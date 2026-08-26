@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meera's 5th Birthday — Event Story · Suman Photography</title>
+<meta name="description" content="Meera's 5th birthday story photographed by Suman Photography — joyful, candid, and full of colour."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface":"#131313","surface-container-lowest":"#0e0e0e","surface-container":"#202020","on-surface":"#e5e2e1","on-surface-variant":"#c4c7c7","primary":"#c8c6c5","outline":"#8e9192","outline-variant":"#444748","background":"#131313","on-background":"#e5e2e1"},borderRadius:{"DEFAULT":"0.125rem"},spacing:{"cinematic-pause":"240px","section-gap":"160px","gutter":"24px","margin-edge":"48px"},fontFamily:{"display":["Playfair Display","serif"],"body":["Inter","sans-serif"]},fontSize:{"display-xl":["clamp(52px,7vw,96px)",{lineHeight:"1.05",letterSpacing:"-0.02em"}],"display-mobile":["48px",{lineHeight:"1.2"}],"headline-lg":["56px",{lineHeight:"1.15"}],"headline-md":["40px",{lineHeight:"1.2"}],"headline-sm":["24px",{lineHeight:"1.4"}],"body-lg":["18px",{lineHeight:"1.6",fontWeight:"300"}],"body-md":["16px",{lineHeight:"1.6"}],"label-caps":["12px",{lineHeight:"1.0",letterSpacing:"0.15em",fontWeight:"600"}]}}}}
+</script>
+<style>
+  .ken-burns{animation:kenBurns 22s ease-out infinite alternate}@keyframes kenBurns{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+  #main-nav{transition:background-color 0.4s ease,backdrop-filter 0.4s ease}#main-nav.scrolled{background-color:rgba(13,13,13,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+  #mobile-menu{transition:opacity 0.4s ease,visibility 0.4s ease}#mobile-menu.open{opacity:1;visibility:visible}
+  .mobile-link{opacity:0;transform:translateY(20px);transition:opacity 0.4s ease,transform 0.4s ease}#mobile-menu.open .mobile-link{opacity:1;transform:translateY(0)}
+  .mobile-link:nth-child(1){transition-delay:0.05s}.mobile-link:nth-child(2){transition-delay:0.1s}.mobile-link:nth-child(3){transition-delay:0.15s}.mobile-link:nth-child(4){transition-delay:0.2s}.mobile-link:nth-child(5){transition-delay:0.25s}.mobile-link:nth-child(6){transition-delay:0.3s}.mobile-link:nth-child(7){transition-delay:0.35s}.mobile-link:nth-child(8){transition-delay:0.4s}
+  .reveal{opacity:0;transform:translateY(48px);transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1),transform 0.9s cubic-bezier(0.16,1,0.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+  .reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}
+  .img-hover{overflow:hidden}.img-hover img{transition:transform 0.7s cubic-bezier(0.16,1,0.3,1)}.img-hover:hover img{transform:scale(1.04)}
+  .btn-ghost{border:1px solid rgba(229,226,225,0.6);color:#e5e2e1;font-family:Inter,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;padding:14px 32px;transition:background-color 0.3s ease,color 0.3s ease;display:inline-block}.btn-ghost:hover{background-color:#e5e2e1;color:#131313}
+  .divider{width:40px;height:1px;background-color:#8e9192}
+  #page-transition{position:fixed;inset:0;background:#0e0e0e;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.4s ease}
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-x-hidden">
+<div id="page-transition"></div>
+<!-- NAV -->
+<nav id="main-nav" class="fixed top-0 w-full z-50 bg-transparent">
+  <div class="flex justify-between items-center px-6 md:px-12 py-5 max-w-[1440px] mx-auto">
+    <a href="index.html" class="font-display text-xl tracking-tighter text-on-surface hover:opacity-80 transition-opacity">Suman Photography</a>
+    <ul class="hidden lg:flex items-center gap-8">
+      <li><a href="index.html" class="font-body text-label-caps text-on-surface/60 hover:text-on-surface transition-colors">HOME</a></li>
+      <li><a href="weddings.html" class="font-body text-label-caps text-on-surface/60 hover:text-on-surface transition-colors">WEDDINGS</a></li>
+      <li><a href="baby-maternity.html" class="font-body text-label-caps text-on-surface/60 hover:text-on-surface transition-colors">BABY &amp; MATERNITY</a></li>
+      <li><a href="birthdays-events.html" class="font-body text-label-caps text-primary border-b border-primary pb-0.5">EVENTS</a></li>
+      <li><a href="portfolio.html" class="font-body text-label-caps text-on-surface/60 hover:text-on-surface transition-colors">PORTFOLIO</a></li>
+      <li><a href="about.html" class="font-body text-label-caps text-on-surface/60 hover:text-on-surface transition-colors">ABOUT</a></li>
+      <li><a href="contact.html" class="font-body text-label-caps text-on-surface/60 hover:text-on-surface transition-colors">CONTACT</a></li>
+    </ul>
+    <div class="hidden lg:flex"><a href="contact.html" class="btn-ghost">Book a Quote</a></div>
+    <button id="menu-btn" class="lg:hidden text-on-surface p-1"><span class="material-symbols-outlined text-[28px]">menu</span></button>
+  </div>
+</nav>
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-surface-container-lowest opacity-0 invisible flex flex-col">
+  <div class="flex justify-between items-center px-6 py-5"><a href="index.html" class="font-display text-xl tracking-tighter text-on-surface">Suman Photography</a><button id="menu-close" class="text-on-surface"><span class="material-symbols-outlined text-[28px]">close</span></button></div>
+  <div class="flex flex-col justify-center flex-1 px-8 gap-8">
+    <a href="index.html" class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">Home</a>
+    <a href="weddings.html" class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">Weddings</a>
+    <a href="baby-maternity.html" class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">Baby &amp; Maternity</a>
+    <a href="birthdays-events.html" class="mobile-link font-display text-display-mobile text-primary">Events</a>
+    <a href="portfolio.html" class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">Portfolio</a>
+    <a href="about.html" class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">About</a>
+    <a href="contact.html" class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">Contact</a>
+    <a href="contact.html" class="mobile-link btn-ghost self-start mt-4">Book a Quote</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="relative w-full h-screen overflow-hidden flex items-end pb-20">
+  <div class="absolute inset-0 z-0">
+    <img class="w-full h-full object-cover ken-burns" loading="eager" alt="Meera birthday hero" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1600&q=85&auto=format&fit=crop"/>
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent"></div>
+  </div>
+  <div class="relative z-10 w-full max-w-[1440px] mx-auto px-6 md:px-12">
+    <p class="font-body text-label-caps text-primary mb-5 reveal">AN EVENT STORY</p>
+    <h1 class="font-display text-display-mobile md:text-display-xl text-on-surface leading-tight reveal reveal-delay-1">Meera's 5th Birthday</h1>
+    <div class="flex flex-wrap gap-8 mt-6 reveal reveal-delay-2">
+      <div><p class="font-body text-label-caps text-on-surface/40 mb-1">TYPE</p><p class="font-body text-body-md text-on-surface/80">Birthday Celebration</p></div>
+      <div><p class="font-body text-label-caps text-on-surface/40 mb-1">LOCATION</p><p class="font-body text-body-md text-on-surface/80">Hyderabad</p></div>
+      <div><p class="font-body text-label-caps text-on-surface/40 mb-1">DATE</p><p class="font-body text-body-md text-on-surface/80">March 2025</p></div>
+    </div>
+  </div>
+</header>
+
+<!-- INTRO -->
+<section class="w-full py-[160px] px-6 md:px-12 flex justify-center bg-background">
+  <div class="max-w-2xl text-center">
+    <div class="divider mx-auto mb-10 reveal"></div>
+    <h2 class="font-display text-headline-sm text-on-surface italic leading-relaxed mb-8 reveal reveal-delay-1">"Meera ran to us the moment we arrived — she was more excited about the camera than the party. By the time the cake came out, she'd already taught us her favourite dance move."</h2>
+    <p class="font-body text-body-lg text-on-surface/60 leading-relaxed reveal reveal-delay-2">Every five-year-old deserves a birthday story this full. The Sharma family planned every detail with love — and all we had to do was keep up.</p>
+  </div>
+</section>
+
+<!-- IMAGES SEQUENCE -->
+<section class="w-full px-6 md:px-12 pb-[80px] bg-background">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-12 gap-2 md:gap-3">
+      <div class="col-span-12 img-hover reveal"><img class="w-full object-cover" style="height:60vh" loading="lazy" alt="Birthday event wide shot" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=80&auto=format&fit=crop"/></div>
+      <div class="col-span-4 img-hover reveal"><img class="w-full h-full object-cover" style="min-height:280px" loading="lazy" alt="Birthday portrait" src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80&auto=format&fit=crop"/></div>
+      <div class="col-span-4 img-hover reveal reveal-delay-1"><img class="w-full h-full object-cover" style="min-height:280px" loading="lazy" alt="Kids dancing" src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=600&q=80&auto=format&fit=crop"/></div>
+      <div class="col-span-4 img-hover reveal reveal-delay-2"><img class="w-full h-full object-cover" style="min-height:280px" loading="lazy" alt="Family group" src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80&auto=format&fit=crop"/></div>
+      <div class="col-span-7 img-hover reveal"><img class="w-full h-full object-cover" style="min-height:360px" loading="lazy" alt="Crowd candid moments" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=900&q=80&auto=format&fit=crop"/></div>
+      <div class="col-span-5 flex flex-col gap-2 md:gap-3">
+        <div class="img-hover reveal reveal-delay-1"><img class="w-full h-full object-cover" style="min-height:175px" loading="lazy" alt="Cake moment" src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=600&q=80&auto=format&fit=crop"/></div>
+        <div class="img-hover reveal reveal-delay-2"><img class="w-full h-full object-cover" style="min-height:175px" loading="lazy" alt="Decor detail" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&auto=format&fit=crop"/></div>
+      </div>
+      <div class="col-span-12 img-hover reveal"><img class="w-full object-cover" style="height:50vh" loading="lazy" alt="Closing wide shot" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=75&auto=format&fit=crop"/></div>
+    </div>
+    <p class="font-display text-headline-sm text-on-surface/50 italic text-center mt-8 reveal reveal-delay-1">"Happy birthday, Meera. See you at six."</p>
+  </div>
+</section>
+
+<!-- PREV/NEXT -->
+<section class="w-full py-20 px-6 md:px-12 bg-surface-container-lowest border-t border-outline-variant">
+  <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+    <a href="birthdays-events.html" class="group flex items-center gap-4 reveal"><span class="text-on-surface/40 transition-transform group-hover:-translate-x-2">←</span><div><p class="font-body text-label-caps text-on-surface/40 mb-1">BACK TO</p><p class="font-display text-headline-sm text-on-surface">Birthdays &amp; Events</p></div></a>
+    <a href="event-story.html" class="group flex items-center gap-4 text-right reveal reveal-delay-1"><div><p class="font-body text-label-caps text-on-surface/40 mb-1">NEXT STORY</p><p class="font-display text-headline-sm text-on-surface">The Sharma Family Reunion</p></div><span class="text-on-surface/40 transition-transform group-hover:translate-x-2">→</span></a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="w-full py-[160px] px-6 md:px-12 bg-background text-center">
+  <div class="max-w-xl mx-auto">
+    <h2 class="font-display text-headline-md md:text-headline-lg text-on-surface mb-6 reveal">Planning a celebration?</h2>
+    <p class="font-body text-body-lg text-on-surface/60 mb-10 reveal reveal-delay-1">Tell us about your event — we'd love to be there.</p>
+    <a href="contact.html" class="btn-ghost reveal reveal-delay-2">Get in Touch</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-lowest py-20 px-6 md:px-12">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+      <div class="md:col-span-2"><a href="index.html" class="font-display text-2xl tracking-tighter text-on-surface block mb-4">Suman Photography</a><p class="font-body text-body-md text-on-surface/50 max-w-xs">Cinematic photography for weddings, maternity, babies &amp; celebrations.</p></div>
+      <div><p class="font-body text-label-caps text-on-surface/30 tracking-[0.15em] mb-6">PAGES</p><ul class="space-y-3"><li><a href="weddings.html" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">Weddings</a></li><li><a href="baby-maternity.html" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">Baby &amp; Maternity</a></li><li><a href="birthdays-events.html" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">Events</a></li><li><a href="portfolio.html" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">Portfolio</a></li><li><a href="about.html" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">About</a></li><li><a href="contact.html" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">Contact</a></li></ul></div>
+      <div><p class="font-body text-label-caps text-on-surface/30 tracking-[0.15em] mb-6">CONTACT</p><ul class="space-y-3"><li><a href="tel:+919999999999" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">+91 99999 99999</a></li><li><a href="mailto:hello@sumanphotography.com" class="font-body text-body-md text-on-surface/60 hover:text-on-surface transition-colors">hello@sumanphotography.com</a></li></ul></div>
+    </div>
+    <div class="border-t border-outline-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-body text-label-caps text-on-surface/30">© 2025 SUMAN PHOTOGRAPHY. ALL RIGHTS RESERVED.</p>
+      <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="font-body text-label-caps text-on-surface/30 hover:text-on-surface transition-colors">BACK TO TOP ↑</button>
+    </div>
+  </div>
+</footer>
+<script>
+const nav=document.getElementById('main-nav');window.addEventListener('scroll',()=>{if(window.scrollY>60)nav.classList.add('scrolled');else nav.classList.remove('scrolled');},{passive:true});
+document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('open'));
+document.getElementById('menu-close').addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
+const obs=new IntersectionObserver((e)=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href');if(href&&!href.startsWith('#')&&!href.startsWith('http')&&!href.startsWith('tel')&&!href.startsWith('mailto')){link.addEventListener('click',(e)=>{e.preventDefault();const o=document.getElementById('page-transition');o.style.opacity='1';o.style.pointerEvents='all';setTimeout(()=>{window.location.href=href;},380);});}});
+window.addEventListener('load',()=>{document.getElementById('page-transition').style.opacity='0';});
+</script>
+</body>
+</html>

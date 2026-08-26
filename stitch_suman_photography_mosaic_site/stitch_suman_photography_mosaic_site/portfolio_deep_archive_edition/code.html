@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Suman Photography - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#c6c6c7",
+                      "primary-container": "#111111",
+                      "surface": "#131313",
+                      "surface-bright": "#393939",
+                      "on-secondary-container": "#b4b5b5",
+                      "on-tertiary-fixed-variant": "#464747",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "error": "#ffb4ab",
+                      "inverse-surface": "#e5e2e1",
+                      "on-primary-fixed-variant": "#474646",
+                      "error-container": "#93000a",
+                      "secondary-fixed": "#e2e2e2",
+                      "background": "#131313",
+                      "secondary-container": "#454747",
+                      "surface-dim": "#131313",
+                      "on-secondary-fixed-variant": "#454747",
+                      "surface-container-low": "#1b1c1c",
+                      "surface-variant": "#353535",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface-container": "#202020",
+                      "surface-container-highest": "#353535",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-primary-container": "#7e7c7c",
+                      "outline": "#8e9192",
+                      "tertiary": "#c6c6c6",
+                      "primary": "#c8c6c5",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "inverse-primary": "#5f5e5e",
+                      "on-primary": "#313030",
+                      "tertiary-container": "#0f1112",
+                      "on-error": "#690005",
+                      "tertiary-fixed": "#e3e2e2",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-high": "#2a2a2a",
+                      "on-tertiary-container": "#7c7d7d",
+                      "on-secondary": "#2f3131",
+                      "outline-variant": "#444748",
+                      "on-tertiary": "#2f3131",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-surface-variant": "#c4c7c7",
+                      "on-surface": "#e5e2e1",
+                      "surface-tint": "#c8c6c5",
+                      "primary-fixed": "#e5e2e1",
+                      "on-background": "#e5e2e1",
+                      "inverse-on-surface": "#303030"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "cinematic-pause": "240px",
+                      "section-gap": "160px",
+                      "container-max": "1440px",
+                      "gutter": "24px",
+                      "unit": "8px",
+                      "margin-edge": "48px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "display-mobile": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "84px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-mobile": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .ken-burns {
+            animation: kenBurns 20s ease-out infinite alternate;
+        }
+        @keyframes kenBurns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 24px;
+        }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        @media (min-width: 1536px) { .masonry-grid { column-count: 4; } }
+      </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-surface-bright selection:text-on-surface">
+<!-- TopNavBar (Desktop) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl dark:bg-surface/80 justify-between items-center px-margin-edge py-unit transition-all duration-300" id="topNav">
+<a class="font-headline-sm text-headline-sm tracking-tighter text-on-surface" href="#">Suman Photography</a>
+<div class="flex items-center gap-gutter font-label-caps text-label-caps">
+<a class="text-on-surface/60 hover:text-on-surface hover:opacity-100 transition-all duration-300" href="#">Home</a>
+<a class="text-on-surface/60 hover:text-on-surface hover:opacity-100 transition-all duration-300" href="#">Weddings</a>
+<a class="text-on-surface/60 hover:text-on-surface hover:opacity-100 transition-all duration-300" href="#">Maternity</a>
+<a class="text-on-surface/60 hover:text-on-surface hover:opacity-100 transition-all duration-300" href="#">Events</a>
+<a class="text-primary border-b border-primary pb-1 hover:opacity-100 transition-all duration-300" href="#">Portfolio</a>
+<a class="text-on-surface/60 hover:text-on-surface hover:opacity-100 transition-all duration-300" href="#">Contact</a>
+</div>
+<button class="border border-on-surface px-6 py-3 font-label-caps text-label-caps hover:bg-on-surface hover:text-background transition-colors">Book a Quote</button>
+</nav>
+<!-- SideNavBar (Mobile Trigger) -->
+<div class="md:hidden fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge py-unit bg-surface/80 backdrop-blur-xl">
+<a class="font-headline-sm text-headline-sm tracking-tighter text-on-surface" href="#">Suman Photography</a>
+<button class="text-on-surface p-2" id="mobileMenuBtn">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- SideNavBar (Mobile Overlay) -->
+<div class="hidden fixed inset-0 z-[60] bg-surface/95 backdrop-blur-3xl flex flex-col justify-center items-center space-y-unit transition-opacity duration-300 opacity-0" id="mobileMenu">
+<button class="absolute top-unit right-margin-edge text-on-surface p-2" id="closeMobileBtn">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="text-center mb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface">Suman Photography</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Modern Editorial Photography</p>
+</div>
+<nav class="flex flex-col items-center space-y-6 font-display-mobile text-display-mobile">
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4" href="#"><span class="material-symbols-outlined" data-icon="home">home</span> Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4" href="#"><span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span> Weddings</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4" href="#"><span class="material-symbols-outlined" data-icon="child_care">child_care</span> Maternity</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4" href="#"><span class="material-symbols-outlined" data-icon="event">event</span> Events</a>
+<a class="text-primary font-bold transition-colors flex items-center gap-4" href="#"><span class="material-symbols-outlined" data-icon="grid_view">grid_view</span> Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-4" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span> Contact</a>
+</nav>
+</div>
+<main>
+<!-- Hero -->
+<header class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover ken-burns opacity-60" data-alt="A striking black and white wide-angle photograph of an elegant couple standing in a vast, minimalist gallery space, silhouetted against a massive arched window. The mood is silent, high-end editorial, evoking a sense of timeless romance. High contrast, sharp focus, capturing the essence of Suman Photography's cinematic style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK1wykyPUiZ6uLF4tZgeqxioSLFgvqWq3WbzuZkicXr8016bdJKpNkaPKVidtXzsOS_07dUg1wiwL1ntSQ7loneW8jCxq7JmRgfrmNBckoQY8XnJX_grkALtzmYqtqryimXqKBIrO06vn1n9bsqqpTL-9Tfe7BLH7DcSJbYeoiFZXsDUilR4Gr_mQFtgZ6mlifowf1W1nvQZr6_L4osLucB6B7pG14pp-LvX5UdZcyyjRLVKxzBKkU4g"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tighter">PORTFOLIO</h1>
+</div>
+</header>
+<!-- Editorial Statement -->
+<section class="py-section-gap px-margin-edge max-w-4xl mx-auto text-center">
+<p class="font-headline-md text-headline-md text-on-surface">
+                "A collection of people, places, celebrations and quiet moments — photographed the way we see them."
+            </p>
+</section>
+<!-- Image Wall -->
+<section class="px-gutter pb-section-gap max-w-[1920px] mx-auto">
+<div class="masonry-grid" id="masonryGallery">
+<!-- Generating placeholder items for the dense grid -->
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up portrait of a bride adjusting her veil, dramatic side lighting, high contrast black and white, editorial fashion style photography, capturing a quiet, intimate moment before the wedding." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTX8quSW7y41K6XVXs4wi45CpxgDpEmMsp6oMquYQHgOeshYqSEM28hdz1j8U2uKvXG6XvOi23qhl_3-InrgQOUquU9hVe6tFiEt9DKExZtcdXDw_XbkKvsStOCrO95_zlkSX5U_NCY3SI5c5-ESApxdbeO5V72nwWU0LEnYWMxpqM1iotFPVWrPBPDW2YSsKyFLQXFktlaa4yDJD5lQOOE6fqufg1-Do-q6x6jPh34sBaUSBXtN-OcQ"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide shot of a wedding reception in a dimly lit historic villa courtyard. Strings of warm festoon lights overhead creating a cinematic, romantic atmosphere. Deep blacks, rich warm highlights, capturing a celebration." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_bPn4O2nFf2illc0kikGmW2pq4bwOZLrD4tLpC__9xVg7G5Sgv5NOjhbr9R_DWWroiNrIUa2mYJTNLKuagpL_p17NcBSVHdwwom64JnMkCtVRPSmDioRw7SurVuvLZNbxD09yXj9-_IoBuYdeIO4x83RP_7Q5H3OuKw9aGpOi2T8NyOWilFCXfL2WF-KNZ0NHxDoqcIyCrMcKLH3gYMbR22nMdsNhahbOk0BrRDmW7kPfDEQf4z13Qg"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Editorial maternity silhouette against a stark, modern architectural concrete wall. Minimalist composition, strong geometric lines framing the subject. High-end fine art aesthetic, dramatic shadows." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFOzMspBmvivOrxXkub2JE-t_LV1RFqmbLdBQYJmTzrLY_Q_ZRRzz967jLON7lsZUjHDMSFE4Cyb9LakZSHMpaUtBNKKIdn4pRNGuhF6gHXs5qGZ-FNNZds6nFMfP1LvvJzyweOlndiDhKyiP-QBGScfIGH9GOkF7Ss9WG7svNJ-lhjn5H7ABPTbS_THZQYVANHvCtOoOBcAG0wrYFoaBIuygfnOqrLlSV3ZXFYQ1qihSa-cYcdx390g"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Candid moment of guests laughing during a toast, captured on 35mm film style with slight grain. High contrast, focus on the emotional connection. Elegant, timeless, documentary photography." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJNBIUQqOaNcBfDF7ZUPta4k5nkzoea2A9vzYQ9yPP-asLchrz4EcmU-AbyUFX8K0T-ypOUxEcLSGCTg9rV79Cmm-PuhW-AjxxQeVGyI3xZJ-jXv2aoV21zFGDxUByp-bRoEWQIO0m_n1BQU6s4qjfCLaMMSW-VK__EwOkR4ZcdIb_uUe7u8n7bUqaLZXsXBwqbNQZ26MrcstcvMlECrzErwQTmYuiu3agaCp78iZtWUxCuc5_SFXEfw"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detail shot of wedding rings resting on textured dark slate. Macro photography highlighting the facets of the diamond against the rough natural texture. Moody lighting, luxury aesthetic." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAg0xXyJ5qKl2viztZZMJSqognsCiI3SlbfwdvVFsw3y5N98MUrs4vAS1Gv-XTDyHQgwsBl4yYoF_Jf_HCUayoEj_t5bGXBVOCtyxhNxgk0Ot3i_CjpSA-JsSuyukrfTzDHpRQH9Bv4P4ttSdMaJODxq3_fnwCELNYMDGqBPaVBtFyq_p9ey8414-2dwzDZFPrGe6Kn7PYlgkNqzmU1VEfxhbF9q5qvWrQ__iX7bvUMN9zelKkz_yjgA"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A couple walking away down a long, mist-filled forest path. Ethereal, moody, atmospheric landscape wedding portrait. cinematic scale emphasizing the environment." loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnf-CpG_BRmV6hkNuHsrmjbD22ch8eyRZXXFW_LHEFVIJSWkhQVvYygclZTTi3Nqhjwu-TCK2AY5ykjkWzuAsT4GT7cC_njOLeE5uLoeq3xOZuEeGP9NnNMLGoScEatwAQ1xIfspBnrDAlYAhpE3Iwc5NZRSBUB62SAwtnI44ZBHHxHbBLJ_HGJjm79RJeVZl-PsHEpJNkCkee-XFv4QrXiYnDZYQNSZYOgVgJDHkwGkikJUmNTdsUjA"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<!-- Repeated for scale and visual weight variation -->
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up portrait of a bride adjusting her veil" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTX8quSW7y41K6XVXs4wi45CpxgDpEmMsp6oMquYQHgOeshYqSEM28hdz1j8U2uKvXG6XvOi23qhl_3-InrgQOUquU9hVe6tFiEt9DKExZtcdXDw_XbkKvsStOCrO95_zlkSX5U_NCY3SI5c5-ESApxdbeO5V72nwWU0LEnYWMxpqM1iotFPVWrPBPDW2YSsKyFLQXFktlaa4yDJD5lQOOE6fqufg1-Do-q6x6jPh34sBaUSBXtN-OcQ"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Wide shot of a wedding reception" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_bPn4O2nFf2illc0kikGmW2pq4bwOZLrD4tLpC__9xVg7G5Sgv5NOjhbr9R_DWWroiNrIUa2mYJTNLKuagpL_p17NcBSVHdwwom64JnMkCtVRPSmDioRw7SurVuvLZNbxD09yXj9-_IoBuYdeIO4x83RP_7Q5H3OuKw9aGpOi2T8NyOWilFCXfL2WF-KNZ0NHxDoqcIyCrMcKLH3gYMbR22nMdsNhahbOk0BrRDmW7kPfDEQf4z13Qg"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+<div class="masonry-item relative group cursor-pointer overflow-hidden rounded-sm">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Detail shot of wedding rings" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAg0xXyJ5qKl2viztZZMJSqognsCiI3SlbfwdvVFsw3y5N98MUrs4vAS1Gv-XTDyHQgwsBl4yYoF_Jf_HCUayoEj_t5bGXBVOCtyxhNxgk0Ot3i_CjpSA-JsSuyukrfTzDHpRQH9Bv4P4ttSdMaJODxq3_fnwCELNYMDGqBPaVBtFyq_p9ey8414-2dwzDZFPrGe6Kn7PYlgkNqzmU1VEfxhbF9q5qvWrQ__iX7bvUMN9zelKkz_yjgA"/>
+<div class="absolute inset-0 bg-surface/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="font-label-caps text-label-caps text-on-surface tracking-widest">VIEW</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest flex flex-col items-center justify-center gap-gutter px-margin-edge">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-8">Suman Photography</div>
+<div class="flex gap-8 font-label-caps text-label-caps">
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">Facebook</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">YouTube</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">WhatsApp</a>
+<button class="text-on-secondary-container hover:text-primary transition-colors" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to Top</button>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface/40 mt-12">© 2024 Suman Photography. All Rights Reserved.</p>
+</footer>
+<!-- Lightbox -->
+<div class="fixed inset-0 z-[100] bg-background hidden opacity-0 transition-opacity duration-500 items-center justify-center p-4" id="lightbox">
+<span class="absolute top-margin-edge left-margin-edge text-on-surface font-label-caps text-label-caps z-[101] tracking-widest" id="lightboxCounter"></span>
+<button class="absolute top-margin-edge right-margin-edge text-on-surface hover:text-primary transition-colors p-4 z-[101]" onclick="closeLightbox()">
+<span class="material-symbols-outlined text-4xl">close</span>
+</button>
+<button class="absolute left-4 md:left-margin-edge text-on-surface hover:text-primary transition-colors p-4 z-[101]" onclick="prevImage(event)">
+<span class="material-symbols-outlined text-4xl">chevron_left</span>
+</button>
+<button class="absolute right-4 md:right-margin-edge text-on-surface hover:text-primary transition-colors p-4 z-[101]" onclick="nextImage(event)">
+<span class="material-symbols-outlined text-4xl">chevron_right</span>
+</button>
+<img alt="Lightbox Image" class="max-w-full max-h-full object-contain scale-95 transition-transform duration-500" id="lightboxImg" src=""/>
+</div>
+<script>
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const closeMobileBtn = document.getElementById('closeMobileBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        function toggleMobileMenu() {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                // trigger reflow
+                void mobileMenu.offsetWidth;
+                mobileMenu.classList.remove('opacity-0');
+            } else {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeMobileBtn.addEventListener('click', toggleMobileMenu);
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        let gridImages = [];
+        let currentImageIndex = 0;
+
+        function initializeLightbox() {
+            const items = document.querySelectorAll('.masonry-item');
+            gridImages = Array.from(items).map(item => item.querySelector('img').src);
+            
+            items.forEach((item, index) => {
+                item.addEventListener('click', () => openLightbox(index));
+            });
+        }
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightbox();
+            
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            
+            // Trigger reflow for animation
+            void lightbox.offsetWidth;
+            
+            lightbox.classList.remove('opacity-0');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightbox() {
+            lightboxImg.src = gridImages[currentImageIndex];
+            lightboxCounter.textContent = `${currentImageIndex + 1} / ${gridImages.length}`;
+            
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            
+            setTimeout(() => {
+                lightboxImg.classList.remove('scale-95');
+                lightboxImg.classList.add('scale-100');
+            }, 50);
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.remove('scale-100');
+            lightboxImg.classList.add('scale-95');
+            
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 500);
+        }
+
+        function prevImage(e) {
+            if(e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex - 1 + gridImages.length) % gridImages.length;
+            updateLightbox();
+        }
+
+        function nextImage(e) {
+            if(e) e.stopPropagation();
+            currentImageIndex = (currentImageIndex + 1) % gridImages.length;
+            updateLightbox();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if(!lightbox.classList.contains('hidden')) {
+                if(e.key === 'Escape') closeLightbox();
+                if(e.key === 'ArrowLeft') prevImage();
+                if(e.key === 'ArrowRight') nextImage();
+            }
+        });
+
+        // Nav Scroll Effect
+        const topNav = document.getElementById('topNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                topNav.classList.add('bg-surface/90', 'border-b', 'border-surface-variant');
+            } else {
+                topNav.classList.remove('bg-surface/90', 'border-b', 'border-surface-variant');
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', initializeLightbox);
+    </script>
+</body></html>

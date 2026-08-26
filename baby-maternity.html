@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Baby &amp; Maternity — Suman Photography</title>
+<meta name="description" content="Suman Photography baby and maternity gallery — maternity, newborn, baby portraits, first birthdays and family photography in Hyderabad."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#e5e2e1;font-family:'Inter',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 48px;transition:background 0.4s,backdrop-filter 0.4s}
+#nav.solid{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;text-transform:uppercase;color:#e5e2e1}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(229,226,225,0.5);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:#e5e2e1}
+.nav-cta{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border:1px solid rgba(229,226,225,0.35);color:#e5e2e1;padding:10px 24px;transition:background 0.3s,color 0.3s}
+.nav-cta:hover{background:#e5e2e1;color:#0a0a0a}
+#menu-btn{display:none;background:none;border:none;color:#e5e2e1;cursor:pointer;font-size:24px}
+#mobile-nav{display:none;position:fixed;inset:0;background:#0a0a0a;z-index:200;flex-direction:column;justify-content:center;padding:60px 40px;gap:32px}
+#mobile-nav.open{display:flex}
+#mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;text-transform:uppercase;color:rgba(229,226,225,0.8)}
+#mob-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#e5e2e1;font-size:28px;cursor:pointer}
+
+/* TYPOGRAPHY SYSTEM */
+.eyebrow{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:rgba(229,226,225,0.45);margin-bottom:16px;display:block}
+.editorial-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(48px,8vw,130px);line-height:0.88;text-transform:uppercase;letter-spacing:-0.015em;color:#e5e2e1}
+.editorial-sub{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,5vw,72px);line-height:0.90;text-transform:uppercase;letter-spacing:-0.01em;color:#e5e2e1}
+
+.hero{position:relative;height:100vh;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;animation:kb 20s ease-out infinite alternate}
+@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.06)}}
+.hero-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.88) 0%,rgba(10,10,10,0.15) 60%,transparent 100%)}
+.hero-txt{position:absolute;bottom:72px;left:48px;right:48px}
+
+.ms{column-gap:3px}
+.ms2{column-count:2}.ms3{column-count:3}.ms4{column-count:4}.ms5{column-count:5}
+@media(max-width:1100px){.ms4{column-count:3}.ms5{column-count:3}}
+@media(max-width:700px){.ms2,.ms3,.ms4,.ms5{column-count:2}}
+.mi{break-inside:avoid;margin-bottom:3px;overflow:hidden;display:block;cursor:pointer}
+.mi img{width:100%;height:auto;display:block;transition:transform 0.65s cubic-bezier(0.16,1,0.3,1)}
+.mi:hover img{transform:scale(1.04);filter:brightness(1.1)}
+.cover{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.65s cubic-bezier(0.16,1,0.3,1)}
+.cover:hover{transform:scale(1.03)}
+.rev{opacity:0;transform:translateY(24px);transition:opacity 0.75s cubic-bezier(0.16,1,0.3,1),transform 0.75s cubic-bezier(0.16,1,0.3,1)}
+.rev.on{opacity:1;transform:none}
+footer{background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.07);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;text-transform:uppercase;letter-spacing:-0.01em}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(229,226,225,0.3);transition:color 0.2s}
+.foot-links a:hover{color:#e5e2e1}
+.foot-copy{width:100%;font-size:11px;color:rgba(229,226,225,0.2);letter-spacing:0.12em;text-transform:uppercase}
+#pt{position:fixed;inset:0;background:#0a0a0a;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s ease}
+@media(max-width:768px){#nav{padding:14px 20px}.nav-links,#nav .nav-cta{display:none}#menu-btn{display:block}.hero-txt{bottom:50px;left:24px;right:24px}footer{padding:32px 20px}}
+</style>
+</head>
+<body>
+<div id="pt"></div>
+<nav id="nav">
+  <a href="index.html" class="logo">Suman Photography</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="weddings.html">Weddings</a></li><li><a href="baby-maternity.html" class="active">Baby &amp; Maternity</a></li><li><a href="birthdays-events.html">Events</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Quote</a>
+  <button id="menu-btn">&#9776;</button>
+</nav>
+<div id="mobile-nav">
+  <button id="mob-close">&#10005;</button>
+  <a href="index.html">Home</a><a href="weddings.html">Weddings</a><a href="baby-maternity.html">Baby &amp; Maternity</a><a href="birthdays-events.html">Events</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1600&q=85&auto=format&fit=crop" loading="eager" alt=""/>
+  <div class="hero-over"></div>
+  <div class="hero-txt">
+    <span class="eyebrow">01 • BABY &amp; MATERNITY</span>
+    <h1 class="editorial-title">LITTLE<br/>MOMENTS.<br/>ENDLESS<br/>MEMORIES.</h1>
+  </div>
+</section>
+
+<!-- 5-col masonry — 20 images -->
+<div style="padding:3px;background:#0a0a0a">
+  <div class="ms ms5">
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=500&q=70&auto=format&fit=crop&crop=faces" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500&q=70&auto=format&fit=crop&crop=center" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&q=70&auto=format&fit=crop&crop=bottom" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=500&q=70&auto=format&fit=crop&crop=top" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=500&q=70&auto=format&fit=crop&crop=center" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&q=75&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=500&q=70&auto=format&fit=crop&crop=faces" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  </div>
+</div>
+
+<!-- FULL BLEED -->
+<div style="height:75vh;overflow:hidden">
+  <img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=1600&q=80&auto=format&fit=crop" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover"/>
+</div>
+
+<!-- Asymmetric grids — 6 images -->
+<div style="display:grid;grid-template-columns:2fr 3fr;gap:3px;background:#0a0a0a">
+  <div style="display:grid;gap:3px">
+    <div style="overflow:hidden;height:280px"><img class="cover" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=700&q=80&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div style="overflow:hidden;height:280px"><img class="cover" src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=700&q=80&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  </div>
+  <div style="overflow:hidden"><img class="cover" style="height:100%;min-height:563px" src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=900&q=85&auto=format&fit=crop" loading="lazy" alt=""/></div>
+</div>
+<div style="display:grid;grid-template-columns:3fr 2fr;gap:3px;background:#0a0a0a;margin-top:3px">
+  <div style="overflow:hidden;height:480px"><img class="cover" src="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=900&q=85&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  <div style="display:grid;gap:3px">
+    <div style="overflow:hidden"><img class="cover" style="height:237px" src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=600&q=80&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div style="overflow:hidden"><img class="cover" style="height:237px" src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=600&q=80&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  </div>
+</div>
+
+<!-- Full bleed 2 -->
+<div style="height:65vh;overflow:hidden;margin-top:3px">
+  <img src="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=1600&q=80&auto=format&fit=crop" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover"/>
+</div>
+
+<!-- 4-col masonry — 20 images -->
+<div style="padding:3px;background:#0a0a0a">
+  <div class="ms ms4">
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=500&q=70&auto=format&fit=crop&crop=entropy" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=500&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=500&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=500&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  </div>
+</div>
+
+<!-- 3-wide strip -->
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin:3px 0">
+  <div style="overflow:hidden;height:380px"><img class="cover" src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=700&q=80&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  <div style="overflow:hidden;height:380px"><img class="cover" src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=700&q=80&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  <div style="overflow:hidden;height:380px"><img class="cover" src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=700&q=80&auto=format&fit=crop" loading="lazy" alt=""/></div>
+</div>
+
+<!-- 3-col masonry — 14 images -->
+<div style="padding:3px;background:#0a0a0a">
+  <div class="ms ms3">
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=70&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+    <div class="mi rev"><img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=600&q=65&auto=format&fit=crop" loading="lazy" alt=""/></div>
+  </div>
+</div>
+
+<!-- FINAL FULL BLEED -->
+<div style="height:85vh;overflow:hidden">
+  <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1600&q=85&auto=format&fit=crop&crop=top" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover"/>
+</div>
+
+<!-- CTA -->
+<div style="background:#0a0a0a;padding:100px 48px;text-align:center">
+  <span class="eyebrow" style="margin-bottom:12px">02 • FAMILY STORIES</span>
+  <h2 class="editorial-sub" style="margin-bottom:28px">LET'S MAKE<br/>SOMETHING BEAUTIFUL.</h2>
+  <a href="contact.html" style="display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border:1px solid rgba(229,226,225,0.5);color:#e5e2e1;padding:14px 36px;transition:background 0.3s,color 0.3s" onmouseover="this.style.background='#e5e2e1';this.style.color='#0a0a0a'" onmouseout="this.style.background='transparent';this.style.color='#e5e2e1'">Get in Touch</a>
+</div>
+
+<footer>
+  <a href="index.html" class="foot-logo">Suman Photography</a>
+  <div class="foot-links"><a href="weddings.html">Weddings</a><a href="baby-maternity.html">Maternity</a><a href="birthdays-events.html">Events</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <p class="foot-copy">© 2025 Suman Photography · Hyderabad · +91 99999 99999</p>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40),{passive:true});
+document.getElementById('menu-btn').onclick=()=>document.getElementById('mobile-nav').classList.add('open');
+document.getElementById('mob-close').onclick=()=>document.getElementById('mobile-nav').classList.remove('open');
+const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target)}}),{threshold:0.03,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+const pt=document.getElementById('pt');
+document.querySelectorAll('a[href]').forEach(a=>{const h=a.getAttribute('href');if(h&&!h.startsWith('#')&&!h.startsWith('http')&&!h.startsWith('tel')&&!h.startsWith('mailto')){a.addEventListener('click',e=>{e.preventDefault();pt.style.opacity='1';pt.style.pointerEvents='all';setTimeout(()=>location.href=h,350)})}});
+window.addEventListener('load',()=>{pt.style.opacity='0'});
+</script>
+</body>
+</html>

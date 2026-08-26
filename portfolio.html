@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio — Suman Photography</title>
+<meta name="description" content="Suman Photography portfolio — the complete archive of wedding, maternity, baby and events photography. 90+ photographs."/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#e5e2e1;font-family:'Inter',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 48px;background:rgba(10,10,10,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;text-transform:uppercase;color:#e5e2e1}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(229,226,225,0.5);transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:#e5e2e1}
+.nav-cta{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border:1px solid rgba(229,226,225,0.35);color:#e5e2e1;padding:10px 24px;transition:background 0.3s,color 0.3s}
+.nav-cta:hover{background:#e5e2e1;color:#0a0a0a}
+#menu-btn{display:none;background:none;border:none;color:#e5e2e1;cursor:pointer;font-size:24px}
+#mobile-nav{display:none;position:fixed;inset:0;background:#0a0a0a;z-index:200;flex-direction:column;justify-content:center;padding:60px 40px;gap:32px}
+#mobile-nav.open{display:flex}
+#mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;text-transform:uppercase;color:rgba(229,226,225,0.8)}
+#mob-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#e5e2e1;font-size:28px;cursor:pointer}
+
+/* TYPOGRAPHY SYSTEM */
+.eyebrow{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:rgba(229,226,225,0.45);margin-bottom:16px;display:block}
+.editorial-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(48px,8vw,130px);line-height:0.88;text-transform:uppercase;letter-spacing:-0.015em;color:#e5e2e1}
+.editorial-sub{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,5vw,72px);line-height:0.90;text-transform:uppercase;letter-spacing:-0.01em;color:#e5e2e1}
+
+/* PAGE HEADER */
+.page-header{padding:130px 48px 48px;border-bottom:1px solid rgba(255,255,255,0.07)}
+
+/* FILTER TABS */
+.filters{display:flex;flex-wrap:wrap;gap:4px;padding:20px 48px;background:#0a0a0a;position:sticky;top:67px;z-index:50;border-bottom:1px solid rgba(255,255,255,0.05)}
+.filter-btn{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;padding:8px 18px;border:1px solid transparent;color:rgba(229,226,225,0.35);transition:all 0.25s;cursor:pointer;background:none}
+.filter-btn:hover,.filter-btn.active{color:#e5e2e1;border-color:rgba(229,226,225,0.25)}
+
+/* MASONRY */
+.masonry-wall{column-count:4;column-gap:3px;padding:3px;background:#0a0a0a}
+@media(max-width:1100px){.masonry-wall{column-count:3}}
+@media(max-width:700px){.masonry-wall{column-count:2}}
+.photo-item{break-inside:avoid;margin-bottom:3px;overflow:hidden;display:block;cursor:pointer;position:relative}
+.photo-item img{width:100%;height:auto;display:block;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);filter:brightness(0.95)}
+.photo-item:hover img{transform:scale(1.04);filter:brightness(1.05)}
+.photo-item.hidden{display:none}
+
+/* LIGHTBOX */
+#lb{position:fixed;inset:0;background:rgba(0,0,0,0.97);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity 0.3s ease,visibility 0.3s ease}
+#lb.open{opacity:1;visibility:visible}
+#lb-img{max-width:90vw;max-height:88vh;object-fit:contain;transition:opacity 0.25s ease}
+#lb-img.fade{opacity:0}
+#lb-close{position:absolute;top:20px;right:24px;background:none;border:none;color:rgba(229,226,225,0.5);cursor:pointer;font-size:28px;line-height:1;transition:color 0.2s}
+#lb-close:hover{color:#e5e2e1}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:rgba(229,226,225,0.6);width:48px;height:80px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;transition:background 0.2s,color 0.2s;user-select:none}
+.lb-nav:hover{background:rgba(255,255,255,0.1);color:#e5e2e1}
+#lb-prev{left:16px}#lb-next{right:16px}
+#lb-count{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(229,226,225,0.3)}
+
+/* REVEAL */
+.rev{opacity:0;transform:translateY(20px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
+.rev.on{opacity:1;transform:none}
+
+/* FOOTER */
+footer{background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.07);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;text-transform:uppercase;letter-spacing:-0.01em}
+.foot-links{display:flex;gap:20px}
+.foot-links a{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(229,226,225,0.3);transition:color 0.2s}
+.foot-links a:hover{color:#e5e2e1}
+.foot-copy{width:100%;font-size:11px;color:rgba(229,226,225,0.2);letter-spacing:0.12em;text-transform:uppercase}
+
+#pt{position:fixed;inset:0;background:#0a0a0a;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s ease}
+
+@media(max-width:768px){
+  #nav{padding:14px 20px}
+  .nav-links,#nav .nav-cta{display:none}
+  #menu-btn{display:block}
+  .page-header{padding:90px 24px 32px}
+  .filters{padding:14px 20px;top:53px}
+  footer{padding:32px 20px}
+}
+</style>
+</head>
+<body>
+<div id="pt"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">Suman Photography</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="weddings.html">Weddings</a></li><li><a href="baby-maternity.html">Baby &amp; Maternity</a></li><li><a href="birthdays-events.html">Events</a></li><li><a href="portfolio.html" class="active">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Book a Quote</a>
+  <button id="menu-btn">&#9776;</button>
+</nav>
+<div id="mobile-nav">
+  <button id="mob-close">&#10005;</button>
+  <a href="index.html">Home</a><a href="weddings.html">Weddings</a><a href="baby-maternity.html">Baby &amp; Maternity</a><a href="birthdays-events.html">Events</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lb">
+  <button id="lb-close">&#10005;</button>
+  <button class="lb-nav" id="lb-prev">&#8592;</button>
+  <img id="lb-img" src="" alt="Portfolio photograph"/>
+  <button class="lb-nav" id="lb-next">&#8594;</button>
+  <span id="lb-count"></span>
+</div>
+
+<!-- HEADER -->
+<div class="page-header">
+  <span class="eyebrow">01 • PORTFOLIO</span>
+  <h1 class="editorial-title">THE WAY<br/>WE SEE<br/>THE WORLD.</h1>
+</div>
+
+<!-- FILTERS -->
+<div class="filters" id="filters">
+  <button class="filter-btn active" data-cat="all">All</button>
+  <button class="filter-btn" data-cat="wedding">Weddings</button>
+  <button class="filter-btn" data-cat="maternity">Maternity</button>
+  <button class="filter-btn" data-cat="newborn">Newborn</button>
+  <button class="filter-btn" data-cat="baby">Baby</button>
+  <button class="filter-btn" data-cat="birthday">Birthday</button>
+  <button class="filter-btn" data-cat="events">Events</button>
+  <button class="filter-btn" data-cat="portrait">Portrait</button>
+  <button class="filter-btn" data-cat="candid">Candid</button>
+</div>
+
+<!-- PORTFOLIO WALL — 90 images -->
+<div class="masonry-wall" id="grid">
+  <!-- WEDDINGS: 30 images -->
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 1"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 2"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Maternity 1"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 3"/></div>
+  <div class="photo-item rev" data-cat="newborn" data-full="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Newborn 1"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 4"/></div>
+  <div class="photo-item rev" data-cat="events" data-full="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Events 1"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 5"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Maternity 2"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1464699908537-0954e50791ee?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1464699908537-0954e50791ee?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 6"/></div>
+  <div class="photo-item rev" data-cat="baby" data-full="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Baby 1"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 7"/></div>
+  <div class="photo-item rev" data-cat="birthday" data-full="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Birthday 1"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 8"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1578496480157-697fc14d2e55?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Maternity 3"/></div>
+  <div class="photo-item rev" data-cat="candid" data-full="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Candid 1"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 9"/></div>
+  <div class="photo-item rev" data-cat="newborn" data-full="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Newborn 2"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1518563259479-d003814d0810?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1518563259479-d003814d0810?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 10"/></div>
+  <div class="photo-item rev" data-cat="events" data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Events 2"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?w=600&q=80&auto=format&fit=crop" loading="lazy" alt="Wedding 11"/></div>
+  <div class="photo-item rev" data-cat="portrait" data-full="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Portrait 1"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Maternity 4"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Wedding 12"/></div>
+  <div class="photo-item rev" data-cat="candid" data-full="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Candid 2"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Wedding 13"/></div>
+  <div class="photo-item rev" data-cat="baby" data-full="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Baby 2"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Wedding 14"/></div>
+  <div class="photo-item rev" data-cat="portrait" data-full="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Portrait 2"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Wedding 15"/></div>
+  <div class="photo-item rev" data-cat="birthday" data-full="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Birthday 2"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Wedding 16"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Maternity 5"/></div>
+  <div class="photo-item rev" data-cat="candid" data-full="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=600&q=75&auto=format&fit=crop" loading="lazy" alt="Candid 3"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=80&auto=format&fit=crop&crop=faces"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=70&auto=format&fit=crop&crop=faces" loading="lazy" alt="Wedding 17"/></div>
+  <div class="photo-item rev" data-cat="newborn" data-full="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Newborn 3"/></div>
+  <div class="photo-item rev" data-cat="events" data-full="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Events 3"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400&q=80&auto=format&fit=crop&crop=top"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=70&auto=format&fit=crop&crop=top" loading="lazy" alt="Wedding 18"/></div>
+  <div class="photo-item rev" data-cat="baby" data-full="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Baby 3"/></div>
+  <div class="photo-item rev" data-cat="portrait" data-full="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Portrait 3"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Wedding 19"/></div>
+  <div class="photo-item rev" data-cat="birthday" data-full="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Birthday 3"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Maternity 6"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1464699908537-0954e50791ee?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1464699908537-0954e50791ee?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Wedding 20"/></div>
+  <div class="photo-item rev" data-cat="candid" data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Candid 4"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Wedding 21"/></div>
+  <div class="photo-item rev" data-cat="events" data-full="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Events 4"/></div>
+  <div class="photo-item rev" data-cat="newborn" data-full="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1497530285540-64bef1c37d58?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Newborn 4"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=600&q=70&auto=format&fit=crop" loading="lazy" alt="Wedding 22"/></div>
+  <div class="photo-item rev" data-cat="portrait" data-full="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Portrait 4"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Wedding 23"/></div>
+  <div class="photo-item rev" data-cat="baby" data-full="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1574200238700-6d35f0e2fc00?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Baby 4"/></div>
+  <div class="photo-item rev" data-cat="candid" data-full="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Candid 5"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1518563259479-d003814d0810?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1518563259479-d003814d0810?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Wedding 24"/></div>
+  <div class="photo-item rev" data-cat="birthday" data-full="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Birthday 4"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1510627498534-cf7e9002facc?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Maternity 7"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Wedding 25"/></div>
+  <div class="photo-item rev" data-cat="events" data-full="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Events 5"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=600&q=65&auto=format&fit=crop" loading="lazy" alt="Wedding 26"/></div>
+  <div class="photo-item rev" data-cat="portrait" data-full="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Portrait 5"/></div>
+  <div class="photo-item rev" data-cat="newborn" data-full="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Newborn 5"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Wedding 27"/></div>
+  <div class="photo-item rev" data-cat="baby" data-full="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Baby 5"/></div>
+  <div class="photo-item rev" data-cat="candid" data-full="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Candid 6"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Wedding 28"/></div>
+  <div class="photo-item rev" data-cat="maternity" data-full="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Maternity 8"/></div>
+  <div class="photo-item rev" data-cat="birthday" data-full="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Birthday 5"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Wedding 29"/></div>
+  <div class="photo-item rev" data-cat="events" data-full="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Events 6"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=80&auto=format&fit=crop&crop=center"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=60&auto=format&fit=crop&crop=center" loading="lazy" alt="Wedding 30"/></div>
+  <div class="photo-item rev" data-cat="portrait" data-full="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Portrait 6"/></div>
+  <div class="photo-item rev" data-cat="baby" data-full="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=1400&q=85&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1468421201266-ec88b2809284?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Baby 6"/></div>
+  <div class="photo-item rev" data-cat="candid" data-full="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Candid 7"/></div>
+  <div class="photo-item rev" data-cat="wedding" data-full="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Wedding 31"/></div>
+  <div class="photo-item rev" data-cat="newborn" data-full="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1491013516836-7db643ee125a?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Newborn 6"/></div>
+  <div class="photo-item rev" data-cat="events" data-full="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=1400&q=80&auto=format&fit=crop"><img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?w=600&q=60&auto=format&fit=crop" loading="lazy" alt="Events 7"/></div>
+</div>
+
+<!-- CTA -->
+<div style="background:#0a0a0a;padding:100px 48px;text-align:center;border-top:1px solid rgba(255,255,255,0.06)">
+  <span class="eyebrow" style="margin-bottom:12px">02 • ARCHIVE</span>
+  <h2 class="editorial-sub" style="margin-bottom:28px">YOUR IMAGES COULD<br/>LIVE HERE TOO.</h2>
+  <a href="contact.html" style="display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border:1px solid rgba(229,226,225,0.5);color:#e5e2e1;padding:14px 36px;transition:background 0.3s,color 0.3s" onmouseover="this.style.background='#e5e2e1';this.style.color='#0a0a0a'" onmouseout="this.style.background='transparent';this.style.color='#e5e2e1'">Get in Touch</a>
+</div>
+
+<footer>
+  <a href="index.html" class="foot-logo">Suman Photography</a>
+  <div class="foot-links"><a href="weddings.html">Weddings</a><a href="baby-maternity.html">Maternity</a><a href="birthdays-events.html">Events</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <p class="foot-copy">© 2025 Suman Photography · Hyderabad · +91 99999 99999</p>
+</footer>
+
+<script>
+// Nav
+document.getElementById('menu-btn').onclick=()=>document.getElementById('mobile-nav').classList.add('open');
+document.getElementById('mob-close').onclick=()=>document.getElementById('mobile-nav').classList.remove('open');
+
+// Reveal
+const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target)}}),{threshold:0.03,rootMargin:'0px 0px -10px 0px'});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+
+// Filters
+const btns=document.querySelectorAll('.filter-btn');
+const items=document.querySelectorAll('.photo-item');
+btns.forEach(btn=>btn.addEventListener('click',()=>{
+  btns.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cat=btn.dataset.cat;
+  items.forEach(item=>{
+    if(cat==='all'||item.dataset.cat===cat){item.style.display='block'}
+    else{item.style.display='none'}
+  });
+}));
+
+// Lightbox
+const lb=document.getElementById('lb');
+const lbImg=document.getElementById('lb-img');
+const lbCount=document.getElementById('lb-count');
+let current=0;
+let visible=[];
+
+function getVisible(){return [...document.querySelectorAll('.photo-item')].filter(i=>i.style.display!=='none')}
+function showImage(idx){
+  current=idx;
+  visible=getVisible();
+  lbImg.classList.add('fade');
+  setTimeout(()=>{
+    lbImg.src=visible[current].dataset.full;
+    lbImg.alt=visible[current].querySelector('img').alt;
+    lbCount.textContent=(current+1)+' / '+visible.length;
+    lbImg.classList.remove('fade');
+  },180);
+}
+function openLb(item){
+  visible=getVisible();
+  current=visible.indexOf(item);
+  lbImg.src=item.dataset.full;
+  lbImg.alt=item.querySelector('img').alt;
+  lbCount.textContent=(current+1)+' / '+visible.length;
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow=''}
+
+items.forEach(item=>item.addEventListener('click',()=>openLb(item)));
+document.getElementById('lb-close').addEventListener('click',closeLb);
+document.getElementById('lb-prev').addEventListener('click',()=>showImage((current-1+visible.length)%visible.length));
+document.getElementById('lb-next').addEventListener('click',()=>showImage((current+1)%visible.length));
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowLeft')showImage((current-1+visible.length)%visible.length);
+  if(e.key==='ArrowRight')showImage((current+1)%visible.length);
+});
+let tx=0;
+lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+lb.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)showImage(d>0?(current+1)%visible.length:(current-1+visible.length)%visible.length)},{passive:true});
+
+// Page transitions
+const pt=document.getElementById('pt');
+document.querySelectorAll('a[href]').forEach(a=>{const h=a.getAttribute('href');if(h&&!h.startsWith('#')&&!h.startsWith('http')&&!h.startsWith('tel')&&!h.startsWith('mailto')){a.addEventListener('click',e=>{e.preventDefault();pt.style.opacity='1';pt.style.pointerEvents='all';setTimeout(()=>location.href=h,350)})}});
+window.addEventListener('load',()=>{pt.style.opacity='0'});
+</script>
+</body>
+</html>

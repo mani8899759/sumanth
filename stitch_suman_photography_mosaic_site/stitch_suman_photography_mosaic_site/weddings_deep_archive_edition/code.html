@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Suman Photography - Weddings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;family=Playfair+Display:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "inverse-on-surface": "#303030",
+                      "secondary-fixed": "#e2e2e2",
+                      "outline": "#8e9192",
+                      "on-secondary-container": "#b4b5b5",
+                      "surface-tint": "#c8c6c5",
+                      "background": "#131313",
+                      "on-tertiary": "#2f3131",
+                      "surface-bright": "#393939",
+                      "surface-container-highest": "#353535",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "on-secondary": "#2f3131",
+                      "surface-variant": "#353535",
+                      "secondary": "#c6c6c7",
+                      "on-error-container": "#ffdad6",
+                      "secondary-container": "#454747",
+                      "surface": "#131313",
+                      "on-primary": "#313030",
+                      "on-surface": "#e5e2e1",
+                      "primary-fixed": "#e5e2e1",
+                      "inverse-surface": "#e5e2e1",
+                      "on-background": "#e5e2e1",
+                      "surface-container-lowest": "#0e0e0e",
+                      "surface-dim": "#131313",
+                      "primary": "#c8c6c5",
+                      "on-error": "#690005",
+                      "tertiary": "#c6c6c6",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "surface-container-low": "#1b1c1c",
+                      "on-primary-fixed-variant": "#474646",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-tertiary-fixed-variant": "#464747",
+                      "on-primary-fixed": "#1c1b1b",
+                      "surface-container-high": "#2a2a2a",
+                      "inverse-primary": "#5f5e5e",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "tertiary-container": "#0f1112",
+                      "on-tertiary-container": "#7c7d7d",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#c4c7c7",
+                      "surface-container": "#202020",
+                      "on-secondary-fixed-variant": "#454747",
+                      "outline-variant": "#444748",
+                      "primary-container": "#111111",
+                      "on-primary-container": "#7e7c7c",
+                      "tertiary-fixed": "#e3e2e2"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "cinematic-pause": "240px",
+                      "section-gap": "160px",
+                      "margin-edge": "48px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-mobile": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "84px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "letterSpacing": "0.01em",
+                                      "fontWeight": "300"
+                              }
+                      ],
+                      "display-mobile": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+        /* Hide scrollbar for clean masonry look if needed, though standard is fine */
+      </style>
+</head>
+<body class="bg-background text-on-surface font-body-lg antialiased selection:bg-surface-bright selection:text-on-surface">
+<!-- Top Navigation (Desktop) -->
+<nav class="hidden md:flex fixed top-0 w-full z-50 flex justify-between items-center px-margin-edge py-unit bg-transparent backdrop-blur-xl dark:bg-surface/80">
+<a class="font-headline-sm text-headline-sm tracking-tighter text-on-surface" href="#">Suman Photography</a>
+<div class="flex space-x-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-on-surface transition-opacity hover:opacity-100 duration-300" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 scale-95 transition-transform hover:opacity-100 duration-300" href="#">Weddings</a>
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-on-surface transition-opacity hover:opacity-100 duration-300" href="#">Maternity</a>
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-on-surface transition-opacity hover:opacity-100 duration-300" href="#">Events</a>
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-on-surface transition-opacity hover:opacity-100 duration-300" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface/60 hover:text-on-surface transition-opacity hover:opacity-100 duration-300" href="#">Contact</a>
+</div>
+<button class="font-label-caps text-label-caps border border-on-surface px-6 py-3 hover:bg-on-surface hover:text-background transition-colors duration-300">Book a Quote</button>
+</nav>
+<!-- Bottom Navigation (Mobile - adapted from SideNav rules) -->
+<nav class="flex md:hidden fixed bottom-0 w-full z-[60] bg-surface/95 backdrop-blur-3xl border-t border-surface-variant flex justify-around items-center py-3 px-2">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary font-bold hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+<span class="text-[10px]">Weddings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="child_care">child_care</span>
+<span class="text-[10px]">Maternity</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="text-[10px]">Events</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="text-[10px]">Portfolio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="text-[10px]">Contact</span>
+</a>
+</nav>
+<main>
+<!-- Cinematic Hero -->
+<section class="relative h-[1024px] w-full overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-background/60 z-10"></div> <!-- Tonal layering / overlay -->
+<div class="absolute inset-0 w-full h-full scale-105 animate-[pulse_10s_ease-in-out_infinite]" data-alt="A breathtaking, cinematic ultra-wide shot of an Indian wedding ceremony taking place at twilight. The scene is illuminated by soft, warm fairy lights and a subtle moody atmosphere. The bride and groom are silhouettes against a dramatic, slightly darkened sky, evoking a premium, editorial, high-contrast dark mode aesthetic. Rich blacks and muted golds dominate the palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC_o5YN5rTStYuOROSFjoEr0SrhIMxaAb-cxWcEpPLEJqhf5EvWVvaOVdkRRLvHjaAbHx2ILo7nKubsdT4sotNwNlxqjjwhMtEct-sa0l8PkXOetNCz_UoK8Mdd1mmkDk5WkonmFiDOyJTVmNP-iJcPRTPLF7FVbTl1CF3H-u0EIa20jBZUQgIHc0Bw1ECjIypnJX2yPFg3Raj8U0TTIi9NER3ITJ-7xFRzKEws6gYFRmMVyG1y5JioZw'); background-size: cover; background-position: center;"></div>
+<div class="relative z-20 text-center px-margin-edge">
+<h1 class="font-display-lg text-display-lg md:font-display-lg md:text-display-lg text-on-surface tracking-tighter">WEDDINGS</h1>
+</div>
+</section>
+<!-- Intro Section -->
+<section class="py-section-gap px-margin-edge flex justify-center bg-background">
+<div class="max-w-4xl text-center">
+<p class="font-headline-md text-headline-md text-on-surface leading-tight">
+                    "From the quiet anticipation before the ceremony to the laughter long after the celebrations begin, we photograph the day as it unfolds."
+                </p>
+</div>
+</section>
+<!-- Dense Gallery Mosaic -->
+<section class="px-margin-edge pb-section-gap bg-background">
+<!-- Using CSS columns for a masonry effect -->
+<div class="columns-1 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-4 gap-unit space-y-unit">
+<!-- Narrative Sequence 1: Establishing Shots & Details -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Q9g9BM3FKzfVEoMfszWUMQJbNcrcStqN-BCf1WhMZSZMXnYdzlegxHQ9MAhLW39tQcirh3lIznUgI_LZuslpZj5Hp32eWaK7HKQcaR-IgAZL6Wqje0MddgwxkRNIrKDWQgFvSEsTd0YD6-ddqBdr2Kp_U8V9dAgHqBkbfAvneXvGoGyxyiZMAWX7gx1b0SkHMcCLaxs4dAbEiwWVG5Xqx02qVsxfSFQaWrAsc8IzumLr0UAFJzp2Hg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-mOKIB3Ys6sKC2yt9Hxct-ldT1UwL15CirYiGRekkV2HVQdSSKF2jQFqCur8u3HY6EIvXX1vblMoCTfpOjZ2Ix2zU9TjhPAx66Nnl5-_gjO7HV2Mv8tD3OuB3S1ox1jJBwN0piH28QcQrpfBs8v7_UmuqHMY-mepq5EZIL3gmv_eLIRz3_GjOb5lvyoCKC0qMFsI6ZGD_H5hdcmQaNCYAtF2NR-Exb94R0lkw66VPs1MvVHmQ1Pz6VA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBCJD7u1wF5v94TLG38ULZgy-pjV73EQaqVxweHl6HPeYSeaUww9YoqNaDmhAN_aVMEiw6O9mLi77Hw1zMAfEheP5trSKAwUOBiqA1FvSSe8vBppnHRd5AuCbw6syQofXAkSTuKr4sM10EyLXiOM-miBTrNuA_qabBOAPnU8yCdku0dogn1sVDAr9RJ7JyZ-VispqZtlIvj-icxSh-EG3wOj0JCSf2OxSoJIBo1rXoWn2CB55aLawl0Q"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<!-- Narrative Sequence 2: Emotional & Candid Moments -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEFL-KHLW3NSDJNOZUUmCvSlONw6AafFnRJPSAM4DXdj3lVTjz-uVMOH0pU0GBybstdET4m0iZgRxLYAJCGPGtIzjo1ZtPSztQvr2ecbZjMODnjnWcgTTJmAW0D3u8z4ZCEbEKqGqiX2hkZ9PQ1R5_AP-OHmEcLs5ENsGQDT2IKZH3scS9lzSW1SLyujfkwsOE_WsWBOq7CcdBTMkh8qrFu54dYNRN5n2makKz0Fqb7PHzxSlsY_jCKg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBT8siw2DZ-pHJJUTXCuW9P_5lAUyBU_k-eg670E1GDmxLfdeHaQbrYGRxHO9oZDC9HvQq7WuTH7z9laK2nCausGUasiYQ7a7skYuf32eUMJEUM3BfM5HwvRGyrBCQO512tXAXudKglIdR4901T5HGw70u-jgAc8DxPJGUnCefooyQPKPgN41wtGSvOjuYMxpHV2tE-tmCmiCPt0N74Rwf64IyTOEmKXt3yzfOEp9WlcB4lrapj59KFA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvRsW7hyLMiZ3sergkxcvzUcx6Z6KigdTZ0LH_kp6oO_MqlejeMFATkeKaUNRrczQzZgm3qK2tZussd-_nsgScvuwdi8deejRmZrqvi86yflG0zTA7bFyY5NGuFATjI5U3KmMQDtpGPYVfchwVRrZUkBdbTcMvr4LL-cdUmK6hFcXHGFjwWAYlfeXaVIHfWPW48cuNRpFtACcxbAqAr_lmL_6bW8xPBZAbNIrDUINMGQwg59aL2UAeUA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOENCAAfjJFMPgHBsc1PYyQxVjMhv-rR2k-IB6xpIkvNvLRtX5dXM7LlLtfzHQx1gmf-ZgNXQi3hT5zi_V-bI-wtXXCGntK8WBgS5oFMxzDFG1-FwhZKnqiBQQAJfxD9UJ1UXihOqwvwEthaMFz5xFetbmCtGt738tYpAaeegHnBsEpF1L99nNvrtEi54abscouR1ewjU_F1d8r6IVQfuQq98cn3BVYH494nxcskTqFRbsZhK6ZzsDg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<!-- Narrative Sequence 3: Ceremonies and Receptions -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqktRmrPPjI8XaU9eEdd-Oxts6a_QedRTLnhsMH7h6fW2UXnMcBEkn98Sh6-wrOMon7QRuiIAaz9AP-GuiqiYoAtjy6gibmBvYPES7B86TY276NY1NJ6nHO8ZLgg1C76ypLt2JT9CoOjp6cCV8CnUw8c_ArClznTDHsgjdr5LzP_SJnWplJxu3BjYvRWF1BVMHKkARNdzm8hwGrO7cqM5-e3PW05TsiW6ZLc7S2QylRuM4pRKOZxpMrQ"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<!-- Repeated items to build the 50+ image mosaic -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Q9g9BM3FKzfVEoMfszWUMQJbNcrcStqN-BCf1WhMZSZMXnYdzlegxHQ9MAhLW39tQcirh3lIznUgI_LZuslpZj5Hp32eWaK7HKQcaR-IgAZL6Wqje0MddgwxkRNIrKDWQgFvSEsTd0YD6-ddqBdr2Kp_U8V9dAgHqBkbfAvneXvGoGyxyiZMAWX7gx1b0SkHMcCLaxs4dAbEiwWVG5Xqx02qVsxfSFQaWrAsc8IzumLr0UAFJzp2Hg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-mOKIB3Ys6sKC2yt9Hxct-ldT1UwL15CirYiGRekkV2HVQdSSKF2jQFqCur8u3HY6EIvXX1vblMoCTfpOjZ2Ix2zU9TjhPAx66Nnl5-_gjO7HV2Mv8tD3OuB3S1ox1jJBwN0piH28QcQrpfBs8v7_UmuqHMY-mepq5EZIL3gmv_eLIRz3_GjOb5lvyoCKC0qMFsI6ZGD_H5hdcmQaNCYAtF2NR-Exb94R0lkw66VPs1MvVHmQ1Pz6VA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBCJD7u1wF5v94TLG38ULZgy-pjV73EQaqVxweHl6HPeYSeaUww9YoqNaDmhAN_aVMEiw6O9mLi77Hw1zMAfEheP5trSKAwUOBiqA1FvSSe8vBppnHRd5AuCbw6syQofXAkSTuKr4sM10EyLXiOM-miBTrNuA_qabBOAPnU8yCdku0dogn1sVDAr9RJ7JyZ-VispqZtlIvj-icxSh-EG3wOj0JCSf2OxSoJIBo1rXoWn2CB55aLawl0Q"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEFL-KHLW3NSDJNOZUUmCvSlONw6AafFnRJPSAM4DXdj3lVTjz-uVMOH0pU0GBybstdET4m0iZgRxLYAJCGPGtIzjo1ZtPSztQvr2ecbZjMODnjnWcgTTJmAW0D3u8z4ZCEbEKqGqiX2hkZ9PQ1R5_AP-OHmEcLs5ENsGQDT2IKZH3scS9lzSW1SLyujfkwsOE_WsWBOq7CcdBTMkh8qrFu54dYNRN5n2makKz0Fqb7PHzxSlsY_jCKg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBT8siw2DZ-pHJJUTXCuW9P_5lAUyBU_k-eg670E1GDmxLfdeHaQbrYGRxHO9oZDC9HvQq7WuTH7z9laK2nCausGUasiYQ7a7skYuf32eUMJEUM3BfM5HwvRGyrBCQO512tXAXudKglIdR4901T5HGw70u-jgAc8DxPJGUnCefooyQPKPgN41wtGSvOjuYMxpHV2tE-tmCmiCPt0N74Rwf64IyTOEmKXt3yzfOEp9WlcB4lrapj59KFA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvRsW7hyLMiZ3sergkxcvzUcx6Z6KigdTZ0LH_kp6oO_MqlejeMFATkeKaUNRrczQzZgm3qK2tZussd-_nsgScvuwdi8deejRmZrqvi86yflG0zTA7bFyY5NGuFATjI5U3KmMQDtpGPYVfchwVRrZUkBdbTcMvr4LL-cdUmK6hFcXHGFjwWAYlfeXaVIHfWPW48cuNRpFtACcxbAqAr_lmL_6bW8xPBZAbNIrDUINMGQwg59aL2UAeUA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOENCAAfjJFMPgHBsc1PYyQxVjMhv-rR2k-IB6xpIkvNvLRtX5dXM7LlLtfzHQx1gmf-ZgNXQi3hT5zi_V-bI-wtXXCGntK8WBgS5oFMxzDFG1-FwhZKnqiBQQAJfxD9UJ1UXihOqwvwEthaMFz5xFetbmCtGt738tYpAaeegHnBsEpF1L99nNvrtEi54abscouR1ewjU_F1d8r6IVQfuQq98cn3BVYH494nxcskTqFRbsZhK6ZzsDg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqktRmrPPjI8XaU9eEdd-Oxts6a_QedRTLnhsMH7h6fW2UXnMcBEkn98Sh6-wrOMon7QRuiIAaz9AP-GuiqiYoAtjy6gibmBvYPES7B86TY276NY1NJ6nHO8ZLgg1C76ypLt2JT9CoOjp6cCV8CnUw8c_ArClznTDHsgjdr5LzP_SJnWplJxu3BjYvRWF1BVMHKkARNdzm8hwGrO7cqM5-e3PW05TsiW6ZLc7S2QylRuM4pRKOZxpMrQ"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<!-- Continue repeating to create dense mosaic, preserving performance with lazy loading -->
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBT8siw2DZ-pHJJUTXCuW9P_5lAUyBU_k-eg670E1GDmxLfdeHaQbrYGRxHO9oZDC9HvQq7WuTH7z9laK2nCausGUasiYQ7a7skYuf32eUMJEUM3BfM5HwvRGyrBCQO512tXAXudKglIdR4901T5HGw70u-jgAc8DxPJGUnCefooyQPKPgN41wtGSvOjuYMxpHV2tE-tmCmiCPt0N74Rwf64IyTOEmKXt3yzfOEp9WlcB4lrapj59KFA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-mOKIB3Ys6sKC2yt9Hxct-ldT1UwL15CirYiGRekkV2HVQdSSKF2jQFqCur8u3HY6EIvXX1vblMoCTfpOjZ2Ix2zU9TjhPAx66Nnl5-_gjO7HV2Mv8tD3OuB3S1ox1jJBwN0piH28QcQrpfBs8v7_UmuqHMY-mepq5EZIL3gmv_eLIRz3_GjOb5lvyoCKC0qMFsI6ZGD_H5hdcmQaNCYAtF2NR-Exb94R0lkw66VPs1MvVHmQ1Pz6VA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Q9g9BM3FKzfVEoMfszWUMQJbNcrcStqN-BCf1WhMZSZMXnYdzlegxHQ9MAhLW39tQcirh3lIznUgI_LZuslpZj5Hp32eWaK7HKQcaR-IgAZL6Wqje0MddgwxkRNIrKDWQgFvSEsTd0YD6-ddqBdr2Kp_U8V9dAgHqBkbfAvneXvGoGyxyiZMAWX7gx1b0SkHMcCLaxs4dAbEiwWVG5Xqx02qVsxfSFQaWrAsc8IzumLr0UAFJzp2Hg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEFL-KHLW3NSDJNOZUUmCvSlONw6AafFnRJPSAM4DXdj3lVTjz-uVMOH0pU0GBybstdET4m0iZgRxLYAJCGPGtIzjo1ZtPSztQvr2ecbZjMODnjnWcgTTJmAW0D3u8z4ZCEbEKqGqiX2hkZ9PQ1R5_AP-OHmEcLs5ENsGQDT2IKZH3scS9lzSW1SLyujfkwsOE_WsWBOq7CcdBTMkh8qrFu54dYNRN5n2makKz0Fqb7PHzxSlsY_jCKg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOENCAAfjJFMPgHBsc1PYyQxVjMhv-rR2k-IB6xpIkvNvLRtX5dXM7LlLtfzHQx1gmf-ZgNXQi3hT5zi_V-bI-wtXXCGntK8WBgS5oFMxzDFG1-FwhZKnqiBQQAJfxD9UJ1UXihOqwvwEthaMFz5xFetbmCtGt738tYpAaeegHnBsEpF1L99nNvrtEi54abscouR1ewjU_F1d8r6IVQfuQq98cn3BVYH494nxcskTqFRbsZhK6ZzsDg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBCJD7u1wF5v94TLG38ULZgy-pjV73EQaqVxweHl6HPeYSeaUww9YoqNaDmhAN_aVMEiw6O9mLi77Hw1zMAfEheP5trSKAwUOBiqA1FvSSe8vBppnHRd5AuCbw6syQofXAkSTuKr4sM10EyLXiOM-miBTrNuA_qabBOAPnU8yCdku0dogn1sVDAr9RJ7JyZ-VispqZtlIvj-icxSh-EG3wOj0JCSf2OxSoJIBo1rXoWn2CB55aLawl0Q"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqktRmrPPjI8XaU9eEdd-Oxts6a_QedRTLnhsMH7h6fW2UXnMcBEkn98Sh6-wrOMon7QRuiIAaz9AP-GuiqiYoAtjy6gibmBvYPES7B86TY276NY1NJ6nHO8ZLgg1C76ypLt2JT9CoOjp6cCV8CnUw8c_ArClznTDHsgjdr5LzP_SJnWplJxu3BjYvRWF1BVMHKkARNdzm8hwGrO7cqM5-e3PW05TsiW6ZLc7S2QylRuM4pRKOZxpMrQ"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvRsW7hyLMiZ3sergkxcvzUcx6Z6KigdTZ0LH_kp6oO_MqlejeMFATkeKaUNRrczQzZgm3qK2tZussd-_nsgScvuwdi8deejRmZrqvi86yflG0zTA7bFyY5NGuFATjI5U3KmMQDtpGPYVfchwVRrZUkBdbTcMvr4LL-cdUmK6hFcXHGFjwWAYlfeXaVIHfWPW48cuNRpFtACcxbAqAr_lmL_6bW8xPBZAbNIrDUINMGQwg59aL2UAeUA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEFL-KHLW3NSDJNOZUUmCvSlONw6AafFnRJPSAM4DXdj3lVTjz-uVMOH0pU0GBybstdET4m0iZgRxLYAJCGPGtIzjo1ZtPSztQvr2ecbZjMODnjnWcgTTJmAW0D3u8z4ZCEbEKqGqiX2hkZ9PQ1R5_AP-OHmEcLs5ENsGQDT2IKZH3scS9lzSW1SLyujfkwsOE_WsWBOq7CcdBTMkh8qrFu54dYNRN5n2makKz0Fqb7PHzxSlsY_jCKg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Q9g9BM3FKzfVEoMfszWUMQJbNcrcStqN-BCf1WhMZSZMXnYdzlegxHQ9MAhLW39tQcirh3lIznUgI_LZuslpZj5Hp32eWaK7HKQcaR-IgAZL6Wqje0MddgwxkRNIrKDWQgFvSEsTd0YD6-ddqBdr2Kp_U8V9dAgHqBkbfAvneXvGoGyxyiZMAWX7gx1b0SkHMcCLaxs4dAbEiwWVG5Xqx02qVsxfSFQaWrAsc8IzumLr0UAFJzp2Hg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOENCAAfjJFMPgHBsc1PYyQxVjMhv-rR2k-IB6xpIkvNvLRtX5dXM7LlLtfzHQx1gmf-ZgNXQi3hT5zi_V-bI-wtXXCGntK8WBgS5oFMxzDFG1-FwhZKnqiBQQAJfxD9UJ1UXihOqwvwEthaMFz5xFetbmCtGt738tYpAaeegHnBsEpF1L99nNvrtEi54abscouR1ewjU_F1d8r6IVQfuQq98cn3BVYH494nxcskTqFRbsZhK6ZzsDg"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBCJD7u1wF5v94TLG38ULZgy-pjV73EQaqVxweHl6HPeYSeaUww9YoqNaDmhAN_aVMEiw6O9mLi77Hw1zMAfEheP5trSKAwUOBiqA1FvSSe8vBppnHRd5AuCbw6syQofXAkSTuKr4sM10EyLXiOM-miBTrNuA_qabBOAPnU8yCdku0dogn1sVDAr9RJ7JyZ-VispqZtlIvj-icxSh-EG3wOj0JCSf2OxSoJIBo1rXoWn2CB55aLawl0Q"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBT8siw2DZ-pHJJUTXCuW9P_5lAUyBU_k-eg670E1GDmxLfdeHaQbrYGRxHO9oZDC9HvQq7WuTH7z9laK2nCausGUasiYQ7a7skYuf32eUMJEUM3BfM5HwvRGyrBCQO512tXAXudKglIdR4901T5HGw70u-jgAc8DxPJGUnCefooyQPKPgN41wtGSvOjuYMxpHV2tE-tmCmiCPt0N74Rwf64IyTOEmKXt3yzfOEp9WlcB4lrapj59KFA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-mOKIB3Ys6sKC2yt9Hxct-ldT1UwL15CirYiGRekkV2HVQdSSKF2jQFqCur8u3HY6EIvXX1vblMoCTfpOjZ2Ix2zU9TjhPAx66Nnl5-_gjO7HV2Mv8tD3OuB3S1ox1jJBwN0piH28QcQrpfBs8v7_UmuqHMY-mepq5EZIL3gmv_eLIRz3_GjOb5lvyoCKC0qMFsI6ZGD_H5hdcmQaNCYAtF2NR-Exb94R0lkw66VPs1MvVHmQ1Pz6VA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqktRmrPPjI8XaU9eEdd-Oxts6a_QedRTLnhsMH7h6fW2UXnMcBEkn98Sh6-wrOMon7QRuiIAaz9AP-GuiqiYoAtjy6gibmBvYPES7B86TY276NY1NJ6nHO8ZLgg1C76ypLt2JT9CoOjp6cCV8CnUw8c_ArClznTDHsgjdr5LzP_SJnWplJxu3BjYvRWF1BVMHKkARNdzm8hwGrO7cqM5-e3PW05TsiW6ZLc7S2QylRuM4pRKOZxpMrQ"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+<div class="break-inside-avoid relative group overflow-hidden bg-surface-container">
+<img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvRsW7hyLMiZ3sergkxcvzUcx6Z6KigdTZ0LH_kp6oO_MqlejeMFATkeKaUNRrczQzZgm3qK2tZussd-_nsgScvuwdi8deejRmZrqvi86yflG0zTA7bFyY5NGuFATjI5U3KmMQDtpGPYVfchwVRrZUkBdbTcMvr4LL-cdUmK6hFcXHGFjwWAYlfeXaVIHfWPW48cuNRpFtACcxbAqAr_lmL_6bW8xPBZAbNIrDUINMGQwg59aL2UAeUA"/>
+<div class="absolute inset-0 bg-primary-container/0 group-hover:bg-primary-container/20 transition-colors duration-300"></div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="relative h-[614px] flex items-center justify-center bg-surface-container overflow-hidden">
+<div class="absolute inset-0 bg-background/70 z-10"></div>
+<div class="absolute inset-0 w-full h-full" data-alt="A deeply romantic, low-light portrait of a newlywed couple embracing. The image is mostly dark, with a single, soft directional light illuminating their profiles. It feels intimate, quiet, and timeless, perfectly aligning with a sophisticated, high-end editorial dark mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcibspXX_WX6aGygFvzSFweQkD8ouolQksda1NIwOQhyzGVeZbSZlTGDF_c3jInNDVCDTqnrnZTFXAweGeOpLjFFxV2B7wucxAfk783da2dCUM5Dgj4C7EziChTlxmf97z9jOnA_jYrrMa3EiUYDP6EZ8NoOBvK9Rv-fRdGUch7PwQD5gnfKbF0tcFSRH7uSV3U4-4Dyo20qZOwIz06q5kqEoREwRtaHCZeo7M5CVNtl1RBewKY9e56Q'); background-size: cover; background-position: center 30%;"></div>
+<div class="relative z-20 text-center flex flex-col items-center gap-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Let's Talk</h2>
+<button class="font-label-caps text-label-caps border border-on-surface px-8 py-4 bg-transparent hover:bg-on-surface hover:text-background transition-all duration-300 tracking-widest">INQUIRE NOW</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap flex flex-col items-center justify-center gap-gutter px-margin-edge bg-surface-container-lowest border-t border-surface-variant mb-16 md:mb-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Suman Photography</h3>
+<div class="flex flex-wrap justify-center gap-6 mb-8">
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary transition-colors" href="#">Facebook</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary transition-colors" href="#">YouTube</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary transition-colors" href="#">WhatsApp</a>
+<a class="font-label-caps text-label-caps text-on-secondary-container hover:text-primary transition-colors cursor-pointer" href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to Top</a>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface/50">© 2024 Suman Photography. All Rights Reserved.</p>
+</footer>
+</body></html>
