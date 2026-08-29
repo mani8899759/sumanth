@@ -25,10 +25,33 @@ a{text-decoration:none;color:inherit}
 #mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;text-transform:uppercase;color:rgba(229,226,225,0.8)}
 #mob-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#e5e2e1;font-size:28px;cursor:pointer}
 
+:root {
+  --bg: #0a0a0a;
+  --surface: #121212;
+  --text: #f4f1ea;
+  --text-muted: rgba(244, 241, 234, 0.55);
+  --accent: #c8b29b;
+  --border: rgba(244, 241, 234, 0.08);
+  --hero-title: clamp(48px, 5vw, 76px);
+  --page-title: clamp(42px, 5vw, 72px);
+  --section-title: clamp(32px, 4vw, 56px);
+  --sub-title: clamp(24px, 3vw, 36px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* CUSTOM CURSOR */
+#cursor{position:fixed;top:0;left:0;width:12px;height:12px;background:#f4f1ea;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.25s ease,height 0.25s ease,background 0.25s ease;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;letter-spacing:0.1em;color:#0a0a0a;white-space:nowrap;padding:0 8px}
+#cursor.active{width:auto;height:32px;background:#f4f1ea;border-radius:16px;padding:0 16px}
+@media (max-width: 1024px){#cursor{display:none}}
+
 /* TYPOGRAPHY SYSTEM */
-.eyebrow{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;color:rgba(229,226,225,0.45);margin-bottom:16px;display:block}
-.editorial-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(48px,8vw,130px);line-height:0.88;text-transform:uppercase;letter-spacing:-0.015em;color:#e5e2e1}
-.editorial-sub{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,5vw,72px);line-height:0.90;text-transform:uppercase;letter-spacing:-0.01em;color:#e5e2e1}
+.eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
+.editorial-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--page-title);line-height:0.92;text-transform:uppercase;letter-spacing:-0.015em;color:var(--text);max-width:650px}
+.editorial-title em,.editorial-sub em{font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:300;text-transform:lowercase;color:var(--accent);font-size:0.85em;margin:0 0.12em}
+.editorial-sub{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--section-title);line-height:0.98;text-transform:uppercase;letter-spacing:-0.01em;color:var(--text)}
 
 .hero{position:relative;height:100vh;overflow:hidden}
 .hero img{width:100%;height:100%;object-fit:cover;animation:kb 20s ease-out infinite alternate}
@@ -54,11 +77,12 @@ footer{background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.07);padding:48
 .foot-links a:hover{color:#e5e2e1}
 .foot-copy{width:100%;font-size:11px;color:rgba(229,226,225,0.2);letter-spacing:0.12em;text-transform:uppercase}
 #pt{position:fixed;inset:0;background:#0a0a0a;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s ease}
-@media(max-width:768px){#nav{padding:14px 20px}.nav-links,#nav .nav-cta{display:none}#menu-btn{display:block}.hero-txt{bottom:50px;left:24px;right:24px}footer{padding:32px 20px}}
+@media(max-width:768px){#nav{padding:14px 20px}.nav-links,#nav .nav-cta{display:none}#menu-btn{display:block}.hero-txt{bottom:50px;left:24px;right:24px}.editorial-title{font-size:clamp(38px,11vw,56px)}.editorial-sub{font-size:clamp(28px,8vw,42px)}footer{padding:32px 20px}}
 </style>
 </head>
 <body>
 <div id="pt"></div>
+<div id="cursor"></div>
 <nav id="nav">
   <a href="index.html" class="logo">Suman Photography</a>
   <ul class="nav-links">
@@ -78,7 +102,7 @@ footer{background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.07);padding:48
   <div class="hero-over"></div>
   <div class="hero-txt">
     <span class="eyebrow">01 • BABY &amp; MATERNITY</span>
-    <h1 class="editorial-title">LITTLE<br/>MOMENTS.<br/>ENDLESS<br/>MEMORIES.</h1>
+    <h1 class="editorial-title">A NEW <em>kind of</em> BEGINNING.</h1>
   </div>
 </section>
 
@@ -195,7 +219,7 @@ footer{background:#0a0a0a;border-top:1px solid rgba(255,255,255,0.07);padding:48
 <!-- CTA -->
 <div style="background:#0a0a0a;padding:100px 48px;text-align:center">
   <span class="eyebrow" style="margin-bottom:12px">02 • FAMILY STORIES</span>
-  <h2 class="editorial-sub" style="margin-bottom:28px">LET'S MAKE<br/>SOMETHING BEAUTIFUL.</h2>
+  <h2 class="editorial-sub" style="margin-bottom:28px">LET'S MAKE <em>something</em> BEAUTIFUL.</h2>
   <a href="contact.html" style="display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border:1px solid rgba(229,226,225,0.5);color:#e5e2e1;padding:14px 36px;transition:background 0.3s,color 0.3s" onmouseover="this.style.background='#e5e2e1';this.style.color='#0a0a0a'" onmouseout="this.style.background='transparent';this.style.color='#e5e2e1'">Get in Touch</a>
 </div>
 
@@ -211,6 +235,30 @@ document.getElementById('menu-btn').onclick=()=>document.getElementById('mobile-
 document.getElementById('mob-close').onclick=()=>document.getElementById('mobile-nav').classList.remove('open');
 const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target)}}),{threshold:0.03,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+// CUSTOM CURSOR
+const cursor = document.getElementById('cursor');
+let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+function animateCursor() {
+  cursorX += (mouseX - cursorX) * 0.2;
+  cursorY += (mouseY - cursorY) * 0.2;
+  cursor.style.left = cursorX + 'px';
+  cursor.style.top = cursorY + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+document.querySelectorAll('.mi').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.classList.add('active');
+    cursor.textContent = 'EXPLORE';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.classList.remove('active');
+    cursor.textContent = '';
+  });
+});
+
 const pt=document.getElementById('pt');
 document.querySelectorAll('a[href]').forEach(a=>{const h=a.getAttribute('href');if(h&&!h.startsWith('#')&&!h.startsWith('http')&&!h.startsWith('tel')&&!h.startsWith('mailto')){a.addEventListener('click',e=>{e.preventDefault();pt.style.opacity='1';pt.style.pointerEvents='all';setTimeout(()=>location.href=h,350)})}});
 window.addEventListener('load',()=>{pt.style.opacity='0'});
