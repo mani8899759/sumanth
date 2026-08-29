@@ -1,252 +1,632 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact — Suman Photography</title>
-<meta name="description" content="Contact Suman Photography to enquire about wedding, maternity, baby or events photography in Hyderabad."/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+<title>Contact — Suman Photography | Hyderabad Fine Art Studio</title>
+<meta name="description" content="Inquire about wedding coverage, maternity sessions, and milestone event photography with Suman Photography in Hyderabad and worldwide."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0a;color:#e5e2e1;font-family:'Inter',sans-serif;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-#nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 48px;transition:background 0.4s,backdrop-filter 0.4s}
-#nav.solid{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06)}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;text-transform:uppercase;color:#e5e2e1}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(229,226,225,0.5);transition:color 0.2s}
-.nav-links a:hover,.nav-links a.active{color:#e5e2e1}
-.nav-cta{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;border:1px solid rgba(229,226,225,0.35);color:#e5e2e1;padding:10px 24px;transition:background 0.3s,color 0.3s}
-.nav-cta:hover{background:#e5e2e1;color:#0a0a0a}
-#menu-btn{display:none;background:none;border:none;color:#e5e2e1;cursor:pointer;font-size:24px}
-#mobile-nav{display:none;position:fixed;inset:0;background:#0a0a0a;z-index:200;flex-direction:column;justify-content:center;padding:60px 40px;gap:32px}
-#mobile-nav.open{display:flex}
-#mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;text-transform:uppercase;color:rgba(229,226,225,0.8)}
-#mob-close{position:absolute;top:24px;right:32px;background:none;border:none;color:#e5e2e1;font-size:28px;cursor:pointer}
-
 :root {
-  --bg: #0a0a0a;
-  --surface: #121212;
-  --text: #f4f1ea;
-  --text-muted: rgba(244, 241, 234, 0.55);
-  --accent: #c8b29b;
-  --border: rgba(244, 241, 234, 0.08);
-  --hero-title: clamp(48px, 5vw, 76px);
-  --page-title: clamp(42px, 5vw, 72px);
-  --section-title: clamp(32px, 4vw, 56px);
-  --sub-title: clamp(24px, 3vw, 36px);
+  --bg: #f5f4f1;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --border-color: #141212;
+  --surface-secondary: #f0f0f0;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --hero-title: clamp(54px, 7.5vw, 110px);
+  --section-title: clamp(38px, 4.5vw, 68px);
+  --sub-title: clamp(24px, 3vw, 38px);
+  --body-size: 16px;
+  --mono-size: 11px;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* CUSTOM CURSOR */
-#cursor{position:fixed;top:0;left:0;width:12px;height:12px;background:#f4f1ea;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.25s ease,height 0.25s ease,background 0.25s ease;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;letter-spacing:0.1em;color:#0a0a0a;white-space:nowrap;padding:0 8px}
-#cursor.active{width:auto;height:32px;background:#f4f1ea;border-radius:16px;padding:0 16px}
-@media (max-width: 1024px){#cursor{display:none}}
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
 
-#nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 48px;transition:background 0.4s,backdrop-filter 0.4s}
-#nav.solid{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;text-transform:uppercase;color:var(--text)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);transition:color 0.25s}
-.nav-links a:hover,.nav-links a.active{color:var(--text)}
-.nav-cta{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:1px solid rgba(244,241,234,0.35);color:var(--text);padding:10px 24px;transition:all 0.3s}
-.nav-cta:hover{background:var(--text);color:#0a0a0a}
-#menu-btn{display:none;background:none;border:none;color:var(--text);cursor:pointer;font-size:24px}
-#mobile-nav{display:none;position:fixed;inset:0;background:#0a0a0a;z-index:200;flex-direction:column;justify-content:center;padding:60px 40px;gap:32px}
-#mobile-nav.open{display:flex}
-#mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;text-transform:uppercase;color:rgba(244,241,234,0.8)}
-#mob-close{position:absolute;top:24px;right:32px;background:none;border:none;color:var(--text);font-size:28px;cursor:pointer}
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--body-size);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-/* TYPOGRAPHY SYSTEM */
-.eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
-.editorial-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--page-title);line-height:0.92;text-transform:uppercase;letter-spacing:-0.015em;color:var(--text);max-width:650px}
-.editorial-title em{font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:300;text-transform:lowercase;color:var(--accent);font-size:0.85em;margin:0 0.12em}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
 
-/* HERO SPLIT */
-.contact-layout{display:grid;grid-template-columns:1fr 1fr;min-height:100vh}
-@media(max-width:768px){.contact-layout{grid-template-columns:1fr}}
-.contact-img{overflow:hidden;position:relative}
-.contact-img img{width:100%;height:100%;object-fit:cover;min-height:50vh;animation:kb 20s ease-out infinite alternate}
-@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.05)}}
-.contact-panel{background:#111;display:flex;flex-direction:column;justify-content:center;padding:100px 60px}
-@media(max-width:1024px){.contact-panel{padding:80px 40px}}
+/* TYPOGRAPHY HELPERS */
+.font-serif { font-family: var(--font-serif); }
+.font-sans { font-family: var(--font-sans); }
+.font-mono { font-family: var(--font-mono); }
 
-/* FORM */
-.field{margin-bottom:28px}
-.field label{display:block;font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;transition:color 0.2s}
-.field:focus-within label{color:var(--text)}
-.field input,.field select,.field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(244,241,234,0.15);color:var(--text);font-family:'Inter',sans-serif;font-size:15px;font-weight:300;padding:10px 0;outline:none;transition:border-color 0.25s;border-radius:0;-webkit-appearance:none;appearance:none}
-.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--accent)}
-.field input::placeholder,.field textarea::placeholder{color:rgba(244,241,234,0.25)}
-.field textarea{resize:vertical;min-height:80px}
-.field select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 4px center;color:var(--text-muted)}
-.field select option{background:#1a1a1a;color:var(--text)}
-.submit-btn{width:100%;background:none;border:1px solid rgba(244,241,234,0.5);color:var(--text);font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;padding:16px;cursor:pointer;transition:background 0.3s,color 0.3s;margin-top:12px}
-.submit-btn:hover{background:var(--text);color:#0a0a0a}
+.editorial-title {
+  font-family: var(--font-serif);
+  font-size: var(--section-title);
+  line-height: 1.02;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
 
-/* CONTACT STRIPS */
-.strips{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
-@media(max-width:700px){.strips{grid-template-columns:1fr}}
-.strip{padding:48px 40px;border-right:1px solid var(--border)}
-.strip:last-child{border-right:none}
-.strip-label{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
-.strip-val{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;text-transform:uppercase;color:var(--text);transition:color 0.2s}
-.strip-val:hover{color:var(--accent)}
-.strip-sub{font-size:13px;color:var(--text-muted);margin-top:6px}
+.italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  text-transform: lowercase;
+  color: var(--text-primary);
+  font-size: 0.9em;
+  margin: 0 0.12em;
+  display: inline-block;
+}
 
-/* SUCCESS */
-#form-success{display:none;text-align:center;padding:60px 0}
-#form-success h3{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;text-transform:uppercase;margin-bottom:12px}
-#form-success p{font-size:15px;color:var(--text-muted)}
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--mono-size);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
 
-/* REVEAL */
-.rev{opacity:0;transform:translateY(24px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}
-.rev.on{opacity:1;transform:none}
+/* LAYOUT CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+}
+
+/* NAVIGATION MASTHEAD */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 48px;
+  background: rgba(245, 244, 241, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-primary);
+}
+
+.nav-cta {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 10px 24px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: var(--text-primary);
+  color: var(--bg);
+}
+
+#menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* MOBILE NAV OVERLAY */
+#mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 200;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 40px;
+  gap: 32px;
+}
+
+#mobile-nav.open {
+  display: flex;
+}
+
+#mobile-nav a {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+#mob-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: var(--text-primary);
+  color: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--text-primary);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+/* SHARP GEOMETRY FORM STYLES */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.form-control {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  padding: 16px 20px;
+  background: var(--bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.form-control:focus {
+  border-color: var(--text-primary);
+  background: #ffffff;
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.on {
+  opacity: 1;
+  transform: none;
+}
 
 /* FOOTER */
-footer{background:#0a0a0a;border-top:1px solid var(--border);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-.foot-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;text-transform:uppercase}
-.foot-links{display:flex;gap:20px}
-.foot-links a{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);transition:color 0.2s}
-.foot-links a:hover{color:var(--text)}
-.foot-copy{width:100%;font-size:11px;color:rgba(244,241,234,0.3);letter-spacing:0.14em;text-transform:uppercase}
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border-color);
+  padding: 80px 48px 48px 48px;
+}
 
-#pt{position:fixed;inset:0;background:#0a0a0a;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s ease}
-@media(max-width:768px){#nav{padding:14px 20px}.nav-links,#nav .nav-cta{display:none}#menu-btn{display:block}.contact-panel{padding:60px 24px}.editorial-title{font-size:clamp(38px,11vw,56px)}.strip{border-right:none;border-bottom:1px solid var(--border)}.strip:last-child{border-bottom:none}footer{padding:32px 20px}}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.footer-brand {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.footer-links-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-heading {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.footer-link:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
+<link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
-<div id="pt"></div>
-<div id="cursor"></div>
+
+<!-- NAVIGATION MASTHEAD -->
 <nav id="nav">
   <a href="index.html" class="logo">Suman Photography</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li><li><a href="weddings.html">Weddings</a></li><li><a href="baby-maternity.html">Baby &amp; Maternity</a></li><li><a href="birthdays-events.html">Events</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
+    <li><a href="baby-maternity.html">Baby &amp; Maternity</a></li>
+    <li><a href="birthdays-events.html">Events</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
   <a href="contact.html" class="nav-cta">Book a Quote</a>
-  <button id="menu-btn">&#9776;</button>
+  <button id="menu-btn" aria-label="Toggle navigation menu">
+    <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="4" y1="6" x2="20" y2="6"/>
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <line x1="4" y1="18" x2="20" y2="18"/>
+    </svg>
+  </button>
 </nav>
-<div id="mobile-nav">
-  <button id="mob-close">&#10005;</button>
-  <a href="index.html">Home</a><a href="weddings.html">Weddings</a><a href="baby-maternity.html">Baby &amp; Maternity</a><a href="birthdays-events.html">Events</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+  <button id="mob-close" aria-label="Close menu">&#10005;</button>
+  <a href="index.html">Home</a>
+  <a href="weddings.html">Weddings</a>
+  <a href="baby-maternity.html">Baby &amp; Maternity</a>
+  <a href="birthdays-events.html">Events</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO SPLIT + FORM -->
-<section class="contact-layout">
-  <div class="contact-img">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=85&auto=format&fit=crop" loading="eager" alt="Contact photograph"/>
-  </div>
-  <div class="contact-panel">
-    <form id="contact-form">
-      <span class="eyebrow">07 • CONTACT</span>
-      <h1 class="editorial-title" style="margin-bottom:36px">LET'S <em>talk.</em></h1>
-      <div class="field">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required/>
-      </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="your@email.com" required/>
-      </div>
-      <div class="field">
-        <label for="phone">Phone / WhatsApp</label>
-        <input type="tel" id="phone" name="phone" placeholder="+91 99999 99999"/>
-      </div>
-      <div class="field">
-        <label for="type">Session Type</label>
-        <select id="type" name="type" required>
-          <option value="" disabled selected>Select…</option>
-          <option>Wedding Photography</option>
-          <option>Pre-Wedding Shoot</option>
-          <option>Maternity Session</option>
-          <option>Newborn / Baby Session</option>
-          <option>Birthday / Event</option>
-          <option>Family Portraits</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="date">Event Date</label>
-        <input type="date" id="date" name="date"/>
-      </div>
-      <div class="field">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="3" placeholder="Tell us about your occasion…"></textarea>
-      </div>
-      <button type="submit" class="submit-btn" id="submit-btn">Send Enquiry</button>
-    </form>
-    <div id="form-success">
-      <h3>Enquiry received.</h3>
-      <p>We'll be in touch within 24 hours.</p>
-    </div>
+<!-- HERO HEADER -->
+<section style="padding:160px 0 60px 0; border-bottom:1px solid var(--border-color);">
+  <div class="container">
+    <span class="mono-label" style="margin-bottom:16px; display:block;">COMMISSIONS &middot; INQUIRIES &middot; HYDERABAD &middot; INDIA</span>
+    
+    <h1 style="font-family:var(--font-serif); font-size:var(--hero-title); line-height:0.95; font-weight:300; text-transform:uppercase; margin-bottom:24px;">
+      LET'S TALK <br/>
+      <span class="italic">about your story.</span>
+    </h1>
+
+    <p style="font-size:18px; font-weight:300; color:var(--text-secondary); max-width:680px; line-height:1.7;">
+      We welcome inquiries for weddings, maternity journeys, and private events worldwide. Please complete the form below or reach out directly to our studio.
+    </p>
   </div>
 </section>
 
-<!-- CONTACT STRIPS -->
-<div class="strips rev">
-  <div class="strip">
-    <p class="strip-label">Call Us</p>
-    <a href="tel:+919999999999" class="strip-val">+91 99999 99999</a>
-    <p class="strip-sub">Mon–Sat · 10am–7pm</p>
-  </div>
-  <div class="strip">
-    <p class="strip-label">Email</p>
-    <a href="mailto:hello@sumanphotography.com" class="strip-val" style="font-size:20px">hello@sumanphotography.com</a>
-    <p class="strip-sub">Response within 24h</p>
-  </div>
-  <div class="strip">
-    <p class="strip-label">Follow</p>
-    <a href="#" class="strip-val">@sumanphotography</a>
-    <p class="strip-sub">Instagram · Facebook · WhatsApp</p>
-  </div>
-</div>
+<!-- MAIN CONTACT SECTION -->
+<section style="padding:100px 0;">
+  <div class="container" style="display:grid; grid-template-columns: 1fr 1.35fr; gap:80px;" class="contact-grid">
+    
+    <!-- LEFT COLUMN: VERIFIED CONTACT INFO -->
+    <aside style="display:flex; flex-direction:column; gap:40px;">
+      <div>
+        <span class="mono-label" style="margin-bottom:12px; display:block;">DIRECT CONTACT</span>
+        <div style="font-size:16px; margin-bottom:6px;">
+          <a href="tel:[REPLACE: REAL PHONE NUMBER]" style="color:var(--text-primary);">[REPLACE: REAL PHONE NUMBER]</a>
+        </div>
+        <div style="font-size:16px;">
+          <a href="mailto:hello@sumanphotography.com" style="color:var(--text-primary);">hello@sumanphotography.com</a>
+        </div>
+      </div>
 
-<!-- Supporting images -->
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;background:#0a0a0a">
-  <div style="overflow:hidden;height:360px"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=700&q=75&auto=format&fit=crop" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-  <div style="overflow:hidden;height:360px"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=700&q=75&auto=format&fit=crop" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-  <div style="overflow:hidden;height:360px"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=700&q=75&auto=format&fit=crop" loading="lazy" alt="" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s cubic-bezier(0.16,1,0.3,1)" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'"/></div>
-</div>
+      <div>
+        <span class="mono-label" style="margin-bottom:12px; display:block;">VERIFIED SOCIAL</span>
+        <div style="font-size:16px; margin-bottom:6px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" style="color:var(--text-primary);">Instagram &rarr;</a>
+        </div>
+        <div style="font-size:16px;">
+          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" style="color:var(--text-primary);">WhatsApp Chat &rarr;</a>
+        </div>
+      </div>
 
+      <div>
+        <span class="mono-label" style="margin-bottom:12px; display:block;">STUDIO LOCATION</span>
+        <div style="font-size:16px; font-weight:500;">Hyderabad, India</div>
+        <div style="font-size:14px; color:var(--text-secondary); margin-top:4px;">Available for commissions worldwide.</div>
+      </div>
+
+      <div style="padding:24px; border:1px solid var(--border-color); background:var(--surface-secondary);">
+        <span class="mono-label" style="margin-bottom:8px; display:block;">STUDIO HOURS</span>
+        <p style="font-size:14px; color:var(--text-secondary);">
+          Monday &ndash; Saturday: 10:00 AM &ndash; 7:00 PM IST<br/>
+          Sunday: By appointment only.
+        </p>
+      </div>
+    </aside>
+
+    <!-- RIGHT COLUMN: MINIMAL SHARP GEOMETRY QUOTE FORM -->
+    <main>
+      <form id="contact-form" style="display:flex; flex-direction:column; gap:28px;">
+        
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:28px;" class="form-row-2">
+          <div class="form-group">
+            <label for="name">NAME *</label>
+            <input type="text" id="name" name="name" class="form-control" required placeholder="Your Full Name"/>
+          </div>
+          <div class="form-group">
+            <label for="phone">PHONE / WHATSAPP *</label>
+            <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+91 98765 43210"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">EMAIL ADDRESS *</label>
+          <input type="email" id="email" name="email" class="form-control" required placeholder="your@email.com"/>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:28px;" class="form-row-2">
+          <div class="form-group">
+            <label for="type">SESSION TYPE *</label>
+            <select id="type" name="type" class="form-control" required>
+              <option value="" selected disabled>Select Session Category...</option>
+              <option value="wedding">Wedding Photography</option>
+              <option value="prewedding">Pre-Wedding Session</option>
+              <option value="maternity">Maternity Session</option>
+              <option value="baby">Newborn &amp; Baby Session</option>
+              <option value="event">Event &amp; Gala</option>
+              <option value="portraits">Fine Art Portraiture</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">EVENT DATE</label>
+            <input type="date" id="date" name="date" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">TELL US ABOUT YOUR VISION</label>
+          <textarea id="message" name="message" class="form-control" rows="4" placeholder="Share event venue, dates, estimated guest count, or vision..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submit-btn" style="align-self:flex-start;">
+          <span id="btn-label-text">REQUEST A QUOTE &rarr;</span>
+        </button>
+      </form>
+
+      <div id="form-success" style="display:none; padding:40px; border:1px solid var(--border-color); background:var(--surface-secondary); margin-top:24px;">
+        <h3 style="font-family:var(--font-serif); font-size:28px; margin-bottom:12px;">REQUEST RECEIVED &check;</h3>
+        <p style="font-size:15px; color:var(--text-secondary);">
+          Thank you for reaching out to Suman Photography. We have received your inquiry and will respond within 24 business hours.
+        </p>
+      </div>
+    </main>
+
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="padding:140px 0; text-align:center; border-top:1px solid var(--border-color);" class="reveal">
+  <div class="container" style="max-width:860px;">
+    <span class="mono-label" style="margin-bottom:20px; display:block;">RESERVATIONS</span>
+    <h2 class="editorial-title" style="margin-bottom:32px;">
+      YOUR STORY <br/>
+      <span class="italic">starts here.</span>
+    </h2>
+
+    <a href="#contact-form" class="btn-primary">REQUEST A QUOTE &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <a href="index.html" class="foot-logo">Suman Photography</a>
-  <div class="foot-links"><a href="weddings.html">Weddings</a><a href="baby-maternity.html">Maternity</a><a href="birthdays-events.html">Events</a><a href="portfolio.html">Portfolio</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-  <p class="foot-copy">© 2025 Suman Photography · Hyderabad · India</p>
+  <div class="container">
+    <div class="footer-grid">
+      
+      <div>
+        <div class="footer-brand">SUMAN<br/>PHOTOGRAPHY</div>
+        <p style="margin-top:16px; font-size:13px; color:var(--text-secondary); max-width:320px;">
+          Fine art &amp; documentary photography studio based in Hyderabad, India. Documenting weddings, maternity sessions, and milestones worldwide.
+        </p>
+      </div>
+
+      <div class="footer-links-column">
+        <div class="footer-heading">Navigation</div>
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="weddings.html" class="footer-link">Weddings</a>
+        <a href="baby-maternity.html" class="footer-link">Maternity &amp; Baby</a>
+        <a href="birthdays-events.html" class="footer-link">Events</a>
+        <a href="portfolio.html" class="footer-link">Portfolio</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+
+      <div class="footer-links-column">
+        <div class="footer-heading">Studio &amp; Location</div>
+        <span class="footer-link">Hyderabad, India</span>
+        <a href="tel:[REPLACE: REAL PHONE NUMBER]" class="footer-link">[REPLACE: REAL PHONE NUMBER]</a>
+        <a href="mailto:hello@sumanphotography.com" class="footer-link">hello@sumanphotography.com</a>
+        <div style="margin-top:12px; display:flex; gap:16px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 SUMAN PHOTOGRAPHY. ALL RIGHTS RESERVED.</span>
+      <span>HYDERABAD &middot; INDIA</span>
+    </div>
+  </div>
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('solid',window.scrollY>40),{passive:true});
-document.getElementById('menu-btn').onclick=()=>document.getElementById('mobile-nav').classList.add('open');
-document.getElementById('mob-close').onclick=()=>document.getElementById('mobile-nav').classList.remove('open');
-const ro=new IntersectionObserver(e=>e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target)}}),{threshold:0.04,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
-document.getElementById('contact-form').addEventListener('submit',function(e){
-  e.preventDefault();
-  const btn=document.getElementById('submit-btn');
-  btn.textContent='Sending…';btn.disabled=true;
-  setTimeout(()=>{this.style.display='none';document.getElementById('form-success').style.display='block'},1000);
-});
-// CUSTOM CURSOR
-const cursor = document.getElementById('cursor');
-let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
-function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.2;
-  cursorY += (mouseY - cursorY) * 0.2;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top = cursorY + 'px';
-  requestAnimationFrame(animateCursor);
+// Mobile Nav
+const menuBtn = document.getElementById('menu-btn');
+const mobClose = document.getElementById('mob-close');
+const mobileNav = document.getElementById('mobile-nav');
+if (menuBtn && mobClose && mobileNav) {
+  menuBtn.onclick = () => mobileNav.classList.add('open');
+  mobClose.onclick = () => mobileNav.classList.remove('open');
 }
-animateCursor();
 
-const pt=document.getElementById('pt');
-document.querySelectorAll('a[href]').forEach(a=>{const h=a.getAttribute('href');if(h&&!h.startsWith('#')&&!h.startsWith('http')&&!h.startsWith('tel')&&!h.startsWith('mailto')){a.addEventListener('click',e=>{e.preventDefault();pt.style.opacity='1';pt.style.pointerEvents='all';setTimeout(()=>location.href=h,350)})}});
-window.addEventListener('load',()=>{pt.style.opacity='0'});
+// Reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Form Submission Behavior
+const form = document.getElementById('contact-form');
+const success = document.getElementById('form-success');
+const submitBtn = document.getElementById('submit-btn');
+const btnLabel = document.getElementById('btn-label-text');
+
+if (form && submitBtn) {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    btnLabel.innerHTML = '&check; REQUEST RECEIVED';
+
+    setTimeout(() => {
+      form.style.display = 'none';
+      if (success) success.style.display = 'block';
+    }, 600);
+  });
+}
 </script>
+
+<style>
+@media (max-width: 900px) {
+  #nav { padding: 18px 24px; }
+  .nav-links, .nav-cta { display: none; }
+  #menu-btn { display: block; }
+  .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+  .form-row-2 { grid-template-columns: 1fr !important; gap: 24px !important; }
+}
+</style>
+<script src="js/motion.js" defer></script>
 </body>
 </html>

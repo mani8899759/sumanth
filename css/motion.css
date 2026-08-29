@@ -1,0 +1,488 @@
+/* ==========================================================================
+   SUMAN PHOTOGRAPHY — EDITORIAL & CINEMATIC MOTION SYSTEM
+   Quiet, intentional, precise motion for high-end photography portfolio.
+   ========================================================================== */
+
+:root {
+  /* Motion Timing Tokens */
+  --duration-micro: 200ms;
+  --duration-hover: 300ms;
+  --duration-ui: 450ms;
+  --duration-text: 800ms;
+  --duration-image: 950ms;
+  --duration-hero-drift: 12s;
+
+  /* Consistent Editorial Easing */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-drift: linear;
+}
+
+/* --------------------------------------------------------------------------
+   01 — PAGE LOAD & EDITORIAL TRANSITIONS
+   -------------------------------------------------------------------------- */
+body {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 450ms var(--ease-editorial), transform 450ms var(--ease-editorial);
+}
+
+body.page-exiting {
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+body.page-entering {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* --------------------------------------------------------------------------
+   02 — HERO IMAGE CINEMATIC DRIFT
+   -------------------------------------------------------------------------- */
+.hero-image-container,
+.hero-image-wrap,
+.hero-bg,
+.hero-img-drift {
+  overflow: hidden;
+}
+
+.hero-image-container img,
+.hero-image-wrap img,
+.hero-bg img,
+.hero-img-drift img,
+img.hero-drift {
+  will-change: transform;
+  transform: scale(1);
+  animation: heroDrift var(--duration-hero-drift) var(--ease-drift) infinite alternate;
+}
+
+@keyframes heroDrift {
+  0% {
+    transform: scale(1.00);
+  }
+  100% {
+    transform: scale(1.035);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   03 — HEADER & NAVIGATION SCROLL BEHAVIOR
+   -------------------------------------------------------------------------- */
+#nav {
+  transition: transform 350ms var(--ease-editorial), 
+              opacity 350ms var(--ease-editorial), 
+              background-color 350ms var(--ease-editorial),
+              backdrop-filter 350ms var(--ease-editorial);
+  will-change: transform, opacity;
+}
+
+#nav.nav-scrolled-down {
+  opacity: 0.88;
+  transform: translateY(-4px);
+}
+
+#nav.nav-scrolled-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header load animation */
+.nav-reveal {
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: navEntrance 650ms var(--ease-editorial) forwards;
+  animation-delay: 150ms;
+}
+
+@keyframes navEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   04 — NAVIGATION & LINK HOVER MICRO-INTERACTIONS
+   -------------------------------------------------------------------------- */
+.nav-link,
+.footer-link,
+a.editorial-link {
+  position: relative;
+  transition: opacity 250ms var(--ease-editorial), color 250ms var(--ease-editorial);
+}
+
+.nav-link::after,
+.footer-link::after,
+a.editorial-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 300ms var(--ease-editorial);
+}
+
+.nav-link:hover::after,
+.footer-link:hover::after,
+a.editorial-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link:hover {
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   05 — CTA BUTTON MICRO-MOTION
+   -------------------------------------------------------------------------- */
+.btn-primary,
+.btn-secondary,
+.btn-cta,
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 300ms var(--ease-editorial),
+              color 300ms var(--ease-editorial),
+              border-color 300ms var(--ease-editorial),
+              opacity 300ms var(--ease-editorial);
+}
+
+.btn-primary .arrow,
+.btn-secondary .arrow,
+.btn-cta .arrow,
+.arrow-link .arrow,
+a[class*="btn"] span.arrow {
+  display: inline-block;
+  transition: transform 300ms var(--ease-editorial);
+  will-change: transform;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-cta:hover,
+.arrow-link:hover {
+  opacity: 0.92;
+}
+
+/* Arrow translate shift */
+.btn-primary:hover .arrow,
+.btn-secondary:hover .arrow,
+.btn-cta:hover .arrow,
+.arrow-link:hover .arrow,
+a:hover > span.arrow {
+  transform: translateX(6px);
+}
+
+/* --------------------------------------------------------------------------
+   06 — IMAGE HOVER & CAPTION INTERACTION (DESKTOP)
+   -------------------------------------------------------------------------- */
+.gallery-image-wrapper,
+.frame-image-wrapper,
+.contact-sheet-item,
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-image-wrapper img,
+.frame-image-wrapper img,
+.gallery-item img,
+.contact-sheet-item img,
+.portfolio-img {
+  transition: transform 650ms var(--ease-editorial), opacity 400ms var(--ease-editorial);
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-image-wrapper:hover img,
+  .frame-image-wrapper:hover img,
+  .gallery-item:hover img,
+  .contact-sheet-item:hover img,
+  .portfolio-img-wrap:hover img {
+    transform: scale(1.03);
+  }
+}
+
+/* Image Caption / Frame Metadata reveal on hover */
+.frame-info,
+.gallery-info,
+.gallery-overlay {
+  transition: opacity 350ms var(--ease-editorial), transform 350ms var(--ease-editorial);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-overlay {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  
+  .gallery-image-wrapper:hover .gallery-overlay,
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   07 — VIEWPORT SCROLL REVEALS & STAGGER
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity var(--duration-text) var(--ease-editorial),
+              transform var(--duration-text) var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+.reveal.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Editorial Italic Word Reveal */
+.italic,
+span.italic {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 600ms var(--ease-editorial), transform 600ms var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+.reveal.on .italic,
+.reveal-hero.on .italic,
+.italic.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Section Headline Reveal */
+.editorial-title {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 850ms var(--ease-editorial), transform 850ms var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+.editorial-title.on,
+.reveal.on .editorial-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contact Sheet & Gallery Grid Stagger */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 750ms var(--ease-editorial), transform 750ms var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+.reveal-stagger.on > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   08 — CLIP PATH IMAGE REVEAL
+   -------------------------------------------------------------------------- */
+.reveal-clip {
+  clip-path: inset(0 0 100% 0);
+  opacity: 0;
+  transition: clip-path 1000ms var(--ease-editorial), opacity 800ms var(--ease-editorial);
+  will-change: clip-path, opacity;
+}
+
+.reveal-clip.on {
+  clip-path: inset(0 0 0% 0);
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   09 — LIGHTBOX ANIMATIONS
+   -------------------------------------------------------------------------- */
+#lightbox-modal {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 400ms var(--ease-editorial), visibility 400ms var(--ease-editorial);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+#lightbox-modal.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#lightbox-modal #lb-img {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 400ms var(--ease-editorial), transform 400ms var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+#lightbox-modal.open #lb-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#lb-img.lb-slide-out-next {
+  opacity: 0;
+  transform: translateX(-16px) scale(0.99);
+}
+
+#lb-img.lb-slide-out-prev {
+  opacity: 0;
+  transform: translateX(16px) scale(0.99);
+}
+
+#lb-img.lb-slide-in {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   10 — MOBILE MENU & HAMBURGER SVG TRANSFORMATION
+   -------------------------------------------------------------------------- */
+#mobile-nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 450ms var(--ease-editorial), visibility 450ms var(--ease-editorial);
+  will-change: opacity, visibility;
+}
+
+#mobile-nav.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+#mobile-nav .mobile-link,
+#mobile-nav a {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 400ms var(--ease-editorial), transform 400ms var(--ease-editorial);
+  will-change: opacity, transform;
+}
+
+#mobile-nav.open .mobile-link,
+#mobile-nav.open a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hamburger SVG Morphing */
+.menu-btn-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu-btn-icon line {
+  transition: transform 300ms var(--ease-editorial), opacity 200ms var(--ease-editorial);
+  transform-origin: center center;
+}
+
+.menu-open .menu-btn-icon line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-open .menu-btn-icon line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-open .menu-btn-icon line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   11 — FORM FOCUS & VALIDATION MOTION
+   -------------------------------------------------------------------------- */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  transition: border-color 250ms var(--ease-editorial),
+              box-shadow 250ms var(--ease-editorial),
+              background-color 250ms var(--ease-editorial);
+}
+
+.form-error-message,
+.error-msg {
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 250ms var(--ease-editorial), transform 250ms var(--ease-editorial);
+}
+
+.form-error-message.visible,
+.error-msg.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   12 — WHATSAPP QUIET FLOATING BUTTON
+   -------------------------------------------------------------------------- */
+.whatsapp-float,
+a[aria-label="WhatsApp"] {
+  transition: opacity 400ms var(--ease-editorial), transform 400ms var(--ease-editorial);
+}
+
+.whatsapp-float.reveal-wa {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: waEntrance 500ms var(--ease-editorial) forwards 800ms;
+}
+
+@keyframes waEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13 — PREFERS-REDUCED-MOTION OVERRIDES
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-image-container img,
+  .hero-image-wrap img,
+  .hero-bg img,
+  .hero-img-drift img,
+  img.hero-drift {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .reveal,
+  .editorial-title,
+  .italic,
+  .reveal-stagger > *,
+  .reveal-clip,
+  #mobile-nav .mobile-link,
+  body {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+}

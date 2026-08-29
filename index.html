@@ -1,151 +1,529 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Suman Photography — Fine Art &amp; Documentary Photography Studio</title>
-<meta name="description" content="Suman Photography — Hyderabad based fine art wedding, maternity, newborn and editorial event photographer."/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<title>Suman Photography — Fine Art &amp; Documentary Photography Studio | Hyderabad</title>
+<meta name="description" content="Suman Photography is a premier editorial and documentary photography studio in Hyderabad, documenting authentic Indian weddings, maternity sessions, and milestone events."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --bg: #0a0a0a;
-  --surface: #121212;
-  --text: #f4f1ea;
-  --text-muted: rgba(244, 241, 234, 0.55);
-  --accent: #c8b29b;
-  --border: rgba(244, 241, 234, 0.08);
-  --hero-title: clamp(48px, 5.5vw, 82px);
-  --page-title: clamp(42px, 5vw, 72px);
-  --section-title: clamp(32px, 4vw, 56px);
-  --sub-title: clamp(22px, 3vw, 36px);
+  --bg: #f5f4f1;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --border-color: #141212;
+  --surface-secondary: #f0f0f0;
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --hero-title: clamp(54px, 7.5vw, 110px);
+  --section-title: clamp(38px, 4.5vw, 68px);
+  --sub-title: clamp(24px, 3vw, 38px);
+  --body-size: 16px;
+  --mono-size: 11px;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;cursor:default}
-a{text-decoration:none;color:inherit}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* CUSTOM CURSOR */
-#cursor{position:fixed;top:0;left:0;width:12px;height:12px;background:#f4f1ea;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.25s ease,height 0.25s ease,background 0.25s ease,border-radius 0.25s ease;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;letter-spacing:0.1em;color:#0a0a0a;white-space:nowrap;padding:0 8px}
-#cursor.active{width:auto;height:32px;background:#f4f1ea;border-radius:16px;padding:0 16px}
-@media (max-width: 1024px){#cursor{display:none}}
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--body-size);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+/* TYPOGRAPHY HELPERS */
+.font-serif { font-family: var(--font-serif); }
+.font-sans { font-family: var(--font-sans); }
+.font-mono { font-family: var(--font-mono); }
+
+.editorial-title {
+  font-family: var(--font-serif);
+  font-size: var(--section-title);
+  line-height: 1.02;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  text-transform: lowercase;
+  color: var(--text-primary);
+  font-size: 0.9em;
+  margin: 0 0.12em;
+  display: inline-block;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--mono-size);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* LAYOUT CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 24px; }
+}
 
 /* NAVIGATION MASTHEAD */
-#nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;transition:background 0.4s ease,backdrop-filter 0.4s ease,padding 0.4s ease}
-#nav.solid{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:18px 48px}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;letter-spacing:-0.01em;text-transform:uppercase;color:var(--text)}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);transition:color 0.25s,border-color 0.25s;padding-bottom:2px;border-bottom:1px solid transparent}
-.nav-links a:hover,.nav-links a.active{color:var(--text);border-bottom-color:var(--accent)}
-.nav-cta{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;border:1px solid rgba(244,241,234,0.3);color:var(--text);padding:10px 24px;transition:all 0.3s ease}
-.nav-cta:hover{background:var(--text);color:#0a0a0a}
-#menu-btn{display:none;background:none;border:none;color:var(--text);cursor:pointer;font-size:24px}
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 48px;
+  background: rgba(245, 244, 241, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
 
-/* MOBILE NAV */
-#mobile-nav{display:none;position:fixed;inset:0;background:#0a0a0a;z-index:200;flex-direction:column;justify-content:center;align-items:flex-start;padding:60px 40px;gap:32px}
-#mobile-nav.open{display:flex}
-#mobile-nav a{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;text-transform:uppercase;color:rgba(244,241,234,0.75)}
-#mobile-nav a:hover{color:var(--text)}
-#mob-close{position:absolute;top:24px;right:32px;background:none;border:none;color:var(--text);font-size:28px;cursor:pointer}
+.logo {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
 
-/* TYPOGRAPHY COMPONENTS */
-.eyebrow{font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:block}
-.editorial-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:var(--hero-title);line-height:0.92;text-transform:uppercase;letter-spacing:-0.015em;color:var(--text);max-width:640px}
-.editorial-title em,.philo-statement em,.service-name em{font-style:italic;font-family:'Cormorant Garamond',serif;font-weight:300;text-transform:lowercase;color:var(--accent);font-size:0.85em;letter-spacing:0em;margin:0 0.12em}
-.editorial-sub{font-size:15px;font-weight:300;color:var(--text-muted);margin-top:20px;max-width:460px;line-height:1.6}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text-primary);
+}
+
+.nav-cta {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 10px 24px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: var(--text-primary);
+  color: var(--bg);
+}
+
+#menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* MOBILE NAV OVERLAY */
+#mobile-nav {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 200;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 40px;
+  gap: 32px;
+}
+
+#mobile-nav.open {
+  display: flex;
+}
+
+#mobile-nav a {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+#mob-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: var(--text-primary);
+  color: var(--bg);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--text-primary);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--text-primary);
+  color: var(--bg);
+}
 
 /* HERO SECTION */
-.hero{position:relative;height:100vh;overflow:hidden;display:flex;align-items:flex-end;padding:80px 48px}
-.hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;animation:kb 24s ease-out infinite alternate}
-@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.08)}}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.92) 0%,rgba(10,10,10,0.3) 50%,rgba(10,10,10,0.2) 100%)}
-.hero-content{position:relative;z-index:10;width:100%;max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end}
-.hero-scroll{font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);display:flex;align-items:center;gap:10px;padding-bottom:10px}
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 80px;
+}
 
-/* SECTION CONTAINERS */
-.section-pad{padding:140px 48px}
-.section-border{border-top:1px solid var(--border)}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: #141212;
+}
 
-/* PHILOSOPHY */
-.philo-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.philo-statement{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,54px);font-weight:300;line-height:1.05;text-transform:uppercase;color:var(--text)}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px;padding-top:40px;border-top:1px solid var(--border)}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--text);margin-bottom:4px}
-.stat-label{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted)}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  opacity: 0.78;
+  animation: kenburns 24s ease-out infinite alternate;
+}
 
-/* FEATURED STORY CASE STUDY */
-.feat-story{position:relative;overflow:hidden;background:#111;margin-top:60px}
-.feat-story-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:3px}
-.feat-main-img{height:75vh;overflow:hidden;position:relative}
-.feat-main-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.16,1,0.3,1)}
-.feat-story:hover .feat-main-img img{transform:scale(1.04)}
-.feat-side-content{padding:60px 48px;display:flex;flex-direction:column;justify-content:space-between;background:var(--surface)}
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
 
-/* EDITORIAL SERVICE ROWS */
-.service-rows{display:flex;flex-direction:column;margin-top:40px}
-.service-row{display:flex;justify-content:space-between;align-items:center;padding:36px 0;border-bottom:1px solid var(--border);transition:padding 0.3s ease,background 0.3s ease;cursor:pointer}
-.service-row:hover{padding-left:16px;padding-right:16px;background:rgba(244,241,234,0.02)}
-.service-name{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,48px);font-weight:300;text-transform:uppercase;color:var(--text);transition:color 0.3s}
-.service-row:hover .service-name{color:var(--accent)}
-.service-arrow{font-size:20px;color:var(--text-muted);transition:transform 0.3s ease,color 0.3s ease}
-.service-row:hover .service-arrow{transform:translateX(8px);color:var(--text)}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(20, 18, 18, 0.85) 0%, rgba(20, 18, 18, 0.2) 60%, transparent 100%);
+}
 
-/* ASYMMETRIC GALLERY */
-.asym-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;margin-top:48px}
-.asym-item{position:relative;overflow:hidden;background:#121212;cursor:pointer}
-.asym-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s cubic-bezier(0.16,1,0.3,1),filter 0.5s ease}
-.asym-item:hover img{transform:scale(1.05);filter:brightness(1.05)}
-.asym-cap{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(10,10,10,0.85) 0%,transparent 100%);opacity:0;transition:opacity 0.4s ease}
-.asym-item:hover .asym-cap{opacity:1}
-.asym-cap p{font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
-.asym-cap h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--text)}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #f5f4f1;
+}
 
-/* TESTIMONIAL */
-.test-box{text-align:center;max-width:800px;margin:0 auto}
-.test-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;font-style:italic;line-height:1.3;color:var(--text);margin-bottom:28px}
-.test-author{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent)}
+.hero-headline {
+  font-family: var(--font-serif);
+  font-size: var(--hero-title);
+  line-height: 0.95;
+  font-weight: 300;
+  text-transform: uppercase;
+  max-width: 920px;
+  margin-bottom: 32px;
+}
 
-/* CONTACT BANNER */
-.contact-banner{padding:120px 48px;background:linear-gradient(to bottom,#0a0a0a,#121212);text-align:center;border-top:1px solid var(--border)}
-.contact-btn-group{display:flex;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap}
+.hero-headline .italic {
+  color: #f5f4f1;
+}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(32px);transition:opacity 0.85s cubic-bezier(0.16,1,0.3,1),transform 0.85s cubic-bezier(0.16,1,0.3,1)}
-.reveal.on{opacity:1;transform:none}
+/* SERVICE EDITORIAL ROWS */
+.service-rows {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+.service-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: padding 0.3s ease;
+}
+
+.service-row:hover {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.service-name {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.service-arrow {
+  font-size: 24px;
+  color: var(--text-secondary);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-row:hover .service-arrow {
+  transform: translateX(10px);
+  color: var(--text-primary);
+}
+
+/* CONTACT SHEET GRID */
+.contact-sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 40px;
+  margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .contact-sheet-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.frame-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--surface-secondary);
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.frame-card:hover {
+  transform: translateY(-3px);
+}
+
+.frame-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #141212;
+  aspect-ratio: 4 / 3;
+}
+
+.frame-card.portrait .frame-image-wrapper { aspect-ratio: 3 / 4; }
+
+.frame-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.frame-card:hover .frame-image-wrapper img {
+  transform: scale(1.04);
+}
+
+.frame-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.frame-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-primary);
+}
+
+.frame-caption {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* REVEAL ANIMATIONS */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.on {
+  opacity: 1;
+  transform: none;
+}
 
 /* FOOTER */
-footer{background:#0a0a0a;border-top:1px solid var(--border);padding:48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
-.foot-brand{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;text-transform:uppercase;color:var(--text)}
-.foot-links{display:flex;gap:28px}
-.foot-links a{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);transition:color 0.2s}
-.foot-links a:hover{color:var(--text)}
-.foot-copy{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(244,241,234,0.3);width:100%}
-
-#pt{position:fixed;inset:0;background:#0a0a0a;z-index:9999;pointer-events:none;opacity:0;transition:opacity 0.35s ease}
-
-@media(max-width:1024px){
-  #nav{padding:18px 24px}
-  .section-pad{padding:90px 24px}
-  .hero{padding:60px 24px}
-  .philo-grid{grid-template-columns:1fr;gap:40px}
-  .feat-story-grid{grid-template-columns:1fr}
-  .feat-main-img{height:50vh}
-  .stats-row{grid-template-columns:repeat(2,1fr)}
-  .asym-grid{grid-template-columns:repeat(6,1fr)}
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border-color);
+  padding: 80px 48px 48px 48px;
 }
-@media(max-width:768px){
-  .nav-links,.nav-cta-wrap{display:none}
-  #menu-btn{display:block}
-  .editorial-title{font-size:clamp(38px,11vw,56px)}
-  .asym-grid{grid-template-columns:1fr}
-  footer{padding:32px 24px}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.footer-brand {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.footer-links-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-heading {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.footer-link:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
+<link rel="stylesheet" href="css/motion.css">
 </head>
 <body>
-<div id="pt"></div>
-<div id="cursor"></div>
 
 <!-- NAVIGATION MASTHEAD -->
 <nav id="nav">
@@ -159,13 +537,19 @@ footer{background:#0a0a0a;border-top:1px solid var(--border);padding:48px;displa
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <div class="nav-cta-wrap hidden lg:block"><a href="contact.html" class="nav-cta">Book a Quote</a></div>
-  <button id="menu-btn" aria-label="Open menu">&#9776;</button>
+  <a href="contact.html" class="nav-cta">Book a Quote</a>
+  <button id="menu-btn" aria-label="Toggle navigation menu">
+    <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="4" y1="6" x2="20" y2="6"/>
+      <line x1="4" y1="12" x2="20" y2="12"/>
+      <line x1="4" y1="18" x2="20" y2="18"/>
+    </svg>
+  </button>
 </nav>
 
-<!-- MOBILE NAV -->
-<div id="mobile-nav">
-  <button id="mob-close" aria-label="Close">&#10005;</button>
+<!-- MOBILE NAVIGATION OVERLAY -->
+<div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+  <button id="mob-close" aria-label="Close menu">&#10005;</button>
   <a href="index.html">Home</a>
   <a href="weddings.html">Weddings</a>
   <a href="baby-maternity.html">Baby &amp; Maternity</a>
@@ -175,265 +559,328 @@ footer{background:#0a0a0a;border-top:1px solid var(--border);padding:48px;displa
   <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO SECTION (PHOTOGRAPHER PORTRAIT + NEGATIVE SPACE TYPOGRAPHY) -->
+<section class="hero-section" aria-label="Hero Section">
   <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=85&auto=format&fit=crop" loading="eager" alt="Hero wedding photograph"/>
+    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=2000&q=85" alt="Suman - Lead Photographer &amp; Founder" loading="eager"/>
     <div class="hero-overlay"></div>
   </div>
-  <div class="hero-content">
+
+  <div class="container hero-content">
+    <div class="mono-label" style="color:rgba(245,244,241,0.75); margin-bottom:16px;">
+      HYDERABAD &middot; INDIA &nbsp;|&nbsp; DOCUMENTARY PHOTOGRAPHY &nbsp;|&nbsp; WEDDINGS &middot; MATERNITY &middot; EVENTS &middot; PORTRAITS
+    </div>
+
+    <h1 class="hero-headline">
+      MOMENTS <br/>
+      <span class="italic">that</span> STAY.
+    </h1>
+
+    <div style="display:flex; gap:20px; align-items:center; flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary" style="background:#f5f4f1; color:#000000; border-color:#f5f4f1;">
+        BOOK A QUOTE &rarr;
+      </a>
+      <a href="portfolio.html" class="btn-secondary" style="border-color:rgba(245,244,241,0.5); color:#f5f4f1;">
+        EXPLORE ARCHIVE
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRODUCTION SECTION (01 · APPROACH) -->
+<section style="padding:160px 0; border-bottom:1px solid var(--border-color);" class="reveal">
+  <div class="container">
+    <span class="mono-label" style="margin-bottom:24px; display:block;">01 &middot; APPROACH</span>
+
+    <h2 class="editorial-title" style="margin-bottom:32px; max-width:880px;">
+      PHOTOGRAPHS <br/>
+      <span class="italic">of the</span> MOMENTS THAT MATTER.
+    </h2>
+
+    <p style="font-size: clamp(18px, 2.2vw, 24px); font-family: var(--font-serif); font-weight: 300; line-height: 1.5; color: var(--text-secondary); max-width: 820px;">
+      We believe photography is not about staging perfection, but preserving genuine emotion. Based in Hyderabad, Suman Photography crafts timeless visual archives of Indian weddings, intimate family sessions, and monumental celebrations across India and worldwide.
+    </p>
+  </div>
+</section>
+
+<!-- FEATURED STORY SECTION (ASYMMETRICAL MAGAZINE COMPOSITION) -->
+<section style="padding:140px 0; background:var(--surface-secondary); border-bottom:1px solid var(--border-color);" class="reveal">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; flex-wrap:wrap; gap:20px;">
+      <div>
+        <span class="mono-label" style="margin-bottom:12px; display:block;">FEATURED STORY &middot; EDITORIAL SPREAD</span>
+        <h2 class="editorial-title">
+          A &amp; R &mdash; <span class="italic">wedding</span> STORY
+        </h2>
+      </div>
+      <div style="text-align:right;">
+        <span class="mono-label" style="display:block; margin-bottom:8px;">HYDERABAD &middot; 2026</span>
+        <a href="weddings.html" class="mono-label" style="color:var(--text-primary); border-bottom:1px solid var(--text-primary); padding-bottom:2px;">VIEW STORY &rarr;</a>
+      </div>
+    </div>
+
+    <!-- ASYMMETRICAL EDITORIAL SPREAD: 1 DOMINANT PHOTO + 1 SECONDARY DETAIL -->
+    <div style="display:grid; grid-template-columns: 1.4fr 1fr; gap:36px; align-items:center;" class="featured-grid">
+      <div class="frame-card portrait">
+        <div class="frame-image-wrapper" style="aspect-ratio: 16/11;">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=85" alt="A &amp; R Wedding Portrait" loading="eager"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 014</span>
+          <span class="frame-caption">GOLDEN HOUR &middot; HYDERABAD</span>
+        </div>
+      </div>
+
+      <div class="frame-card">
+        <div class="frame-image-wrapper" style="aspect-ratio: 4/3;">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80" alt="A &amp; R Sacred Ritual Details" loading="lazy"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 015</span>
+          <span class="frame-caption">CEREMONY &middot; SACRED RITUALS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION (4 MINIMAL EDITORIAL ROWS) -->
+<section style="padding:140px 0; border-bottom:1px solid var(--border-color);" class="reveal">
+  <div class="container">
+    <span class="mono-label" style="margin-bottom:20px; display:block;">SERVICES &middot; SPECIALIZATION</span>
+    <h2 class="editorial-title" style="margin-bottom:48px;">EDITORIAL ROWS</h2>
+
+    <div class="service-rows">
+      <a href="weddings.html" class="service-row">
+        <h3 class="service-name">01 WEDDINGS &rarr;</h3>
+      </a>
+
+      <a href="baby-maternity.html" class="service-row">
+        <h3 class="service-name">02 MATERNITY &amp; BABY &rarr;</h3>
+      </a>
+
+      <a href="birthdays-events.html" class="service-row">
+        <h3 class="service-name">03 EVENTS &rarr;</h3>
+      </a>
+
+      <a href="portfolio.html" class="service-row">
+        <h3 class="service-name">04 PORTRAITS &rarr;</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RECENT WORK SECTION (CURATED CONTACT SHEET) -->
+<section style="padding:140px 0; border-bottom:1px solid var(--border-color);" class="reveal">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:40px; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="mono-label" style="margin-bottom:12px; display:block;">CURATED SELECTION &middot; ARCHIVE</span>
+        <h2 class="editorial-title">RECENT WORK</h2>
+      </div>
+      <a href="portfolio.html" class="btn-secondary">VIEW PORTFOLIO &rarr;</a>
+    </div>
+
+    <div class="contact-sheet-grid">
+      
+      <div class="frame-card portrait">
+        <div class="frame-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?auto=format&fit=crop&w=800&q=80" alt="Indian Bride Preparation" loading="lazy"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 014</span>
+          <span class="frame-caption">GOLDEN HOUR &middot; HYDERABAD</span>
+        </div>
+      </div>
+
+      <div class="frame-card">
+        <div class="frame-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=800&q=80" alt="Pre-wedding Couple Sunset Walk" loading="lazy"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 019</span>
+          <span class="frame-caption">CEREMONY &middot; 2026</span>
+        </div>
+      </div>
+
+      <div class="frame-card portrait">
+        <div class="frame-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=800&q=80" alt="Fine Art Maternity Portrait" loading="lazy"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 021</span>
+          <span class="frame-caption">MATERNITY PORTRAIT &middot; STUDIO</span>
+        </div>
+      </div>
+
+      <div class="frame-card">
+        <div class="frame-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?auto=format&fit=crop&w=800&q=80" alt="Wedding Vows Ceremony" loading="lazy"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 025</span>
+          <span class="frame-caption">SACRED VOWS &middot; UDAIPUR</span>
+        </div>
+      </div>
+
+      <div class="frame-card portrait">
+        <div class="frame-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80" alt="Gala Celebration" loading="lazy"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 028</span>
+          <span class="frame-caption">MILESTONE CELEBRATION</span>
+        </div>
+      </div>
+
+      <div class="frame-card">
+        <div class="frame-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80" alt="Editorial Couple Portrait" loading="lazy"/>
+        </div>
+        <div class="frame-info">
+          <span class="frame-number">FRAME 032</span>
+          <span class="frame-caption">EDITORIAL &middot; PORTRAITURE</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 06 — ABOUT PREVIEW -->
+<section style="padding:140px 0; border-bottom:1px solid var(--border-color);" class="reveal">
+  <div class="container" style="display:grid; grid-template-columns: 1fr 1fr; gap:64px; align-items:center;" class="about-grid">
+    
+    <div class="frame-card portrait">
+      <div class="frame-image-wrapper">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=85" alt="Suman - Lead Photographer Portrait" loading="lazy"/>
+      </div>
+      <div class="frame-info">
+        <span class="frame-number">FOUNDER &amp; LEAD PHOTOGRAPHER</span>
+        <span class="frame-caption">HYDERABAD STUDIO</span>
+      </div>
+    </div>
+
     <div>
-      <span class="eyebrow">01 • HYDERABAD, INDIA — CINEMATIC STORIES</span>
-      <h1 class="editorial-title">MOMENTS<br/><em>that</em> STAY.</h1>
-      <p class="editorial-sub">Weddings · Maternity · Portraits · Celebrations</p>
+      <span class="mono-label" style="margin-bottom:16px; display:block;">THE PHOTOGRAPHER</span>
+      <h2 class="editorial-title" style="margin-bottom:24px;">
+        THE PERSON <br/>
+        <span class="italic">behind</span> THE STORIES.
+      </h2>
+      <p style="font-size:16px; color:var(--text-secondary); margin-bottom:32px; line-height:1.7;">
+        Hi, I'm Suman. Over the past decade, I've had the honor of documenting hundreds of wedding rituals, maternity journeys, and private celebrations across India. My approach merges fine art aesthetics with raw documentary instinct.
+      </p>
+      <a href="about.html" class="btn-primary">ABOUT SUMAN &rarr;</a>
     </div>
-    <div class="hero-scroll hidden md:flex">
-      <span>SCROLL TO EXPLORE</span>
-      <span>↓</span>
-    </div>
+
   </div>
 </section>
 
-<!-- SECTION 01 — PHILOSOPHY -->
-<section class="section-pad section-border">
-  <div class="max-w-[1440px] mx-auto">
-    <div class="philo-grid reveal">
-      <div>
-        <span class="eyebrow">01 • PHILOSOPHY</span>
-        <h2 class="philo-statement">NOT JUST PHOTOGRAPHS.<br/><em>moments that</em> STAY.</h2>
-      </div>
-      <div>
-        <p style="font-size:16px;line-height:1.7;color:var(--text-muted);margin-bottom:24px">
-          We don't pose life — we document it. Every wedding, maternity, and event is an unrepeatable composition of human connection, quiet anticipation, and raw emotion.
-        </p>
-        <p style="font-size:16px;line-height:1.7;color:var(--text-muted)">
-          Based in Hyderabad and available across India, Suman Photography crafts timeless visual archives for families who value art over convention.
-        </p>
-      </div>
-    </div>
+<!-- SECTION 07 — FINAL CTA -->
+<section style="padding:160px 0; text-align:center;" class="reveal">
+  <div class="container" style="max-width:860px;">
+    <span class="mono-label" style="margin-bottom:20px; display:block;">INQUIRIES &middot; COMMISSIONS</span>
+    <h2 class="editorial-title" style="margin-bottom:32px;">
+      LET'S MAKE <br/>
+      <span class="italic">something</span> TIMELESS.
+    </h2>
+    <p style="font-size:16px; color:var(--text-secondary); margin-bottom:40px; opacity:0.85;">
+      We accept a limited number of commissions each year to ensure every story receives undivided artistic dedication.
+    </p>
 
-    <!-- STATS -->
-    <div class="stats-row reveal">
-      <div><div class="stat-num">400+</div><div class="stat-label">Weddings Documented</div></div>
-      <div><div class="stat-num">200+</div><div class="stat-label">Maternity &amp; Newborn</div></div>
-      <div><div class="stat-num">150+</div><div class="stat-label">Celebrations</div></div>
-      <div><div class="stat-num">8+</div><div class="stat-label">Years Experience</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 02 — FEATURED STORY -->
-<section class="section-pad section-border" style="background:#0d0d0d">
-  <div class="max-w-[1440px] mx-auto">
-    <span class="eyebrow">02 • FEATURED STORY</span>
-    <h2 class="editorial-title" style="font-size:var(--section-title)">PRIYA &amp; ARJUN <em>in love</em></h2>
-    <p class="editorial-sub" style="margin-top:8px">The Leela Palace, Hyderabad · December 2024</p>
-
-    <div class="feat-story reveal" data-cursor="EXPLORE STORY →">
-      <a href="wedding-story.html" class="feat-story-grid">
-        <div class="feat-main-img">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=85&auto=format&fit=crop" loading="lazy" alt="Priya and Arjun wedding story"/>
-        </div>
-        <div class="feat-side-content">
-          <div>
-            <span class="eyebrow" style="color:var(--accent)">DOCUMENTARY FEATURE</span>
-            <h3 style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--text);margin-bottom:16px">FOUR DAYS OF <em>silent &amp; celebratory</em> MOMENTS.</h3>
-            <p style="font-size:14px;line-height:1.6;color:var(--text-muted)">
-              "Their wedding was deeply rooted in traditional ritual yet completely personal. From candid Haldi laughter to the quiet sunset ceremony."
-            </p>
-          </div>
-          <div style="margin-top:32px">
-            <span class="nav-cta" style="display:inline-block">Read Wedding Story →</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 03 — EDITORIAL CATEGORY NAVIGATION -->
-<section class="section-pad section-border">
-  <div class="max-w-[1440px] mx-auto">
-    <span class="eyebrow">03 • EXPERTISE</span>
-    <h2 class="editorial-title" style="font-size:var(--section-title)">STORIES <em>we</em> TELL</h2>
-
-    <div class="service-rows reveal">
-      <a href="weddings.html" class="service-row" data-cursor="VIEW WEDDINGS">
-        <div>
-          <span class="eyebrow" style="margin-bottom:4px;color:rgba(244,241,234,0.3)">01</span>
-          <h3 class="service-name">Weddings <em>&amp; pre-weddings</em></h3>
-        </div>
-        <span class="service-arrow">→</span>
-      </a>
-
-      <a href="baby-maternity.html" class="service-row" data-cursor="VIEW MATERNITY">
-        <div>
-          <span class="eyebrow" style="margin-bottom:4px;color:rgba(244,241,234,0.3)">02</span>
-          <h3 class="service-name">Maternity <em>&amp; baby sessions</em></h3>
-        </div>
-        <span class="service-arrow">→</span>
-      </a>
-
-      <a href="birthdays-events.html" class="service-row" data-cursor="VIEW EVENTS">
-        <div>
-          <span class="eyebrow" style="margin-bottom:4px;color:rgba(244,241,234,0.3)">03</span>
-          <h3 class="service-name">Birthdays <em>&amp; event stories</em></h3>
-        </div>
-        <span class="service-arrow">→</span>
-      </a>
-
-      <a href="portfolio.html" class="service-row" data-cursor="VIEW ARCHIVE">
-        <div>
-          <span class="eyebrow" style="margin-bottom:4px;color:rgba(244,241,234,0.3)">04</span>
-          <h3 class="service-name">Complete <em>photographic</em> archive</h3>
-        </div>
-        <span class="service-arrow">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 04 — ASYMMETRIC GALLERY SPREAD -->
-<section class="section-pad section-border" style="background:#0d0d0d">
-  <div class="max-w-[1440px] mx-auto">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px" class="reveal">
-      <div>
-        <span class="eyebrow">04 • SELECTED WORKS</span>
-        <h2 class="editorial-title" style="font-size:var(--section-title)">CURATED <em>photographic</em> ARCHIVE</h2>
-      </div>
-      <a href="portfolio.html" class="nav-cta">View Full Portfolio →</a>
-    </div>
-
-    <!-- ASYMMETRIC LAYOUT -->
-    <div class="asym-grid reveal">
-      <a href="weddings.html" class="asym-item style-1" style="grid-column: span 8; height: 500px" data-cursor="EXPLORE">
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1000&q=80&auto=format&fit=crop" loading="lazy" alt="Bridal portrait"/>
-        <div class="asym-cap">
-          <p>WEDDINGS · HYDERABAD</p>
-          <h4>The Bridal Rituals</h4>
-        </div>
-      </a>
-
-      <a href="baby-maternity.html" class="asym-item style-2" style="grid-column: span 4; height: 500px" data-cursor="EXPLORE">
-        <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80&auto=format&fit=crop" loading="lazy" alt="Maternity portrait"/>
-        <div class="asym-cap">
-          <p>MATERNITY · STUDIO</p>
-          <h4>Quiet Expectations</h4>
-        </div>
-      </a>
-
-      <a href="birthdays-events.html" class="asym-item style-3" style="grid-column: span 4; height: 420px" data-cursor="EXPLORE">
-        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80&auto=format&fit=crop" loading="lazy" alt="Event photography"/>
-        <div class="asym-cap">
-          <p>CELEBRATION · HYDERABAD</p>
-          <h4>Joyful Gatherings</h4>
-        </div>
-      </a>
-
-      <a href="weddings.html" class="asym-item style-4" style="grid-column: span 8; height: 420px" data-cursor="EXPLORE">
-        <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1000&q=80&auto=format&fit=crop" loading="lazy" alt="Reception candid"/>
-        <div class="asym-cap">
-          <p>WEDDINGS · DESTINATION</p>
-          <h4>Under The Twilight Canopy</h4>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 05 — TESTIMONIAL -->
-<section class="section-pad section-border">
-  <div class="max-w-[1440px] mx-auto">
-    <div class="test-box reveal">
-      <span class="eyebrow">05 • KIND WORDS</span>
-      <blockquote class="test-quote">
-        “Some moments only happen once in a lifetime. Suman didn't just photograph our wedding — he captured how every silent gaze and celebration actually felt.”
-      </blockquote>
-      <p class="test-author">PRIYA &amp; ARJUN — WEDDING STORY · THE LEELA PALACE, HYDERABAD</p>
-    </div>
-  </div>
-</section>
-
-<!-- SECTION 06 — CINEMATIC CONTACT BANNER -->
-<section class="contact-banner">
-  <div class="max-w-[900px] mx-auto reveal">
-    <span class="eyebrow">06 • START A CONVERSATION</span>
-    <h2 class="editorial-title" style="margin:0 auto;font-size:clamp(40px,5vw,72px)">LET'S MAKE <em>something</em> TIMELESS.</h2>
-    <p class="editorial-sub" style="margin:24px auto 0">Available for weddings, maternity, portraits and events across Hyderabad, India and worldwide destination commissions.</p>
-    <div class="contact-btn-group">
-      <a href="contact.html" class="nav-cta" style="padding:14px 36px;font-size:12px">Book a Consultation →</a>
-      <a href="portfolio.html" class="nav-cta" style="padding:14px 36px;font-size:12px;border-color:transparent;color:var(--text-muted)">Explore Full Archive</a>
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+      <a href="contact.html" class="btn-primary">BOOK A QUOTE &rarr;</a>
+      <a href="portfolio.html" class="btn-secondary">EXPLORE ARCHIVE</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <a href="index.html" class="foot-brand">Suman Photography</a>
-  <div class="foot-links">
-    <a href="weddings.html">Weddings</a>
-    <a href="baby-maternity.html">Maternity</a>
-    <a href="birthdays-events.html">Events</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+  <div class="container">
+    <div class="footer-grid">
+      
+      <div>
+        <div class="footer-brand">SUMAN<br/>PHOTOGRAPHY</div>
+        <p style="margin-top:16px; font-size:13px; color:var(--text-secondary); max-width:320px;">
+          Fine art &amp; documentary photography studio based in Hyderabad, India. Documenting weddings, maternity sessions, and milestones worldwide.
+        </p>
+      </div>
+
+      <div class="footer-links-column">
+        <div class="footer-heading">Navigation</div>
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="weddings.html" class="footer-link">Weddings</a>
+        <a href="baby-maternity.html" class="footer-link">Maternity &amp; Baby</a>
+        <a href="birthdays-events.html" class="footer-link">Events</a>
+        <a href="portfolio.html" class="footer-link">Portfolio</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+
+      <div class="footer-links-column">
+        <div class="footer-heading">Studio &amp; Location</div>
+        <span class="footer-link">Hyderabad, India</span>
+        <a href="tel:[REPLACE: REAL PHONE NUMBER]" class="footer-link">[REPLACE: REAL PHONE NUMBER]</a>
+        <a href="mailto:hello@sumanphotography.com" class="footer-link">hello@sumanphotography.com</a>
+        <div style="margin-top:12px; display:flex; gap:16px;">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 SUMAN PHOTOGRAPHY. ALL RIGHTS RESERVED.</span>
+      <span>HYDERABAD &middot; INDIA</span>
+    </div>
   </div>
-  <p class="foot-copy">© 2026 Suman Photography · Hyderabad, India · hello@sumanphotography.com · +91 99999 99999</p>
 </footer>
 
 <script>
-// CUSTOM CURSOR
-const cursor = document.getElementById('cursor');
-let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
-document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
-function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.2;
-  cursorY += (mouseY - cursorY) * 0.2;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top = cursorY + 'px';
-  requestAnimationFrame(animateCursor);
+// Mobile Navigation Toggles
+const menuBtn = document.getElementById('menu-btn');
+const mobClose = document.getElementById('mob-close');
+const mobileNav = document.getElementById('mobile-nav');
+
+if (menuBtn && mobClose && mobileNav) {
+  menuBtn.addEventListener('click', () => mobileNav.classList.add('open'));
+  mobClose.addEventListener('click', () => mobileNav.classList.remove('open'));
 }
-animateCursor();
 
-document.querySelectorAll('[data-cursor]').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.classList.add('active');
-    cursor.textContent = el.getAttribute('data-cursor');
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.classList.remove('active');
-    cursor.textContent = '';
-  });
-});
-
-// NAV SCROLL
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.classList.toggle('solid', window.scrollY > 40); }, { passive: true });
-
-// MOBILE MENU
-document.getElementById('menu-btn').onclick = () => document.getElementById('mobile-nav').classList.add('open');
-document.getElementById('mob-close').onclick = () => document.getElementById('mobile-nav').classList.remove('open');
-
-// INTERSECTION REVEAL
+// Reveal on Scroll
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('on');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.06 });
 
-// PAGE TRANSITION
-const pt = document.getElementById('pt');
-document.querySelectorAll('a[href]').forEach(a => {
-  const h = a.getAttribute('href');
-  if (h && !h.startsWith('#') && !h.startsWith('http') && !h.startsWith('tel') && !h.startsWith('mailto')) {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      pt.style.opacity = '1';
-      pt.style.pointerEvents = 'all';
-      setTimeout(() => location.href = h, 350);
-    });
-  }
-});
-window.addEventListener('load', () => { pt.style.opacity = '0'; });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+<style>
+@media (max-width: 900px) {
+  #nav { padding: 18px 24px; }
+  .nav-links, .nav-cta { display: none; }
+  #menu-btn { display: block; }
+  .featured-grid { grid-template-columns: 1fr !important; }
+  .about-grid { grid-template-columns: 1fr !important; }
+}
+</style>
+<script src="js/motion.js" defer></script>
 </body>
 </html>

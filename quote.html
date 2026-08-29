@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>About Suman — Lead Photographer &amp; Studio Founder | Hyderabad</title>
-<meta name="description" content="Discover the documentary philosophy, editorial craft, and background of Suman, lead photographer and founder of Suman Photography in Hyderabad, India."/>
+<title>Book a Quote — Suman Photography | Hyderabad Fine Art Studio</title>
+<meta name="description" content="Request a personalized commission quote for weddings, maternity sessions, and milestone event photography with Suman Photography."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
@@ -238,53 +238,6 @@ a {
   transform: translateY(-1px);
 }
 
-/* FRAME CARDS */
-.frame-card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: var(--surface-secondary);
-  padding: 16px;
-  border: 1px solid var(--border-color);
-}
-
-.frame-image-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: #141212;
-  aspect-ratio: 4 / 3;
-}
-
-.frame-card.portrait .frame-image-wrapper { aspect-ratio: 3 / 4; }
-
-.frame-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.frame-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.frame-number {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--text-primary);
-}
-
-.frame-caption {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-secondary);
-}
-
 /* SHARP GEOMETRY FORM STYLES */
 .form-group {
   display: flex;
@@ -421,10 +374,10 @@ footer {
     <li><a href="baby-maternity.html">Baby &amp; Maternity</a></li>
     <li><a href="birthdays-events.html">Events</a></li>
     <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-  <a href="contact.html" class="nav-cta">Book a Quote</a>
+  <a href="quote.html" class="nav-cta" style="background:var(--text-primary); color:var(--bg);">Book a Quote</a>
   <button id="menu-btn" aria-label="Toggle navigation menu">
     <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
       <line x1="4" y1="6" x2="20" y2="6"/>
@@ -446,175 +399,60 @@ footer {
   <a href="contact.html">Contact</a>
 </div>
 
-<!-- ABOUT HERO -->
-<section style="padding:160px 0 100px 0; border-bottom:1px solid var(--border-color);">
-  <div class="container" style="display:grid; grid-template-columns: 1.1fr 1fr; gap:64px; align-items:center;" class="hero-about-grid">
+<!-- HERO HEADER -->
+<section style="padding:160px 0 60px 0; border-bottom:1px solid var(--border-color);">
+  <div class="container">
+    <span class="mono-label" style="margin-bottom:16px; display:block;">RESERVATIONS &middot; COMMISSIONS &middot; HYDERABAD &middot; INDIA</span>
     
-    <div>
-      <span class="mono-label" style="margin-bottom:16px; display:block;">SUMAN PHOTOGRAPHY &middot; HYDERABAD &middot; INDIA</span>
-      
-      <h1 style="font-family:var(--font-serif); font-size:var(--hero-title); line-height:0.95; font-weight:300; text-transform:uppercase; margin-bottom:24px;">
-        THE PERSON <br/>
-        <span class="italic">behind</span> THE STORIES.
-      </h1>
+    <h1 style="font-family:var(--font-serif); font-size:var(--hero-title); line-height:0.95; font-weight:300; text-transform:uppercase; margin-bottom:24px;">
+      BOOK A QUOTE <br/>
+      <span class="italic">for your milestone.</span>
+    </h1>
 
-      <p style="font-size:18px; font-weight:300; line-height:1.7; color:var(--text-primary); margin-bottom:24px;">
-        "We are documentary storytellers obsessed with the quiet moments between the planned ones."
-      </p>
-
-      <p style="font-size:15px; color:var(--text-secondary); line-height:1.7;">
-        Founded by Suman in Hyderabad, Suman Photography was created with a single vision: to elevate wedding, maternity, and milestone photography into timeless visual art. Moving beyond rigid poses, our camera acts as a quiet observer capturing unscripted laughter, sacred rituals, and raw human connection.
-      </p>
-    </div>
-
-    <div class="frame-card portrait">
-      <div class="frame-image-wrapper" style="aspect-ratio: 4/5;">
-        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1000&q=85" alt="Suman - Lead Photographer Portrait" loading="eager"/>
-      </div>
-      <div class="frame-info">
-        <span class="frame-number">FOUNDER &amp; LEAD PHOTOGRAPHER</span>
-        <span class="frame-caption">HYDERABAD STUDIO</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- DOCUMENTARY PHILOSOPHY -->
-<section style="padding:140px 0; border-bottom:1px solid var(--border-color);" class="reveal">
-  <div class="container" style="max-width:960px; text-align:center;">
-    <span class="mono-label" style="margin-bottom:20px; display:block;">DOCUMENTARY PHILOSOPHY</span>
-    
-    <h2 class="editorial-title" style="margin-bottom:32px; font-size:clamp(36px, 5vw, 68px);">
-      I LOOK FOR <br/>
-      THE MOMENTS <br/>
-      <span class="italic">between</span> THE MOMENTS.
-    </h2>
-
-    <p style="font-size:17px; color:var(--text-secondary); max-width:720px; margin:0 auto; line-height:1.8;">
-      Traditional photography often interrupts genuine emotion to force awkward postures. We step back, allowing sacred wedding rituals and family interactions to unfold naturally before our lenses—capturing honest heirlooms that age gracefully over generations.
+    <p style="font-size:18px; font-weight:300; color:var(--text-secondary); max-width:680px; line-height:1.7;">
+      Please share your session details below. We accept a limited number of commissions each year to ensure every story receives undivided artistic focus.
     </p>
   </div>
 </section>
 
-<!-- VERIFIED PROOF & MILESTONE STATS -->
-<section style="padding:120px 0; border-bottom:1px solid var(--border-color);" class="reveal">
-  <div class="container">
-    <span class="mono-label" style="margin-bottom:32px; display:block; text-align:center;">VERIFIED MILESTONES &middot; STATISTICAL ARCHIVE</span>
-
-    <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap:32px; text-align:center;" class="stats-grid">
-      
-      <div style="padding:32px 24px; border:1px solid var(--border-color); background:var(--surface-secondary);">
-        <div style="font-family:var(--font-serif); font-size:56px; font-weight:300; color:var(--text-primary); line-height:1;">400+</div>
-        <div class="mono-label" style="margin-top:12px;">WEDDINGS DOCUMENTED</div>
-        <p style="font-size:12px; color:var(--text-secondary); margin-top:6px;">Across Hyderabad, Udaipur &amp; India</p>
-      </div>
-
-      <div style="padding:32px 24px; border:1px solid var(--border-color); background:var(--surface-secondary);">
-        <div style="font-family:var(--font-serif); font-size:56px; font-weight:300; color:var(--text-primary); line-height:1;">200+</div>
-        <div class="mono-label" style="margin-top:12px;">MATERNITY SESSIONS</div>
-        <p style="font-size:12px; color:var(--text-secondary); margin-top:6px;">Fine Art Studio &amp; Outdoor</p>
-      </div>
-
-      <div style="padding:32px 24px; border:1px solid var(--border-color); background:var(--surface-secondary);">
-        <div style="font-family:var(--font-serif); font-size:56px; font-weight:300; color:var(--text-primary); line-height:1;">150+</div>
-        <div class="mono-label" style="margin-top:12px;">EVENTS &amp; GALAS</div>
-        <p style="font-size:12px; color:var(--text-secondary); margin-top:6px;">Milestone Celebrations</p>
-      </div>
-
-      <div style="padding:32px 24px; border:1px solid var(--border-color); background:var(--surface-secondary);">
-        <div style="font-family:var(--font-serif); font-size:56px; font-weight:300; color:var(--text-primary); line-height:1;">8+</div>
-        <div class="mono-label" style="margin-top:12px;">YEARS OF CRAFT</div>
-        <p style="font-size:12px; color:var(--text-secondary); margin-top:6px;">Dedicated Studio Excellence</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- REAL STUDIO ARCHIVE & BTS -->
-<section style="padding:120px 0; border-bottom:1px solid var(--border-color);" class="reveal">
-  <div class="container">
-    <span class="mono-label" style="margin-bottom:16px; display:block;">BEHIND THE SCENES &middot; STUDIO ARCHIVE</span>
-    <h2 class="editorial-title" style="margin-bottom:40px;">THE STUDIO IN ACTION</h2>
-
-    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:32px;" class="bts-grid">
-      
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Camera Gear Preparation" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 002</span>
-          <span class="frame-caption">GEAR PREPARATION &middot; HYDERABAD</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?auto=format&fit=crop&w=800&q=80" alt="Photographer in Action" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 003</span>
-          <span class="frame-caption">ON LOCATION &middot; WEDDING</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80" alt="Editing Suite" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 004</span>
-          <span class="frame-caption">EDITING &amp; PRINT SUITE</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- INTEGRATED CONTACT & REQUEST A QUOTE FORM SECTION -->
-<section id="inquiry-form" style="padding:140px 0; border-bottom:1px solid var(--border-color);" class="reveal">
+<!-- MAIN QUOTE SECTION -->
+<section style="padding:100px 0;">
   <div class="container" style="display:grid; grid-template-columns: 1fr 1.35fr; gap:80px;" class="contact-grid">
     
     <!-- LEFT COLUMN: VERIFIED CONTACT INFO -->
     <aside style="display:flex; flex-direction:column; gap:40px;">
       <div>
-        <span class="mono-label" style="margin-bottom:12px; display:block;">STUDIO INQUIRIES</span>
-        <h2 class="editorial-title" style="font-size:clamp(32px, 4vw, 54px); margin-bottom:24px;">
-          LET'S TALK <br/>
-          <span class="italic">about your story.</span>
-        </h2>
-        <p style="font-size:15px; color:var(--text-secondary); line-height:1.7;">
-          We welcome inquiries for weddings, maternity journeys, and private events worldwide. Please complete the form or reach out directly to our studio.
-        </p>
+        <span class="mono-label" style="margin-bottom:12px; display:block;">STUDIO LOCATION</span>
+        <div style="font-size:16px; font-weight:500;">Hyderabad, India</div>
+        <div style="font-size:14px; color:var(--text-secondary); margin-top:4px;">Available for commissions worldwide.</div>
       </div>
 
       <div>
-        <span class="mono-label" style="margin-bottom:8px; display:block;">DIRECT CONTACT</span>
-        <div style="font-size:15px; margin-bottom:4px;">
+        <span class="mono-label" style="margin-bottom:12px; display:block;">DIRECT CONTACT</span>
+        <div style="font-size:16px; margin-bottom:6px;">
           <a href="tel:[REPLACE: REAL PHONE NUMBER]" style="color:var(--text-primary);">[REPLACE: REAL PHONE NUMBER]</a>
         </div>
-        <div style="font-size:15px;">
+        <div style="font-size:16px;">
           <a href="mailto:hello@sumanphotography.com" style="color:var(--text-primary);">hello@sumanphotography.com</a>
         </div>
       </div>
 
       <div>
-        <span class="mono-label" style="margin-bottom:8px; display:block;">VERIFIED SOCIAL</span>
-        <div style="font-size:15px; margin-bottom:4px;">
+        <span class="mono-label" style="margin-bottom:12px; display:block;">VERIFIED SOCIAL</span>
+        <div style="font-size:16px; margin-bottom:6px;">
           <a href="https://instagram.com" target="_blank" rel="noopener" style="color:var(--text-primary);">Instagram &rarr;</a>
         </div>
-        <div style="font-size:15px;">
+        <div style="font-size:16px;">
           <a href="https://wa.me/919999999999" target="_blank" rel="noopener" style="color:var(--text-primary);">WhatsApp Chat &rarr;</a>
         </div>
       </div>
 
-      <div>
-        <span class="mono-label" style="margin-bottom:8px; display:block;">STUDIO LOCATION</span>
-        <div style="font-size:15px; font-weight:500;">Hyderabad, India</div>
-        <div style="font-size:13px; color:var(--text-secondary); margin-top:2px;">Available for commissions worldwide.</div>
+      <div style="padding:24px; border:1px solid var(--border-color); background:var(--surface-secondary);">
+        <span class="mono-label" style="margin-bottom:8px; display:block;">STUDIO HOURS</span>
+        <p style="font-size:14px; color:var(--text-secondary);">
+          Monday &ndash; Saturday: 10:00 AM &ndash; 7:00 PM IST<br/>
+          Sunday: By appointment only.
+        </p>
       </div>
     </aside>
 
@@ -679,7 +517,7 @@ footer {
 </section>
 
 <!-- FINAL CTA -->
-<section style="padding:160px 0; text-align:center;" class="reveal">
+<section style="padding:140px 0; text-align:center; border-top:1px solid var(--border-color);" class="reveal">
   <div class="container" style="max-width:860px;">
     <span class="mono-label" style="margin-bottom:20px; display:block;">RESERVATIONS</span>
     <h2 class="editorial-title" style="margin-bottom:32px;">
@@ -687,7 +525,7 @@ footer {
       <span class="italic">starts here.</span>
     </h2>
 
-    <a href="#inquiry-form" class="btn-primary">REQUEST A QUOTE &rarr;</a>
+    <a href="#contact-form" class="btn-primary">REQUEST A QUOTE &rarr;</a>
   </div>
 </section>
 
@@ -785,13 +623,8 @@ if (form && submitBtn) {
   #nav { padding: 18px 24px; }
   .nav-links, .nav-cta { display: none; }
   #menu-btn { display: block; }
-  .hero-about-grid, .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
-  .stats-grid { grid-template-columns: 1fr 1fr !important; }
-  .bts-grid { grid-template-columns: 1fr !important; }
+  .contact-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
   .form-row-2 { grid-template-columns: 1fr !important; gap: 24px !important; }
-}
-@media (max-width: 600px) {
-  .stats-grid { grid-template-columns: 1fr !important; }
 }
 </style>
 <script src="js/motion.js" defer></script>
