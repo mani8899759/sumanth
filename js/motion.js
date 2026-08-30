@@ -78,10 +78,16 @@
      02 — HERO TEXT & ELEMENT STAGING
      -------------------------------------------------------------------------- */
   function initHeroSequence() {
-    const heroSection = document.querySelector('section.hero, header.hero, .hero-section, .hero');
+    const heroSection = document.querySelector('section.hero, header.hero, .hero-section, .hero, .about-hero-section, .contact-hero-section');
+    
+    // Always activate any italic elements above the fold
+    document.querySelectorAll('.about-hero-section .italic, .contact-hero-section .italic, .hero .italic, .hero-section .italic').forEach(el => {
+      el.classList.add('on');
+    });
+
     if (!heroSection) return;
 
-    const heroElements = heroSection.querySelectorAll('h1, h2, p, .mono-label, .btn-primary, .btn-secondary, .italic');
+    const heroElements = heroSection.querySelectorAll('h1, h2, p, .mono-label, .btn-primary, .btn-secondary, .italic, span.italic');
     heroElements.forEach((el, idx) => {
       el.style.transitionDelay = `${150 + idx * 120}ms`;
       el.classList.add('reveal');
@@ -98,7 +104,7 @@
      -------------------------------------------------------------------------- */
   function initScrollObserver() {
     if (prefersReducedMotion) {
-      document.querySelectorAll('.reveal, .reveal-stagger, .reveal-clip, .editorial-title').forEach(el => {
+      document.querySelectorAll('.reveal, .reveal-stagger, .reveal-clip, .editorial-title, .italic, span.italic').forEach(el => {
         el.classList.add('on');
       });
       return;
@@ -106,8 +112,8 @@
 
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -12% 0px',
-      threshold: 0.15
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.08
     };
 
     const observer = new IntersectionObserver((entries, obs) => {
@@ -124,6 +130,8 @@
           }
 
           target.classList.add('on');
+          // Also activate child italic words
+          target.querySelectorAll('.italic, span.italic').forEach(it => it.classList.add('on'));
           obs.unobserve(target);
         }
       });
@@ -131,7 +139,7 @@
 
     // Observe reveal elements
     const elementsToObserve = document.querySelectorAll(
-      '.reveal, .reveal-stagger, .reveal-clip, .contact-sheet-grid, .featured-grid, .portfolio-grid, .editorial-title'
+      '.reveal, .reveal-stagger, .reveal-clip, .contact-sheet-grid, .featured-grid, .portfolio-grid, .editorial-title, .italic, span.italic'
     );
 
     elementsToObserve.forEach(el => observer.observe(el));
