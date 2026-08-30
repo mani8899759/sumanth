@@ -367,7 +367,7 @@ span.italic {
 }
 
 /* --------------------------------------------------------------------------
-   10 — MOBILE MENU & HAMBURGER SVG TRANSFORMATION
+   10 — MOBILE MENU & HAMBURGER SVG TRANSFORMATION (UNIVERSAL GLOBAL COMPONENT)
    -------------------------------------------------------------------------- */
 /* Body scroll lock during mobile menu open */
 body.menu-open {
@@ -377,116 +377,135 @@ body.menu-open {
 }
 
 #mobile-nav {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  width: 100vw;
-  height: 100vh;
-  height: 100svh;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100svh !important;
   opacity: 0;
   visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: calc(24px + env(safe-area-inset-top, 0px)) 32px calc(32px + env(safe-area-inset-bottom, 0px)) 32px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  padding: calc(28px + env(safe-area-inset-top, 0px)) clamp(24px, 6vw, 40px) calc(28px + env(safe-area-inset-bottom, 0px)) clamp(24px, 6vw, 40px) !important;
   background: #f5f4f1 !important;
+  background-color: #f5f4f1 !important;
   color: #000000 !important;
-  transition: opacity 350ms var(--ease-editorial), visibility 350ms var(--ease-editorial);
+  box-sizing: border-box !important;
+  transition: opacity 350ms var(--ease-editorial), visibility 350ms var(--ease-editorial) !important;
   will-change: opacity, visibility;
+  overflow: hidden !important;
 }
 
 #mobile-nav.open {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
 }
 
-.mobile-nav-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
+#mobile-nav .mobile-nav-top {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
 }
 
-.mobile-nav-logo {
-  font-family: var(--font-serif, 'Cormorant Garamond', serif);
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+#mobile-nav .mobile-nav-logo {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif) !important;
+  font-size: clamp(14px, 3.8vw, 16px) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
   color: #000000 !important;
-  text-decoration: none;
+  text-decoration: none !important;
+  display: inline-block !important;
+  line-height: 1 !important;
 }
 
-.mobile-close-btn,
-#mob-close {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
+#mobile-nav .mobile-close-btn,
+#mobile-nav #mob-close {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 8px 16px !important;
   border: 1px solid rgba(0, 0, 0, 0.4) !important;
   background: transparent !important;
   color: #000000 !important;
-  font-family: var(--font-mono, 'Space Mono', monospace);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 0;
-  min-height: 44px;
-  transition: all 250ms ease;
+  font-family: var(--font-mono, 'Space Mono', monospace) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  border-radius: 0 !important;
+  min-height: 38px !important;
+  line-height: 1 !important;
+  transition: all 250ms ease !important;
+  box-shadow: none !important;
 }
 
-.mobile-close-btn:hover,
-#mob-close:hover {
+#mobile-nav .mobile-close-btn:hover,
+#mobile-nav #mob-close:hover {
   background: #000000 !important;
   color: #f5f4f1 !important;
 }
 
-.mobile-nav-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px 0;
+#mobile-nav .mobile-nav-body {
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: clamp(30px, 6vh, 60px) 0 clamp(20px, 4vh, 40px) 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  border: none !important;
+  box-sizing: border-box !important;
 }
 
-.mobile-menu-list {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(14px, 3vh, 32px);
+#mobile-nav .mobile-menu-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(20px, 4.2vh, 36px) !important;
+  align-items: flex-start !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
 }
 
-.mobile-menu-item {
-  font-family: var(--font-serif, 'Cormorant Garamond', serif);
-  font-size: clamp(24px, 6.2vw, 44px);
-  line-height: 1.1;
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+#mobile-nav .mobile-menu-item {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif) !important;
+  font-size: clamp(24px, 6.8vw, 36px) !important;
+  line-height: 1.15 !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
   color: #000000 !important;
-  text-decoration: none;
-  min-height: 44px;
-  display: flex;
-  align-items: center;
-  transition: opacity 250ms ease;
-}
-
-.mobile-menu-item:hover {
-  opacity: 0.65;
-}
-
-#mobile-nav .mobile-link,
-#mobile-nav a {
+  text-decoration: none !important;
+  display: inline-block !important;
+  text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  transition: opacity 250ms ease, transform 350ms var(--ease-editorial) !important;
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 350ms var(--ease-editorial), transform 350ms var(--ease-editorial);
   will-change: opacity, transform;
 }
 
-#mobile-nav.open .mobile-link,
-#mobile-nav.open a {
+#mobile-nav.open .mobile-menu-item {
   opacity: 1;
   transform: translateY(0);
+}
+
+#mobile-nav .mobile-menu-item:hover {
+  opacity: 0.55 !important;
 }
 
 /* Hamburger SVG Morphing */

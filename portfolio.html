@@ -193,42 +193,6 @@
       font-size: 24px;
     }
 
-    /* MOBILE NAV OVERLAY */
-    #mobile-nav {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      z-index: 200;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 60px 40px;
-      gap: 32px;
-    }
-
-    #mobile-nav.open {
-      display: flex;
-    }
-
-    #mobile-nav a {
-      font-family: var(--font-serif);
-      font-size: 38px;
-      font-weight: 300;
-      text-transform: uppercase;
-      color: var(--text-primary);
-    }
-
-    #mob-close {
-      position: absolute;
-      top: 24px;
-      right: 32px;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 28px;
-      cursor: pointer;
-    }
 
     /* BUTTONS */
     .btn-primary {
@@ -641,10 +605,23 @@
     </button>
   </nav>
 
-  <!-- MOBILE NAVIGATION OVERLAY -->
+  <!-- MOBILE NAVIGATION OVERLAY (GLOBAL UNIFIED) -->
   <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
+    <div class="mobile-nav-top">
+      <a href="index.html" class="mobile-nav-logo">SUMANTH PHOTOGRAPHY</a>
+      <button id="mob-close" class="mobile-close-btn" aria-label="Close menu">
+        <span>&times;&nbsp; CLOSE</span>
+      </button>
+    </div>
+    <div class="mobile-nav-body">
+      <nav class="mobile-menu-list">
+        <a href="weddings.html" class="mobile-menu-item">WEDDING<br />PHOTOGRAPHY</a>
+        <a href="baby-maternity.html" class="mobile-menu-item">BABY BUMP<br />SHOOTS</a>
+        <a href="birthdays-events.html" class="mobile-menu-item">OTHERS</a>
+        <a href="about.html" class="mobile-menu-item">ABOUT</a>
+        <a href="contact.html" class="mobile-menu-item">CONTACT</a>
+      </nav>
+    </div>
   </div>
 
   <!-- HERO HEADER -->
@@ -1021,7 +998,6 @@
       }
     }
   </style>
-  <script src="js/motion.js" defer></script>
 </body>
 
 </html>

@@ -176,12 +176,20 @@
     }, { passive: true });
   }
 
-  /* --------------------------------------------------------------------------
-     05 — MOBILE MENU & STAGGERED REVEAL
+  /* -----------------------------------------------------------------  /* --------------------------------------------------------------------------
+     05 — MOBILE MENU & STAGGERED REVEAL (ONE GLOBAL COMPONENT)
      -------------------------------------------------------------------------- */
+  const mobileNavigation = [
+    { label: 'WEDDING<br />PHOTOGRAPHY', href: 'weddings.html' },
+    { label: 'BABY BUMP<br />SHOOTS', href: 'baby-maternity.html' },
+    { label: 'OTHERS', href: 'birthdays-events.html' },
+    { label: 'ABOUT', href: 'about.html' },
+    { label: 'CONTACT', href: 'contact.html' }
+  ];
+
   function initMobileMenu() {
     let mobileNav = document.getElementById('mobile-nav');
-    const menuBtn = document.getElementById('menu-btn');
+    const menuBtns = document.querySelectorAll('#menu-btn, .menu-btn, #mobile-menu-btn');
 
     // Ensure universal mobile nav HTML is present
     if (!mobileNav) {
@@ -193,100 +201,83 @@
       document.body.appendChild(mobileNav);
     }
 
-    // Standardize mobile nav internal content
+    // Standardize mobile nav internal content matching visual reference
     mobileNav.innerHTML = `
       <div class="mobile-nav-top">
         <a href="index.html" class="mobile-nav-logo">SUMANTH PHOTOGRAPHY</a>
         <button id="mob-close" class="mobile-close-btn" aria-label="Close menu">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span>CLOSE</span>
+          <span>&times;&nbsp; CLOSE</span>
         </button>
       </div>
       <div class="mobile-nav-body">
         <nav class="mobile-menu-list">
-          <a href="weddings.html" class="mobile-menu-item">WEDDING<br />PHOTOGRAPHY</a>
-          <a href="baby-maternity.html" class="mobile-menu-item">BABY BUMP<br />SHOOTS</a>
-          <a href="birthdays-events.html" class="mobile-menu-item">OTHERS</a>
-          <a href="about.html" class="mobile-menu-item">ABOUT</a>
-          <a href="contact.html" class="mobile-menu-item">CONTACT</a>
+          ${mobileNavigation.map(item => `<a href="${item.href}" class="mobile-menu-item">${item.label}</a>`).join('\n          ')}
         </nav>
-      </div>
-      <div class="mobile-nav-footer">
-        <a href="https://wa.me/919491818015" target="_blank" rel="noopener" aria-label="WhatsApp Sumanth Photography" class="hero-contact-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          <span>WHATSAPP</span>
-        </a>
-        <a href="https://www.instagram.com/sumanth__photography07/" target="_blank" rel="noopener" aria-label="Instagram Sumanth Photography" class="hero-contact-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          <span>INSTAGRAM</span>
-        </a>
-        <a href="tel:+919491818015" aria-label="Call Sumanth Photography" class="hero-contact-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>CALL</span>
-        </a>
       </div>
     `;
 
     const mobClose = document.getElementById('mob-close');
-    const navLinks = mobileNav.querySelectorAll('a, .mobile-menu-item');
+    const navItems = mobileNav.querySelectorAll('.mobile-menu-item');
 
     const openMenu = () => {
       mobileNav.style.display = 'flex';
       requestAnimationFrame(() => {
         mobileNav.classList.add('open');
         document.body.classList.add('menu-open');
-        if (menuBtn) {
-          menuBtn.classList.add('menu-open');
-          menuBtn.setAttribute('aria-expanded', 'true');
-          menuBtn.setAttribute('aria-label', 'Close navigation menu');
-        }
+        menuBtns.forEach(btn => {
+          btn.classList.add('menu-open');
+          btn.setAttribute('aria-expanded', 'true');
+          btn.setAttribute('aria-label', 'Close navigation menu');
+        });
       });
 
-      navLinks.forEach((link, idx) => {
-        link.style.transitionDelay = `${60 + idx * 40}ms`;
+      navItems.forEach((link, idx) => {
+        link.style.transitionDelay = `${50 + idx * 45}ms`;
       });
     };
 
     const closeMenu = () => {
       mobileNav.classList.remove('open');
       document.body.classList.remove('menu-open');
-      if (menuBtn) {
-        menuBtn.classList.remove('menu-open');
-        menuBtn.setAttribute('aria-expanded', 'false');
-        menuBtn.setAttribute('aria-label', 'Open navigation menu');
-      }
+      menuBtns.forEach(btn => {
+        btn.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open navigation menu');
+      });
 
       setTimeout(() => {
         if (!mobileNav.classList.contains('open')) {
           mobileNav.style.display = 'none';
         }
-      }, 300);
+      }, 350);
 
-      navLinks.forEach(link => {
+      navItems.forEach(link => {
         link.style.transitionDelay = '0ms';
       });
     };
 
-    if (menuBtn) {
-      menuBtn.addEventListener('click', (e) => {
+    menuBtns.forEach(btn => {
+      btn.onclick = (e) => {
+        e.preventDefault();
         e.stopPropagation();
         if (mobileNav.classList.contains('open')) {
           closeMenu();
         } else {
           openMenu();
         }
-      });
-    }
+      };
+    });
 
     if (mobClose) {
-      mobClose.addEventListener('click', (e) => {
+      mobClose.onclick = (e) => {
+        e.preventDefault();
         e.stopPropagation();
         closeMenu();
-      });
+      };
     }
 
     // Close menu when tapping any link inside
-    navLinks.forEach(link => {
+    navItems.forEach(link => {
       link.addEventListener('click', () => {
         closeMenu();
       });

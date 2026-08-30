@@ -41,33 +41,6 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.06)
     }
 
-    #mobile-menu {
-      transition: opacity 0.4s ease, visibility 0.4s ease
-    }
-
-    #mobile-menu.open {
-      opacity: 1;
-      visibility: visible
-    }
-
-    .mobile-link {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.4s ease, transform 0.4s ease
-    }
-
-    #mobile-menu.open .mobile-link {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    .mobile-link:nth-child(1) {
-      transition-delay: 0.05s
-    }
-
-    .mobile-link:nth-child(2) {
-      transition-delay: 0.1s
-    }
 
     .mobile-link:nth-child(3) {
       transition-delay: 0.15s
@@ -191,25 +164,8 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu" class="fixed inset-0 z-[100] bg-surface-container-lowest opacity-0 invisible flex flex-col">
-    <div class="flex justify-between items-center px-6 py-5">
-      <a href="index.html" class="logo">SUMANTH PHOTOGRAPHY</a>
-      <button id="menu-close" class="text-on-surface"><span
-          class="material-symbols-outlined text-[28px]">close</span></button>
-    </div>
-    <div class="flex flex-col justify-center flex-1 px-8 gap-8">
-      <a href="weddings.html" class="mobile-link font-display text-display-mobile text-primary">WEDDING PHOTOGRAPHY</a>
-      <a href="baby-maternity.html"
-        class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">BABY BUMP SHOOTS</a>
-      <a href="birthdays-events.html"
-        class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">OTHERS</a>
-      <a href="about.html"
-        class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">ABOUT</a>
-      <a href="contact.html"
-        class="mobile-link font-display text-display-mobile text-on-surface hover:text-primary transition-colors">CONTACT</a>
-    </div>
-  </div>
+  <!-- MOBILE MENU (GLOBAL UNIFIED) -->
+  <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu"></div>
 
   <!-- STORY HERO -->
   <header class="relative w-full h-screen overflow-hidden flex items-end pb-20">
@@ -442,8 +398,6 @@
   </footer>
   <script>
     const nav = document.getElementById('main-nav'); window.addEventListener('scroll', () => { if (window.scrollY > 60) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); }, { passive: true });
-    document.getElementById('menu-btn').addEventListener('click', () => document.getElementById('mobile-menu').classList.add('open'));
-    document.getElementById('menu-close').addEventListener('click', () => document.getElementById('mobile-menu').classList.remove('open'));
     const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     document.querySelectorAll('a[href]').forEach(link => { const href = link.getAttribute('href'); if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('tel') && !href.startsWith('mailto')) { link.addEventListener('click', (e) => { e.preventDefault(); const o = document.getElementById('page-transition'); o.style.opacity = '1'; o.style.pointerEvents = 'all'; setTimeout(() => { window.location.href = href; }, 380); }); } });
