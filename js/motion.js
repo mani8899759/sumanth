@@ -1,5 +1,5 @@
 /**
- * SUMAN PHOTOGRAPHY — EDITORIAL & CINEMATIC MOTION SYSTEM
+ * SUMANTH PHOTOGRAPHY — EDITORIAL & CINEMATIC MOTION SYSTEM
  * Quiet, intentional, precise JavaScript interaction engine.
  */
 
@@ -180,46 +180,122 @@
      05 — MOBILE MENU & STAGGERED REVEAL
      -------------------------------------------------------------------------- */
   function initMobileMenu() {
+    let mobileNav = document.getElementById('mobile-nav');
     const menuBtn = document.getElementById('menu-btn');
+
+    // Ensure universal mobile nav HTML is present
+    if (!mobileNav) {
+      mobileNav = document.createElement('div');
+      mobileNav.id = 'mobile-nav';
+      mobileNav.setAttribute('role', 'dialog');
+      mobileNav.setAttribute('aria-modal', 'true');
+      mobileNav.setAttribute('aria-label', 'Mobile Navigation Menu');
+      document.body.appendChild(mobileNav);
+    }
+
+    // Standardize mobile nav internal content
+    mobileNav.innerHTML = `
+      <div class="mobile-nav-top">
+        <a href="index.html" class="mobile-nav-logo">SUMANTH PHOTOGRAPHY</a>
+        <button id="mob-close" class="mobile-close-btn" aria-label="Close menu">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>CLOSE</span>
+        </button>
+      </div>
+      <div class="mobile-nav-body">
+        <nav class="mobile-menu-list">
+          <a href="weddings.html" class="mobile-menu-item">WEDDING<br />PHOTOGRAPHY</a>
+          <a href="baby-maternity.html" class="mobile-menu-item">BABY BUMP<br />SHOOTS</a>
+          <a href="birthdays-events.html" class="mobile-menu-item">OTHERS</a>
+          <a href="about.html" class="mobile-menu-item">ABOUT</a>
+          <a href="contact.html" class="mobile-menu-item">CONTACT</a>
+        </nav>
+      </div>
+    `;
+
     const mobClose = document.getElementById('mob-close');
-    const mobileNav = document.getElementById('mobile-nav');
-
-    if (!menuBtn || !mobileNav) return;
-
-    const navLinks = mobileNav.querySelectorAll('a, .mobile-link');
+    const navLinks = mobileNav.querySelectorAll('a, .mobile-menu-item');
 
     const openMenu = () => {
-      mobileNav.classList.add('open');
-      document.body.classList.add('menu-open');
-      menuBtn.classList.add('menu-open');
+      mobileNav.style.display = 'flex';
+      requestAnimationFrame(() => {
+        mobileNav.classList.add('open');
+        document.body.classList.add('menu-open');
+        if (menuBtn) {
+          menuBtn.classList.add('menu-open');
+          menuBtn.setAttribute('aria-expanded', 'true');
+          menuBtn.setAttribute('aria-label', 'Close navigation menu');
+        }
+      });
 
       navLinks.forEach((link, idx) => {
-        link.style.transitionDelay = `${100 + idx * 50}ms`;
+        link.style.transitionDelay = `${60 + idx * 40}ms`;
       });
     };
 
     const closeMenu = () => {
       mobileNav.classList.remove('open');
       document.body.classList.remove('menu-open');
-      menuBtn.classList.remove('menu-open');
+      if (menuBtn) {
+        menuBtn.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Open navigation menu');
+      }
+
+      setTimeout(() => {
+        if (!mobileNav.classList.contains('open')) {
+          mobileNav.style.display = 'none';
+        }
+      }, 300);
 
       navLinks.forEach(link => {
         link.style.transitionDelay = '0ms';
       });
     };
 
-    menuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (mobileNav.classList.contains('open')) {
+    if (menuBtn) {
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (mobileNav.classList.contains('open')) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+    }
+
+    if (mobClose) {
+      mobClose.addEventListener('click', (e) => {
+        e.stopPropagation();
         closeMenu();
-      } else {
-        openMenu();
+      });
+    }
+
+    // Close menu when tapping any link inside
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
+    // ESC Key listener
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+        closeMenu();
       }
     });
 
-    if (mobClose) {
-      mobClose.addEventListener('click', closeMenu);
-    }
+    // Reset state on pageshow (back button navigation)
+    window.addEventListener('pageshow', () => {
+      closeMenu();
+    });
+
+    // Reset state on desktop resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900 && mobileNav.classList.contains('open')) {
+        closeMenu();
+      }
+    });
   }
 
   /* --------------------------------------------------------------------------
@@ -244,9 +320,9 @@
   function initLightboxAnimations() {
     const modal = document.getElementById('lightbox-modal');
     const lbImg = document.getElementById('lb-img');
-    const lbPrev = document.getElementById('lb-prev');
-    const lbNext = document.getElementById('lb-next');
-    const lbClose = document.getElementById('lb-close');
+    const lbPrev = document.getElementById('lb-prev') || document.getElementById('lb-prev-btn');
+    const lbNext = document.getElementById('lb-next') || document.getElementById('lb-next-btn');
+    const lbClose = document.getElementById('lb-close') || document.getElementById('lb-close-btn');
 
     if (!modal || !lbImg) return;
 

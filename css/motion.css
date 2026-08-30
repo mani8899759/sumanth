@@ -1,9 +1,18 @@
 /* ==========================================================================
-   SUMAN PHOTOGRAPHY — EDITORIAL & CINEMATIC MOTION SYSTEM
+   SUMANTH PHOTOGRAPHY — EDITORIAL & CINEMATIC MOTION SYSTEM
    Quiet, intentional, precise motion for high-end photography portfolio.
    ========================================================================== */
 
 :root {
+  /* Global Color & Typography Tokens */
+  --bg: #f5f4f1;
+  --surface: #eae9e4;
+  --surface-secondary: #e2e1dc;
+  --text-primary: #000000;
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --border-color: rgba(0, 0, 0, 0.12);
+  --border-color-subtle: rgba(0, 0, 0, 0.06);
+
   /* Motion Timing Tokens */
   --duration-micro: 200ms;
   --duration-hover: 300ms;
@@ -21,10 +30,16 @@
 /* --------------------------------------------------------------------------
    01 — PAGE LOAD & EDITORIAL TRANSITIONS
    -------------------------------------------------------------------------- */
+html {
+  background-color: var(--bg);
+  color: var(--text-primary);
+}
+
 body {
+  background-color: var(--bg);
+  color: var(--text-primary);
   opacity: 1;
-  transform: translateY(0);
-  transition: opacity 450ms var(--ease-editorial), transform 450ms var(--ease-editorial);
+  transition: opacity 450ms var(--ease-editorial);
 }
 
 body.page-exiting {
@@ -62,6 +77,7 @@ img.hero-drift {
   0% {
     transform: scale(1.00);
   }
+
   100% {
     transform: scale(1.035);
   }
@@ -71,10 +87,10 @@ img.hero-drift {
    03 — HEADER & NAVIGATION SCROLL BEHAVIOR
    -------------------------------------------------------------------------- */
 #nav {
-  transition: transform 350ms var(--ease-editorial), 
-              opacity 350ms var(--ease-editorial), 
-              background-color 350ms var(--ease-editorial),
-              backdrop-filter 350ms var(--ease-editorial);
+  transition: transform 350ms var(--ease-editorial),
+    opacity 350ms var(--ease-editorial),
+    background-color 350ms var(--ease-editorial),
+    backdrop-filter 350ms var(--ease-editorial);
   will-change: transform, opacity;
 }
 
@@ -148,9 +164,9 @@ a.editorial-link:hover::after {
   display: inline-flex;
   align-items: center;
   transition: background-color 300ms var(--ease-editorial),
-              color 300ms var(--ease-editorial),
-              border-color 300ms var(--ease-editorial),
-              opacity 300ms var(--ease-editorial);
+    color 300ms var(--ease-editorial),
+    border-color 300ms var(--ease-editorial),
+    opacity 300ms var(--ease-editorial);
 }
 
 .btn-primary .arrow,
@@ -175,7 +191,7 @@ a[class*="btn"] span.arrow {
 .btn-secondary:hover .arrow,
 .btn-cta:hover .arrow,
 .arrow-link:hover .arrow,
-a:hover > span.arrow {
+a:hover>span.arrow {
   transform: translateX(6px);
 }
 
@@ -200,6 +216,7 @@ a:hover > span.arrow {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
   .gallery-image-wrapper:hover img,
   .frame-image-wrapper:hover img,
   .gallery-item:hover img,
@@ -221,7 +238,7 @@ a:hover > span.arrow {
     opacity: 0;
     transform: translateY(6px);
   }
-  
+
   .gallery-image-wrapper:hover .gallery-overlay,
   .gallery-item:hover .gallery-overlay {
     opacity: 1;
@@ -236,7 +253,7 @@ a:hover > span.arrow {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity var(--duration-text) var(--ease-editorial),
-              transform var(--duration-text) var(--ease-editorial);
+    transform var(--duration-text) var(--ease-editorial);
   will-change: opacity, transform;
 }
 
@@ -277,14 +294,14 @@ span.italic {
 }
 
 /* Contact Sheet & Gallery Grid Stagger */
-.reveal-stagger > * {
+.reveal-stagger>* {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 750ms var(--ease-editorial), transform 750ms var(--ease-editorial);
   will-change: opacity, transform;
 }
 
-.reveal-stagger.on > * {
+.reveal-stagger.on>* {
   opacity: 1;
   transform: translateY(0);
 }
@@ -352,10 +369,29 @@ span.italic {
 /* --------------------------------------------------------------------------
    10 — MOBILE MENU & HAMBURGER SVG TRANSFORMATION
    -------------------------------------------------------------------------- */
+/* Body scroll lock during mobile menu open */
+body.menu-open {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}
+
 #mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  height: 100svh;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 450ms var(--ease-editorial), visibility 450ms var(--ease-editorial);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: calc(24px + env(safe-area-inset-top, 0px)) 32px calc(32px + env(safe-area-inset-bottom, 0px)) 32px;
+  background: #f5f4f1 !important;
+  color: #000000 !important;
+  transition: opacity 350ms var(--ease-editorial), visibility 350ms var(--ease-editorial);
   will-change: opacity, visibility;
 }
 
@@ -364,11 +400,86 @@ span.italic {
   visibility: visible;
 }
 
+.mobile-nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.mobile-nav-logo {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #000000 !important;
+  text-decoration: none;
+}
+
+.mobile-close-btn,
+#mob-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(0, 0, 0, 0.4) !important;
+  background: transparent !important;
+  color: #000000 !important;
+  font-family: var(--font-mono, 'Space Mono', monospace);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+  min-height: 44px;
+  transition: all 250ms ease;
+}
+
+.mobile-close-btn:hover,
+#mob-close:hover {
+  background: #000000 !important;
+  color: #f5f4f1 !important;
+}
+
+.mobile-nav-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 3vh, 32px);
+}
+
+.mobile-menu-item {
+  font-family: var(--font-serif, 'Cormorant Garamond', serif);
+  font-size: clamp(24px, 6.2vw, 44px);
+  line-height: 1.1;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #000000 !important;
+  text-decoration: none;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  transition: opacity 250ms ease;
+}
+
+.mobile-menu-item:hover {
+  opacity: 0.65;
+}
+
 #mobile-nav .mobile-link,
 #mobile-nav a {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 400ms var(--ease-editorial), transform 400ms var(--ease-editorial);
+  transition: opacity 350ms var(--ease-editorial), transform 350ms var(--ease-editorial);
   will-change: opacity, transform;
 }
 
@@ -413,8 +524,8 @@ input[type="date"],
 select,
 textarea {
   transition: border-color 250ms var(--ease-editorial),
-              box-shadow 250ms var(--ease-editorial),
-              background-color 250ms var(--ease-editorial);
+    box-shadow 250ms var(--ease-editorial),
+    background-color 250ms var(--ease-editorial);
 }
 
 .form-error-message,
@@ -455,6 +566,7 @@ a[aria-label="WhatsApp"] {
    13 — PREFERS-REDUCED-MOTION OVERRIDES
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -476,7 +588,7 @@ a[aria-label="WhatsApp"] {
   .reveal,
   .editorial-title,
   .italic,
-  .reveal-stagger > *,
+  .reveal-stagger>*,
   .reveal-clip,
   #mobile-nav .mobile-link,
   body {

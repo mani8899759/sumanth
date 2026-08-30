@@ -1,1085 +1,1526 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Weddings — Suman Photography | Fine Art Wedding Storyteller</title>
-<meta name="description" content="Explore real wedding documentary archives by Suman Photography. Fine art wedding stories, sacred rituals, pre-wedding sessions, and reception galas in Hyderabad and worldwide."/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
-<style>
-:root {
-  --bg: #f5f4f1;
-  --text-primary: #000000;
-  --text-secondary: #666666;
-  --border-color: #141212;
-  --surface-secondary: #f0f0f0;
-
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
-
-  --hero-title: clamp(54px, 7.5vw, 110px);
-  --section-title: clamp(38px, 4.5vw, 68px);
-  --sub-title: clamp(24px, 3vw, 38px);
-  --body-size: 16px;
-  --mono-size: 11px;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-  background-color: var(--bg);
-  color: var(--text-primary);
-}
-
-body {
-  background-color: var(--bg);
-  color: var(--text-primary);
-  font-family: var(--font-sans);
-  font-size: var(--body-size);
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.25s ease, color 0.25s ease;
-}
-
-/* TYPOGRAPHY HELPERS */
-.font-serif { font-family: var(--font-serif); }
-.font-sans { font-family: var(--font-sans); }
-.font-mono { font-family: var(--font-mono); }
-
-.editorial-title {
-  font-family: var(--font-serif);
-  font-size: var(--section-title);
-  line-height: 1.02;
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  color: var(--text-primary);
-}
-
-.italic {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 300;
-  text-transform: lowercase;
-  color: var(--text-primary);
-  font-size: 0.9em;
-  margin: 0 0.12em;
-  display: inline-block;
-}
-
-.mono-label {
-  font-family: var(--font-mono);
-  font-size: var(--mono-size);
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-/* LAYOUT CONTAINER */
-.container {
-  width: 100%;
-  max-width: 1340px;
-  margin: 0 auto;
-  padding: 0 48px;
-}
-
-@media (max-width: 768px) {
-  .container { padding: 0 24px; }
-}
-
-/* NAVIGATION MASTHEAD */
-#nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 26px 48px;
-  background: rgba(245, 244, 241, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-color);
-  transition: all 0.3s ease;
-}
-
-.logo {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-}
-
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  transition: color 0.25s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--text-primary);
-}
-
-.nav-cta {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  padding: 10px 24px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.nav-cta:hover {
-  background: var(--text-primary);
-  color: var(--bg);
-}
-
-#menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  cursor: pointer;
-  font-size: 24px;
-}
-
-/* MOBILE NAV OVERLAY */
-#mobile-nav {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--bg);
-  z-index: 200;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 60px 40px;
-  gap: 32px;
-}
-
-#mobile-nav.open {
-  display: flex;
-}
-
-#mobile-nav a {
-  font-family: var(--font-serif);
-  font-size: 38px;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: var(--text-primary);
-}
-
-#mob-close {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* BUTTONS */
-.btn-primary {
-  background: var(--text-primary);
-  color: var(--bg);
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 16px 36px;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid var(--text-primary);
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-  background: transparent;
-  color: var(--text-primary);
-  transform: translateY(-1px);
-}
-
-/* HERO OPENING */
-.hero-section {
-  position: relative;
-  height: 90vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 80px;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: #141212;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.8;
-  animation: kenburns 24s ease-out infinite alternate;
-}
-
-@keyframes kenburns {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.06); }
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top, rgba(20, 18, 18, 0.85) 0%, rgba(20, 18, 18, 0.2) 60%, transparent 100%);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: #f5f4f1;
-}
-
-/* VERTICAL INDEX ROWS */
-.index-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--border-color);
-  margin-top: 40px;
-}
-
-.index-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border-color);
-  transition: padding 0.3s ease;
-}
-
-.index-row:hover {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-
-.index-title {
-  font-family: var(--font-serif);
-  font-size: clamp(24px, 3vw, 38px);
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-/* CONTACT SHEET GRID & CARDS */
-.contact-sheet-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 40px;
-  margin-top: 48px;
-}
-
-@media (max-width: 768px) {
-  .contact-sheet-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-}
-
-.frame-card {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  background: var(--surface-secondary);
-  padding: 16px;
-  border: 1px solid var(--border-color);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.frame-card:hover {
-  transform: translateY(-3px);
-}
-
-.frame-image-wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: #141212;
-  aspect-ratio: 4 / 3;
-}
-
-.frame-card.portrait .frame-image-wrapper { aspect-ratio: 3 / 4; }
-
-.frame-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.frame-card:hover .frame-image-wrapper img {
-  transform: scale(1.04);
-}
-
-.frame-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.frame-number {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  color: var(--text-primary);
-}
-
-.frame-caption {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-secondary);
-}
-
-/* LIGHTBOX MODAL */
-#lightbox-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(20, 18, 18, 0.96);
-  backdrop-filter: blur(12px);
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32px 48px;
-  color: #f5f4f1;
-}
-
-#lightbox-modal.open {
-  display: flex;
-}
-
-.lightbox-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.lightbox-title {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  color: var(--text-secondary);
-}
-
-.lightbox-close {
-  background: none;
-  border: none;
-  color: #f5f4f1;
-  cursor: pointer;
-}
-
-.lightbox-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: 20px 0;
-}
-
-.lightbox-content img {
-  max-width: 90vw;
-  max-height: 75vh;
-  object-fit: contain;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-}
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(245, 244, 241, 0.1);
-  border: none;
-  color: #f5f4f1;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.25s ease;
-}
-
-.lightbox-nav:hover {
-  background: var(--text-primary);
-  color: var(--bg);
-}
-
-.lightbox-prev { left: 20px; }
-.lightbox-next { right: 20px; }
-
-.lightbox-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: rgba(245, 244, 241, 0.7);
-}
-
-/* REVEAL ANIMATION */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal.on {
-  opacity: 1;
-  transform: none;
-}
-
-/* FOOTER */
-footer {
-  background: var(--bg);
-  border-top: 1px solid var(--border-color);
-  padding: 80px 48px 48px 48px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 60px;
-  margin-bottom: 60px;
-}
-
-@media (max-width: 900px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-.footer-brand {
-  font-family: var(--font-serif);
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 1.1;
-}
-
-.footer-links-column {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-heading {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-
-.footer-link {
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-.footer-link:hover {
-  color: var(--text-primary);
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 32px;
-  border-top: 1px solid var(--border-color);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-secondary);
-  letter-spacing: 0.1em;
-}
-
-/* REDUCED MOTION */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-</style>
-<link rel="stylesheet" href="css/motion.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Photography — Sumanth Photography | Fine Art &amp; Documentary</title>
+  <meta name="description"
+    content="Continuous Indian wedding photographic story documented from Pre-Wedding to Reception. Sumanth Photography, Hyderabad India.">
+
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f5f4f1;
+      --surface: #eae9e4;
+      --text-primary: #000000;
+      --text-secondary: rgba(0, 0, 0, 0.6);
+      --border-color: rgba(0, 0, 0, 0.12);
+      --border-color-subtle: rgba(0, 0, 0, 0.06);
+
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'Space Mono', monospace;
+
+      --hero-title: clamp(48px, 8.5vw, 110px);
+      --section-spacing: clamp(100px, 14vw, 220px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* FULL VIEWPORT CONTAINER */
+    .story-container {
+      width: 100%;
+      max-width: 95vw;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .story-container {
+        max-width: 100vw;
+        padding: 0 16px;
+      }
+    }
+
+    .mono-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-secondary);
+    }
+
+    .italic {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      text-transform: lowercase;
+    }
+
+    /* MASTHEAD NAVIGATION */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 40px;
+      background: rgba(245, 244, 241, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color-subtle);
+      color: var(--text-primary);
+    }
+
+    .logo {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      transition: color 250ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    .nav-cta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border: 1px solid var(--text-primary);
+      color: var(--text-primary);
+      transition: all 250ms ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--text-primary);
+      color: var(--bg);
+    }
+
+    #menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+
+    /* MOBILE OVERLAY */
+    #mobile-nav {
+      display: none;
+      background: var(--bg);
+      color: var(--text-primary);
+    }
+
+    #mobile-nav a {
+      color: var(--text-primary);
+    }
+
+    @media (max-width: 900px) {
+
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      #menu-btn {
+        display: block;
+      }
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      position: relative;
+      height: 92vh;
+      min-height: 650px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 70px;
+      overflow: hidden;
+      background: #0d0d0d;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.68) contrast(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13, 13, 13, 0.92) 0%, rgba(13, 13, 13, 0.35) 60%, rgba(13, 13, 13, 0.5) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #f5f4f1;
+    }
+
+    .hero-headline-desktop {
+      font-family: var(--font-serif);
+      font-size: clamp(44px, 7.5vw, 100px);
+      font-weight: 300;
+      line-height: 0.94;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      color: #f5f4f1;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-action-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-action-item {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #f5f4f1;
+      transition: opacity 250ms ease;
+    }
+
+    .hero-action-item:hover {
+      opacity: 0.7;
+    }
+
+    .hero-contact-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(245, 244, 241, 0.75);
+      transition: color 250ms ease;
+    }
+
+    .hero-contact-item:hover {
+      color: #f5f4f1;
+    }
+
+    /* MOBILE-ONLY HERO STYLING */
+    @media (max-width: 768px) {
+      #nav {
+        background: rgba(13, 13, 13, 0.7);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+        color: #f5f4f1;
+      }
+
+      #nav .logo {
+        color: #f5f4f1;
+      }
+
+      #menu-btn {
+        color: #f5f4f1;
+      }
+
+      .hero-section {
+        height: 100svh;
+        min-height: 100vh;
+        padding-bottom: calc(32px + env(safe-area-inset-bottom, 0px));
+      }
+
+      .hero-bg img {
+        object-position: center 20% !important;
+        filter: brightness(0.92) contrast(1.02) !important;
+      }
+
+      .hero-overlay {
+        background: linear-gradient(to top, rgba(13, 13, 13, 0.92) 0%, rgba(13, 13, 13, 0.25) 45%, transparent 100%) !important;
+      }
+
+      .hero-headline-desktop {
+        display: none !important;
+      }
+    }
+
+    /* CONTINUOUS STORY FLOW */
+    .story-flow {
+      padding-top: 80px;
+      background: var(--bg);
+    }
+
+    .stage-marker {
+      padding: 120px 0 40px 0;
+    }
+
+    .stage-title {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-color-subtle);
+      padding-bottom: 16px;
+    }
+
+    /* UNCONTAINED PHOTOGRAPHY FRAME ELEMENTS */
+    .photo-frame {
+      position: relative;
+      cursor: pointer;
+      margin-bottom: 64px;
+      background: transparent;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform 700ms var(--ease-editorial), filter 700ms ease;
+      filter: brightness(0.98);
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.015);
+      filter: brightness(1.02);
+    }
+
+    .photo-meta {
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+    }
+
+    /* FULL VIEWPORT COMPOSITION LAYOUTS */
+    .frame-full-bleed {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
+    .frame-full-bleed img {
+      max-height: 85vh;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .frame-full-bleed .photo-meta {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .frame-hero-spread {
+      margin-top: 40px;
+      margin-bottom: 72px;
+    }
+
+    .frame-hero-spread img {
+      aspect-ratio: 16/9;
+      max-height: 80vh;
+    }
+
+    .grid-pair-spacious {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 72px;
+      align-items: center;
+    }
+
+    .grid-asymmetric-wide {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      margin-bottom: 72px;
+      align-items: center;
+    }
+
+    .grid-asymmetric-wide-rev {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      margin-bottom: 72px;
+      align-items: center;
+    }
+
+    .grid-trio-spacious {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 72px;
+    }
+
+    @media (max-width: 900px) {
+
+      .grid-pair-spacious,
+      .grid-asymmetric-wide,
+      .grid-asymmetric-wide-rev,
+      .grid-trio-spacious {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .frame-full-bleed .photo-meta {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    /* CLOSING & CONVERSION AREA */
+    .closing-section {
+      padding: var(--section-spacing) 0;
+      text-align: center;
+      background: var(--bg);
+      border-top: 1px solid var(--border-color-subtle);
+    }
+
+    .editorial-title {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 300;
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--text-primary);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      background: var(--text-primary);
+      color: var(--bg);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--text-primary);
+      transition: all 300ms var(--ease-editorial);
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--text-primary);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 36px;
+      background: transparent;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-color);
+      transition: all 300ms var(--ease-editorial);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-primary);
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    /* LIGHTBOX MODAL */
+    #lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.96);
+      backdrop-filter: blur(16px);
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 40px;
+    }
+
+    #lightbox-modal.open {
+      display: flex;
+    }
+
+    .lb-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .lb-counter {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(245, 244, 241, 0.6);
+    }
+
+    .lb-close-btn {
+      background: none;
+      border: none;
+      color: #f5f4f1;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+      padding: 8px 16px;
+      border: 1px solid rgba(245, 244, 241, 0.2);
+    }
+
+    .lb-body {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .lb-image-container {
+      max-width: 90vw;
+      max-height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lb-image-container img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .lb-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(20, 20, 20, 0.8);
+      border: 1px solid rgba(245, 244, 241, 0.2);
+      color: #f5f4f1;
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: 18px;
+      transition: all 250ms ease;
+    }
+
+    .lb-nav-btn:hover {
+      background: #f5f4f1;
+      color: #000000;
+    }
+
+    .lb-prev {
+      left: 10px;
+    }
+
+    .lb-next {
+      right: 10px;
+    }
+
+    .lb-footer {
+      text-align: center;
+    }
+
+    .lb-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: rgba(245, 244, 241, 0.6);
+      margin-bottom: 4px;
+    }
+
+    .lb-caption {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: #f5f4f1;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 100px 0 60px 0;
+      background: var(--bg);
+      color: var(--text-primary);
+      border-top: 1px solid var(--border-color-subtle);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 64px;
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      #lightbox-modal {
+        padding: 20px;
+      }
+
+      .lb-nav-btn {
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    .footer-brand {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      letter-spacing: 0.16em;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    .footer-links-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-heading {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .footer-link {
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: color 250ms ease;
+    }
+
+    .footer-link:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-color);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      letter-spacing: 0.1em;
+    }
+  </style>
+  <link rel="stylesheet" href="css/motion.css">
 </head>
+
 <body>
 
-<!-- NAVIGATION MASTHEAD -->
-<nav id="nav">
-  <a href="index.html" class="logo">Suman Photography</a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="weddings.html" class="active">Weddings</a></li>
-    <li><a href="baby-maternity.html">Baby &amp; Maternity</a></li>
-    <li><a href="birthdays-events.html">Events</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Book a Quote</a>
-  <button id="menu-btn" aria-label="Toggle navigation menu">
-    <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-      <line x1="4" y1="6" x2="20" y2="6"/>
-      <line x1="4" y1="12" x2="20" y2="12"/>
-      <line x1="4" y1="18" x2="20" y2="18"/>
-    </svg>
-  </button>
-</nav>
+  <!-- NAVIGATION MASTHEAD -->
+  <nav id="nav">
+    <a href="index.html" class="logo">SUMANTH PHOTOGRAPHY</a>
+    <ul class="nav-links">
+      <li><a href="weddings.html" class="active">Wedding Photography</a></li>
+      <li><a href="baby-maternity.html">Baby Bump Shoots</a></li>
+      <li><a href="birthdays-events.html">Others</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="menu-btn" aria-label="Toggle navigation menu">
+      <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="1.5" stroke-linecap="round">
+        <line x1="4" y1="6" x2="20" y2="6" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="18" x2="20" y2="18" />
+      </svg>
+    </button>
+  </nav>
 
-<!-- MOBILE NAVIGATION OVERLAY -->
-<div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
-  <button id="mob-close" aria-label="Close menu">&#10005;</button>
-  <a href="index.html">Home</a>
-  <a href="weddings.html">Weddings</a>
-  <a href="baby-maternity.html">Baby &amp; Maternity</a>
-  <a href="birthdays-events.html">Events</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<!-- OPENING HERO -->
-<section class="hero-section" aria-label="Weddings Hero">
-  <div class="hero-bg">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85" alt="Real Wedding Story Backdrop" loading="eager"/>
-    <div class="hero-overlay"></div>
-  </div>
-
-  <div class="container hero-content">
-    <div class="mono-label" style="color:rgba(245,244,241,0.75); margin-bottom:16px;">
-      HYDERABAD &middot; INDIA &nbsp;|&nbsp; WEDDING DOCUMENTARY ARCHIVE
+  <!-- MOBILE NAVIGATION OVERLAY -->
+  <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-nav-top">
+      <span class="mobile-nav-logo">SUMANTH PHOTOGRAPHY</span>
+      <button id="mob-close" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+        <span>CLOSE</span>
+      </button>
     </div>
-
-    <h1 style="font-family:var(--font-serif); font-size:var(--hero-title); line-height:0.95; font-weight:300; text-transform:uppercase; max-width:920px; margin-bottom:24px;">
-      WEDDINGS <br/>
-      <span class="italic" style="color:#f5f4f1;">where everything happens at once.</span>
-    </h1>
-  </div>
-</section>
-
-<!-- WEDDING INDEX (EDITORIAL VERTICAL LIST) -->
-<section style="padding:120px 0; border-bottom:1px solid var(--border-color);" class="reveal">
-  <div class="container">
-    <span class="mono-label" style="margin-bottom:24px; display:block;">WEDDING INDEX &middot; RECENT SESSIONS</span>
-    
-    <div class="index-list">
-      <a href="#session-01" class="index-row">
-        <span class="mono-label">01 / SESSION</span>
-        <h3 class="index-title">A &amp; R &mdash; HYDERABAD</h3>
-        <span class="mono-label">FEB 2026 &rarr;</span>
+    <div class="mobile-nav-body">
+      <nav class="mobile-menu-list">
+        <a href="weddings.html" class="mobile-menu-item">WEDDING<br />PHOTOGRAPHY</a>
+        <a href="baby-maternity.html" class="mobile-menu-item">BABY BUMP<br />SHOOTS</a>
+        <a href="birthdays-events.html" class="mobile-menu-item">OTHERS</a>
+        <a href="about.html" class="mobile-menu-item">ABOUT</a>
+        <a href="contact.html" class="mobile-menu-item">CONTACT</a>
+      </nav>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="https://wa.me/[REPLACE: REAL WHATSAPP NUMBER]" target="_blank" rel="noopener"
+        aria-label="WhatsApp Sumanth Photography" class="hero-contact-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </svg>
+        <span>WHATSAPP</span>
       </a>
-
-      <a href="#session-02" class="index-row">
-        <span class="mono-label">02 / SESSION</span>
-        <h3 class="index-title">S &amp; K &mdash; HYDERABAD</h3>
-        <span class="mono-label">JAN 2026 &rarr;</span>
+      <a href="https://instagram.com/[REPLACE: VERIFIED INSTAGRAM URL]" target="_blank" rel="noopener"
+        aria-label="Instagram Sumanth Photography" class="hero-contact-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+        <span>INSTAGRAM</span>
       </a>
-
-      <a href="#session-03" class="index-row">
-        <span class="mono-label">03 / SESSION</span>
-        <h3 class="index-title">R &amp; P &mdash; VIJAYAWADA</h3>
-        <span class="mono-label">2026 &rarr;</span>
+      <a href="tel:[REPLACE: REAL PHONE NUMBER]" aria-label="Call Sumanth Photography" class="hero-contact-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+        <span>CALL</span>
       </a>
     </div>
   </div>
-</section>
 
-<!-- SESSION 01 CHAPTER: A & R (HYDERABAD · 2026) -->
-<section id="session-01" style="padding:140px 0; border-bottom:1px solid var(--border-color);" class="reveal">
-  <div class="container">
-    
-    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="mono-label" style="margin-bottom:12px; display:block;">SESSION 01 &middot; VISUAL CHAPTER</span>
-        <h2 class="editorial-title">
-          A &amp; R &mdash; <span class="italic">heritage</span> PALACE
-        </h2>
-      </div>
-      <div style="text-align:right;">
-        <span class="mono-label" style="display:block;">HYDERABAD &middot; 2026</span>
-        <span class="mono-label" style="color:var(--text-primary);">12 FRAMES ARCHIVED</span>
-      </div>
+  <!-- HERO SECTION WITH RESPONSIVE MOBILE PHOTOGRAPHER BACKDROP -->
+  <section class="hero-section" aria-label="Wedding Photography Hero">
+    <div class="hero-bg">
+      <picture>
+        <source media="(max-width: 768px)" srcset="images/photographer.jpg">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
+          alt="Sumanth Photography — Fine Art Wedding Documentaries" loading="eager" fetchpriority="high" />
+      </picture>
+      <div class="hero-overlay"></div>
     </div>
 
-    <!-- 12 REAL PHOTOGRAPHS IN JUSTIFIED CONTACT-SHEET GRID -->
-    <div class="contact-sheet-grid">
-      
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Bridal Portrait" loading="eager"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 001</span>
-          <span class="frame-caption">BRIDE PORTRAIT</span>
-        </div>
-      </div>
+    <div class="story-container hero-content">
+      <h1 class="hero-headline-desktop">
+        WEDDING <br />
+        <span class="italic">photography.</span>
+      </h1>
 
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Haldi Ceremony" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 002</span>
-          <span class="frame-caption">HALDI &middot; CEREMONY</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Sangeet Performance" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 003</span>
-          <span class="frame-caption">SANGEET &middot; PERFORMANCE</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?auto=format&fit=crop&w=800&q=80" alt="Mehendi Details" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 004</span>
-          <span class="frame-caption">MEHENDI &middot; DETAILS</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=800&q=80" alt="Sunset Couple Portrait" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 014</span>
-          <span class="frame-caption">GOLDEN HOUR &middot; HYDERABAD</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1464699908537-0954e50791ee?auto=format&fit=crop&w=800&q=80" alt="Baraat Procession" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 015</span>
-          <span class="frame-caption">BARAAT &middot; PROCESSION</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80" alt="Sacred Pheras Ritual" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 016</span>
-          <span class="frame-caption">CEREMONY &middot; SACRED PHERAS</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=800&q=80" alt="Sindoor Moment Detail" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 017</span>
-          <span class="frame-caption">SINDOOR &middot; BLESSINGS</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&w=800&q=80" alt="Vidai Emotional Moment" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 018</span>
-          <span class="frame-caption">VIDAI &middot; EMOTIONAL MOMENT</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1518563259479-d003814d0810?auto=format&fit=crop&w=800&q=80" alt="Reception Gala Dance" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 019</span>
-          <span class="frame-caption">RECEPTION &middot; FIRST DANCE</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?auto=format&fit=crop&w=800&q=80" alt="Mandap Floral Architecture" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 020</span>
-          <span class="frame-caption">MANDAP &middot; ARCHITECTURE</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80" alt="Ring Exchange Close Up" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 021</span>
-          <span class="frame-caption">RING EXCHANGE &middot; CLOSE UP</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- BETWEEN SESSIONS STATEMENT -->
-<section style="padding:160px 0; text-align:center; border-bottom:1px solid var(--border-color);" class="reveal">
-  <div class="container" style="max-width:860px;">
-    <h2 class="editorial-title" style="font-size:clamp(36px, 5vw, 68px);">
-      THE MOMENTS <br/>
-      <span class="italic">between</span> THE MOMENTS.
-    </h2>
-  </div>
-</section>
-
-<!-- SESSION 02 CHAPTER: S & K (HYDERABAD · 2026) -->
-<section id="session-02" style="padding:140px 0; border-bottom:1px solid var(--border-color);" class="reveal">
-  <div class="container">
-    
-    <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:48px; flex-wrap:wrap; gap:16px;">
-      <div>
-        <span class="mono-label" style="margin-bottom:12px; display:block;">SESSION 02 &middot; VISUAL CHAPTER</span>
-        <h2 class="editorial-title">
-          S &amp; K &mdash; <span class="italic">lakeside</span> GARDENS
-        </h2>
-      </div>
-      <div style="text-align:right;">
-        <span class="mono-label" style="display:block;">HYDERABAD &middot; JAN 2026</span>
-        <span class="mono-label" style="color:var(--text-primary);">8 FRAMES ARCHIVED</span>
-      </div>
-    </div>
-
-    <!-- 8 REAL PHOTOGRAPHS IN CONTACT-SHEET GRID -->
-    <div class="contact-sheet-grid">
-      
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=800&q=80" alt="Lakeside Portrait" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 022</span>
-          <span class="frame-caption">LAKESIDE &middot; PORTRAIT</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?auto=format&fit=crop&w=800&q=80" alt="Royal Procession" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 023</span>
-          <span class="frame-caption">ROYAL PROCESSION</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=800&q=80" alt="Garden Reception" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 024</span>
-          <span class="frame-caption">GARDEN RECEPTION</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" alt="Sunset Walk" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 025</span>
-          <span class="frame-caption">SUNSET WALK</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=800&q=80" alt="Groom Detail" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 026</span>
-          <span class="frame-caption">GROOM &middot; DETAIL</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Lighting Architecture" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 027</span>
-          <span class="frame-caption">LIGHTING &middot; ARCHITECTURE</span>
-        </div>
-      </div>
-
-      <div class="frame-card portrait">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?auto=format&fit=crop&w=800&q=80" alt="Twilight Celebration" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 028</span>
-          <span class="frame-caption">TWILIGHT CELEBRATION</span>
-        </div>
-      </div>
-
-      <div class="frame-card">
-        <div class="frame-image-wrapper">
-          <img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?auto=format&fit=crop&w=800&q=80" alt="Final Vows" loading="lazy"/>
-        </div>
-        <div class="frame-info">
-          <span class="frame-number">FRAME 029</span>
-          <span class="frame-caption">FINAL VOWS &middot; BLESSINGS</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section style="padding:160px 0; text-align:center;" class="reveal">
-  <div class="container" style="max-width:860px;">
-    <span class="mono-label" style="margin-bottom:20px; display:block;">COMMISSION YOUR STORY</span>
-    <h2 class="editorial-title" style="margin-bottom:32px;">
-      YOUR DAY. <br/>
-      <span class="italic">YOUR STORY.</span>
-    </h2>
-
-    <a href="contact.html" class="btn-primary">BOOK A QUOTE &rarr;</a>
-  </div>
-</section>
-
-<!-- ACCESSIBLE LIGHTBOX MODAL -->
-<div id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Lightbox Modal">
-  <div class="lightbox-header">
-    <div class="lightbox-title" id="lb-title">FRAME 001</div>
-    <button class="lightbox-close" id="lb-close" aria-label="Close lightbox">&#10005;</button>
-  </div>
-
-  <div class="lightbox-content">
-    <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Previous image">&larr;</button>
-    <img id="lb-img" src="" alt=""/>
-    <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Next image">&rarr;</button>
-  </div>
-
-  <div class="lightbox-footer">
-    <span id="lb-caption">BRIDE PORTRAIT</span>
-    <span id="lb-counter">1 / 1</span>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      
-      <div>
-        <div class="footer-brand">SUMAN<br/>PHOTOGRAPHY</div>
-        <p style="margin-top:16px; font-size:13px; color:var(--text-secondary); max-width:320px;">
-          Fine art &amp; documentary photography studio based in Hyderabad, India. Documenting weddings, maternity sessions, and milestones worldwide.
-        </p>
-      </div>
-
-      <div class="footer-links-column">
-        <div class="footer-heading">Navigation</div>
-        <a href="index.html" class="footer-link">Home</a>
-        <a href="weddings.html" class="footer-link">Weddings</a>
-        <a href="baby-maternity.html" class="footer-link">Maternity &amp; Baby</a>
-        <a href="birthdays-events.html" class="footer-link">Events</a>
-        <a href="portfolio.html" class="footer-link">Portfolio</a>
-        <a href="about.html" class="footer-link">About</a>
-        <a href="contact.html" class="footer-link">Contact</a>
-      </div>
-
-      <div class="footer-links-column">
-        <div class="footer-heading">Studio &amp; Location</div>
-        <span class="footer-link">Hyderabad, India</span>
-        <a href="tel:[REPLACE: REAL PHONE NUMBER]" class="footer-link">[REPLACE: REAL PHONE NUMBER]</a>
-        <a href="mailto:hello@sumanphotography.com" class="footer-link">hello@sumanphotography.com</a>
-        <div style="margin-top:12px; display:flex; gap:16px;">
-          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      <div class="hero-actions-container">
+        <div class="hero-contact-links">
+          <a href="https://wa.me/[REPLACE: REAL WHATSAPP NUMBER]" target="_blank" rel="noopener" class="hero-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
             </svg>
+            <span>WHATSAPP</span>
           </a>
-          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp" class="footer-link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          <a href="https://instagram.com/[REPLACE: VERIFIED INSTAGRAM URL]" target="_blank" rel="noopener" class="hero-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
             </svg>
+            <span>INSTAGRAM</span>
+          </a>
+          <a href="tel:[REPLACE: REAL PHONE NUMBER]" class="hero-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>CALL</span>
           </a>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- ONE CONTINUOUS WEDDING STORY FLOW -->
+  <main class="story-flow" id="pre-wedding">
+
+    <!-- 01 · PRE-WEDDING -->
+    <section class="story-stage reveal">
+      <div class="story-container">
+        <div class="stage-marker">
+          <div class="stage-title">01 &middot; PRE-WEDDING</div>
+        </div>
+
+        <div class="photo-frame frame-hero-spread">
+          <img src="https://images.unsplash.com/photo-1518563259479-d003814d0810?auto=format&fit=crop&w=2000&q=85"
+            alt="Pre-Wedding Heritage Location" loading="lazy" />
+          <div class="photo-meta">
+            <span>FRAME 001 &middot; HERITAGE LOCATION</span>
+            <span>HYDERABAD &middot; INDIA</span>
+          </div>
+        </div>
+
+        <div class="grid-pair-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=1200&q=80"
+              alt="Natural Landscape Backdrop" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 002</span>
+              <span>ENVIRONMENT</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1200&q=80"
+              alt="Couple Walking at Sunset" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 003</span>
+              <span>SUNSET PROMENADE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-asymmetric-wide">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?auto=format&fit=crop&w=1400&q=80"
+              alt="Shared Laughter" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 004</span>
+              <span>SHARED LAUGHTER</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?auto=format&fit=crop&w=1000&q=80"
+              alt="Silk & Gold Detail" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 005</span>
+              <span>SILK &amp; GOLD DETAIL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FULL-BLEED 100VW FRAME -->
+      <div class="photo-frame frame-full-bleed">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=85"
+          alt="Palace Gardens Panoramic" loading="lazy" />
+        <div class="photo-meta">
+          <span>FRAME 006 &middot; PALACE GARDENS</span>
+          <span>HYDERABAD &middot; 2026</span>
+        </div>
+      </div>
+
+      <div class="story-container">
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
+              alt="Editorial Couple Portrait" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 007</span>
+              <span>EDITORIAL PORTRAIT</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&w=800&q=80"
+              alt="Ring Close-up" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 008</span>
+              <span>RING DETAIL</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80"
+              alt="Dusk Portrait" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 010</span>
+              <span>DUSK PORTRAIT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 · ENGAGEMENT -->
+    <section class="story-stage reveal">
+      <div class="story-container">
+        <div class="stage-marker">
+          <div class="stage-title">02 &middot; ENGAGEMENT</div>
+        </div>
+
+        <div class="photo-frame frame-hero-spread">
+          <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=2000&q=85"
+            alt="Floral Pavilion Setup" loading="lazy" />
+          <div class="photo-meta">
+            <span>FRAME 011 &middot; FLORAL PAVILION</span>
+            <span>ENGAGEMENT CEREMONY</span>
+          </div>
+        </div>
+
+        <div class="grid-pair-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1200&q=80"
+              alt="Engagement Couple Entry" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 012</span>
+              <span>GRAND ENTRANCE</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&w=1200&q=80"
+              alt="Ring Exchange Detail" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 013</span>
+              <span>THE RING EXCHANGE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-asymmetric-wide-rev">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80"
+              alt="Family Blessings" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 014</span>
+              <span>FAMILY BLESSINGS</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80"
+              alt="Engagement Portrait" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 015</span>
+              <span>ENGAGEMENT PORTRAIT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+              alt="Tilak Ritual" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 016</span>
+              <span>TILAK RITUAL</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+              alt="Celebratory Toast" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 017</span>
+              <span>CELEBRATORY TOAST</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=800&q=80"
+              alt="Evening Ambience" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 018</span>
+              <span>EVENING AMBIENCE</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 · BRIDE HALDI -->
+    <section class="story-stage reveal">
+      <div class="story-container">
+        <div class="stage-marker">
+          <div class="stage-title">03 &middot; BRIDE HALDI</div>
+        </div>
+
+        <div class="photo-frame frame-hero-spread">
+          <img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=2000&q=85"
+            alt="Marigold Petal Shower" loading="lazy" />
+          <div class="photo-meta">
+            <span>FRAME 021 &middot; BRIDE HALDI</span>
+            <span>MARIGOLD SHOWER</span>
+          </div>
+        </div>
+
+        <div class="grid-pair-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80"
+              alt="Bride in Yellow Silk" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 022</span>
+              <span>BRIDE IN YELLOW SILK</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?auto=format&fit=crop&w=1200&q=80"
+              alt="Mother's Turmeric Blessing" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 023</span>
+              <span>MOTHER'S BLESSING</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-asymmetric-wide">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=1400&q=80"
+              alt="Sisters Laughter" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 024</span>
+              <span>SISTERS &amp; FRIENDS</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1460978812857-470ed1c77af0?auto=format&fit=crop&w=1000&q=80"
+              alt="Marigold Detail" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 025</span>
+              <span>PETAL DETAIL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 · GROOM HALDI -->
+    <section class="story-stage reveal">
+      <div class="story-container">
+        <div class="stage-marker">
+          <div class="stage-title">04 &middot; GROOM HALDI</div>
+        </div>
+      </div>
+
+      <!-- FULL-BLEED GROOM HALDI FRAME -->
+      <div class="photo-frame frame-full-bleed">
+        <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=2400&q=85"
+          alt="Courtyard Water Shower" loading="lazy" />
+        <div class="photo-meta">
+          <span>FRAME 031 &middot; GROOM HALDI</span>
+          <span>COURTYARD SHOWER &middot; HYDERABAD</span>
+        </div>
+      </div>
+
+      <div class="story-container">
+        <div class="grid-pair-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1464699908537-0954e50791ee?auto=format&fit=crop&w=1200&q=80"
+              alt="Groom Ritual" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 032</span>
+              <span>GROOM RITUAL</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=1200&q=80"
+              alt="Groomsmen Frenzy" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 033</span>
+              <span>GROOMSMEN FRENZY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+              alt="Unfiltered Candid" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 035</span>
+              <span>UNFILTERED CANDID</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1585842378054-ee2e52f94ba2?auto=format&fit=crop&w=800&q=80"
+              alt="Turmeric Detail" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 036</span>
+              <span>TURMERIC DETAIL</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+              alt="Parents Blessing" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 039</span>
+              <span>PARENTS BLESSING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · THE WEDDING CEREMONY -->
+    <section class="story-stage reveal">
+      <div class="story-container">
+        <div class="stage-marker">
+          <div class="stage-title">05 &middot; THE WEDDING</div>
+        </div>
+
+        <div class="photo-frame frame-hero-spread">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
+            alt="Sacred Mandap Setup" loading="lazy" />
+          <div class="photo-meta">
+            <span>FRAME 041 &middot; THE WEDDING</span>
+            <span>SACRED MANDAP &middot; HYDERABAD</span>
+          </div>
+        </div>
+
+        <div class="grid-pair-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80"
+              alt="Sacred Fire Ritual" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 042</span>
+              <span>SACRED FIRE RITUAL</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?auto=format&fit=crop&w=1200&q=80"
+              alt="Baraat Arrival" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 043</span>
+              <span>BARAAT ARRIVAL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-asymmetric-wide">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80"
+              alt="Bride Entry Under Phoolon Ki Chaadar" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 044</span>
+              <span>BRIDE ENTRY</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1464699908537-0954e50791ee?auto=format&fit=crop&w=1000&q=80"
+              alt="Groom at Mandap" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 045</span>
+              <span>GROOM AT MANDAP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FULL-BLEED CEREMONY CLIMAX SPREAD -->
+      <div class="photo-frame frame-full-bleed">
+        <img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?auto=format&fit=crop&w=2400&q=85"
+          alt="Varamala Garland Exchange" loading="lazy" />
+        <div class="photo-meta">
+          <span>FRAME 046 &middot; VARAMALA CEREMONY</span>
+          <span>GARLAND EXCHANGE &middot; UDAIPUR PALACE</span>
+        </div>
+      </div>
+
+      <div class="story-container">
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
+              alt="Kanyadaan Ritual" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 047</span>
+              <span>KANYADAAN RITUAL</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
+              alt="Saptapadi" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 048</span>
+              <span>SAPTAPADI</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?auto=format&fit=crop&w=800&q=80"
+              alt="Mangalsutra Tying" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 049</span>
+              <span>MANGALSUTRA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-frame frame-hero-spread">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
+            alt="First Married Portrait" loading="lazy" />
+          <div class="photo-meta">
+            <span>FRAME 052 &middot; FIRST MARRIED PORTRAIT</span>
+            <span>SACRED UNION</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 · RECEPTION -->
+    <section class="story-stage reveal">
+      <div class="story-container">
+        <div class="stage-marker">
+          <div class="stage-title">06 &middot; RECEPTION</div>
+        </div>
+
+        <div class="photo-frame frame-hero-spread">
+          <img src="https://images.unsplash.com/photo-1535016120720-40c646be5580?auto=format&fit=crop&w=2000&q=85"
+            alt="Gala Ambience" loading="lazy" />
+          <div class="photo-meta">
+            <span>FRAME 053 &middot; RECEPTION GALA</span>
+            <span>HYDERABAD &middot; INDIA</span>
+          </div>
+        </div>
+
+        <div class="grid-pair-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?auto=format&fit=crop&w=1200&q=80"
+              alt="Grand Entry" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 054</span>
+              <span>GRAND ENTRY</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80"
+              alt="Stage Family Portrait" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 055</span>
+              <span>STAGE FAMILY PORTRAIT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-asymmetric-wide-rev">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80"
+              alt="Speeches & Toasts" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 057</span>
+              <span>SPEECHES &amp; TOASTS</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1400&q=80"
+              alt="Editorial Reception Portrait" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 056</span>
+              <span>EDITORIAL RECEPTION PORTRAIT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80"
+              alt="First Dance" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 058</span>
+              <span>THE FIRST DANCE</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80"
+              alt="Dance Floor Energy" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 059</span>
+              <span>DANCE FLOOR ENERGY</span>
+            </div>
+          </div>
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+              alt="Celebratory Candid" loading="lazy" />
+            <div class="photo-meta">
+              <span>FRAME 060</span>
+              <span>CELEBRATORY CANDID</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FULL-BLEED FINAL FAREWELL FRAME -->
+      <div class="photo-frame frame-full-bleed" style="margin-bottom:0;">
+        <img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?auto=format&fit=crop&w=2400&q=85"
+          alt="Sparklers Farewell" loading="lazy" />
+        <div class="photo-meta">
+          <span>FRAME 062 &middot; WEDDING STORY CONCLUSION</span>
+          <span>SPARKLERS FAREWELL</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CLOSING SECTION -->
+  <section class="closing-section reveal">
+    <div class="story-container" style="max-width:860px;">
+      <span class="mono-label" style="margin-bottom:20px; display:block;">COMMISSIONS &middot; INQUIRIES</span>
+      <h2 class="editorial-title" style="margin-bottom:32px;">
+        YOUR STORY <br />
+        <span class="italic">starts here.</span>
+      </h2>
+      <p style="font-size:16px; color:var(--text-secondary); margin-bottom:40px; opacity:0.85;">
+        We accept a limited number of wedding commissions each year to ensure undivided artistic dedication for every story.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+        <a href="contact.html" class="btn-secondary">CONTACT STUDIO &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="story-container">
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-brand">SUMANTH<br />PHOTOGRAPHY</div>
+          <p style="margin-top:16px; font-size:13px; color:var(--text-secondary); max-width:320px;">
+            Fine art &amp; documentary photography studio based in Hyderabad, India. Documenting weddings, maternity
+            sessions, and milestones worldwide.
+          </p>
+        </div>
+
+        <div class="footer-links-column">
+          <div class="footer-heading">Navigation</div>
+          <a href="weddings.html" class="footer-link">Wedding Photography</a>
+          <a href="baby-maternity.html" class="footer-link">Baby Bump Shoots</a>
+          <a href="birthdays-events.html" class="footer-link">Others</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="contact.html" class="footer-link">Contact</a>
+        </div>
+
+        <div class="footer-links-column">
+          <div class="footer-heading">Studio &amp; Location</div>
+          <span class="footer-link">Hyderabad, India</span>
+          <a href="tel:[REPLACE: REAL PHONE NUMBER]" class="footer-link">[REPLACE: REAL PHONE NUMBER]</a>
+          <a href="mailto:hello@sumanthphotography.com" class="footer-link">hello@sumanthphotography.com</a>
+          <div style="margin-top:12px; display:flex; gap:16px;">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="footer-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="https://wa.me/919999999999" target="_blank" rel="noopener" aria-label="WhatsApp"
+              class="footer-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 SUMANTH PHOTOGRAPHY. ALL RIGHTS RESERVED.</span>
+        <span>HYDERABAD &middot; INDIA</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photography Lightbox">
+    <div class="lb-header">
+      <span class="lb-counter" id="lb-counter">1 / 50</span>
+      <button class="lb-close-btn" id="lb-close-btn" aria-label="Close Lightbox">CLOSE &#10005;</button>
     </div>
 
-    <div class="footer-bottom">
-      <span>&copy; 2026 SUMAN PHOTOGRAPHY. ALL RIGHTS RESERVED.</span>
-      <span>HYDERABAD &middot; INDIA</span>
+    <div class="lb-body">
+      <button class="lb-nav-btn lb-prev" id="lb-prev-btn" aria-label="Previous Image">&larr;</button>
+      <div class="lb-image-container">
+        <img id="lb-img" src="" alt="" />
+      </div>
+      <button class="lb-nav-btn lb-next" id="lb-next-btn" aria-label="Next Image">&rarr;</button>
+    </div>
+
+    <div class="lb-footer">
+      <div class="lb-title" id="lb-title">FRAME 001 &middot; PRE-WEDDING</div>
+      <div class="lb-caption" id="lb-caption">HERITAGE ARCHITECTURE &middot; HYDERABAD</div>
     </div>
   </div>
-</footer>
 
-<script>
-// Mobile Nav
-const menuBtn = document.getElementById('menu-btn');
-const mobClose = document.getElementById('mob-close');
-const mobileNav = document.getElementById('mobile-nav');
-if (menuBtn && mobClose && mobileNav) {
-  menuBtn.onclick = () => mobileNav.classList.add('open');
-  mobClose.onclick = () => mobileNav.classList.remove('open');
-}
+  <script src="js/motion.js"></script>
+  <script>
 
-// Reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
-}, { threshold: 0.06 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // LIGHTBOX ENGINE
+    let galleryItems = [];
+    let currentIndex = 0;
 
-// Lightbox Engine
-let items = [];
-let currentIndex = 0;
-const modal = document.getElementById('lightbox-modal');
-const lbImg = document.getElementById('lb-img');
-const lbTitle = document.getElementById('lb-title');
-const lbCaption = document.getElementById('lb-caption');
-const lbCounter = document.getElementById('lb-counter');
+    const modal = document.getElementById('lightbox-modal');
+    const lbImg = document.getElementById('lb-img');
+    const lbTitle = document.getElementById('lb-title');
+    const lbCaption = document.getElementById('lb-caption');
+    const lbCounter = document.getElementById('lb-counter');
 
-function updateLb() {
-  const item = items[currentIndex];
-  if (!item) return;
-  lbImg.src = item.src;
-  lbImg.alt = item.caption;
-  lbTitle.textContent = item.frame;
-  lbCaption.textContent = item.caption;
-  lbCounter.textContent = `${currentIndex + 1} / ${items.length}`;
-}
+    const prevBtn = document.getElementById('lb-prev-btn') || document.getElementById('lb-prev');
+    const nextBtn = document.getElementById('lb-next-btn') || document.getElementById('lb-next');
+    const closeBtn = document.getElementById('lb-close-btn') || document.getElementById('lb-close');
 
-function openLb(idx) {
-  currentIndex = idx;
-  updateLb();
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
+    function updateLightboxContent() {
+      const item = galleryItems[currentIndex];
+      if (!item) return;
 
-function closeLb() {
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-}
+      lbImg.src = item.src;
+      lbImg.alt = item.caption;
+      lbTitle.textContent = item.number;
+      lbCaption.textContent = item.caption;
+      lbCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+    }
 
-function prevLb() {
-  currentIndex = (currentIndex - 1 + items.length) % items.length;
-  updateLb();
-}
+    function openLightbox(index) {
+      currentIndex = index;
+      updateLightboxContent();
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
 
-function nextLb() {
-  currentIndex = (currentIndex + 1) % items.length;
-  updateLb();
-}
+    function closeLightbox() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = Array.from(document.querySelectorAll('.frame-card'));
-  items = cards.map((card, idx) => {
-    const img = card.querySelector('img');
-    const num = card.querySelector('.frame-number');
-    const cap = card.querySelector('.frame-caption');
-    card.addEventListener('click', () => openLb(idx));
-    return {
-      src: img ? img.src : '',
-      frame: num ? num.textContent : `FRAME ${idx + 1}`,
-      caption: cap ? cap.textContent : ''
-    };
-  });
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      updateLightboxContent();
+    }
 
-  document.getElementById('lb-close').onclick = closeLb;
-  document.getElementById('lb-prev').onclick = prevLb;
-  document.getElementById('lb-next').onclick = nextLb;
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      updateLightboxContent();
+    }
 
-  document.addEventListener('keydown', (e) => {
-    if (!modal.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLb();
-    if (e.key === 'ArrowLeft') prevLb();
-    if (e.key === 'ArrowRight') nextLb();
-  });
-});
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const frames = Array.from(document.querySelectorAll('.photo-frame'));
 
-<style>
-@media (max-width: 900px) {
-  #nav { padding: 18px 24px; }
-  .nav-links, .nav-cta { display: none; }
-  #menu-btn { display: block; }
-}
-</style>
-<script src="js/motion.js" defer></script>
+      galleryItems = frames.map((frame, idx) => {
+        const img = frame.querySelector('img');
+        const metaSpans = frame.querySelectorAll('.photo-meta span');
+
+        frame.addEventListener('click', () => openLightbox(idx));
+
+        return {
+          src: img ? img.src : '',
+          number: metaSpans[0] ? metaSpans[0].textContent : `FRAME 0${idx + 1}`,
+          caption: metaSpans[1] ? metaSpans[1].textContent : 'WEDDING STORY'
+        };
+      });
+
+      if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+      if (prevBtn) prevBtn.addEventListener('click', prevImage);
+      if (nextBtn) nextBtn.addEventListener('click', nextImage);
+
+      // KEYBOARD NAVIGATION (ESC, LEFT, RIGHT)
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('open')) return;
+
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'ArrowRight') nextImage();
+      });
+    });
+
+    // REVEAL ANIMATIONS
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('on');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>
