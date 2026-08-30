@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Coverage Builder - Sumanth Photography</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1b1c1c",
+                        "primary": "#000000",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#e3e2e2",
+                        "outline": "#7e7576",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "surface-container": "#efeded",
+                        "on-surface-variant": "#4c4546",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-background": "#1b1c1c",
+                        "secondary-fixed": "#e5e2e1",
+                        "surface-dim": "#dbdad9",
+                        "surface-tint": "#5e5e5e",
+                        "inverse-primary": "#c6c6c6",
+                        "surface": "#fbf9f9",
+                        "on-primary-fixed": "#1b1b1b",
+                        "secondary": "#5f5e5e",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed": "#e2e2e2",
+                        "surface-variant": "#e3e2e2",
+                        "on-tertiary-container": "#838482",
+                        "secondary-container": "#e2dfde",
+                        "on-secondary-container": "#636262",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#1a1c1b",
+                        "on-primary-fixed-variant": "#474747",
+                        "background": "#fbf9f9",
+                        "tertiary": "#000000",
+                        "tertiary-fixed": "#e3e2e0",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#303031",
+                        "surface-container-low": "#f5f3f3",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "primary-container": "#1b1b1b",
+                        "surface-bright": "#fbf9f9",
+                        "inverse-on-surface": "#f2f0f0",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e9e8e7",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-secondary-fixed": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "unit": "4px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px",
+                        "section-gap": "128px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f9;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            color: #1b1c1c;
+        }
+        .thin-border {
+            border: 1px solid #1b1c1c;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative font-body-md text-body-md bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-on-surface border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50">
+<div class="font-headline-md text-headline-md uppercase tracking-widest text-primary dark:text-on-surface hover:opacity-70 transition-opacity transition-all duration-300 ease-in-out cursor-pointer">
+            LUMINOUS ARCHIVE
+        </div>
+<nav class="hidden md:flex gap-8 transition-all duration-300 ease-in-out">
+<a class="text-on-surface-variant font-normal font-label-sm text-label-sm uppercase hover:opacity-70 transition-opacity" href="#">Portfolio</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm uppercase hover:opacity-70 transition-opacity" href="#">Process</a>
+<a class="text-on-surface-variant font-normal font-label-sm text-label-sm uppercase hover:opacity-70 transition-opacity" href="#">Inquiry</a>
+</nav>
+<div class="font-label-sm text-label-sm text-primary">
+            03 / 05
+        </div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 flex flex-col md:flex-row gap-gutter">
+<!-- Left Content Area -->
+<div class="flex-1 flex flex-col gap-12">
+<!-- Page Header -->
+<section class="flex flex-col gap-4">
+<p class="font-label-sm text-label-sm text-on-surface-variant">03 / 05</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">Build Your Coverage</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Choose how each part of your wedding should be documented.</p>
+</section>
+<!-- Event Navigation -->
+<nav class="flex gap-8 border-b border-outline-variant pb-4 overflow-x-auto whitespace-nowrap hide-scrollbar">
+<a class="font-label-sm text-label-sm uppercase text-primary border-b-2 border-primary pb-1 font-bold" href="#">Engagement</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors pb-1" href="#">Bride Haldi</a>
+<a class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors pb-1" href="#">Reception</a>
+</nav>
+<section class="flex flex-col gap-8">
+<h2 class="font-headline-md text-headline-md text-primary">ENGAGEMENT — PRE-WEDDING / CEREMONY</h2>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1: Candid Photography (Selected) -->
+<div class="thin-border p-6 flex flex-col gap-4 relative group cursor-pointer border-primary border-2">
+<div class="absolute top-4 right-4 text-primary">
+<span class="material-symbols-outlined font-light">check_circle</span>
+</div>
+<div class="aspect-square w-full overflow-hidden mb-2">
+<img alt="Candid Photography" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1Vkj3cLnSJ55BkC8WRsiipQlhnRUEX9XeG9l1nTnopeuVnMRuvm296v6WdTDHrY1CaT0261BITu1CJhjv5w3VK5U6Rl7e2NhMB38l9QVjz0J1Q5phyBgrSQeeGttjCy7w0SgSYLG4jFU2tR1hyQ5K-T5VTWda511-6hT1YAw-rUAbaWBWb-G9bNYo4O0hejBvdJ92nj70a7XSv5YUIqZ1H-sxpo3Gu9h5TcpsNrXrnkur5Zxwu8rPueVfiL"/>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-label-sm text-label-sm uppercase text-primary">Candid Photography</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Natural, emotional coverage.</p>
+<p class="font-body-md text-body-md text-primary font-semibold">₹45,000</p>
+</div>
+<div class="mt-4 flex items-center justify-between border-t border-outline-variant pt-4">
+<span class="font-label-sm text-label-sm text-on-surface-variant">PHOTOGRAPHERS</span>
+<div class="flex items-center gap-4">
+<button class="w-8 h-8 flex items-center justify-center thin-border hover:bg-surface-container-highest transition-colors text-primary">-</button>
+<span class="font-body-md text-body-md text-primary w-4 text-center">1</span>
+<button class="w-8 h-8 flex items-center justify-center thin-border hover:bg-surface-container-highest transition-colors text-primary">+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Traditional Photography -->
+<div class="thin-border border-outline-variant p-6 flex flex-col gap-4 relative group cursor-pointer hover:border-primary transition-colors">
+<div class="absolute top-4 right-4 text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined font-light">add_circle</span>
+</div>
+<div class="aspect-square w-full overflow-hidden mb-2">
+<img alt="Traditional Photography" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AEtjO1WlNbgESalFLS629i_Q2aQReV7g9cLVf11RY_saOlMRqfKnXbBpbVYm90EYnLt3bXpbuN6REV0KGbp1Gz27C1V7gCe1O5JA5Wkl_nvRw0oXnuQUPzns2zlY9YluCnTsLc_4Q6AQyqzrorSvJ3AG2IXQMrFjd5uuN9-gSULALI8KoKMbqoDjLR_uuQcta0WWHKt4nX4prE2YYSVpOBUss6GBdIHb2hE8RyNgODoaKw9aIQSToa05-nddgs-U"/>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-label-sm text-label-sm uppercase text-primary">Traditional Photography</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Ritual and group documentation.</p>
+<p class="font-body-md text-body-md text-primary font-semibold">₹30,000</p>
+</div>
+</div>
+<!-- Card 3: Candid Video -->
+<div class="thin-border border-outline-variant p-6 flex flex-col gap-4 relative group cursor-pointer hover:border-primary transition-colors">
+<div class="absolute top-4 right-4 text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined font-light">add_circle</span>
+</div>
+<div class="aspect-video w-full overflow-hidden mb-2">
+<img alt="Candid Video" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNyFOdSksDbnu3T6x_uoCX-HPCJLpY0OdU_GVJLTl3LSz_2UNir_QGowmAEPdlsnPw8rSjf1GDGYzXEEAiKzNNhVwNZbZ4t02YNUGMezG7IkbAnUvo_6AMAeSiGfJW11ccYEPsQN25nDCs9vEHPzbrEX5EabHWz3amIV3vEPgAEG9eKsm4fb3JAyRIOBlg0qkiKwkF1CnV78ZjW_JD9sOOn5aomVUjEeyn33Kfz5WZLq1C6iF1bLmfxQ"/>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-label-sm text-label-sm uppercase text-primary">Candid Video</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cinematic storytelling.</p>
+<p class="font-body-md text-body-md text-primary font-semibold">₹55,000</p>
+</div>
+</div>
+<!-- Card 4: Drone -->
+<div class="thin-border border-outline-variant p-6 flex flex-col gap-4 relative group cursor-pointer hover:border-primary transition-colors">
+<div class="absolute top-4 right-4 text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined font-light">add_circle</span>
+</div>
+<div class="aspect-video w-full overflow-hidden mb-2">
+<img alt="Drone" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ2rc9NZuXFWmMrbstPfW2SjfpV5k31-jZBLSRxTYMMw4erP_c8oCVzjNPpQslK8MbR2srsA_MrKHfKfI8rv51mfcs3AOMNNtvsrFul_P8tXvGtjsRQ6p5DlOC7w_w6ixsEBoIu07g6ZNJMQ7ExxQCRgbaAq7s426-mZSO_Ja1ZaLutJTxMkOLmxJqMEjVe-eOlRs5RkKbnwlZEwFR0k8DwvXx6iwcO4PJsGsdQXi1geVQWzRYIuboyg"/>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="font-label-sm text-label-sm uppercase text-primary">Drone</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Aerial perspectives.</p>
+<p class="font-body-md text-body-md text-primary font-semibold">₹15,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Navigation -->
+<div class="mt-16 flex justify-between items-center border-t border-outline-variant pt-8 mb-24 md:mb-0">
+<button class="font-label-sm text-label-sm uppercase text-on-surface-variant hover:text-primary transition-colors tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">cloud_upload</span> BACK
+                </button>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-tint transition-colors flex items-center gap-2">
+                    CONTINUE <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Sidebar Summary -->
+<aside class="w-full md:w-80 hidden md:block">
+<div class="sticky top-32 thin-border p-8 flex flex-col gap-6 bg-surface">
+<h3 class="font-label-sm text-label-sm uppercase text-primary border-b border-outline-variant pb-4">Coverage Summary</h3>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Events Included</span>
+<span class="text-primary">3</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Services Selected</span>
+<span class="text-primary">4</span>
+</div>
+</div>
+<div class="border-t border-outline-variant pt-4 flex flex-col gap-2">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Estimated Quote</p>
+<p class="font-headline-md text-headline-md text-primary">₹1,45,000</p>
+</div>
+<button class="w-full thin-border py-4 font-label-sm text-label-sm uppercase text-primary hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2 mt-4">
+                    VIEW SUMMARY <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-16 bg-surface px-margin-mobile border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-primary font-bold scale-105 active:scale-95 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined font-light" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-50 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined font-light">receipt_long</span>
+<span class="font-label-sm text-label-sm uppercase mt-1">Summary</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-50 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined font-light">edit_calendar</span>
+<span class="font-label-sm text-label-sm uppercase mt-1">Details</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-50 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined font-light">send</span>
+<span class="font-label-sm text-label-sm uppercase mt-1">Review</span>
+</a>
+</nav>
+</body></html>

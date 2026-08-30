@@ -587,6 +587,7 @@
     }
   </style>
   <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/typography.css">
 </head>
 
 <body>  <!-- NAVIGATION MASTHEAD -->
@@ -599,6 +600,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <a href="quote.html" class="nav-byq-cta" id="nav-byq-cta" aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
     <button id="menu-btn" aria-label="Toggle navigation menu">
       <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.5" stroke-linecap="round">
@@ -624,6 +626,7 @@
         <a href="birthdays-events.html" class="mobile-menu-item">OTHERS</a>
         <a href="about.html" class="mobile-menu-item">ABOUT</a>
         <a href="contact.html" class="mobile-menu-item">CONTACT</a>
+        <a href="quote.html" class="mobile-menu-item mobile-menu-item--byq" id="mobile-byq-cta" aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
       </nav>
     </div>
   </div>
@@ -891,6 +894,15 @@
     </div>
   </div>
 
+  <!-- BUILD YOUR QUOTE — PAGE CTA -->
+  <section class="byq-cta-section reveal">
+    <div class="container">
+      <span class="byq-mono">STUDIO ENQUIRY</span>
+      <h2 class="byq-heading">READY TO DOCUMENT<br />YOUR MILESTONE?</h2>
+      <a href="quote.html" class="btn-byq" id="others-byq-cta" aria-label="Build Your Photography Quote">BUILD YOUR QUOTE &rarr;</a>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="container">
@@ -1033,8 +1045,9 @@
       }
 
       .nav-links,
-      .nav-cta {
-        display: none;
+      .nav-cta,
+      .nav-byq-cta {
+        display: none !important;
       }
 
       #menu-btn {

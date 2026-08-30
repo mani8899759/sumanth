@@ -1,0 +1,299 @@
+/* ==========================================================================
+   SUMANTH PHOTOGRAPHY — BOLD EDITORIAL TYPOGRAPHY SYSTEM
+   Global weight overrides for stronger, more confident presence.
+   
+   Font Weight Hierarchy:
+   ─────────────────────────────────────────────────────
+   DISPLAY / HERO HEADINGS:       500–600  (Cormorant Garamond)
+   SECTION HEADINGS:              500      (Cormorant Garamond)
+   EDITORIAL ITALIC:              400      (Cormorant Garamond Italic)
+   NAVIGATION LINKS:              500–600  (Sans / Mono)
+   BUTTONS / CTA:                 600      (Sans / Mono)
+   BODY TEXT:                     400      (Sans)
+   FORM LABELS:                   500–600  (Mono)
+   METADATA / MONO LABELS:        400–500  (Mono — restrained)
+   FOOTER BRAND:                  500      (Cormorant Garamond)
+   FOOTER LINKS:                  400      (Sans)
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   01 — DISPLAY & HERO HEADINGS
+   Strongest visual presence. Uses weight 500–600 of Cormorant Garamond.
+   -------------------------------------------------------------------------- */
+.editorial-title {
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+/* Hero headlines — maximum confidence */
+.hero-headline-desktop,
+h1.hero-headline-desktop,
+.hero-title,
+.page-hero-title,
+[class*="hero"] h1 {
+  font-weight: 500;
+}
+
+/* Large display headings in step headers, quote builder, etc. */
+.step-header h1,
+.wizard-step-panel h1 {
+  font-weight: 500;
+}
+
+
+/* --------------------------------------------------------------------------
+   02 — SECTION HEADINGS & SUBHEADINGS
+   Strong but not as heavy as hero. Weight 500 of Cormorant Garamond.
+   -------------------------------------------------------------------------- */
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+/* Service row names on home page */
+.service-name {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Section headings in content areas */
+.section-heading,
+.content-heading {
+  font-weight: 500;
+}
+
+
+/* --------------------------------------------------------------------------
+   03 — EDITORIAL ITALIC
+   Elegant, slightly lighter than primary text but NOT ultra-thin.
+   Uses weight 400 italic instead of 300 italic.
+   -------------------------------------------------------------------------- */
+.italic,
+span.italic,
+em.italic {
+  font-weight: 400;
+}
+
+
+/* --------------------------------------------------------------------------
+   04 — LOGO / BRAND IDENTITY
+   The masthead logo gets more presence.
+   -------------------------------------------------------------------------- */
+.logo,
+a.logo {
+  font-weight: 400;
+  letter-spacing: 0.12em;
+}
+
+
+/* --------------------------------------------------------------------------
+   05 — NAVIGATION LINKS
+   More readable without becoming heavy UI chrome.
+   -------------------------------------------------------------------------- */
+
+/* Desktop navigation links (mono or sans) */
+.nav-links a {
+  font-weight: 500;
+}
+
+/* Navigation CTA button */
+.nav-cta {
+  font-weight: 600;
+}
+
+
+/* --------------------------------------------------------------------------
+   06 — MOBILE MENU
+   Stronger serif menu items for readable, premium mobile experience.
+   -------------------------------------------------------------------------- */
+#mobile-nav .mobile-menu-item {
+  font-weight: 400 !important;
+}
+
+#mobile-nav .mobile-nav-logo {
+  font-weight: 500 !important;
+}
+
+#mobile-nav .mobile-close-btn,
+#mobile-nav #mob-close {
+  font-weight: 600 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   07 — BUTTONS & ACTION ELEMENTS
+   Maximum confidence for interactive elements.
+   -------------------------------------------------------------------------- */
+.btn-primary,
+.btn-secondary,
+.btn-cta,
+.btn-action,
+.btn-action-outline,
+button[type="submit"],
+input[type="submit"],
+.hero-cta-primary,
+.hero-cta-secondary {
+  font-weight: 600;
+}
+
+
+/* --------------------------------------------------------------------------
+   08 — BODY TEXT
+   Slightly stronger than ultra-light. Improved readability.
+   -------------------------------------------------------------------------- */
+body {
+  font-weight: 400;
+}
+
+p {
+  font-weight: 400;
+}
+
+/* Descriptive body text in serif */
+.body-serif,
+.description-text {
+  font-weight: 400;
+}
+
+
+/* --------------------------------------------------------------------------
+   09 — FORM LABELS & INPUT TEXT
+   Labels are scannable. Input text remains comfortable.
+   -------------------------------------------------------------------------- */
+.form-group label,
+label {
+  font-weight: 500;
+}
+
+.form-control,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  font-weight: 400;
+}
+
+
+/* --------------------------------------------------------------------------
+   10 — MONO LABELS & METADATA
+   Restrained. Not bold. Just readable.
+   -------------------------------------------------------------------------- */
+.mono-label {
+  font-weight: 500;
+}
+
+.frame-number {
+  font-weight: 500;
+}
+
+.frame-caption {
+  font-weight: 400;
+}
+
+
+/* --------------------------------------------------------------------------
+   11 — FOOTER
+   Brand gets stronger presence. Links and metadata remain restrained.
+   -------------------------------------------------------------------------- */
+.footer-brand {
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.footer-heading {
+  font-weight: 500;
+}
+
+.footer-link {
+  font-weight: 400;
+}
+
+.footer-bottom {
+  font-weight: 400;
+}
+
+
+/* --------------------------------------------------------------------------
+   12 — PAGE-SPECIFIC: ABOUT / CONTACT SECTION TITLES
+   -------------------------------------------------------------------------- */
+.section-title,
+.hero-section h1,
+.about-hero h1,
+.contact-hero h1 {
+  font-weight: 500;
+}
+
+
+/* --------------------------------------------------------------------------
+   13 — QUOTE BUILDER SPECIFICS
+   Step progress, review cards, pricing.
+   -------------------------------------------------------------------------- */
+.step-progress-label,
+.step-counter {
+  font-weight: 500;
+}
+
+.review-category-card h3 {
+  font-weight: 500;
+}
+
+.review-total-banner {
+  font-weight: 600;
+}
+
+.addon-card-title,
+.event-card-title,
+.style-card-title {
+  font-weight: 500;
+}
+
+
+/* --------------------------------------------------------------------------
+   14 — WEDDINGS PAGE — GALLERY TITLES
+   -------------------------------------------------------------------------- */
+.gallery-section-title,
+.gallery-title,
+.portfolio-title {
+  font-weight: 500;
+}
+
+
+/* --------------------------------------------------------------------------
+   15 — RESPONSIVE FINE-TUNING
+   Ensure heavier weights don't cause layout issues on small screens.
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  /* Slightly tighter letter-spacing on mobile to prevent overflow with heavier weights */
+  .editorial-title {
+    letter-spacing: -0.02em;
+  }
+
+  .logo,
+  a.logo {
+    letter-spacing: 0.08em;
+  }
+
+  .nav-links a {
+    letter-spacing: 0.1em;
+  }
+
+  h1, h2 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile body text remains readable but not heavy */
+  body {
+    font-weight: 400;
+  }
+  
+  /* Mobile hero headlines retain strong presence */
+  .hero-headline-desktop,
+  .editorial-title {
+    font-weight: 500;
+  }
+}

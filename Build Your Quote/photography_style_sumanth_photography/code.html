@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photography Style - Sumanth Photography</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e3e2e0",
+                        "surface-variant": "#e3e2e2",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1a1c1b",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#303031",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-dim": "#dbdad9",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#e2dfde",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e3e2e2",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-container-low": "#f5f3f3",
+                        "background": "#fbf9f9",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "on-tertiary-container": "#838482",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "inverse-primary": "#c6c6c6",
+                        "on-secondary-container": "#636262",
+                        "surface-bright": "#fbf9f9",
+                        "outline": "#7e7576",
+                        "on-background": "#1b1c1c",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary-container": "#848484",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "primary": "#000000",
+                        "primary-container": "#1b1b1b",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#4c4546",
+                        "surface-tint": "#5e5e5e",
+                        "surface": "#fbf9f9",
+                        "secondary": "#5f5e5e",
+                        "surface-container-high": "#e9e8e7"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "section-gap": "128px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        .selection-card {
+            transition: all 0.3s ease;
+        }
+        .selection-card:hover {
+            transform: translateY(-4px);
+        }
+        .selection-card.selected {
+            border-width: 2px;
+            border-color: #000000;
+            background-color: #f5f3f3; /* surface-container-low */
+        }
+        .selection-card.selected .check-icon {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-surface-variant">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background border-b border-outline-variant flat no shadows transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto h-[72px]">
+<div class="font-headline-md text-headline-md tracking-tighter text-primary">
+                SUMANTH PHOTOGRAPHY
+            </div>
+<div class="font-label-sm text-label-sm text-secondary uppercase tracking-widest hidden md:block">
+                WEDDING PHOTOGRAPHY
+            </div>
+</div>
+</header>
+<!-- SideNavBar (Progress) -->
+<nav class="fixed left-margin-desktop top-1/2 -translate-y-1/2 hidden md:flex flex-col space-y-unit bg-transparent z-40">
+<div class="font-label-sm text-label-sm text-outline mb-gutter tracking-widest">PROGRESS</div>
+<div class="flex flex-col space-y-4">
+<div class="text-outline pl-2 flex items-center gap-2 group cursor-not-allowed">
+<span class="material-symbols-outlined text-[12px] opacity-50" style="font-variation-settings: 'FILL' 1;">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50">01 / 05</span>
+</div>
+<div class="text-primary font-bold border-l-2 border-primary pl-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[12px]" style="font-variation-settings: 'FILL' 1;">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums">02 / 05</span>
+</div>
+<div class="text-outline pl-2 flex items-center gap-2 group cursor-not-allowed">
+<span class="material-symbols-outlined text-[12px] opacity-50" style="font-variation-settings: 'FILL' 0;">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50">03 / 05</span>
+</div>
+<div class="text-outline pl-2 flex items-center gap-2 group cursor-not-allowed">
+<span class="material-symbols-outlined text-[12px] opacity-50" style="font-variation-settings: 'FILL' 0;">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50">04 / 05</span>
+</div>
+<div class="text-outline pl-2 flex items-center gap-2 group cursor-not-allowed">
+<span class="material-symbols-outlined text-[12px] opacity-50" style="font-variation-settings: 'FILL' 0;">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50">05 / 05</span>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-[120px] pb-[140px] md:pl-[200px] px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full flex flex-col justify-center">
+<div class="mb-16">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary max-w-3xl leading-tight">
+                WHAT KIND OF PHOTOGRAPHY DO YOU WANT?
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl">
+                Select the style that best aligns with your vision for the event.
+            </p>
+</div>
+<!-- Selection Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full">
+<!-- Card 1: Candid -->
+<button class="selection-card group text-left border border-outline bg-surface-container-lowest p-4 md:p-6 flex flex-col h-full cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary relative" onclick="selectCard(this)">
+<div class="absolute top-6 right-6 z-10 check-icon opacity-0 transition-opacity duration-200">
+<span class="material-symbols-outlined text-primary" style="font-weight: 200; font-size: 24px;">check</span>
+</div>
+<div class="aspect-square w-full mb-6 overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZik5hm_MYomjDtIkyGNHwQ4EiSlgrRFCn8VE02Hye0htUM0DOcWAIfYxQwt9ijNMEa2EQKkKysnKwobLF0xFf6U4fIgL8BzyTLQVFdBj1imr4-AS7qTexJE-TullpnNdk8GBFTPVA9hIuveg0hrBW99BMwJzF7Nos6lSkjIJlPpN6qNNCMY21Gz1AbviKLYt2xbD30SH9CXIjF3wPOggSZV4WkiHBiiRlim9ePjOJdAEb4VC1mC8rkw"/>
+</div>
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-3">CANDID PHOTOGRAPHY</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                    Natural, emotional and creative coverage.
+                </p>
+</button>
+<!-- Card 2: Traditional -->
+<button class="selection-card group text-left border border-outline bg-surface-container-lowest p-4 md:p-6 flex flex-col h-full cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary relative" onclick="selectCard(this)">
+<div class="absolute top-6 right-6 z-10 check-icon opacity-0 transition-opacity duration-200">
+<span class="material-symbols-outlined text-primary" style="font-weight: 200; font-size: 24px;">check</span>
+</div>
+<div class="aspect-square w-full mb-6 overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXFfaWH8HgFG8H8tQC0gD-FGym_Pz4lF-MZYwvuumCaQyxCHiNTCYVOxSjV4g8u6a_C6CXcUaH38uaFmq4Ee_i1eM9p-5RUEDe8klbulmZviPJePoCLaw9LkPk89DYPSbZCc12VxDEldQnF9kDZDWMOWRotOUXYUO3QdEzUUbTCwxtpCx_z5zt0bpKsO2tvBA0knY7_PxRC-IM9IPdswfM4Nlea-_gtViWOVXMVEv8Ay8j8EJTHLsJHg"/>
+</div>
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-3">TRADITIONAL PHOTOGRAPHY</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                    Ritual, event documentation and posed/group coverage.
+                </p>
+</button>
+<!-- Card 3: Both (Recommended) -->
+<button class="selection-card group text-left border border-outline bg-surface-container-lowest p-4 md:p-6 flex flex-col h-full cursor-pointer focus:outline-none focus:ring-1 focus:ring-primary relative" onclick="selectCard(this)">
+<div class="absolute top-6 right-6 z-10 check-icon opacity-0 transition-opacity duration-200">
+<span class="material-symbols-outlined text-primary" style="font-weight: 200; font-size: 24px;">check</span>
+</div>
+<div class="absolute top-6 left-6 z-10 bg-primary text-on-primary px-3 py-1 font-label-sm text-[10px] tracking-widest uppercase">
+                    RECOMMENDED
+                </div>
+<div class="aspect-square w-full mb-6 overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out grayscale group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1wqEjh6pNxliXVKeViGLzb15889iI2xzg0OrPgrsbRqZg54w6bT8KboSelmRD3fARE6E32M_cNh4qu3IvEbwGIEVDzDQxVUBh0DNF3PIF5dXh-L7ueGauIN04y_YZSuqg1w1KfgHNLnJsyK84GKxs2aD1tIRQwct7rfTrIncwqbIofdCtHAETHoBTt6GJWWb2zWr2D2PPMDSggSVAN986Z2hu7Z3WP8PrJ40xnhzjtbc9SHsLK2b1NQ"/>
+</div>
+<h3 class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-3">BOTH</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">
+                    A comprehensive blend of candid moments and traditional portraits.
+                </p>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<footer class="fixed bottom-0 w-full z-50 bg-background border-t border-outline">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-gutter max-w-container-max mx-auto">
+<!-- Back Button -->
+<button class="border border-outline text-primary px-gutter py-unit flex items-center justify-center font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-variant transition-colors duration-200 h-[48px]">
+                BACK
+            </button>
+<!-- Continue Button (Disabled by default) -->
+<button class="bg-surface-variant text-on-surface-variant px-gutter py-unit flex items-center justify-center font-label-sm text-label-sm uppercase tracking-widest cursor-not-allowed transition-colors duration-200 h-[48px]" disabled="" id="continueBtn">
+                CONTINUE <span class="ml-2 font-normal">→</span>
+</button>
+</div>
+</footer>
+<script>
+        function selectCard(clickedCard) {
+            // Remove selected class from all cards
+            const cards = document.querySelectorAll('.selection-card');
+            cards.forEach(card => card.classList.remove('selected'));
+            
+            // Add selected class to clicked card
+            clickedCard.classList.add('selected');
+
+            // Enable continue button
+            const continueBtn = document.getElementById('continueBtn');
+            continueBtn.disabled = false;
+            continueBtn.className = "bg-primary text-on-primary px-gutter py-unit flex items-center justify-center font-label-sm text-label-sm uppercase tracking-widest hover:bg-tertiary-container transition-colors duration-200 h-[48px] cursor-pointer";
+        }
+    </script>
+</body></html>

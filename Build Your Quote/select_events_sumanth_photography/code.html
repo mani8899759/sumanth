@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sumanth Photography - Select Wedding Events</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e3e2e2",
+                        "surface-bright": "#fbf9f9",
+                        "inverse-surface": "#303031",
+                        "on-secondary-container": "#636262",
+                        "on-surface-variant": "#4c4546",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary": "#000000",
+                        "on-primary-container": "#848484",
+                        "outline-variant": "#cfc4c5",
+                        "tertiary": "#000000",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-surface": "#1b1c1c",
+                        "surface-dim": "#dbdad9",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-container": "#efeded",
+                        "on-secondary-fixed-variant": "#474746",
+                        "primary-container": "#1b1b1b",
+                        "tertiary-fixed": "#e3e2e0",
+                        "inverse-primary": "#c6c6c6",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary-container": "#e2dfde",
+                        "surface-container-high": "#e9e8e7",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary": "#5f5e5e",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "on-tertiary-container": "#838482",
+                        "outline": "#7e7576",
+                        "tertiary-container": "#1a1c1b",
+                        "surface-variant": "#e3e2e2",
+                        "on-background": "#1b1c1c",
+                        "background": "#fbf9f9",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-tint": "#5e5e5e",
+                        "surface": "#fbf9f9",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "section-gap": "128px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            color: theme('colors.on-background');
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .event-card {
+            transition: all 0.3s ease;
+        }
+        
+        .event-card.selected {
+            border-color: theme('colors.primary');
+            border-width: 2px;
+        }
+        
+        .event-card:hover:not(.selected) {
+            border-color: theme('colors.outline');
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-[88px] pb-[104px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-background border-b border-outline-variant z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md tracking-tighter text-primary">SUMANTH PHOTOGRAPHY</div>
+<div class="hidden md:flex space-x-8">
+<!-- Suppressed normal nav links as per instructions for linear transactional flow -->
+</div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-primary hidden md:block">WEDDING PHOTOGRAPHY</div>
+</div>
+</header>
+<!-- SideNavBar (Progress) -->
+<nav class="fixed left-margin-desktop top-1/2 -translate-y-1/2 hidden lg:flex flex-col space-y-4 z-40">
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-8">PROGRESS</div>
+<div class="flex items-center text-outline pl-2 hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[16px] mr-4 opacity-50 group-hover:opacity-100">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50 group-hover:opacity-100">01 / 05</span>
+</div>
+<div class="flex items-center text-primary font-bold border-l-2 border-primary pl-2 cursor-pointer">
+<span class="material-symbols-outlined text-[16px] mr-4" style="font-variation-settings: 'FILL' 1;">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums">02 / 05</span>
+</div>
+<div class="flex items-center text-outline pl-2 hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[16px] mr-4 opacity-50 group-hover:opacity-100">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50 group-hover:opacity-100">03 / 05</span>
+</div>
+<div class="flex items-center text-outline pl-2 hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[16px] mr-4 opacity-50 group-hover:opacity-100">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50 group-hover:opacity-100">04 / 05</span>
+</div>
+<div class="flex items-center text-outline pl-2 hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-[16px] mr-4 opacity-50 group-hover:opacity-100">circle</span>
+<span class="font-label-sm text-label-sm tabular-nums opacity-50 group-hover:opacity-100">05 / 05</span>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop lg:pl-[200px] lg:pr-margin-desktop pt-16">
+<!-- Left: Events Grid -->
+<div class="w-full lg:w-3/4 pr-0 lg:pr-16">
+<h1 class="font-display-lg text-display-lg text-primary mb-2">WHICH MOMENTS</h1>
+<h2 class="font-display-lg text-display-lg text-primary italic font-light mb-16">*should we cover?*</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Event Card: YOUR WEDDING DAY (Recommended) -->
+<div class="event-card selected relative flex flex-col border border-primary bg-surface p-4 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute top-2 right-2 bg-primary text-on-primary px-2 py-1 font-label-sm text-[10px] uppercase tracking-widest z-10 flex items-center">
+<span class="material-symbols-outlined text-[12px] mr-1">star</span> RECOMMENDED
+                    </div>
+<div class="absolute bottom-4 right-4 z-10 check-indicator">
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full border border-primary">check</span>
+</div>
+<div class="aspect-square mb-4 overflow-hidden border border-outline-variant">
+<img alt="The Big Day" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjjlWu3ODzO-urTY9-BCLBn9Ibnu7bT4G4Cv_riSM2jcLFtDJ_tR_giux2O32UAbe8JADKIj3zNB3f4aJSV06dU6L9191B97-WtztEPn2_ZXQopkDbZUHRNvVmmE5Q5Xld7c8g_6l36CJOyUOlPT90kjguN06VUH_pY_Vnp5ap7fbKu0LFZ9COUEOY3fFuubMVF0ztqViQIzZZLevRNKGN9QmNHkla_e3KElaTQqaSA8VNYGZQTedj2w"/>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mb-1 block">THE MAIN EVENT</span>
+<h3 class="font-headline-md text-[24px] text-primary leading-tight">YOUR WEDDING DAY</h3>
+</div>
+</div>
+</div>
+<!-- Event Card: ENGAGEMENT -->
+<div class="event-card relative flex flex-col border border-outline-variant bg-surface p-4 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute bottom-4 right-4 z-10 check-indicator hidden">
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full border border-primary">check</span>
+</div>
+<div class="aspect-square mb-4 overflow-hidden border border-outline-variant bg-surface-container">
+<img alt="Engagement" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlQQxYZw2vP6uaY6pzu55GzMmldPLAu9mo-cOaAtAznPlU0R1iAd7G-IMlLB_RVAKmlQBEmEj_1tTmiltCYYumcy_MRdb47P2uSk0yrGkTkgoy8sMrRtu1tNp92u4YuLyzxJKvjEdXCHjWKSFr7BoG_nr3BiEEeceqiKV9P4Q1v1-B4XJlhdphgg8jAP9KketqlTlDh2LEQpf1G8NFqRw5wJA_wapSDZY7IyhPWp56x39PIoleXD6M-Q"/>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mb-1 block">PRE-WEDDING RITUAL</span>
+<h3 class="font-headline-md text-[24px] text-primary leading-tight">ENGAGEMENT</h3>
+</div>
+</div>
+</div>
+<!-- Event Card: VRATHAM -->
+<div class="event-card relative flex flex-col border border-outline-variant bg-surface p-4 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute bottom-4 right-4 z-10 check-indicator hidden">
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full border border-primary">check</span>
+</div>
+<div class="aspect-square mb-4 overflow-hidden border border-outline-variant bg-surface-container flex items-center justify-center">
+<span class="font-label-sm text-secondary uppercase tracking-widest">Image Pending</span>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mb-1 block">PRE-WEDDING RITUAL</span>
+<h3 class="font-headline-md text-[24px] text-primary leading-tight">VRATHAM</h3>
+</div>
+</div>
+</div>
+<!-- Event Card: GROOM HALDI -->
+<div class="event-card relative flex flex-col border border-outline-variant bg-surface p-4 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute bottom-4 right-4 z-10 check-indicator hidden">
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full border border-primary">check</span>
+</div>
+<div class="aspect-square mb-4 overflow-hidden border border-outline-variant bg-surface-container">
+<img alt="Groom Haldi" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEVGwU_CoUfXHsnwz14qatFidGWYz5U1i1vNTjRnn3AxDUS1lJLwfinBESFJsl40i1O933l7nLjNc1Gd-kt52XO9mkFKQ7L7yCcYh7_fEb5C_FTT1jhrjlvsmVQsTiIKDZY0zRbxgBVWOA52XQmn4ql4WYGWZwn7cnfogQbVbPFOyVzOjp2YGBdY6s-XnWI3xSr9Z3_Mk0IHE-45ukf1bJ74TZLyEU2V4HtEIETGK3fxPhKggndbBzpQ"/>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mb-1 block">CEREMONY</span>
+<h3 class="font-headline-md text-[24px] text-primary leading-tight">GROOM HALDI</h3>
+</div>
+</div>
+</div>
+<!-- Event Card: BRIDE HALDI -->
+<div class="event-card relative flex flex-col border border-outline-variant bg-surface p-4 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute bottom-4 right-4 z-10 check-indicator hidden">
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full border border-primary">check</span>
+</div>
+<div class="aspect-square mb-4 overflow-hidden border border-outline-variant bg-surface-container flex items-center justify-center">
+<span class="font-label-sm text-secondary uppercase tracking-widest">Image Pending</span>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mb-1 block">CEREMONY</span>
+<h3 class="font-headline-md text-[24px] text-primary leading-tight">BRIDE HALDI</h3>
+</div>
+</div>
+</div>
+<!-- Event Card: SANGEET -->
+<div class="event-card relative flex flex-col border border-outline-variant bg-surface p-4 cursor-pointer" onclick="toggleSelection(this)">
+<div class="absolute bottom-4 right-4 z-10 check-indicator hidden">
+<span class="material-symbols-outlined text-primary bg-surface p-1 rounded-full border border-primary">check</span>
+</div>
+<div class="aspect-square mb-4 overflow-hidden border border-outline-variant bg-surface-container flex items-center justify-center">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A vibrant, high-energy shot of a Sangeet dance performance. Colorful traditional Indian attire, dramatic stage lighting cutting through slight atmospheric haze. The composition is dynamic and captures movement beautifully, maintaining the luxury, high-end editorial wedding photography style with deep, rich contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7wai3Mq1dPI3PpP1j3BNFMm8g2XLhKYEeWNBYT6AnhMVlsmxGhB6C_v7yb0bR_bVRrQbcrQIDA6kB0viTeeSHU94qeXysbpd_hhYVMqhUSo56Je5ZuIQrQtErTIYnxTC074QIN64Yc5GZI3Vf1pb9SDTdopHP-um7khY2GY-HhpfeTdBJIkg0UZTKxy1SPuspGxJZ6ia9Hjn197xmxqAzlXOOXG6sIxmI5JBUr9rR4-_qWdGnne3Nnw"/>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<span class="font-label-sm text-[10px] text-secondary tracking-widest uppercase mb-1 block">CELEBRATION</span>
+<h3 class="font-headline-md text-[24px] text-primary leading-tight">SANGEET</h3>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 mb-8 border-t border-outline-variant pt-8">
+<button class="flex items-center text-primary font-label-sm uppercase tracking-widest hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined mr-2">add</span> SHOW ALL EVENTS
+                 </button>
+</div>
+</div>
+<!-- Right: Sticky Summary -->
+<div class="hidden lg:block lg:w-1/4 relative">
+<div class="sticky top-[140px] border border-outline-variant bg-surface p-6 flex flex-col h-[calc(100vh-280px)] min-h-[400px]">
+<h4 class="font-label-sm text-secondary uppercase tracking-widest mb-6 border-b border-outline-variant pb-2">SUMMARY</h4>
+<div class="flex-grow">
+<div class="mb-4">
+<span class="font-headline-md text-primary block mb-1">01</span>
+<span class="font-label-sm text-secondary uppercase tracking-widest block">EVENTS SELECTED</span>
+</div>
+<ul class="space-y-3 font-body-sm text-primary mb-8" id="selected-events-list">
+<li class="flex justify-between items-start border-b border-outline-variant pb-2 border-opacity-30">
+<span>YOUR WEDDING DAY</span>
+<span class="material-symbols-outlined text-[16px] text-secondary cursor-pointer hover:text-error transition-colors">close</span>
+</li>
+</ul>
+</div>
+<div class="border-t border-outline-variant pt-6 mt-auto">
+<span class="font-label-sm text-secondary uppercase tracking-widest block mb-2">ESTIMATED QUOTE</span>
+<span class="font-headline-md text-primary block">TBD</span>
+<p class="font-body-sm text-[12px] text-secondary mt-2">Quote updates in final step based on selections.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<footer class="fixed bottom-0 w-full bg-background border-t border-outline z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 md:py-gutter max-w-container-max mx-auto">
+<button class="border border-outline text-primary px-6 md:px-gutter py-3 md:py-unit flex items-center justify-center font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container-high transition-colors duration-200">
+<span class="material-symbols-outlined mr-2 md:hidden">arrow_back</span>
+<span class="hidden md:inline">BACK</span>
+</button>
+<div class="font-label-sm text-secondary tracking-widest uppercase md:hidden">
+                01 EVENTS
+            </div>
+<button class="bg-primary text-on-primary px-6 md:px-gutter py-3 md:py-unit flex items-center justify-center font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-opacity duration-200 active:scale-95 transition-transform">
+<span>CONTINUE</span>
+<span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</div>
+</footer>
+<script>
+        function toggleSelection(element) {
+            element.classList.toggle('selected');
+            const check = element.querySelector('.check-indicator');
+            if (check) {
+                check.classList.toggle('hidden');
+            }
+            
+            // In a real app, we would update the summary sidebar here based on state
+            // For this static prototype, we just toggle the visual class.
+        }
+    </script>
+</body></html>

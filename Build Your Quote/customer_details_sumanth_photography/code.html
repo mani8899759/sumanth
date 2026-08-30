@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Details - Aesthete Photography</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Brand Anchors -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#000000",
+                    "surface-container-low": "#f5f3f3",
+                    "on-primary-fixed-variant": "#474747",
+                    "inverse-primary": "#c6c6c6",
+                    "secondary": "#5f5e5e",
+                    "tertiary-fixed": "#e3e2e0",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#efeded",
+                    "on-primary-container": "#848484",
+                    "on-tertiary-container": "#838482",
+                    "surface-variant": "#e3e2e2",
+                    "background": "#fbf9f9",
+                    "secondary-container": "#e2dfde",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-tint": "#5e5e5e",
+                    "on-tertiary-fixed": "#1a1c1b",
+                    "on-secondary-container": "#636262",
+                    "primary-container": "#1b1b1b",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dbdad9",
+                    "inverse-on-surface": "#f2f0f0",
+                    "primary-fixed": "#e2e2e2",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#1a1c1b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#1b1c1c",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e3e2e2",
+                    "surface-bright": "#fbf9f9",
+                    "tertiary-fixed-dim": "#c7c6c5",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface": "#fbf9f9",
+                    "on-surface-variant": "#4c4546",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "outline-variant": "#cfc4c5",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1b1c1c",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "inverse-surface": "#303031",
+                    "on-tertiary-fixed-variant": "#464746",
+                    "outline": "#7e7576",
+                    "surface-container-high": "#e9e8e7",
+                    "primary": "#000000"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "unit": "4px",
+                    "margin-desktop": "64px",
+                    "container-max": "1440px",
+                    "section-gap": "128px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Playfair Display"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["72px", {"lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom styles for minimalist inputs and editorial feel */
+        .editorial-input {
+            border: none;
+            border-bottom: 1px solid theme('colors.tertiary');
+            background-color: transparent;
+            border-radius: 0;
+            padding: theme('spacing.2') 0;
+            box-shadow: none !important;
+            transition: border-color 0.3s ease;
+        }
+        .editorial-input:focus {
+            outline: none;
+            border-bottom-color: theme('colors.primary');
+            border-bottom-width: 2px;
+        }
+        .editorial-input::placeholder {
+            color: theme('colors.outline-variant');
+        }
+        
+        /* Custom Checkbox */
+        .custom-checkbox input:checked + div {
+            background-color: theme('colors.primary');
+            border-color: theme('colors.primary');
+        }
+        .custom-checkbox input:checked + div .check-icon {
+            opacity: 1;
+        }
+        
+        /* Noise texture for paper feel */
+        .bg-noise {
+            position: relative;
+        }
+        .bg-noise::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            opacity: 0.02;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface text-primary min-h-screen relative pb-32 bg-noise">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-40 bg-surface dark:bg-surface border-b border-tertiary">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">
+                AESTHETE PHOTOGRAPHY
+            </div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Services</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary hover:text-primary transition-colors duration-300" href="#">Philosophy</a>
+</nav>
+<div class="cursor-pointer transition-opacity active:opacity-70 text-primary dark:text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">account_circle</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-32 md:pt-48 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Header -->
+<div class="max-w-3xl mb-16 md:mb-24">
+<h1 class="font-display-lg text-display-lg uppercase tracking-tight text-primary mb-6">ALMOST THERE</h1>
+<p class="font-body-lg text-body-lg text-secondary">Tell us a little about the day we're helping you document.</p>
+</div>
+<!-- Form -->
+<form class="max-w-4xl w-full" id="customer-details-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-gutter gap-y-12">
+<!-- Full Name -->
+<div class="relative flex flex-col pt-6">
+<label class="absolute top-0 left-0 font-label-sm text-label-sm uppercase tracking-widest text-secondary" for="fullName">Full Name *</label>
+<input class="editorial-input font-body-md text-body-md text-primary w-full" id="fullName" placeholder="Jane Doe" required="" type="text"/>
+</div>
+<!-- Phone Number -->
+<div class="relative flex flex-col pt-6">
+<label class="absolute top-0 left-0 font-label-sm text-label-sm uppercase tracking-widest text-secondary" for="phone">Phone Number *</label>
+<input class="editorial-input font-body-md text-body-md text-primary w-full" id="phone" placeholder="+1 (555) 000-0000" required="" type="tel"/>
+</div>
+<!-- Email Address -->
+<div class="relative flex flex-col pt-6">
+<label class="absolute top-0 left-0 font-label-sm text-label-sm uppercase tracking-widest text-secondary" for="email">Email Address *</label>
+<input class="editorial-input font-body-md text-body-md text-primary w-full" id="email" placeholder="jane@example.com" required="" type="email"/>
+</div>
+<!-- Wedding Date -->
+<div class="relative flex flex-col pt-6">
+<label class="absolute top-0 left-0 font-label-sm text-label-sm uppercase tracking-widest text-secondary" for="date">Wedding Date *</label>
+<input class="editorial-input font-body-md text-body-md text-primary w-full" id="date" required="" type="date"/>
+</div>
+<!-- Wedding Venue / Location -->
+<div class="relative flex flex-col pt-6 md:col-span-2">
+<label class="absolute top-0 left-0 font-label-sm text-label-sm uppercase tracking-widest text-secondary" for="venue">Wedding Venue / Location *</label>
+<input class="editorial-input font-body-md text-body-md text-primary w-full" id="venue" placeholder="The Plaza Hotel" required="" type="text"/>
+</div>
+<!-- City (Optional) -->
+<div class="relative flex flex-col pt-6 md:col-span-2">
+<label class="absolute top-0 left-0 font-label-sm text-label-sm uppercase tracking-widest text-secondary" for="city">City (Optional)</label>
+<input class="editorial-input font-body-md text-body-md text-primary w-full" id="city" placeholder="New York, NY" type="text"/>
+</div>
+<!-- Additional Requirements (Optional) -->
+<div class="relative flex flex-col pt-6 md:col-span-2">
+<label class="absolute top-0 left-0 font-label-sm text-label-sm uppercase tracking-widest text-secondary" for="notes">Additional Requirements / Notes (Optional)</label>
+<textarea class="editorial-input font-body-md text-body-md text-primary w-full resize-none" id="notes" placeholder="Any specific moments or details you want prioritized..." rows="3"></textarea>
+</div>
+</div>
+<!-- Terms & Conditions -->
+<div class="mt-12 flex items-start gap-4">
+<label class="custom-checkbox relative flex items-start cursor-pointer mt-1 group">
+<input class="peer sr-only" id="terms" required="" type="checkbox"/>
+<div class="w-5 h-5 border border-tertiary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined check-icon opacity-0 text-white transition-opacity" style="font-size: 16px; font-variation-settings: 'wght' 300;">close</span>
+</div>
+</label>
+<div class="font-body-md text-body-md text-secondary">
+                    I agree to the <a class="text-primary underline underline-offset-4 decoration-1" href="#">Terms &amp; Conditions</a> and acknowledge the <a class="text-primary underline underline-offset-4 decoration-1" href="#">Privacy Policy</a> regarding my personal data. *
+                </div>
+</div>
+</form>
+</main>
+<!-- BottomNavBar (Shared Component) -->
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 border-t border-tertiary bg-surface">
+<!-- Back Button -->
+<button class="flex items-center gap-2 text-primary border border-primary px-6 md:px-8 py-3 md:py-4 rounded-none hover:bg-tertiary hover:text-on-tertiary transition-all duration-200 active:scale-95 cursor-pointer" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">arrow_back</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest hidden md:inline">Back</span>
+</button>
+<!-- Continue / Request Quote Button -->
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 md:px-8 py-3 md:py-4 rounded-none transition-all duration-300 opacity-50 cursor-not-allowed" disabled="" form="customer-details-form" id="submitBtn" type="submit">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Request My Quote</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">arrow_forward</span>
+</button>
+</footer>
+<!-- Form Validation Logic -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('customer-details-form');
+            const submitBtn = document.getElementById('submitBtn');
+            const requiredInputs = form.querySelectorAll('[required]');
+
+            function checkFormValidity() {
+                let isValid = true;
+                requiredInputs.forEach(input => {
+                    if (!input.value.trim() || (input.type === 'checkbox' && !input.checked)) {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    // Enable Button
+                    submitBtn.removeAttribute('disabled');
+                    submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    submitBtn.classList.add('hover:bg-tertiary', 'active:scale-95');
+                } else {
+                    // Disable Button
+                    submitBtn.setAttribute('disabled', 'true');
+                    submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                    submitBtn.classList.remove('hover:bg-tertiary', 'active:scale-95');
+                }
+            }
+
+            requiredInputs.forEach(input => {
+                input.addEventListener('input', checkFormValidity);
+                input.addEventListener('change', checkFormValidity); // For checkbox/date
+            });
+            
+            // Initial check in case browser auto-filled
+            checkFormValidity();
+        });
+    </script>
+</body></html>

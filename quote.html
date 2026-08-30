@@ -4,29 +4,41 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Commissions &amp; Inquiries — Sumanth Photography | Hyderabad Fine Art Studio</title>
+  <title>Build Your Wedding Photography Quote | Sumanth Photography Hyderabad</title>
   <meta name="description"
-    content="Request a personalized commission quote for weddings, maternity sessions, and milestone event photography with Sumanth Photography." />
+    content="Configure a transparent, bespoke photography & cinema estimate for your wedding celebrations in Hyderabad, India, and destination venues worldwide with Sumanth Photography." />
+  <link rel="canonical" href="https://sumanthphotography.com/quote.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Build Your Wedding Photography Quote | Sumanth Photography" />
+  <meta property="og:description"
+    content="Configure a transparent, bespoke photography & cinema estimate for your wedding celebrations with Sumanth Photography." />
+  <meta property="og:url" content="https://sumanthphotography.com/quote.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=85" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
     rel="stylesheet" />
+  <link rel="stylesheet" href="css/motion.css" />
+  <link rel="stylesheet" href="css/typography.css" />
+
   <style>
     :root {
       --bg: #f5f4f1;
       --text-primary: #000000;
       --text-secondary: #666666;
       --border-color: #141212;
+      --border-light: #141212;
       --surface-secondary: #f0f0f0;
+      --surface-active: #f0f0f0;
+      --accent-muted: #888888;
 
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-mono: 'IBM Plex Mono', monospace;
 
-      --hero-title: clamp(54px, 7.5vw, 110px);
-      --section-title: clamp(38px, 4.5vw, 68px);
-      --sub-title: clamp(24px, 3vw, 38px);
+      --hero-title: clamp(40px, 6.5vw, 84px);
+      --section-title: clamp(32px, 4.5vw, 56px);
       --body-size: 16px;
       --mono-size: 11px;
     }
@@ -54,12 +66,14 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     a {
       text-decoration: none;
       color: inherit;
-      transition: opacity 0.25s ease, color 0.25s ease;
     }
 
     /* TYPOGRAPHY HELPERS */
@@ -78,8 +92,8 @@
     .editorial-title {
       font-family: var(--font-serif);
       font-size: var(--section-title);
-      line-height: 1.02;
-      font-weight: 300;
+      line-height: 1.04;
+      font-weight: 500;
       text-transform: uppercase;
       letter-spacing: -0.01em;
       color: var(--text-primary);
@@ -88,11 +102,10 @@
     .italic {
       font-family: var(--font-serif);
       font-style: italic;
-      font-weight: 300;
+      font-weight: 400;
       text-transform: lowercase;
       color: var(--text-primary);
-      font-size: 0.9em;
-      margin: 0 0.12em;
+      margin: 0 0.1em;
       display: inline-block;
     }
 
@@ -108,14 +121,14 @@
     /* LAYOUT CONTAINER */
     .container {
       width: 100%;
-      max-width: 1340px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 48px;
+      padding: 0 40px;
     }
 
     @media (max-width: 768px) {
       .container {
-        padding: 0 24px;
+        padding: 0 20px;
       }
     }
 
@@ -129,8 +142,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 26px 48px;
-      background: rgba(245, 244, 241, 0.92);
+      padding: 20px 40px;
+      background: rgba(245, 244, 241, 0.96);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-color);
@@ -139,49 +152,20 @@
 
     .logo {
       font-family: var(--font-serif);
-      font-size: 22px;
-      font-weight: 400;
+      font-size: 20px;
+      font-weight: 500;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text-primary);
     }
 
-    .nav-links {
-      display: flex;
-      gap: 36px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: var(--font-sans);
+    .nav-tracker {
+      font-family: var(--font-mono);
       font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-      transition: color 0.25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text-primary);
-    }
-
-    .nav-cta {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 600;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-primary);
-      border: 1px solid var(--border-color);
-      padding: 10px 24px;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    .nav-cta:hover {
-      background: var(--text-primary);
-      color: var(--bg);
+      font-weight: 600;
     }
 
     #menu-btn {
@@ -193,170 +177,876 @@
       font-size: 24px;
     }
 
+    @media (max-width: 768px) {
+      #nav {
+        padding: 16px 20px;
+      }
+      #menu-btn {
+        display: block;
+      }
+    }
 
-    /* BUTTONS */
-    .btn-primary {
+    /* DESKTOP SIDE PROGRESS NAV */
+    .desktop-side-nav {
+      position: fixed;
+      left: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 40;
+    }
+
+    .side-nav-heading {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .step-dot-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      transition: color 0.25s ease;
+    }
+
+    .step-dot-item:hover {
+      color: var(--text-primary);
+    }
+
+    .step-dot-circle {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--text-secondary);
+      background: transparent;
+      transition: all 0.25s ease;
+    }
+
+    .step-dot-item.active-step {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .step-dot-item.active-step .step-dot-circle {
+      border-color: var(--text-primary);
+      background: var(--text-primary);
+      transform: scale(1.2);
+    }
+
+    .step-dot-item.completed-step .step-dot-circle {
+      background: var(--text-primary);
+      border-color: var(--text-primary);
+    }
+
+    @media (max-width: 1100px) {
+      .desktop-side-nav {
+        display: none;
+      }
+    }
+
+    /* MAIN WIZARD VIEWPORT */
+    .wizard-main {
+      flex: 1;
+      padding-top: 100px;
+      padding-bottom: 140px;
+      width: 100%;
+    }
+
+    @media (min-width: 1101px) {
+      .wizard-main {
+        padding-left: 180px;
+      }
+    }
+
+    /* STEP PANELS */
+    .wizard-step-panel {
+      display: none;
+      animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .wizard-step-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* STEP HEADER */
+    .step-header {
+      margin-bottom: 40px;
+    }
+
+    .step-header .mono-label {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .step-header h1 {
+      font-family: var(--font-serif);
+      font-size: var(--section-title);
+      font-weight: 500;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .step-header p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 680px;
+      line-height: 1.6;
+    }
+
+    /* SELECTION CARDS (STYLE & EVENTS) */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .selection-card,
+    .event-card {
+      background: var(--bg);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+      touch-action: manipulation;
+      min-height: 140px;
+      border-radius: 0;
+    }
+
+    .selection-card:hover,
+    .event-card:hover {
+      border-color: var(--border-color);
+      transform: translateY(-2px);
+    }
+
+    .selection-card.selected,
+    .event-card.selected {
+      border-color: var(--border-color);
+      background-color: var(--surface-secondary);
+    }
+
+    .card-image-wrap {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      margin-bottom: 14px;
+      background: var(--surface-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+      display: block;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-image-wrap img.img-cover {
+      object-fit: cover;
+      padding: 0;
+    }
+
+    .card-image-wrap img.img-contain {
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .selection-card:hover .card-image-wrap img,
+    .event-card:hover .card-image-wrap img,
+    .service-tier-card:hover .card-image-wrap img,
+    .choice-pill-card:hover .card-image-wrap img,
+    .album-card:hover .album-thumb img {
+      transform: scale(1.02);
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .card-subtitle {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card-description {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .event-checkbox {
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .event-card.selected .event-checkbox {
       background: var(--text-primary);
       color: var(--bg);
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+    }
+
+    .event-cat {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 16px 36px;
+      color: var(--text-secondary);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .event-name {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    /* STEP 3: COVERAGE SERVICE CARDS */
+    .service-tier-card {
+      background: var(--bg);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+      border-radius: 0;
+    }
+
+    .service-tier-card.selected {
+      background: var(--surface-secondary);
+      border-color: var(--border-color);
+    }
+
+    .service-rate {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Stepper for crew size */
+    .stepper-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .stepper-btn {
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, color 0.2s ease;
+      flex-shrink: 0;
+      border-radius: 0;
+    }
+
+    .stepper-btn:hover:not(:disabled) {
+      background: var(--text-primary);
+      color: var(--bg);
+    }
+
+    .stepper-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      border-color: var(--border-color);
+    }
+
+    .stepper-val {
+      width: 40px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* STEP 4: ADDONS & PROGRESSIVE PANELS */
+    .addon-section-card {
+      background: var(--bg);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      margin-bottom: 24px;
+      transition: border-color 0.25s ease;
+      border-radius: 0;
+    }
+
+    .addon-section-title {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .addon-section-desc {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .toggle-pill-btn-group {
+      display: inline-flex;
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      padding: 2px;
+      border-radius: 0;
+    }
+
+    .toggle-pill-btn {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      min-height: 36px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-radius: 0;
+    }
+
+    .toggle-pill-btn.active {
+      background: var(--text-primary);
+      color: var(--bg);
+      font-weight: 600;
+    }
+
+    .progressive-panel {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-color);
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .choice-pills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .choice-pill-card {
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 0;
+    }
+
+    .choice-pill-card:hover {
+      border-color: var(--border-color);
+    }
+
+    .choice-pill-card.active {
+      border-color: var(--border-color);
+      background: var(--surface-secondary);
+    }
+
+    .album-item-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .album-card {
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.2s ease;
+      border-radius: 0;
+    }
+
+    .album-card:hover {
+      border-color: var(--border-color);
+    }
+
+    .album-card.has-qty {
+      border-color: var(--border-color);
+      background: var(--surface-secondary);
+    }
+
+    .album-thumb {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: var(--surface-secondary);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .album-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+      display: block;
+    }
+
+    .album-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .album-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .album-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .album-footer {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--surface-secondary);
+    }
+
+    .discount-pill {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
+      background: var(--surface-secondary);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 6px 12px;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+    }
+
+    .promo-input-group {
+      display: flex;
+      gap: 8px;
+      max-width: 380px;
+    }
+
+    .promo-input {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      color: var(--text-primary);
+      flex: 1;
+      border-radius: 0;
+    }
+
+    .promo-btn {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 12px 18px;
+      background: var(--text-primary);
+      color: var(--bg);
       border: 1px solid var(--text-primary);
       cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+      transition: opacity 0.2s ease;
+      border-radius: 0;
     }
 
-    .btn-primary:hover {
-      background: transparent;
-      color: var(--text-primary);
-      transform: translateY(-1px);
+    .promo-btn:hover {
+      opacity: 0.85;
     }
 
-    /* SHARP GEOMETRY FORM STYLES */
+    /* STEP 5: CUSTOMER FORM STYLES */
     .form-group {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin-bottom: 24px;
     }
 
     .form-group label {
       font-family: var(--font-mono);
       font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--text-primary);
+      font-weight: 500;
     }
 
     .form-control {
-      font-family: var(--font-sans);
-      font-size: 15px;
-      padding: 16px 20px;
+      width: 100%;
       background: var(--bg);
       border: 1px solid var(--border-color);
+      padding: 14px 16px;
+      font-family: var(--font-sans);
+      font-size: 15px;
       color: var(--text-primary);
-      border-radius: 0;
       outline: none;
-      transition: border-color 0.25s ease, background 0.25s ease;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+      min-height: 48px;
+      border-radius: 0;
     }
 
     .form-control:focus {
       border-color: var(--text-primary);
-      background: var(--surface, #eae9e4);
-    }
-
-    /* REVEAL ANIMATION */
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.on {
-      opacity: 1;
-      transform: none;
-    }
-
-    /* FOOTER */
-    footer {
       background: var(--bg);
-      border-top: 1px solid var(--border-color);
-      padding: 80px 48px 48px 48px;
+      box-shadow: 0 1px 0 var(--text-primary);
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 60px;
-      margin-bottom: 60px;
+    .form-control.is-invalid {
+      border-color: var(--border-color);
+      background: var(--surface-secondary);
     }
 
-    @media (max-width: 900px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-    }
-
-    .footer-brand {
-      font-family: var(--font-serif);
-      font-size: 28px;
-      font-weight: 400;
+    .form-error-msg {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-primary);
       letter-spacing: 0.04em;
-      text-transform: uppercase;
-      line-height: 1.1;
+      margin-top: 4px;
+      display: none;
+      font-weight: 500;
     }
 
-    .footer-links-column {
+    .form-error-msg.visible {
+      display: block;
+    }
+
+    .terms-group {
+      border: 1px solid var(--border-color);
+      background: var(--surface-secondary);
+      padding: 18px 20px;
+      margin-bottom: 28px;
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+      align-items: flex-start;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
     }
 
-    .footer-heading {
+    .terms-checkbox {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--text-primary);
+      margin-top: 3px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .terms-label {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .terms-label strong {
+      color: var(--text-primary);
+    }
+
+    /* STEP 6: REVIEW TABLE */
+    .review-category-card {
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      margin-bottom: 24px;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .review-category-header {
+      background: var(--surface-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .review-category-title {
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-      margin-bottom: 8px;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
-    .footer-link {
-      font-size: 12px;
+    .review-edit-link {
+      font-family: var(--font-mono);
+      font-size: 10px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .footer-link:hover {
       color: var(--text-primary);
+      text-decoration: underline;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
     }
 
-    .footer-bottom {
+    .review-edit-link:hover {
+      opacity: 0.7;
+    }
+
+    .review-items-list {
+      padding: 8px 20px;
+    }
+
+    .review-line-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-color);
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      padding-top: 32px;
-      border-top: 1px solid var(--border-color);
+      align-items: baseline;
+      gap: 16px;
+    }
+
+    .review-line-item:last-child {
+      border-bottom: none;
+    }
+
+    .review-item-name {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .review-item-meta {
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--text-secondary);
-      letter-spacing: 0.1em;
+      margin-top: 2px;
+      display: block;
     }
 
-    /* REDUCED MOTION */
-    @media (prefers-reduced-motion: reduce) {
+    .review-item-price {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
 
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+    .review-total-banner {
+      border: 1px solid var(--border-color);
+      background: var(--text-primary);
+      color: var(--bg);
+      padding: 32px;
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .submission-error-banner {
+      border: 1px solid var(--border-color);
+      background: var(--surface-secondary);
+      color: var(--text-primary);
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      display: none;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .submission-error-banner.visible {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* FIXED BOTTOM ACTION BAR */
+    .wizard-bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 80;
+      background: rgba(245, 244, 241, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border-color);
+      padding: 16px 40px;
+    }
+
+    .bottom-nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-action {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0;
+      touch-action: manipulation;
+    }
+
+    .btn-action-primary {
+      background: var(--text-primary);
+      color: var(--bg);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-primary:hover:not(:disabled) {
+      background: #000000;
+      opacity: 0.85;
+    }
+
+    .btn-action-primary:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .btn-action-outline {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-action-outline:hover {
+      background: var(--surface-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .wizard-bottom-nav {
+        padding: 12px 20px;
+      }
+      .btn-action {
+        padding: 12px 20px;
+        font-size: 10px;
       }
     }
   </style>
-  <link rel="stylesheet" href="css/motion.css">
 </head>
 
-<body>  <!-- NAVIGATION MASTHEAD -->
+<body>
+
+  <!-- NAVIGATION MASTHEAD -->
   <nav id="nav">
     <a href="index.html" class="logo">SUMANTH PHOTOGRAPHY</a>
-    <ul class="nav-links">
-      <li><a href="weddings.html">Wedding Photography</a></li>
-      <li><a href="baby-maternity.html">Baby Bump Shoots</a></li>
-      <li><a href="birthdays-events.html">Others</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+    <div class="nav-tracker" id="step-progress-text">01 / 05</div>
     <button id="menu-btn" aria-label="Toggle navigation menu">
       <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.5" stroke-linecap="round">
@@ -382,259 +1072,404 @@
         <a href="birthdays-events.html" class="mobile-menu-item">OTHERS</a>
         <a href="about.html" class="mobile-menu-item">ABOUT</a>
         <a href="contact.html" class="mobile-menu-item">CONTACT</a>
+        <a href="quote.html" class="mobile-menu-item mobile-menu-item--byq" id="mobile-byq-cta" aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
       </nav>
     </div>
   </div>
 
-  <!-- HERO HEADER -->
-  <section style="padding:160px 0 60px 0; border-bottom:1px solid var(--border-color);">
-    <div class="container">
-      <span class="mono-label" style="margin-bottom:16px; display:block;">RESERVATIONS &middot; COMMISSIONS &middot;
-        HYDERABAD &middot; INDIA</span>
-
-      <h1
-        style="font-family:var(--font-serif); font-size:var(--hero-title); line-height:0.95; font-weight:300; text-transform:uppercase; margin-bottom:24px;">
-        COMMISSIONS <br />
-        <span class="italic">for your milestone.</span>
-      </h1>
-
-      <p style="font-size:18px; font-weight:300; color:var(--text-secondary); max-width:680px; line-height:1.7;">
-        Please share your session details below. We accept a limited number of commissions each year to ensure every
-        story receives undivided artistic focus.
-      </p>
+  <!-- DESKTOP SIDE PROGRESS BAR -->
+  <nav class="desktop-side-nav" aria-label="Quote Configurator Progress">
+    <div class="side-nav-heading">PROGRESS</div>
+    <div class="step-dot-item active-step" data-step="1">
+      <span class="step-dot-circle"></span>
+      <span>01 / STYLE</span>
     </div>
-  </section>
+    <div class="step-dot-item" data-step="2">
+      <span class="step-dot-circle"></span>
+      <span>02 / EVENTS</span>
+    </div>
+    <div class="step-dot-item" data-step="3">
+      <span class="step-dot-circle"></span>
+      <span>03 / COVERAGE</span>
+    </div>
+    <div class="step-dot-item" data-step="4">
+      <span class="step-dot-circle"></span>
+      <span>04 / ADD-ONS</span>
+    </div>
+    <div class="step-dot-item" data-step="5">
+      <span class="step-dot-circle"></span>
+      <span>05 / DETAILS</span>
+    </div>
+    <div class="step-dot-item" data-step="6">
+      <span class="step-dot-circle"></span>
+      <span>06 / REVIEW</span>
+    </div>
+  </nav>
 
-  <!-- MAIN QUOTE SECTION -->
-  <section style="padding:100px 0;">
-    <div class="container" style="display:grid; grid-template-columns: 1fr 1.35fr; gap:80px;" class="contact-grid">
+  <!-- MAIN WIZARD CONTAINER -->
+  <main class="wizard-main">
+    <div class="container">
 
-      <!-- LEFT COLUMN: VERIFIED CONTACT INFO -->
-      <aside style="display:flex; flex-direction:column; gap:40px;">
-        <div>
-          <span class="mono-label" style="margin-bottom:12px; display:block;">STUDIO LOCATION</span>
-          <div style="font-size:16px; font-weight:500;">Hyderabad, India</div>
-          <div style="font-size:14px; color:var(--text-secondary); margin-top:4px;">Available for commissions worldwide.
+      <!-- STEP 0: WELCOME SCREEN -->
+      <section class="wizard-step-panel active" data-step="0">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:60px; align-items:center; min-height:65vh;">
+          <div>
+            <span class="mono-label" style="display:block; margin-bottom:16px;">BESPOKE EDITORIAL CONFIGURATOR</span>
+            <h1 class="editorial-title" style="font-size:clamp(42px, 6.5vw, 76px); margin-bottom:24px;">
+              THE ARCHIVE OF <br />
+              <span class="italic">your wedding story.</span>
+            </h1>
+            <p style="font-size:17px; color:var(--text-secondary); line-height:1.7; margin-bottom:36px; max-width:540px;">
+              Configure a transparent, tailored photography and cinematography collection for your wedding celebrations across Hyderabad, India, and destination venues worldwide.
+            </p>
+            <button type="button" class="btn-action btn-action-primary" onclick="window.goToQuoteStep(1)">
+              BEGIN CONFIGURATION &rarr;
+            </button>
           </div>
-        </div>
-
-        <div>
-          <span class="mono-label" style="margin-bottom:12px; display:block;">DIRECT CONTACT</span>
-          <div style="font-size:16px; margin-bottom:6px;">
-            <a href="tel:+919491818015" style="color:var(--text-primary);">+91 94918 18015</a>
-          </div>
-          <div style="font-size:16px;">
-            <a href="mailto:hello@sumanthphotography.com"
-              style="color:var(--text-primary);">hello@sumanthphotography.com</a>
-          </div>
-        </div>
-
-        <div>
-          <span class="mono-label" style="margin-bottom:12px; display:block;">VERIFIED SOCIAL</span>
-          <div style="font-size:16px; margin-bottom:6px;">
-            <a href="https://www.instagram.com/sumanth__photography07/" target="_blank" rel="noopener" style="color:var(--text-primary);">Instagram
-              &rarr;</a>
-          </div>
-          <div style="font-size:16px;">
-            <a href="https://wa.me/919491818015" target="_blank" rel="noopener"
-              style="color:var(--text-primary);">WhatsApp Chat &rarr;</a>
-          </div>
-        </div>
-
-        <div style="padding:24px; border:1px solid var(--border-color); background:var(--surface-secondary);">
-          <span class="mono-label" style="margin-bottom:8px; display:block;">STUDIO HOURS</span>
-          <p style="font-size:14px; color:var(--text-secondary);">
-            Monday &ndash; Saturday: 10:00 AM &ndash; 7:00 PM IST<br />
-            Sunday: By appointment only.
-          </p>
-        </div>
-      </aside>
-
-      <!-- RIGHT COLUMN: MINIMAL SHARP GEOMETRY QUOTE FORM -->
-      <main>
-        <form id="contact-form" style="display:flex; flex-direction:column; gap:28px;">
-
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:28px;" class="form-row-2">
-            <div class="form-group">
-              <label for="name">NAME *</label>
-              <input type="text" id="name" name="name" class="form-control" required placeholder="Your Full Name" />
+          <div style="border:1px solid var(--border-color); background:var(--surface-secondary); padding:16px;">
+            <div style="aspect-ratio:4/5; overflow:hidden; background:var(--surface-secondary);">
+              <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1000&q=85"
+                alt="Luxury Wedding Moment" style="width:100%; height:100%; object-fit:cover;" loading="eager" />
             </div>
-            <div class="form-group">
-              <label for="phone">PHONE / WHATSAPP *</label>
-              <input type="tel" id="phone" name="phone" class="form-control" required placeholder="+91 98765 43210" />
+            <div style="display:flex; justify-content:space-between; margin-top:12px; font-family:var(--font-mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-secondary);">
+              <span>SUMANTH PHOTOGRAPHY</span>
+              <span>HYDERABAD STUDIO</span>
             </div>
           </div>
+        </div>
+      </section>
 
+      <!-- STEP 1: PHOTOGRAPHY STYLE -->
+      <section class="wizard-step-panel" data-step="1">
+        <div class="step-header">
+          <span class="mono-label">STEP 01 OF 06</span>
+          <h1>WHAT PHOTOGRAPHY <br /><span class="italic">do you want?</span></h1>
+          <p>Select the visual storytelling style that best reflects your celebration vision.</p>
+        </div>
+        <div class="cards-grid" id="style-cards-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- STEP 2: SELECT EVENTS -->
+      <section class="wizard-step-panel" data-step="2">
+        <div class="step-header">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <span class="mono-label">STEP 02 OF 06</span>
+            <span class="mono-label" id="events-count-badge" style="font-weight:600; color:var(--text-primary);">1 EVENT SELECTED</span>
+          </div>
+          <h1>WHICH EVENTS <br /><span class="italic">do you want to cover?</span></h1>
+          <p>Select all the celebration rituals and ceremonies you wish to document.</p>
+        </div>
+        <div class="cards-grid" id="events-cards-grid">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- STEP 3: EVENT-BY-EVENT COVERAGE BUILDER -->
+      <section class="wizard-step-panel" data-step="3">
+        <!-- Event progress breadcrumb -->
+        <div id="cov-event-crumb" style="display:flex; align-items:center; gap:8px; margin-bottom:24px; overflow-x:auto; white-space:nowrap; scrollbar-width:none; padding-bottom:4px;">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Event context header -->
+        <div style="display:grid; grid-template-columns:1fr auto; align-items:start; gap:20px; margin-bottom:28px;">
+          <div>
+            <span class="mono-label" id="cov-step-label" style="display:block; margin-bottom:10px;">STEP 03 OF 06 — EVENT 1 OF 1</span>
+            <h1 id="cov-event-title" class="editorial-title" style="font-size:clamp(28px, 4vw, 52px);">WEDDING COVERAGE</h1>
+            <p id="cov-event-cat" class="mono-label" style="margin-top:8px;">THE MAIN SACRED EVENT</p>
+          </div>
+          <!-- Live quote dock (desktop) -->
+          <div id="cov-live-quote-desktop" style="min-width:200px; border:1px solid var(--border-color); padding:20px; text-align:right; display:none;">
+            <span class="mono-label" style="display:block; margin-bottom:4px;">RUNNING TOTAL</span>
+            <div id="cov-live-total-desktop" style="font-family:var(--font-serif); font-size:28px; font-weight:300; color:var(--text-primary);">₹0</div>
+          </div>
+        </div>
+
+        <!-- Services grid -->
+        <div id="coverage-services-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:16px; margin-bottom:32px;">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Event navigation (prev / next within Step 3) -->
+        <div id="cov-event-nav" style="display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-top:1px solid var(--border-light); margin-top:8px;">
+          <button type="button" id="cov-prev-event-btn" class="btn-action btn-action-outline" style="font-size:10px; padding:12px 20px;" aria-label="Previous event">
+            &larr; PREV EVENT
+          </button>
+          <span id="cov-event-counter" class="mono-label">1 / 1</span>
+          <button type="button" id="cov-next-event-btn" class="btn-action btn-action-primary" style="font-size:10px; padding:12px 20px;" aria-label="Next event">
+            NEXT EVENT &rarr;
+          </button>
+        </div>
+
+        <!-- Mobile live quote strip -->
+        <div id="cov-live-quote-mobile" style="margin-top:16px; border:1px solid var(--border-color); background:var(--surface-secondary); padding:12px 16px; display:flex; justify-content:space-between; align-items:center;">
+          <span class="mono-label">RUNNING TOTAL</span>
+          <span id="cov-live-total-mobile" style="font-family:var(--font-mono); font-size:15px; font-weight:600; color:var(--text-primary);">₹0</span>
+        </div>
+      </section>
+
+      <!-- STEP 4: ADD-ONS & DELIVERABLES -->
+      <section class="wizard-step-panel" data-step="4">
+        <div class="step-header" style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+          <div>
+            <span class="mono-label">STEP 04 OF 06</span>
+            <h1>CURATE YOUR ADD-ONS <br /><span class="italic">&amp; signature deliverables.</span></h1>
+            <p>Select optional pre-wedding shoots, fine art heirloom albums, live streaming, and cinema edit styles.</p>
+          </div>
+          <button type="button" class="btn-action btn-action-outline" style="font-size:10px; padding:10px 18px;" onclick="window.goToQuoteStep(5)">
+            SKIP FOR NOW &rarr;
+          </button>
+        </div>
+
+        <div id="addons-list-container">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- STEP 5: SCREEN 01 — CUSTOMER DETAILS -->
+      <section class="wizard-step-panel" data-step="5" aria-labelledby="details-step-heading">
+        <div class="step-header">
+          <span class="mono-label">STEP 05 OF 06</span>
+          <h1 id="details-step-heading">TELL US ABOUT <br /><span class="italic">your celebration.</span></h1>
+          <p>Provide your contact details and celebration venue so our studio team can confirm date availability and package specifications.</p>
+        </div>
+
+        <form id="customer-details-form" novalidate style="max-width:680px;">
+          <!-- Full Name -->
           <div class="form-group">
-            <label for="email">EMAIL ADDRESS *</label>
-            <input type="email" id="email" name="email" class="form-control" required placeholder="your@email.com" />
+            <label for="cust-fullName">FULL NAME *</label>
+            <input type="text" id="cust-fullName" class="form-control" placeholder="e.g. Sumanth & Ananya" required aria-required="true" autocomplete="name" />
+            <span class="form-error-msg" id="err-cust-fullName">Please enter your full name.</span>
           </div>
 
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:28px;" class="form-row-2">
-            <div class="form-group">
-              <label for="type">SESSION TYPE *</label>
-              <select id="type" name="type" class="form-control" required>
-                <option value="" selected disabled>Select Session Category...</option>
-                <option value="wedding">Wedding Photography</option>
-                <option value="prewedding">Pre-Wedding Session</option>
-                <option value="maternity">Maternity Session</option>
-                <option value="baby">Newborn &amp; Baby Session</option>
-                <option value="event">Event &amp; Gala</option>
-                <option value="portraits">Fine Art Portraiture</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="date">EVENT DATE</label>
-              <input type="date" id="date" name="date" class="form-control" />
-            </div>
-          </div>
-
+          <!-- Phone Number -->
           <div class="form-group">
-            <label for="message">TELL US ABOUT YOUR VISION</label>
-            <textarea id="message" name="message" class="form-control" rows="4"
-              placeholder="Share event venue, dates, estimated guest count, or vision..."></textarea>
+            <label for="cust-phone">PHONE NUMBER / WHATSAPP *</label>
+            <input type="tel" id="cust-phone" class="form-control" placeholder="+91 94918 18015" required aria-required="true" autocomplete="tel" />
+            <span class="form-error-msg" id="err-cust-phone">Please enter a valid 10-digit phone number.</span>
           </div>
 
-          <button type="submit" class="btn-primary" id="submit-btn" style="align-self:flex-start;">
-            <span id="btn-label-text">REQUEST A QUOTE &rarr;</span>
+          <!-- Email Address -->
+          <div class="form-group">
+            <label for="cust-email">EMAIL ADDRESS *</label>
+            <input type="email" id="cust-email" class="form-control" placeholder="name@domain.com" required aria-required="true" autocomplete="email" />
+            <span class="form-error-msg" id="err-cust-email">Please enter a valid email address.</span>
+          </div>
+
+          <!-- Wedding Date -->
+          <div class="form-group">
+            <label for="cust-date">WEDDING / EVENT DATE *</label>
+            <input type="date" id="cust-date" class="form-control" required aria-required="true" />
+            <span class="form-error-msg" id="err-cust-date">Please select your primary celebration date.</span>
+          </div>
+
+          <!-- Venue / Location -->
+          <div class="form-group">
+            <label for="cust-venue">WEDDING VENUE / LOCATION *</label>
+            <input type="text" id="cust-venue" class="form-control" placeholder="e.g. Taj Falaknuma Palace / Novotel" required aria-required="true" />
+            <span class="form-error-msg" id="err-cust-venue">Please specify the celebration venue or property.</span>
+          </div>
+
+          <!-- City / Destination (Optional) -->
+          <div class="form-group">
+            <label for="cust-city">CITY / DESTINATION (OPTIONAL)</label>
+            <input type="text" id="cust-city" class="form-control" placeholder="e.g. Hyderabad, Udaipur, Goa" value="Hyderabad" />
+          </div>
+
+          <!-- Notes / Priorities (Optional) -->
+          <div class="form-group">
+            <label for="cust-notes">ADDITIONAL REQUIREMENTS / NOTES (OPTIONAL)</label>
+            <textarea id="cust-notes" class="form-control" rows="4" placeholder="Share estimated guest count, specific family rituals, or special creative requests..."></textarea>
+          </div>
+
+          <!-- Terms & Conditions (Required) -->
+          <div class="terms-group" id="terms-container">
+            <input type="checkbox" id="cust-terms" class="terms-checkbox" required aria-required="true" />
+            <label for="cust-terms" class="terms-label">
+              I accept the <strong>Terms &amp; Conditions</strong> and understand this quote represents a preliminary estimate subject to studio date availability, scheduling, and final contract confirmation. *
+            </label>
+          </div>
+          <span class="form-error-msg" id="err-cust-terms" style="margin-top:-18px; margin-bottom:24px;">You must accept the terms and conditions to proceed.</span>
+
+          <button type="submit" class="btn-action btn-action-primary" style="width:100%;">
+            REVIEW EXACT QUOTE &rarr;
           </button>
         </form>
+      </section>
 
-        <div id="form-success"
-          style="display:none; padding:40px; border:1px solid var(--border-color); background:var(--surface-secondary); margin-top:24px;">
-          <h3 style="font-family:var(--font-serif); font-size:28px; margin-bottom:12px;">REQUEST RECEIVED &check;</h3>
-          <p style="font-size:15px; color:var(--text-secondary);">
-            Thank you for reaching out to Sumanth Photography. We have received your inquiry and will respond within 24
-            business hours.
+      <!-- STEP 6: SCREEN 02 — FINAL EXACT QUOTE REVIEW -->
+      <section class="wizard-step-panel" data-step="6" aria-labelledby="review-step-heading">
+        <div class="step-header">
+          <span class="mono-label">STEP 06 OF 06 — FINAL REVIEW</span>
+          <h1 id="review-step-heading">YOUR QUOTE</h1>
+          <p>Please review your itemized photography, cinematography, deliverables, and estimated investment before submitting your enquiry.</p>
+        </div>
+
+        <!-- Submission Error / Retry Banner -->
+        <div id="submission-error-box" class="submission-error-banner" role="alert">
+          <div>
+            <strong>We couldn't submit your enquiry. Please try again.</strong>
+            <div style="font-size:12px; margin-top:2px;">Your details and selections have been safely preserved.</div>
+          </div>
+          <button type="button" class="btn-action btn-action-outline" style="font-size:10px; padding:6px 12px;" onclick="window.retrySubmitQuote()">
+            RETRY
+          </button>
+        </div>
+
+        <div style="max-width:880px;">
+          <!-- 01. Client & Celebration Overview Card -->
+          <div class="review-category-card">
+            <div class="review-category-header">
+              <span class="review-category-title">01. CLIENT &amp; CELEBRATION DETAILS</span>
+              <a href="javascript:void(0)" class="review-edit-link" onclick="window.goToQuoteStep(5)">EDIT DETAILS &rarr;</a>
+            </div>
+            <div class="review-items-list" id="review-client-details-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- 02. Photography Style Card -->
+          <div class="review-category-card">
+            <div class="review-category-header">
+              <span class="review-category-title">02. PHOTOGRAPHY STYLE</span>
+              <a href="javascript:void(0)" class="review-edit-link" onclick="window.goToQuoteStep(1)">EDIT STYLE &rarr;</a>
+            </div>
+            <div class="review-items-list" id="review-style-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- 03. Selected Celebrations & Coverage -->
+          <div class="review-category-card">
+            <div class="review-category-header">
+              <span class="review-category-title">03. EVENT-WISE COVERAGE BREAKDOWN</span>
+              <div style="display:flex; gap:12px;">
+                <a href="javascript:void(0)" class="review-edit-link" onclick="window.goToQuoteStep(2)">EDIT EVENTS &rarr;</a>
+                <a href="javascript:void(0)" class="review-edit-link" onclick="window.goToQuoteStep(3)">EDIT COVERAGE &rarr;</a>
+              </div>
+            </div>
+            <div class="review-items-list" id="review-events-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- 04. Curated Add-ons & Deliverables -->
+          <div class="review-category-card">
+            <div class="review-category-header">
+              <span class="review-category-title">04. CURATED ADD-ONS &amp; PHYSICAL DELIVERABLES</span>
+              <a href="javascript:void(0)" class="review-edit-link" onclick="window.goToQuoteStep(4)">EDIT ADD-ONS &rarr;</a>
+            </div>
+            <div class="review-items-list" id="review-addons-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- 05. Digital Outputs & Post-Production -->
+          <div class="review-category-card">
+            <div class="review-category-header">
+              <span class="review-category-title">05. CINEMA DIRECTION &amp; POST-PRODUCTION TIMELINE</span>
+              <a href="javascript:void(0)" class="review-edit-link" onclick="window.goToQuoteStep(4)">EDIT SPECIFICATIONS &rarr;</a>
+            </div>
+            <div class="review-items-list" id="review-outputs-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- 06. Studio Privileges & Discounts -->
+          <div class="review-category-card" id="review-discounts-card" style="display:none;">
+            <div class="review-category-header">
+              <span class="review-category-title">06. STUDIO PRIVILEGES &amp; PACKAGE BENEFITS</span>
+            </div>
+            <div class="review-items-list" id="review-discounts-list">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+
+          <!-- Estimated Total Investment Banner -->
+          <div class="review-total-banner">
+            <div>
+              <span class="mono-label" style="color:rgba(245,244,241,0.7); display:block; margin-bottom:4px;">ESTIMATED QUOTE (PENDING STUDIO CONFIRMATION)</span>
+              <div id="review-total-val" class="font-serif" style="font-size:clamp(36px, 5.5vw, 54px); font-weight:500; line-height:1;">
+                ₹0
+              </div>
+              <div id="review-savings-msg" style="margin-top:6px; font-family:var(--font-mono); font-size:12px; color:#f5f4f1; display:none;">
+                <!-- Total Savings Applied -->
+              </div>
+            </div>
+            <div style="max-width:340px; font-size:12px; color:rgba(245,244,241,0.8); line-height:1.6;">
+              &bull; Official quote subject to date verification.<br />
+              &bull; Statutory GST and destination outstation travel billed as applicable.
+            </div>
+          </div>
+
+          <!-- Single Final Submission CTA -->
+          <div style="margin-top:32px;">
+            <button type="button" id="btn-final-submit-quote" class="btn-action btn-action-primary" style="width:100%; font-size:13px; padding:20px 32px;" onclick="window.handleFinalSubmitClick()">
+              <span id="submit-btn-text">REQUEST MY QUOTE &rarr;</span>
+            </button>
+            <p style="font-family:var(--font-mono); font-size:11px; color:var(--text-secondary); text-align:center; margin-top:12px; letter-spacing:0.04em;">
+              By submitting, your bespoke requirements will be instantly dispatched to the Sumanth Photography senior creative team.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 7: SCREEN 03 — CONFIRMATION SCREEN -->
+      <section class="wizard-step-panel" data-step="7" aria-labelledby="confirm-step-heading">
+        <div style="max-width:720px; margin:40px auto; text-align:center;">
+          <div style="width:72px; height:72px; border-radius:50%; border:1px solid var(--border-color); display:flex; align-items:center; justify-content:center; margin:0 auto 28px auto; font-size:28px;">
+            ✓
+          </div>
+          <span class="mono-label" style="display:block; margin-bottom:12px;">QUOTE ENQUIRY RECEIVED</span>
+          <h1 id="confirm-step-heading" class="editorial-title" style="margin-bottom:20px;">
+            THANK YOU.
+          </h1>
+          <p style="font-size:17px; color:var(--text-primary); line-height:1.7; margin-bottom:28px;">
+            Your custom photography requirements have been received. Our team will contact you to review the package, availability, pricing and booking details.
           </p>
-        </div>
-      </main>
 
-    </div>
-  </section>
+          <div style="border:1px solid var(--border-color); background:var(--surface-secondary); padding:28px; text-align:left; margin-bottom:32px;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px; border-bottom:1px solid var(--border-light); padding-bottom:12px;">
+              <span class="mono-label">QUOTE REFERENCE ID</span>
+              <strong id="confirm-ref-id" style="font-family:var(--font-mono); font-size:16px; letter-spacing:0.08em; color:var(--text-primary);">SQ-2026-8492</strong>
+            </div>
 
-  <!-- FINAL CTA -->
-  <section style="padding:140px 0; text-align:center; border-top:1px solid var(--border-color);" class="reveal">
-    <div class="container" style="max-width:860px;">
-      <span class="mono-label" style="margin-bottom:20px; display:block;">RESERVATIONS</span>
-      <h2 class="editorial-title" style="margin-bottom:32px;">
-        YOUR STORY <br />
-        <span class="italic">starts here.</span>
-      </h2>
+            <div id="confirm-summary-box">
+              <!-- Summary breakdown populated by JS -->
+            </div>
+          </div>
 
-      <a href="#contact-form" class="btn-primary">REQUEST A QUOTE &rarr;</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-
-        <div>
-          <div class="footer-brand">SUMANTH<br />PHOTOGRAPHY</div>
-          <p style="margin-top:16px; font-size:13px; color:var(--text-secondary); max-width:320px;">
-            Fine art &amp; documentary photography studio based in Hyderabad, India. Documenting weddings, maternity
-            sessions, and milestones worldwide.
-          </p>
-        </div>
-
-        <div class="footer-links-column">
-          <div class="footer-heading">Navigation</div>
-          <a href="weddings.html" class="footer-link">Wedding Photography</a>
-          <a href="baby-maternity.html" class="footer-link">Baby Bump Shoots</a>
-          <a href="birthdays-events.html" class="footer-link">Others</a>
-          <a href="about.html" class="footer-link">About</a>
-          <a href="contact.html" class="footer-link">Contact</a>
-        </div>
-
-        <div class="footer-links-column">
-          <div class="footer-heading">Studio &amp; Location</div>
-          <span class="footer-link">Hyderabad, India</span>
-          <a href="tel:+919491818015" class="footer-link">+91 94918 18015</a>
-          <a href="mailto:hello@sumanthphotography.com" class="footer-link">hello@sumanthphotography.com</a>
-          <div style="margin-top:12px; display:flex; gap:16px;">
-            <a href="https://www.instagram.com/sumanth__photography07/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-              </svg>
+          <div style="display:flex; flex-direction:column; gap:14px; align-items:center;">
+            <a id="confirm-whatsapp-btn" href="https://wa.me/919491818015" target="_blank" rel="noopener" class="btn-action btn-action-primary" style="width:100%; max-width:420px; padding:18px;">
+              SEND DIRECTLY VIA WHATSAPP &rarr;
             </a>
-            <a href="https://wa.me/919491818015" target="_blank" rel="noopener" aria-label="WhatsApp"
-              class="footer-link">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-              </svg>
+            <a href="index.html" class="btn-action btn-action-outline" style="width:100%; max-width:420px;">
+              RETURN TO HOMEPAGE
             </a>
           </div>
         </div>
+      </section>
 
-      </div>
+    </div>
+  </main>
 
-      <div class="footer-bottom">
-        <span>&copy; 2026 SUMANTH PHOTOGRAPHY. ALL RIGHTS RESERVED.</span>
-        <span>HYDERABAD &middot; INDIA</span>
-      </div>
+  <!-- FIXED BOTTOM ACTION BAR -->
+  <footer class="wizard-bottom-nav" id="wizard-bottom-bar">
+    <div class="bottom-nav-inner">
+      <button type="button" class="btn-action btn-action-outline" id="btn-wizard-back">
+        &larr; BACK
+      </button>
+      <button type="button" class="btn-action btn-action-primary" id="btn-wizard-continue">
+        <span id="btn-continue-label">CONTINUE &rarr;</span>
+      </button>
     </div>
   </footer>
 
+
   <script src="js/motion.js"></script>
-  <script>
-
-    // Reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
-    }, { threshold: 0.06 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // Form Submission Behavior
-    const form = document.getElementById('contact-form');
-    const success = document.getElementById('form-success');
-    const submitBtn = document.getElementById('submit-btn');
-    const btnLabel = document.getElementById('btn-label-text');
-
-    if (form && submitBtn) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        btnLabel.innerHTML = '&check; REQUEST RECEIVED';
-
-        setTimeout(() => {
-          form.style.display = 'none';
-          if (success) success.style.display = 'block';
-        }, 600);
-      });
-    }
-  </script>
-
-  <style>
-    @media (max-width: 900px) {
-      #nav {
-        padding: 18px 24px;
-      }
-
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      #menu-btn {
-        display: block;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr !important;
-        gap: 48px !important;
-      }
-
-      .form-row-2 {
-        grid-template-columns: 1fr !important;
-        gap: 24px !important;
-      }
-    }
-  </style>
+  <script src="js/quote-builder.js"></script>
 </body>
 
 </html>

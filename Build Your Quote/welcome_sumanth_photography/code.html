@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sumanth Photography - Build Your Quote</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Subtle paper texture overlay */
+        .bg-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e3e2e0",
+                        "surface-variant": "#e3e2e2",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1a1c1b",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#303031",
+                        "surface-container": "#efeded",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-dim": "#dbdad9",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#e2dfde",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e3e2e2",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474747",
+                        "surface-container-low": "#f5f3f3",
+                        "background": "#fbf9f9",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "tertiary-fixed-dim": "#c7c6c5",
+                        "on-tertiary-container": "#838482",
+                        "on-surface": "#1b1c1c",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "inverse-primary": "#c6c6c6",
+                        "on-secondary-container": "#636262",
+                        "surface-bright": "#fbf9f9",
+                        "outline": "#7e7576",
+                        "on-background": "#1b1c1c",
+                        "outline-variant": "#cfc4c5",
+                        "on-primary-container": "#848484",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#464746",
+                        "primary": "#000000",
+                        "primary-container": "#1b1b1b",
+                        "on-tertiary-fixed": "#1a1c1b",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-surface-variant": "#4c4546",
+                        "surface-tint": "#5e5e5e",
+                        "surface": "#fbf9f9",
+                        "secondary": "#5f5e5e",
+                        "surface-container-high": "#e9e8e7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "unit": "4px",
+                        "gutter": "32px",
+                        "container-max": "1440px",
+                        "margin-desktop": "64px",
+                        "section-gap": "128px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-lg": ["72px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen relative font-body-md overflow-x-hidden">
+<!-- Texture Overlay -->
+<div class="fixed inset-0 bg-texture z-0"></div>
+<!-- Main Container -->
+<div class="relative z-10 flex flex-col md:flex-row min-h-screen">
+<!-- Left Panel: Content -->
+<div class="w-full md:w-1/2 flex flex-col justify-between p-margin-mobile md:p-margin-desktop bg-surface-container-lowest border-r border-outline-variant/30">
+<!-- Header / Top Metadata -->
+<header class="flex justify-between items-start w-full">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary">SUMANTH PHOTOGRAPHY</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider">WEDDING PHOTOGRAPHY</span>
+</div>
+<div class="hidden md:flex font-label-sm text-label-sm tabular-nums text-outline border-b border-outline pb-1">
+                    01 / 05
+                </div>
+</header>
+<!-- Main Hero Content -->
+<main class="flex-grow flex flex-col justify-center max-w-lg mt-16 md:mt-0">
+<h1 class="font-display-lg text-display-lg md:text-[88px] md:leading-[96px] text-primary mb-8 tracking-tighter">
+                    BUILD <br/><span class="italic font-light">YOUR</span> QUOTE
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">
+                    Create a photography package around the way you want your wedding documented.
+                </p>
+<!-- Action Button -->
+<div>
+<button class="group flex items-center justify-between w-full max-w-[280px] bg-primary text-on-primary px-6 py-5 hover:bg-surface-tint transition-colors duration-300">
+<span class="font-label-sm text-label-sm uppercase tracking-widest">GET STARTED</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform duration-300" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Mobile Progress / Footer Metadata -->
+<footer class="mt-16 md:mt-0 flex justify-between items-end md:hidden">
+<div class="font-label-sm text-label-sm tabular-nums text-outline border-b border-outline pb-1">
+                    01 / 05
+                </div>
+</footer>
+</div>
+<!-- Right Panel: Image -->
+<div class="w-full md:w-1/2 h-[50vh] md:h-screen relative overflow-hidden bg-surface-variant hidden md:block">
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply z-10 pointer-events-none"></div>
+<img alt="Premium wedding photography" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[20%] contrast-125 transition-transform duration-[10s] hover:scale-105 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7v9-1I6maPv9Q2GsCYBI3oFNXcGYZ_qknN1IWD8sOGtA43w-bHKJJ2Rq_Kqr-Jd_N2UozaOpEkVC8b6wjeOLiJhIJMIfnfGwsGvuqkIAXNnMaRAzyUWHtcD1G3zZIsdiMD8lr78o81_b9pX2I6PRr7nwbN7LQKny_5xUh63sAMvmLckSH4uhEVGvAkqkGH6Aujhk8XcoC_6cBaaGM-zS2EddCfN5A3BuxiA0YmFXcGNXw3d4fWVa58w"/>
+<!-- Subtle Image Overlay Elements -->
+<div class="absolute inset-0 z-20 pointer-events-none border-[16px] md:border-[32px] border-surface-container-lowest/5 mix-blend-overlay"></div>
+</div>
+<!-- Mobile Image Version (Shows above content on small screens if desired, or below. Opting for below as requested layout is split screen) -->
+<div class="w-full h-[40vh] relative overflow-hidden bg-surface-variant md:hidden border-t border-outline-variant/30">
+<img alt="Premium wedding photography" class="absolute inset-0 w-full h-full object-cover object-center grayscale-[20%] contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7v9-1I6maPv9Q2GsCYBI3oFNXcGYZ_qknN1IWD8sOGtA43w-bHKJJ2Rq_Kqr-Jd_N2UozaOpEkVC8b6wjeOLiJhIJMIfnfGwsGvuqkIAXNnMaRAzyUWHtcD1G3zZIsdiMD8lr78o81_b9pX2I6PRr7nwbN7LQKny_5xUh63sAMvmLckSH4uhEVGvAkqkGH6Aujhk8XcoC_6cBaaGM-zS2EddCfN5A3BuxiA0YmFXcGNXw3d4fWVa58w"/>
+</div>
+</div>
+</body></html>

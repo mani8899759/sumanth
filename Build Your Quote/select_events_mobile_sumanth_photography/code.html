@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sumanth Photography - Select Events</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e3e2e2",
+                      "surface-bright": "#fbf9f9",
+                      "inverse-surface": "#303031",
+                      "on-secondary-container": "#636262",
+                      "on-surface-variant": "#4c4546",
+                      "on-error": "#ffffff",
+                      "on-tertiary-fixed-variant": "#464746",
+                      "inverse-on-surface": "#f2f0f0",
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "primary": "#000000",
+                      "on-primary-container": "#848484",
+                      "outline-variant": "#cfc4c5",
+                      "tertiary": "#000000",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#1a1c1b",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-surface": "#1b1c1c",
+                      "surface-dim": "#dbdad9",
+                      "error": "#ba1a1a",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#e5e2e1",
+                      "on-primary-fixed-variant": "#474747",
+                      "surface-container": "#efeded",
+                      "on-secondary-fixed-variant": "#474746",
+                      "primary-container": "#1b1b1b",
+                      "tertiary-fixed": "#e3e2e0",
+                      "inverse-primary": "#c6c6c6",
+                      "surface-container-low": "#f5f3f3",
+                      "secondary-container": "#e2dfde",
+                      "surface-container-high": "#e9e8e7",
+                      "primary-fixed": "#e2e2e2",
+                      "secondary": "#5f5e5e",
+                      "tertiary-fixed-dim": "#c7c6c5",
+                      "on-tertiary-container": "#838482",
+                      "outline": "#7e7576",
+                      "tertiary-container": "#1a1c1b",
+                      "surface-variant": "#e3e2e2",
+                      "on-background": "#1b1c1c",
+                      "background": "#fbf9f9",
+                      "on-error-container": "#93000a",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "surface-tint": "#5e5e5e",
+                      "surface": "#fbf9f9",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#1c1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1440px",
+                      "margin-desktop": "64px",
+                      "gutter": "32px",
+                      "margin-mobile": "20px",
+                      "unit": "4px",
+                      "section-gap": "128px"
+              },
+              "fontFamily": {
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "72px",
+                              {
+                                      "lineHeight": "84px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      }
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            /* Subtle paper texture */
+            background-color: #fbf9f9;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-16 pb-32 selection:bg-primary selection:text-on-primary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full bg-background dark:bg-background border-b border-outline-variant dark:border-outline flat no shadows transition-all duration-300 ease-in-out z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-unit max-w-container-max mx-auto h-16">
+<span class="font-headline-md text-headline-md tracking-tighter text-primary dark:text-on-background">SUMANTH PHOTOGRAPHY</span>
+<span class="font-label-sm text-label-sm text-secondary hidden md:block uppercase tracking-widest">WEDDING PHOTOGRAPHY</span>
+<!-- Mobile Menu Toggle (Semantic, functionally hidden navigation shell intent) -->
+<span class="material-symbols-outlined block md:hidden cursor-pointer" data-icon="menu">menu</span>
+</div>
+</header>
+<!-- SideNavBar (Hidden on Mobile, relevant for semantic structure but suppressed per intent rules for this linear flow step) -->
+<nav class="fixed left-margin-desktop top-1/2 -translate-y-1/2 hidden md:flex flex-col space-y-unit bg-transparent z-40">
+<div class="font-label-sm text-label-sm uppercase text-secondary mb-4 tracking-widest">PROGRESS</div>
+<div class="text-outline pl-2 font-label-sm text-label-sm tabular-nums flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px]" data-icon="circle" style="font-variation-settings: 'FILL' 0;">circle</span>
+            01 / 05
+        </div>
+<div class="text-primary font-bold border-l-2 border-primary pl-2 font-label-sm text-label-sm tabular-nums flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px]" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+            02 / 05
+        </div>
+<div class="text-outline pl-2 font-label-sm text-label-sm tabular-nums flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px]" data-icon="circle" style="font-variation-settings: 'FILL' 0;">circle</span>
+            03 / 05
+        </div>
+<div class="text-outline pl-2 font-label-sm text-label-sm tabular-nums flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px]" data-icon="circle" style="font-variation-settings: 'FILL' 0;">circle</span>
+            04 / 05
+        </div>
+<div class="text-outline pl-2 font-label-sm text-label-sm tabular-nums flex items-center gap-2">
+<span class="material-symbols-outlined text-[10px]" data-icon="circle" style="font-variation-settings: 'FILL' 0;">circle</span>
+            05 / 05
+        </div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full md:pl-[200px] mt-8 mb-16">
+<!-- Header -->
+<div class="mb-12 border-b border-primary pb-8">
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-4 block md:hidden">PROGRESS 02 / 05</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary max-w-2xl leading-tight">
+                WHICH MOMENTS <br/><i class="font-normal italic">should we cover?</i>
+</h1>
+<p class="font-body-md text-body-md text-secondary mt-4 max-w-xl">
+                Select the events you are planning. This helps us tailor our approach and estimate coverage requirements.
+            </p>
+</div>
+<!-- Event Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1: YOUR WEDDING DAY (Highlighted) -->
+<label class="group relative block cursor-pointer">
+<input checked="" class="peer sr-only" type="checkbox"/>
+<div class="border border-primary peer-checked:border-2 bg-surface p-4 transition-all duration-300 h-full flex flex-col">
+<div class="relative w-full aspect-[4/3] mb-4 overflow-hidden bg-surface-container">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A sweeping, cinematic shot of a traditional South Indian wedding ceremony. The bride and groom are seated at the mandap, surrounded by vibrant flowers and warm golden lighting. The composition is editorial, capturing a fleeting moment of connection between the couple. Shot on medium format film, high contrast, timeless feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_x5QyMSv5cFs0IAWK5AaODWlA183END4oIR6QHSe3zAro9_YdJ0m8Ri7537eWoCqyjEnE0ua7CMJ67YBjAMmjzR22Nf83Gmjy1sIgZRaX6stsRyXUuvTcyQvtiB8LkAOqAecmaUrWkF4xOXOuK-fEyPfOIRv72Ai3voVGbWc7Xx5OHwnWfse6RrRehJL65AjdOy_Gdat0r1nQj88wpryZ6kV9dGAhdl0aJ65FCF78J6tY5cSNbpR7HQ"/>
+<div class="absolute inset-0 bg-primary/10 peer-checked:bg-transparent transition-colors"></div>
+<div class="absolute top-3 right-3 w-6 h-6 border border-primary bg-surface flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm font-bold" data-icon="close">close</span>
+</div>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">MAIN EVENT</div>
+<h3 class="font-headline-md text-headline-md text-primary">YOUR WEDDING DAY</h3>
+</div>
+<div class="mt-4 border-t border-outline-variant pt-2 flex justify-between items-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-primary">REQUIRED</span>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="check">check</span>
+</div>
+</div>
+</div>
+</label>
+<!-- Card 2: ENGAGEMENT -->
+<label class="group relative block cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="border border-outline peer-checked:border-primary peer-checked:border-2 bg-surface p-4 transition-all duration-300 h-full flex flex-col hover:border-primary">
+<div class="relative w-full aspect-[4/3] mb-4 overflow-hidden bg-surface-container">
+<img class="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="An elegant engagement ring exchange ceremony. The couple is dressed in contemporary formal wear. The lighting is soft and natural, creating a romantic atmosphere. The focus is sharp on their hands, with the background softly blurred in a classic bokeh effect. Black and white aesthetic, high-end editorial." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcyI0awld_oiWR81cIljDUQ5E-vCYPaglsPBENTwyus9c_fNBScfhnb7FC8IUS6R-jklusv8Qk1EuTRQ-UtM-iQKyCZAPYuiZvlyecoGbxJ2M2GgOl-8nlG6xr2mL1GNKHxr_IlkWQe6SPp1Ewzes-SqOVfUGoenYiCoTRb-NDFNyH4jYP_hPgvMCBXnfT9vlbueYEhnpGy-xuy5852oH7yYStOHnYkgTypEJkYH_vPwzB-wZT5XqVdQ"/>
+<div class="absolute inset-0 bg-primary/10 peer-checked:bg-transparent transition-colors"></div>
+<div class="absolute top-3 right-3 w-6 h-6 border border-primary bg-surface flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm font-bold" data-icon="close">close</span>
+</div>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">PRE-WEDDING</div>
+<h3 class="font-headline-md text-headline-md text-primary">ENGAGEMENT</h3>
+</div>
+</div>
+</div>
+</label>
+<!-- Card 3: HALDI (Using requested image) -->
+<label class="group relative block cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="border border-outline peer-checked:border-primary peer-checked:border-2 bg-surface p-4 transition-all duration-300 h-full flex flex-col hover:border-primary">
+<div class="relative w-full aspect-[4/3] mb-4 overflow-hidden bg-surface-container">
+<div class="bg-cover bg-center w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCEVGwU_CoUfXHsnwz14qatFidGWYz5U1i1vNTjRnn3AxDUS1lJLwfinBESFJsl40i1O933l7nLjNc1Gd-kt52XO9mkFKQ7L7yCcYh7_fEb5C_FTT1jhrjlvsmVQsTiIKDZY0zRbxgBVWOA52XQmn4ql4WYGWZwn7cnfogQbVbPFOyVzOjp2YGBdY6s-XnWI3xSr9Z3_Mk0IHE-45ukf1bJ74TZLyEU2V4HtEIETGK3fxPhKggndbBzpQ')"></div>
+<div class="absolute inset-0 bg-primary/10 peer-checked:bg-transparent transition-colors"></div>
+<div class="absolute top-3 right-3 w-6 h-6 border border-primary bg-surface flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm font-bold" data-icon="close">close</span>
+</div>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">CEREMONY</div>
+<h3 class="font-headline-md text-headline-md text-primary">HALDI</h3>
+</div>
+</div>
+</div>
+</label>
+<!-- Additional Cards simplified for brevity but matching style -->
+<label class="group relative block cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="border border-outline peer-checked:border-primary peer-checked:border-2 bg-surface p-4 transition-all duration-300 h-full flex flex-col hover:border-primary">
+<div class="flex flex-col flex-grow justify-center py-8">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">CEREMONY</div>
+<h3 class="font-headline-md text-headline-md text-primary">SANGEET</h3>
+</div>
+</div>
+<div class="absolute top-3 right-3 w-6 h-6 border border-primary bg-surface flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm font-bold" data-icon="close">close</span>
+</div>
+</div>
+</label>
+<label class="group relative block cursor-pointer">
+<input class="peer sr-only" type="checkbox"/>
+<div class="border border-outline peer-checked:border-primary peer-checked:border-2 bg-surface p-4 transition-all duration-300 h-full flex flex-col hover:border-primary">
+<div class="flex flex-col flex-grow justify-center py-8">
+<div>
+<div class="font-label-sm text-label-sm uppercase tracking-widest text-secondary mb-1">CEREMONY</div>
+<h3 class="font-headline-md text-headline-md text-primary">MEHENDI</h3>
+</div>
+</div>
+<div class="absolute top-3 right-3 w-6 h-6 border border-primary bg-surface flex items-center justify-center opacity-0 peer-checked:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm font-bold" data-icon="close">close</span>
+</div>
+</div>
+</label>
+</div>
+</main>
+<!-- BottomNavBar (Transaction Flow Shell) -->
+<div class="fixed bottom-0 w-full z-50 bg-background dark:bg-background border-t border-outline dark:border-outline flat no shadows flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto h-20 md:h-24">
+<!-- Summary Dock (Mobile/Desktop) -->
+<div class="hidden md:flex flex-col mr-auto">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary">EVENTS SELECTED: 1</span>
+<span class="font-body-md text-body-md text-primary">Base Coverage</span>
+</div>
+<div class="flex space-x-4 w-full md:w-auto justify-between md:justify-end">
+<!-- Secondary Action -->
+<button class="border border-outline text-primary px-gutter py-unit flex items-center justify-center hover:bg-surface-container transition-colors duration-200 font-label-sm text-label-sm uppercase tracking-widest h-12 w-1/2 md:w-auto md:min-w-[140px]">
+                BACK
+            </button>
+<!-- Primary Action -->
+<button class="bg-primary text-on-primary px-gutter py-unit flex items-center justify-center hover:opacity-90 transition-colors duration-200 font-label-sm text-label-sm uppercase tracking-widest h-12 w-1/2 md:w-auto md:min-w-[180px] active:scale-95 transition-transform">
+                CONTINUE <span class="ml-2 font-body-md">→</span>
+</button>
+</div>
+</div>
+</body></html>

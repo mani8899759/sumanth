@@ -192,7 +192,8 @@
     { label: 'BABY BUMP<br />SHOOTS', href: 'baby-maternity.html' },
     { label: 'OTHERS', href: 'birthdays-events.html' },
     { label: 'ABOUT', href: 'about.html' },
-    { label: 'CONTACT', href: 'contact.html' }
+    { label: 'CONTACT', href: 'contact.html' },
+    { label: 'BUILD YOUR QUOTE &rarr;', href: 'quote.html', isPrimary: true }
   ];
 
   function initMobileMenu() {
@@ -219,7 +220,11 @@
       </div>
       <div class="mobile-nav-body">
         <nav class="mobile-menu-list">
-          ${mobileNavigation.map(item => `<a href="${item.href}" class="mobile-menu-item">${item.label}</a>`).join('\n          ')}
+          ${mobileNavigation.map(item => `
+            <a href="${item.href}" class="mobile-menu-item${item.isPrimary ? ' mobile-menu-item--byq' : ''}"${item.isPrimary ? ' id="mobile-byq-cta"' : ''}>
+              ${item.label}
+            </a>
+          `).join('\n          ')}
         </nav>
       </div>
     `;

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Event Coverage Builder - Sumanth Photography</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#1b1c1c",
+                    "primary": "#000000",
+                    "outline-variant": "#cfc4c5",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "surface-container-highest": "#e3e2e2",
+                    "outline": "#7e7576",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#848484",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#c6c6c6",
+                    "surface-container": "#efeded",
+                    "on-surface-variant": "#4c4546",
+                    "on-tertiary-fixed": "#1a1c1b",
+                    "on-background": "#1b1c1c",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-dim": "#dbdad9",
+                    "surface-tint": "#5e5e5e",
+                    "inverse-primary": "#c6c6c6",
+                    "surface": "#fbf9f9",
+                    "on-primary-fixed": "#1b1b1b",
+                    "secondary": "#5f5e5e",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#e2e2e2",
+                    "surface-variant": "#e3e2e2",
+                    "on-tertiary-container": "#838482",
+                    "secondary-container": "#e2dfde",
+                    "on-secondary-container": "#636262",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#1a1c1b",
+                    "on-primary-fixed-variant": "#474747",
+                    "background": "#fbf9f9",
+                    "tertiary": "#000000",
+                    "tertiary-fixed": "#e3e2e0",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#303031",
+                    "surface-container-low": "#f5f3f3",
+                    "tertiary-fixed-dim": "#c7c6c5",
+                    "primary-container": "#1b1b1b",
+                    "surface-bright": "#fbf9f9",
+                    "inverse-on-surface": "#f2f0f0",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e9e8e7",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#464746",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-secondary-fixed": "#1c1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "32px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "section-gap": "128px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "72px",
+                            {
+                                    "lineHeight": "84px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbf9f9;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="text-on-surface font-body-md bg-surface antialiased flex flex-col min-h-screen relative pb-[80px]">
+<!-- Top Navigation (Mobile Focus, TopAppBar logic but suppressed for linear flow, using a custom header instead as requested) -->
+<header class="w-full px-margin-mobile py-4 border-b border-outline-variant flex justify-between items-center sticky top-0 bg-surface/95 backdrop-blur-sm z-40">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">03 / 05</span>
+<h1 class="font-headline-md text-headline-md text-primary tracking-tight">BUILD YOUR COVERAGE</h1>
+</div>
+<button class="p-2 border border-primary text-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</header>
+<main class="flex-grow w-full max-w-[100vw] overflow-x-hidden">
+<!-- Event Navigation -->
+<nav class="w-full border-b border-outline-variant bg-surface sticky top-[80px] z-30">
+<ul class="flex overflow-x-auto hide-scrollbar px-margin-mobile py-4 space-x-6">
+<li>
+<button class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1 uppercase tracking-widest whitespace-nowrap">
+                        ENGAGEMENT
+                    </button>
+</li>
+<li>
+<button class="font-label-sm text-label-sm text-on-surface-variant font-normal uppercase tracking-widest whitespace-nowrap hover:text-primary transition-colors">
+                        HALDI
+                    </button>
+</li>
+<li>
+<button class="font-label-sm text-label-sm text-on-surface-variant font-normal uppercase tracking-widest whitespace-nowrap hover:text-primary transition-colors">
+                        RECEPTION
+                    </button>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<section class="px-margin-mobile py-8 space-y-8">
+<!-- Service Card 1: Candid Photography -->
+<article class="border border-primary bg-surface flex flex-col">
+<div class="w-full aspect-square relative border-b border-primary">
+<img alt="Candid Photography" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Vkj3cLnSJ55BkC8WRsiipQlhnRUEX9XeG9l1nTnopeuVnMRuvm296v6WdTDHrY1CaT0261BITu1CJhjv5w3VK5U6Rl7e2NhMB38l9QVjz0J1Q5phyBgrSQeeGttjCy7w0SgSYLG4jFU2tR1hyQ5K-T5VTWda511-6hT1YAw-rUAbaWBWb-G9bNYo4O0hejBvdJ92nj70a7XSv5YUIqZ1H-sxpo3Gu9h5TcpsNrXrnkur5Zxwu8rPueVfiL"/>
+<div class="absolute top-4 right-4 w-6 h-6 border border-primary flex items-center justify-center bg-surface/80 backdrop-blur-sm">
+<!-- Elegant checkmark alternative -->
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'wght' 200;">check</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">CANDID PHOTOGRAPHY</h2>
+<span class="font-body-md text-body-md text-on-surface-variant">₹45,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Our primary approach to documenting your day. Unobtrusive, narrative-driven imagery capturing genuine moments and raw emotion.
+                    </p>
+<div class="flex items-center gap-4 pt-4 border-t border-outline-variant mt-2">
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Photographers</span>
+<div class="flex items-center border border-primary">
+<button class="px-3 py-1 text-primary hover:bg-surface-variant transition-colors">−</button>
+<span class="px-4 py-1 font-body-md border-x border-primary min-w-[40px] text-center">2</span>
+<button class="px-3 py-1 text-primary hover:bg-surface-variant transition-colors">+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Service Card 2: Candid Video -->
+<article class="border border-primary bg-surface flex flex-col opacity-70 hover:opacity-100 transition-opacity">
+<div class="w-full aspect-[1.49] relative border-b border-primary">
+<img alt="Candid Video" class="w-full h-full object-cover grayscale transition-all duration-300 hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNyFOdSksDbnu3T6x_uoCX-HPCJLpY0OdU_GVJLTl3LSz_2UNir_QGowmAEPdlsnPw8rSjf1GDGYzXEEAiKzNNhVwNZbZ4t02YNUGMezG7IkbAnUvo_6AMAeSiGfJW11ccYEPsQN25nDCs9vEHPzbrEX5EabHWz3amIV3vEPgAEG9eKsm4fb3JAyRIOBlg0qkiKwkF1CnV78ZjW_JD9sOOn5aomVUjEeyn33Kfz5WZLq1C6iF1bLmfxQ"/>
+<div class="absolute top-4 right-4 w-6 h-6 border border-primary flex items-center justify-center bg-surface/80 backdrop-blur-sm">
+<!-- Empty for unselected state -->
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight">CANDID VIDEO</h2>
+<span class="font-body-md text-body-md text-on-surface-variant">₹60,000</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Cinematic storytelling focused on movement, vows, and the atmospheric sounds of your celebration. Delivered as a narrative highlight film.
+                    </p>
+</div>
+</article>
+</section>
+<!-- Navigation Actions (Within content flow before dock) -->
+<div class="px-margin-mobile pb-section-gap flex justify-between gap-4">
+<button class="flex-1 py-4 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-variant transition-colors">
+                BACK
+            </button>
+<button class="flex-1 py-4 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-inverse-surface transition-colors">
+                CONTINUE <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Bottom Dock Summary (Custom for this linear flow) -->
+<div class="fixed bottom-0 w-full bg-surface border-t border-primary z-50 p-4 flex justify-between items-center shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">4 SERVICES</span>
+<span class="font-body-md text-body-md font-bold text-primary">₹1,45,000</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary underline underline-offset-4 uppercase tracking-widest hover:text-on-surface-variant transition-colors">
+            [VIEW SUMMARY]
+        </button>
+</div>
+</body></html>
