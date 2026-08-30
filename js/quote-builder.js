@@ -1594,7 +1594,7 @@
   // -------------------------------------------------------------
   // SUBMISSION LOGIC & DOUBLE-SUBMIT PREVENTION
   // -------------------------------------------------------------
-  window.handleFinalSubmitClick = function () {
+  window.handleFinalSubmitClick = async function () {
     if (state.isSubmitting) return;
 
     const totals = calculateQuoteTotals();
@@ -1636,6 +1636,15 @@
       addons: state.addons,
       promoCode: state.promoCode,
       lineItems: totals.lineItems,
+      addonsSelected: totals.lineItems.filter(i => i.category === 'ADDON' || i.category === 'OUTPUT'),
+      preferences: {
+        film_style: state.addons.filmStyle,
+        delivery_preference: state.addons.delivery,
+        streaming_preference: state.addons.liveStreaming?.included ? state.addons.liveStreaming.events?.join(', ') : 'none',
+        raw_drive: Boolean(state.addons.rawDrive),
+        reels_package: Boolean(state.addons.sameDayReels),
+        notes: cust.notes || ''
+      },
       eventSubtotal: totals.eventSubtotal,
       addonSubtotal: totals.addonSubtotal,
       rawSubtotal: totals.rawSubtotal,
@@ -1644,41 +1653,50 @@
       termsAccepted: true
     };
 
-    // Simulate reliable dispatch
-    setTimeout(() => {
-      try {
-        // Save to active history archive
-        const historyKey = 'sumanth_quotes_history';
-        const existing = JSON.parse(localStorage.getItem(historyKey) || '[]');
-        existing.unshift(payload);
-        localStorage.setItem(historyKey, JSON.stringify(existing.slice(0, 20)));
-        localStorage.setItem('sumanth_latest_quote', JSON.stringify(payload));
-
-        state.isSubmitting = false;
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.style.opacity = '1';
-        }
-        if (submitText) {
-          submitText.textContent = 'REQUEST MY QUOTE →';
-        }
-
-        saveState();
-        trackEvent('quote_submitted', { quoteId: quoteId, total: totals.estimatedTotal });
-        window.goToQuoteStep(7);
-      } catch (err) {
-        state.isSubmitting = false;
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.style.opacity = '1';
-        }
-        if (submitText) {
-          submitText.textContent = 'REQUEST MY QUOTE →';
-        }
-        if (errorBox) errorBox.classList.add('visible');
-        trackEvent('quote_submission_failed', { error: err.message });
+    try {
+      // 1. Submit to Supabase / Backend Data Layer
+      if (window.SumanthDB && typeof window.SumanthDB.submitQuoteSubmission === 'function') {
+        await window.SumanthDB.submitQuoteSubmission(payload);
       }
-    }, 400);
+
+      // 2. Save to active local history archive for immediate offline access
+      const historyKey = 'sumanth_quotes_history';
+      const existing = JSON.parse(localStorage.getItem(historyKey) || '[]');
+      existing.unshift(payload);
+      localStorage.setItem(historyKey, JSON.stringify(existing.slice(0, 20)));
+      localStorage.setItem('sumanth_latest_quote', JSON.stringify(payload));
+
+      state.isSubmitting = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+      }
+      if (submitText) {
+        submitText.textContent = 'REQUEST MY QUOTE →';
+      }
+
+      saveState();
+      trackEvent('quote_submitted', { quoteId: quoteId, total: totals.estimatedTotal });
+      window.goToQuoteStep(7);
+    } catch (err) {
+      console.error('Quote submission error:', err);
+      state.isSubmitting = false;
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+      }
+      if (submitText) {
+        submitText.textContent = 'REQUEST MY QUOTE →';
+      }
+      if (errorBox) {
+        errorBox.classList.add('visible');
+        const errDesc = errorBox.querySelector('p');
+        if (errDesc) {
+          errDesc.textContent = err.message || 'Unable to store your quote submission. Please verify your connection.';
+        }
+      }
+      trackEvent('quote_submission_failed', { error: err.message });
+    }
   };
 
   window.retrySubmitQuote = function () {
