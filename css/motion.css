@@ -106,6 +106,7 @@ img.hero-drift {
 
 /* Hide desktop nav BYQ CTA on mobile (hamburger menu takes over) */
 @media (max-width: 900px) {
+
   a.nav-byq-cta,
   .nav-byq-cta {
     display: none !important;
@@ -648,6 +649,7 @@ a[aria-label="WhatsApp"] {
 
 /* ── Desktop nav header CTA (Desktop only > 900px) ───────────────────────── */
 @media (min-width: 901px) {
+
   a.nav-byq-cta,
   .nav-byq-cta {
     display: inline-flex !important;
@@ -686,6 +688,7 @@ a[aria-label="WhatsApp"] {
 
 /* Strictly hide from mobile header <= 900px */
 @media (max-width: 900px) {
+
   a.nav-byq-cta,
   .nav-byq-cta {
     display: none !important;
@@ -787,7 +790,8 @@ a.btn-byq-dark:focus-visible,
   font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif) !important;
   font-size: clamp(24px, 6.8vw, 36px) !important;
   line-height: 1.15 !important;
-  font-weight: 500 !important;           /* Slightly bolder than regular items (400) */
+  font-weight: 500 !important;
+  /* Slightly bolder than regular items (400) */
   letter-spacing: 0.12em !important;
   text-transform: uppercase !important;
   color: #000000 !important;
@@ -797,7 +801,8 @@ a.btn-byq-dark:focus-visible,
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  min-height: 44px !important;           /* Touch target */
+  min-height: 44px !important;
+  /* Touch target */
   display: inline-flex !important;
   align-items: center !important;
   gap: 0.18em !important;
@@ -807,7 +812,8 @@ a.btn-byq-dark:focus-visible,
 
 #mobile-nav .mobile-menu-byq:hover {
   opacity: 0.65 !important;
-  gap: 0.26em !important;                /* Arrow nudges slightly right on hover */
+  gap: 0.26em !important;
+  /* Arrow nudges slightly right on hover */
 }
 
 #mobile-nav .mobile-menu-byq:active {
@@ -850,6 +856,7 @@ a.btn-byq-dark:focus-visible,
 
 /* ── Reduced motion for BYQ ─────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
+
   a.nav-byq-cta,
   a.btn-byq,
   a.btn-byq-dark,

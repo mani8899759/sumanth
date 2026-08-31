@@ -46,7 +46,9 @@ h1.hero-headline-desktop,
    02 — SECTION HEADINGS & SUBHEADINGS
    Strong but not as heavy as hero. Weight 500 of Cormorant Garamond.
    -------------------------------------------------------------------------- */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 500;
 }
 
@@ -265,6 +267,7 @@ textarea {
    Ensure heavier weights don't cause layout issues on small screens.
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
+
   /* Slightly tighter letter-spacing on mobile to prevent overflow with heavier weights */
   .editorial-title {
     letter-spacing: -0.02em;
@@ -279,18 +282,20 @@ textarea {
     letter-spacing: 0.1em;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     word-break: break-word;
     overflow-wrap: break-word;
   }
 }
 
 @media (max-width: 768px) {
+
   /* Mobile body text remains readable but not heavy */
   body {
     font-weight: 400;
   }
-  
+
   /* Mobile hero headlines retain strong presence */
   .hero-headline-desktop,
   .editorial-title {

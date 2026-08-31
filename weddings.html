@@ -283,8 +283,13 @@
       border-color: rgba(245, 244, 241, 0.6);
     }
 
-    .desktop-slider-btn.prev-btn { left: 24px; }
-    .desktop-slider-btn.next-btn { right: 24px; }
+    .desktop-slider-btn.prev-btn {
+      left: 24px;
+    }
+
+    .desktop-slider-btn.next-btn {
+      right: 24px;
+    }
 
     .desktop-slider-dots {
       position: absolute;
@@ -307,7 +312,8 @@
       transition: color 250ms ease, border-color 250ms ease;
     }
 
-    .desk-dot.active, .desk-dot:hover {
+    .desk-dot.active,
+    .desk-dot:hover {
       color: #f5f4f1;
       border-color: rgba(245, 244, 241, 0.3);
     }
@@ -322,6 +328,7 @@
         height: 100%;
         overflow: hidden;
       }
+
       .hero-desktop-slider {
         display: none !important;
       }
@@ -926,6 +933,7 @@
   </style>
   <link rel="stylesheet" href="css/motion.css">
   <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/floating-contact.css">
 </head>
 
 <body>
@@ -982,36 +990,56 @@
         <div class="mobile-slider-track">
           <div class="mobile-slide active">
             <picture>
-              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-001-480.webp 480w, images/wedding/wedding-mobile-001-750.webp 750w, images/wedding/wedding-mobile-001.webp 1024w" sizes="100vw">
-              <img src="images/wedding/wedding-mobile-001.webp" alt="Mobile Wedding Hero 1 &mdash; Golden Silhouette Couple inside Heritage Archway" loading="eager" fetchpriority="high" style="object-position: center 30%;" />
+              <source media="(max-width: 768px)"
+                srcset="images/wedding/wedding-mobile-001-480.webp 480w, images/wedding/wedding-mobile-001-750.webp 750w, images/wedding/wedding-mobile-001.webp 1024w"
+                sizes="100vw">
+              <img src="images/wedding/wedding-mobile-001.webp"
+                alt="Mobile Wedding Hero 1 &mdash; Golden Silhouette Couple inside Heritage Archway" loading="eager"
+                fetchpriority="high" style="object-position: center 30%;" />
             </picture>
           </div>
           <div class="mobile-slide">
             <picture>
-              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-002-480.webp 480w, images/wedding/wedding-mobile-002-750.webp 750w, images/wedding/wedding-mobile-002.webp 1024w" sizes="100vw">
-              <img src="images/wedding/wedding-mobile-002.webp" alt="Mobile Wedding Hero 2 &mdash; Couple in Magenta Gown &amp; Black Suit on White Mansion Staircase" loading="lazy" style="object-position: center 35%;" />
+              <source media="(max-width: 768px)"
+                srcset="images/wedding/wedding-mobile-002-480.webp 480w, images/wedding/wedding-mobile-002-750.webp 750w, images/wedding/wedding-mobile-002.webp 1024w"
+                sizes="100vw">
+              <img src="images/wedding/wedding-mobile-002.webp"
+                alt="Mobile Wedding Hero 2 &mdash; Couple in Magenta Gown &amp; Black Suit on White Mansion Staircase"
+                loading="lazy" style="object-position: center 35%;" />
             </picture>
           </div>
           <div class="mobile-slide">
             <picture>
-              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-003-480.webp 480w, images/wedding/wedding-mobile-003-750.webp 750w, images/wedding/wedding-mobile-003.webp 1024w" sizes="100vw">
-              <img src="images/wedding/wedding-mobile-003.webp" alt="Mobile Wedding Hero 3 &mdash; Couple in Red Saree &amp; White Kurta in Heritage Arcade Corridor" loading="lazy" style="object-position: center 40%;" />
+              <source media="(max-width: 768px)"
+                srcset="images/wedding/wedding-mobile-003-480.webp 480w, images/wedding/wedding-mobile-003-750.webp 750w, images/wedding/wedding-mobile-003.webp 1024w"
+                sizes="100vw">
+              <img src="images/wedding/wedding-mobile-003.webp"
+                alt="Mobile Wedding Hero 3 &mdash; Couple in Red Saree &amp; White Kurta in Heritage Arcade Corridor"
+                loading="lazy" style="object-position: center 40%;" />
             </picture>
           </div>
           <div class="mobile-slide">
             <picture>
-              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-004-480.webp 480w, images/wedding/wedding-mobile-004-750.webp 750w, images/wedding/wedding-mobile-004.webp 1024w" sizes="100vw">
-              <img src="images/wedding/wedding-mobile-004.webp" alt="Mobile Wedding Hero 4 &mdash; Woman in Yellow/Pink Saree in Snow under Bare Tree" loading="lazy" style="object-position: center 30%;" />
+              <source media="(max-width: 768px)"
+                srcset="images/wedding/wedding-mobile-004-480.webp 480w, images/wedding/wedding-mobile-004-750.webp 750w, images/wedding/wedding-mobile-004.webp 1024w"
+                sizes="100vw">
+              <img src="images/wedding/wedding-mobile-004.webp"
+                alt="Mobile Wedding Hero 4 &mdash; Woman in Yellow/Pink Saree in Snow under Bare Tree" loading="lazy"
+                style="object-position: center 30%;" />
             </picture>
           </div>
           <div class="mobile-slide">
             <picture>
-              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-005-480.webp 480w, images/wedding/wedding-mobile-005-750.webp 750w, images/wedding/wedding-mobile-005.webp 1024w" sizes="100vw">
-              <img src="images/wedding/wedding-mobile-005.webp" alt="Mobile Wedding Hero 5 &mdash; Bride in Pink Ballgown &amp; Groom on Hilltop with Horse" loading="lazy" style="object-position: center 35%;" />
+              <source media="(max-width: 768px)"
+                srcset="images/wedding/wedding-mobile-005-480.webp 480w, images/wedding/wedding-mobile-005-750.webp 750w, images/wedding/wedding-mobile-005.webp 1024w"
+                sizes="100vw">
+              <img src="images/wedding/wedding-mobile-005.webp"
+                alt="Mobile Wedding Hero 5 &mdash; Bride in Pink Ballgown &amp; Groom on Hilltop with Horse"
+                loading="lazy" style="object-position: center 35%;" />
             </picture>
           </div>
         </div>
-        
+
         <!-- Subtle Mobile Slide Indicator (01 / 05) -->
         <div class="mobile-slider-counter" aria-live="polite">
           <span id="mobile-slide-num">01</span> / 05
@@ -1022,19 +1050,39 @@
       <div class="hero-desktop-slider">
         <div class="desktop-slider-track">
           <div class="desktop-slide active">
-            <img src="images/wedding/wedding-hero-001.webp" srcset="images/wedding/wedding-hero-001-800.webp 800w, images/wedding/wedding-hero-001-1280.webp 1280w, images/wedding/wedding-hero-001-1440.webp 1440w, images/wedding/wedding-hero-001-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 1 &mdash; Golden Sunset Silhouette &amp; Horse on Hilltop" loading="eager" fetchpriority="high" style="object-position: center 35%;" />
+            <img src="images/wedding/wedding-hero-001.webp"
+              srcset="images/wedding/wedding-hero-001-800.webp 800w, images/wedding/wedding-hero-001-1280.webp 1280w, images/wedding/wedding-hero-001-1440.webp 1440w, images/wedding/wedding-hero-001-2048.webp 2048w"
+              sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px"
+              alt="Wedding Hero 1 &mdash; Golden Sunset Silhouette &amp; Horse on Hilltop" loading="eager"
+              fetchpriority="high" style="object-position: center 35%;" />
           </div>
           <div class="desktop-slide">
-            <img src="images/wedding/wedding-hero-002.webp" srcset="images/wedding/wedding-hero-002-800.webp 800w, images/wedding/wedding-hero-002-1280.webp 1280w, images/wedding/wedding-hero-002-1440.webp 1440w, images/wedding/wedding-hero-002-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 2 &mdash; Glacier River Rock Embrace" loading="lazy" style="object-position: center 40%;" />
+            <img src="images/wedding/wedding-hero-002.webp"
+              srcset="images/wedding/wedding-hero-002-800.webp 800w, images/wedding/wedding-hero-002-1280.webp 1280w, images/wedding/wedding-hero-002-1440.webp 1440w, images/wedding/wedding-hero-002-2048.webp 2048w"
+              sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px"
+              alt="Wedding Hero 2 &mdash; Glacier River Rock Embrace" loading="lazy"
+              style="object-position: center 40%;" />
           </div>
           <div class="desktop-slide">
-            <img src="images/wedding/wedding-hero-003.webp" srcset="images/wedding/wedding-hero-003-800.webp 800w, images/wedding/wedding-hero-003-1280.webp 1280w, images/wedding/wedding-hero-003-1440.webp 1440w, images/wedding/wedding-hero-003-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 3 &mdash; Snow Mountain Majesty &amp; White Horses" loading="lazy" style="object-position: center 30%;" />
+            <img src="images/wedding/wedding-hero-003.webp"
+              srcset="images/wedding/wedding-hero-003-800.webp 800w, images/wedding/wedding-hero-003-1280.webp 1280w, images/wedding/wedding-hero-003-1440.webp 1440w, images/wedding/wedding-hero-003-2048.webp 2048w"
+              sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px"
+              alt="Wedding Hero 3 &mdash; Snow Mountain Majesty &amp; White Horses" loading="lazy"
+              style="object-position: center 30%;" />
           </div>
           <div class="desktop-slide">
-            <img src="images/wedding/wedding-hero-004.webp" srcset="images/wedding/wedding-hero-004-800.webp 800w, images/wedding/wedding-hero-004-1280.webp 1280w, images/wedding/wedding-hero-004-1440.webp 1440w, images/wedding/wedding-hero-004-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 4 &mdash; Intimate Backlit Sunset Palace Silhouette" loading="lazy" style="object-position: center 50%;" />
+            <img src="images/wedding/wedding-hero-004.webp"
+              srcset="images/wedding/wedding-hero-004-800.webp 800w, images/wedding/wedding-hero-004-1280.webp 1280w, images/wedding/wedding-hero-004-1440.webp 1440w, images/wedding/wedding-hero-004-2048.webp 2048w"
+              sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px"
+              alt="Wedding Hero 4 &mdash; Intimate Backlit Sunset Palace Silhouette" loading="lazy"
+              style="object-position: center 50%;" />
           </div>
           <div class="desktop-slide">
-            <img src="images/wedding/wedding-hero-005.webp" srcset="images/wedding/wedding-hero-005-800.webp 800w, images/wedding/wedding-hero-005-1280.webp 1280w, images/wedding/wedding-hero-005-1440.webp 1440w, images/wedding/wedding-hero-005-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 5 &mdash; Heritage Pink Palace Fort &amp; Flying Red Dupatta" loading="lazy" style="object-position: center 30%;" />
+            <img src="images/wedding/wedding-hero-005.webp"
+              srcset="images/wedding/wedding-hero-005-800.webp 800w, images/wedding/wedding-hero-005-1280.webp 1280w, images/wedding/wedding-hero-005-1440.webp 1440w, images/wedding/wedding-hero-005-2048.webp 2048w"
+              sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px"
+              alt="Wedding Hero 5 &mdash; Heritage Pink Palace Fort &amp; Flying Red Dupatta" loading="lazy"
+              style="object-position: center 30%;" />
           </div>
         </div>
 
@@ -1223,8 +1271,8 @@
             <img src="images/prewedding/prewedding-010.webp"
               srcset="images/prewedding/prewedding-010-480.webp 480w, images/prewedding/prewedding-010.webp 682w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Pre-wedding couple in elegant attire standing in front of clock tower heritage architecture" loading="lazy"
-              decoding="async" width="682" height="1024" />
+              alt="Pre-wedding couple in elegant attire standing in front of clock tower heritage architecture"
+              loading="lazy" decoding="async" width="682" height="1024" />
             <div class="photo-meta">
               <span>FRAME 010 &middot; CLOCK TOWER HERITAGE</span>
               <span>PRE-WEDDING</span>
@@ -1301,8 +1349,8 @@
             <img src="images/prewedding/prewedding-016.webp"
               srcset="images/prewedding/prewedding-016-480.webp 480w, images/prewedding/prewedding-016.webp 682w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Editorial pre-wedding portrait of stylish woman in denim jacket and yellow dress sitting on river rocks" loading="lazy"
-              decoding="async" width="682" height="1024" />
+              alt="Editorial pre-wedding portrait of stylish woman in denim jacket and yellow dress sitting on river rocks"
+              loading="lazy" decoding="async" width="682" height="1024" />
             <div class="photo-meta">
               <span>FRAME 016 &middot; RIVER ROCK PORTRAIT</span>
               <span>PRE-WEDDING &middot; PORTRAIT</span>
@@ -1313,8 +1361,8 @@
             <img src="images/prewedding/prewedding-017.webp"
               srcset="images/prewedding/prewedding-017-480.webp 480w, images/prewedding/prewedding-017.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Regal portrait of bride in magenta gown on white mansion staircase" loading="lazy"
-              decoding="async" width="683" height="1024" />
+              alt="Regal portrait of bride in magenta gown on white mansion staircase" loading="lazy" decoding="async"
+              width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 017 &middot; PALACE STAIRCASE</span>
               <span>PRE-WEDDING</span>
@@ -1325,8 +1373,8 @@
             <img src="images/prewedding/prewedding-018.webp"
               srcset="images/prewedding/prewedding-018-480.webp 480w, images/prewedding/prewedding-018.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Cinematic portrait of woman in vibrant yellow and pink saree in snow under bare winter tree" loading="lazy"
-              decoding="async" width="683" height="1024" />
+              alt="Cinematic portrait of woman in vibrant yellow and pink saree in snow under bare winter tree"
+              loading="lazy" decoding="async" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 018 &middot; SNOW SAREE PORTRAIT</span>
               <span>PRE-WEDDING &middot; PORTRAIT</span>
@@ -1340,8 +1388,8 @@
             <img src="images/prewedding/prewedding-019.webp"
               srcset="images/prewedding/prewedding-019-480.webp 480w, images/prewedding/prewedding-019-800.webp 800w, images/prewedding/prewedding-019.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Backlit silhouette of pre-wedding couple standing inside illuminated heritage archway window" loading="lazy"
-              decoding="async" width="1024" height="682" />
+              alt="Backlit silhouette of pre-wedding couple standing inside illuminated heritage archway window"
+              loading="lazy" decoding="async" width="1024" height="682" />
             <div class="photo-meta">
               <span>FRAME 019 &middot; ARCHWAY SILHOUETTE</span>
               <span>PRE-WEDDING</span>
@@ -1352,8 +1400,8 @@
             <img src="images/prewedding/prewedding-020.webp"
               srcset="images/prewedding/prewedding-020-480.webp 480w, images/prewedding/prewedding-020-800.webp 800w, images/prewedding/prewedding-020.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Cinematic landscape portrait of bride in purple gown with dramatic flowing train spreading across field" loading="lazy"
-              decoding="async" width="1024" height="683" />
+              alt="Cinematic landscape portrait of bride in purple gown with dramatic flowing train spreading across field"
+              loading="lazy" decoding="async" width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 020 &middot; FLOWING PURPLE TRAIN</span>
               <span>PRE-WEDDING &middot; PORTRAIT</span>
@@ -1379,8 +1427,8 @@
             <img src="images/prewedding/prewedding-022.webp"
               srcset="images/prewedding/prewedding-022-480.webp 480w, images/prewedding/prewedding-022-800.webp 800w, images/prewedding/prewedding-022.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Playful pre-wedding couple portrait on lakeside promenade railing with white palace backdrop" loading="lazy"
-              decoding="async" width="1024" height="683" />
+              alt="Playful pre-wedding couple portrait on lakeside promenade railing with white palace backdrop"
+              loading="lazy" decoding="async" width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 022 &middot; LAKESIDE PROMENADE</span>
               <span>PRE-WEDDING</span>
@@ -1391,8 +1439,8 @@
             <img src="images/prewedding/prewedding-023.webp"
               srcset="images/prewedding/prewedding-023-480.webp 480w, images/prewedding/prewedding-023-800.webp 800w, images/prewedding/prewedding-023.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Editorial pre-wedding portrait in white winter wonderland set with magenta gown and black sherwani" loading="lazy"
-              decoding="async" width="1024" height="683" />
+              alt="Editorial pre-wedding portrait in white winter wonderland set with magenta gown and black sherwani"
+              loading="lazy" decoding="async" width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 023 &middot; WINTER WONDERLAND</span>
               <span>PRE-WEDDING &middot; PORTRAIT</span>
@@ -1403,8 +1451,8 @@
             <img src="images/prewedding/prewedding-024.webp"
               srcset="images/prewedding/prewedding-024-480.webp 480w, images/prewedding/prewedding-024-800.webp 800w, images/prewedding/prewedding-024.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Romantic pre-wedding portrait of couple holding hands walking up ancient stone steps against blue sky" loading="lazy"
-              decoding="async" width="1024" height="683" />
+              alt="Romantic pre-wedding portrait of couple holding hands walking up ancient stone steps against blue sky"
+              loading="lazy" decoding="async" width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 024 &middot; ANCIENT STONE STEPS</span>
               <span>PRE-WEDDING</span>
@@ -1716,8 +1764,8 @@
             <img src="images/wedding/wedding-023.webp"
               srcset="images/wedding/wedding-023-480.webp 480w, images/wedding/wedding-023-800.webp 800w, images/wedding/wedding-023.webp 1024w"
               sizes="(max-width: 900px) 100vw, 50vw"
-              alt="Editorial portrait of bride touching eye under mandap in red saree" loading="lazy"
-              decoding="async" width="1024" height="683" />
+              alt="Editorial portrait of bride touching eye under mandap in red saree" loading="lazy" decoding="async"
+              width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 050 &middot; BRIDAL MANDAP RITUAL</span>
               <span>THE WEDDING</span>
@@ -1743,8 +1791,8 @@
             <img src="images/wedding/wedding-025.webp"
               srcset="images/wedding/wedding-025-480.webp 480w, images/wedding/wedding-025-800.webp 800w, images/wedding/wedding-025.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Sacred Kanyadaan water pouring ritual over coconut and mangalsutra during Indian wedding ceremony" loading="lazy"
-              decoding="async" width="683" height="1024" />
+              alt="Sacred Kanyadaan water pouring ritual over coconut and mangalsutra during Indian wedding ceremony"
+              loading="lazy" decoding="async" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 052 &middot; SACRED KANYADAAN</span>
               <span>WEDDING RITUAL</span>
@@ -1754,9 +1802,8 @@
           <div class="photo-frame">
             <img src="images/wedding/wedding-026.webp"
               srcset="images/wedding/wedding-026-480.webp 480w, images/wedding/wedding-026-800.webp 800w, images/wedding/wedding-026.webp 1024w"
-              sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Joyful groom smiling frame under wedding flower garland" loading="lazy"
-              decoding="async" width="1024" height="683" />
+              sizes="(max-width: 900px) 100vw, 33vw" alt="Joyful groom smiling frame under wedding flower garland"
+              loading="lazy" decoding="async" width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 053 &middot; GROOM CEREMONY SMILE</span>
               <span>WEDDING PORTRAIT</span>
@@ -1767,8 +1814,8 @@
             <img src="images/wedding/wedding-027.webp"
               srcset="images/wedding/wedding-027-480.webp 480w, images/wedding/wedding-027-800.webp 800w, images/wedding/wedding-027.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Emotional Mangalsutra tying ceremony: Groom tying sacred knot as bride smiles reclining" loading="lazy"
-              decoding="async" width="1024" height="683" />
+              alt="Emotional Mangalsutra tying ceremony: Groom tying sacred knot as bride smiles reclining"
+              loading="lazy" decoding="async" width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 054 &middot; MANGALSUTRA CEREMONY</span>
               <span>SACRED KNOT</span>
@@ -2069,7 +2116,7 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // DYNAMIC ADAPTIVE WEDDING HERO SLIDESHOW ENGINE (01 -> 02 -> 03 -> 04 -> 05 -> 01)
-    (function() {
+    (function () {
       const slides = document.querySelectorAll('.hero-desktop-slider .desktop-slide');
       const dots = document.querySelectorAll('.desktop-slider-dots .desk-dot');
       const prevBtn = document.getElementById('desk-hero-prev');
@@ -2147,7 +2194,7 @@
     })();
 
     // MOBILE-ONLY ART-DIRECTED 5-IMAGE WEDDING HERO SLIDESHOW ENGINE
-    (function() {
+    (function () {
       const mobileSlides = document.querySelectorAll('#hero-mobile-slider .mobile-slide');
       const mobileNumEl = document.getElementById('mobile-slide-num');
       const mobileSlider = document.getElementById('hero-mobile-slider');
@@ -2195,7 +2242,7 @@
       }
 
       // Tab visibility state handling
-      document.addEventListener('visibilitychange', function() {
+      document.addEventListener('visibilitychange', function () {
         if (document.hidden) {
           stopMobileTimer();
         } else {
@@ -2208,8 +2255,8 @@
       const menuOverlay = document.querySelector('.mobile-menu-overlay, .mobile-nav-overlay');
 
       if (menuBtn) {
-        menuBtn.addEventListener('click', function() {
-          setTimeout(function() {
+        menuBtn.addEventListener('click', function () {
+          setTimeout(function () {
             if (menuOverlay && (menuOverlay.classList.contains('active') || menuOverlay.classList.contains('open'))) {
               isMobilePaused = true;
             } else {
@@ -2226,12 +2273,12 @@
         let touchEndX = 0;
         let touchEndY = 0;
 
-        mobileSlider.addEventListener('touchstart', function(e) {
+        mobileSlider.addEventListener('touchstart', function (e) {
           touchStartX = e.changedTouches[0].screenX;
           touchStartY = e.changedTouches[0].screenY;
         }, { passive: true });
 
-        mobileSlider.addEventListener('touchend', function(e) {
+        mobileSlider.addEventListener('touchend', function (e) {
           touchEndX = e.changedTouches[0].screenX;
           touchEndY = e.changedTouches[0].screenY;
           handleSwipe();
@@ -2258,6 +2305,9 @@
       startMobileTimer();
     })();
   </script>
+  <script src="js/motion.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/floating-contact.js"></script>
 </body>
 
 </html>

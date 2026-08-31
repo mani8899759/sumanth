@@ -48,13 +48,15 @@
   <div class="mobile-admin-drawer">
     <div style="display:flex; justify-content:space-between; align-items:center;">
       <span class="admin-logo">SUMANTH PHOTOGRAPHY</span>
-      <button type="button" class="mobile-drawer-close" style="background:none; border:none; font-size:24px; cursor:pointer;">&times;</button>
+      <button type="button" class="mobile-drawer-close"
+        style="background:none; border:none; font-size:24px; cursor:pointer;">&times;</button>
     </div>
     <div class="mobile-drawer-links">
       <a href="index.html" class="mobile-drawer-link">DASHBOARD</a>
       <a href="contacts.html" class="mobile-drawer-link">CONTACTS</a>
       <a href="quotes.html" class="mobile-drawer-link">BUILD YOUR QUOTE</a>
-      <a href="../index.html" target="_blank" class="mobile-drawer-link" style="font-size:20px; color:var(--text-secondary);">PUBLIC WEBSITE &rarr;</a>
+      <a href="../index.html" target="_blank" class="mobile-drawer-link"
+        style="font-size:20px; color:var(--text-secondary);">PUBLIC WEBSITE &rarr;</a>
     </div>
     <div>
       <button type="button" class="btn-logout" style="width:100%; padding:14px;">LOG OUT</button>
@@ -93,7 +95,8 @@
         </div>
 
         <div style="font-size:13px; color:var(--text-secondary); margin:12px 0;">
-          <span>Latest: </span><strong id="stat-contacts-latest" style="color:var(--text-primary); font-weight:500;">Loading...</strong>
+          <span>Latest: </span><strong id="stat-contacts-latest"
+            style="color:var(--text-primary); font-weight:500;">Loading...</strong>
         </div>
 
         <div class="editorial-card-footer">
@@ -123,7 +126,8 @@
         </div>
 
         <div style="font-size:13px; color:var(--text-secondary); margin:12px 0;">
-          <span>Latest: </span><strong id="stat-quotes-latest" style="color:var(--text-primary); font-weight:500;">Loading...</strong>
+          <span>Latest: </span><strong id="stat-quotes-latest"
+            style="color:var(--text-primary); font-weight:500;">Loading...</strong>
         </div>
 
         <div class="editorial-card-footer">
@@ -138,7 +142,8 @@
       <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px;">
         <div>
           <span class="section-label">CHRONOLOGICAL FEED</span>
-          <h2 style="font-family:var(--font-serif); font-size:24px; font-weight:400; text-transform:uppercase;">RECENT SUBMISSIONS</h2>
+          <h2 style="font-family:var(--font-serif); font-size:24px; font-weight:400; text-transform:uppercase;">RECENT
+            SUBMISSIONS</h2>
         </div>
         <a href="quotes.html" class="btn-editorial-cta" style="font-size:11px;">SEE ALL RECORDS &rarr;</a>
       </div>
@@ -181,7 +186,7 @@
 
         document.getElementById('stat-contacts-new').textContent = newContacts.length;
         document.getElementById('stat-contacts-total').textContent = contactsRes.totalCount;
-        
+
         if (newContacts.length > 0) {
           const badge = document.getElementById('contact-new-badge');
           badge.textContent = `${newContacts.length} NEW`;

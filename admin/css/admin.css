@@ -54,9 +54,17 @@ a {
 }
 
 /* TYPOGRAPHY HELPERS */
-.font-serif { font-family: var(--font-serif); }
-.font-sans { font-family: var(--font-sans); }
-.font-mono { font-family: var(--font-mono); }
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
 
 .admin-page-title {
   font-family: var(--font-serif);
@@ -481,8 +489,13 @@ a {
 }
 
 @keyframes slideInRight {
-  from { transform: translateX(100%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 .detail-header {
@@ -765,22 +778,28 @@ a {
   .admin-container {
     padding: 24px 16px;
   }
+
   .dashboard-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .admin-nav {
     display: none;
   }
+
   .admin-menu-toggle {
     display: block;
   }
+
   .admin-header {
     padding: 0 20px;
   }
+
   .detail-panel {
     max-width: 100%;
   }
+
   .detail-grid-2 {
     grid-template-columns: 1fr;
   }
@@ -790,9 +809,11 @@ a {
   .editorial-card {
     padding: 24px;
   }
+
   .stat-value {
     font-size: 32px;
   }
+
   .editorial-table th,
   .editorial-table td {
     padding: 12px 14px;
