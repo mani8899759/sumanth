@@ -169,6 +169,7 @@
 
 
     @media (max-width: 900px) {
+
       .nav-links,
       .nav-cta,
       .nav-byq-cta {
@@ -183,8 +184,9 @@
     /* HERO SECTION */
     .hero-section {
       position: relative;
-      height: 92vh;
-      min-height: 650px;
+      width: 100%;
+      height: 85vh;
+      min-height: 550px;
       display: flex;
       align-items: flex-end;
       padding-bottom: 70px;
@@ -195,7 +197,10 @@
     .hero-bg {
       position: absolute;
       inset: 0;
+      width: 100%;
+      height: 100%;
       z-index: 0;
+      background: #0d0d0d;
     }
 
     .hero-bg img {
@@ -203,7 +208,186 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      filter: brightness(0.68) contrast(1.05);
+      filter: brightness(0.92) contrast(1.02);
+    }
+
+    /* HERO DESKTOP SLIDESHOW & MOBILE ISOLATION (FULL-BLEED FULL WIDTH) */
+    .hero-mobile-slider {
+      display: none !important;
+    }
+
+    .hero-desktop-slider {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: block !important;
+      width: 100%;
+      height: 100%;
+    }
+
+    .desktop-slider-track {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .desktop-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .desktop-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .desktop-slide img {
+      position: absolute;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center;
+      filter: brightness(0.92) contrast(1.02);
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* DESKTOP SLIDER CONTROLS & SLIDE INDICATOR */
+    .desktop-slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      background: rgba(13, 13, 13, 0.4);
+      border: 1px solid rgba(245, 244, 241, 0.2);
+      color: #f5f4f1;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 250ms ease, border-color 250ms ease;
+    }
+
+    .desktop-slider-btn:hover {
+      background: rgba(13, 13, 13, 0.85);
+      border-color: rgba(245, 244, 241, 0.6);
+    }
+
+    .desktop-slider-btn.prev-btn { left: 24px; }
+    .desktop-slider-btn.next-btn { right: 24px; }
+
+    .desktop-slider-dots {
+      position: absolute;
+      bottom: 28px;
+      right: 40px;
+      z-index: 5;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .desk-dot {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: rgba(245, 244, 241, 0.5);
+      cursor: pointer;
+      padding: 4px 8px;
+      border: 1px solid transparent;
+      transition: color 250ms ease, border-color 250ms ease;
+    }
+
+    .desk-dot.active, .desk-dot:hover {
+      color: #f5f4f1;
+      border-color: rgba(245, 244, 241, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero-mobile-slider {
+        display: block !important;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      .hero-desktop-slider {
+        display: none !important;
+      }
+    }
+
+    /* MOBILE ART-DIRECTED 5-IMAGE HERO SLIDESHOW (max-width: 768px) */
+    .mobile-slider-track {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .mobile-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transform: scale(1.015);
+      pointer-events: none;
+      transition: opacity 1200ms cubic-bezier(0.4, 0, 0.2, 1), transform 1200ms cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity, transform;
+    }
+
+    .mobile-slide.active {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .mobile-slide picture,
+    .mobile-slide img {
+      position: absolute;
+      inset: 0;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      filter: brightness(0.92) contrast(1.02);
+      image-rendering: -webkit-optimize-contrast;
+    }
+
+    .mobile-slider-counter {
+      position: absolute;
+      bottom: 24px;
+      right: 20px;
+      z-index: 5;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: rgba(245, 244, 241, 0.75);
+      background: rgba(13, 13, 13, 0.5);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(245, 244, 241, 0.18);
+      pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mobile-slide {
+        transition: opacity 800ms ease-in-out !important;
+        transform: none !important;
+      }
     }
 
     .hero-overlay {
@@ -438,6 +622,7 @@
       align-items: center;
     }
 
+    .wedding-stage .story-container,
     .prewedding-stage .story-container {
       width: 100%;
       max-width: 100%;
@@ -462,6 +647,15 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-bottom: 36px;
+      align-items: start;
+    }
+
+    .grid-pair-compact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 760px;
+      margin: 0 auto 36px auto;
       align-items: start;
     }
 
@@ -746,7 +940,8 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a href="quote.html" class="nav-byq-cta" id="nav-byq-cta" aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
+    <a href="quote.html" class="nav-byq-cta" id="nav-byq-cta" aria-label="Build Your Wedding Photography Quote">BUILD
+      YOUR QUOTE &rarr;</a>
     <button id="menu-btn" aria-label="Toggle navigation menu">
       <svg class="menu-btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="1.5" stroke-linecap="round">
@@ -772,20 +967,90 @@
         <a href="birthdays-events.html" class="mobile-menu-item">OTHERS</a>
         <a href="about.html" class="mobile-menu-item">ABOUT</a>
         <a href="contact.html" class="mobile-menu-item">CONTACT</a>
-        <a href="quote.html" class="mobile-menu-item mobile-menu-item--byq" id="mobile-byq-cta" aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
+        <a href="quote.html" class="mobile-menu-item mobile-menu-item--byq" id="mobile-byq-cta"
+          aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
       </nav>
     </div>
   </div>
   </div>
 
-  <!-- HERO SECTION WITH RESPONSIVE MOBILE PHOTOGRAPHER BACKDROP -->
+  <!-- HERO SECTION WITH RESPONSIVE CINEMATIC SLIDESHOW BACKDROP -->
   <section class="hero-section" aria-label="Wedding Photography Hero">
     <div class="hero-bg">
-      <picture>
-        <source media="(max-width: 768px)" srcset="images/photographer.jpg">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
-          alt="Sumanth Photography — Fine Art Wedding Documentaries" loading="eager" fetchpriority="high" />
-      </picture>
+      <!-- Mobile-Only Art-Directed 5-Image Hero Slideshow (max-width: 768px) -->
+      <div class="hero-mobile-slider" id="hero-mobile-slider">
+        <div class="mobile-slider-track">
+          <div class="mobile-slide active">
+            <picture>
+              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-001-480.webp 480w, images/wedding/wedding-mobile-001-750.webp 750w, images/wedding/wedding-mobile-001.webp 1024w" sizes="100vw">
+              <img src="images/wedding/wedding-mobile-001.webp" alt="Mobile Wedding Hero 1 &mdash; Golden Silhouette Couple inside Heritage Archway" loading="eager" fetchpriority="high" style="object-position: center 30%;" />
+            </picture>
+          </div>
+          <div class="mobile-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-002-480.webp 480w, images/wedding/wedding-mobile-002-750.webp 750w, images/wedding/wedding-mobile-002.webp 1024w" sizes="100vw">
+              <img src="images/wedding/wedding-mobile-002.webp" alt="Mobile Wedding Hero 2 &mdash; Couple in Magenta Gown &amp; Black Suit on White Mansion Staircase" loading="lazy" style="object-position: center 35%;" />
+            </picture>
+          </div>
+          <div class="mobile-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-003-480.webp 480w, images/wedding/wedding-mobile-003-750.webp 750w, images/wedding/wedding-mobile-003.webp 1024w" sizes="100vw">
+              <img src="images/wedding/wedding-mobile-003.webp" alt="Mobile Wedding Hero 3 &mdash; Couple in Red Saree &amp; White Kurta in Heritage Arcade Corridor" loading="lazy" style="object-position: center 40%;" />
+            </picture>
+          </div>
+          <div class="mobile-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-004-480.webp 480w, images/wedding/wedding-mobile-004-750.webp 750w, images/wedding/wedding-mobile-004.webp 1024w" sizes="100vw">
+              <img src="images/wedding/wedding-mobile-004.webp" alt="Mobile Wedding Hero 4 &mdash; Woman in Yellow/Pink Saree in Snow under Bare Tree" loading="lazy" style="object-position: center 30%;" />
+            </picture>
+          </div>
+          <div class="mobile-slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset="images/wedding/wedding-mobile-005-480.webp 480w, images/wedding/wedding-mobile-005-750.webp 750w, images/wedding/wedding-mobile-005.webp 1024w" sizes="100vw">
+              <img src="images/wedding/wedding-mobile-005.webp" alt="Mobile Wedding Hero 5 &mdash; Bride in Pink Ballgown &amp; Groom on Hilltop with Horse" loading="lazy" style="object-position: center 35%;" />
+            </picture>
+          </div>
+        </div>
+        
+        <!-- Subtle Mobile Slide Indicator (01 / 05) -->
+        <div class="mobile-slider-counter" aria-live="polite">
+          <span id="mobile-slide-num">01</span> / 05
+        </div>
+      </div>
+
+      <!-- Desktop/Laptop Interactive Hero Slider (5 Supplied Gemini Enhanced Wedding Photographs) -->
+      <div class="hero-desktop-slider">
+        <div class="desktop-slider-track">
+          <div class="desktop-slide active">
+            <img src="images/wedding/wedding-hero-001.webp" srcset="images/wedding/wedding-hero-001-800.webp 800w, images/wedding/wedding-hero-001-1280.webp 1280w, images/wedding/wedding-hero-001-1440.webp 1440w, images/wedding/wedding-hero-001-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 1 &mdash; Golden Sunset Silhouette &amp; Horse on Hilltop" loading="eager" fetchpriority="high" style="object-position: center 35%;" />
+          </div>
+          <div class="desktop-slide">
+            <img src="images/wedding/wedding-hero-002.webp" srcset="images/wedding/wedding-hero-002-800.webp 800w, images/wedding/wedding-hero-002-1280.webp 1280w, images/wedding/wedding-hero-002-1440.webp 1440w, images/wedding/wedding-hero-002-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 2 &mdash; Glacier River Rock Embrace" loading="lazy" style="object-position: center 40%;" />
+          </div>
+          <div class="desktop-slide">
+            <img src="images/wedding/wedding-hero-003.webp" srcset="images/wedding/wedding-hero-003-800.webp 800w, images/wedding/wedding-hero-003-1280.webp 1280w, images/wedding/wedding-hero-003-1440.webp 1440w, images/wedding/wedding-hero-003-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 3 &mdash; Snow Mountain Majesty &amp; White Horses" loading="lazy" style="object-position: center 30%;" />
+          </div>
+          <div class="desktop-slide">
+            <img src="images/wedding/wedding-hero-004.webp" srcset="images/wedding/wedding-hero-004-800.webp 800w, images/wedding/wedding-hero-004-1280.webp 1280w, images/wedding/wedding-hero-004-1440.webp 1440w, images/wedding/wedding-hero-004-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 4 &mdash; Intimate Backlit Sunset Palace Silhouette" loading="lazy" style="object-position: center 50%;" />
+          </div>
+          <div class="desktop-slide">
+            <img src="images/wedding/wedding-hero-005.webp" srcset="images/wedding/wedding-hero-005-800.webp 800w, images/wedding/wedding-hero-005-1280.webp 1280w, images/wedding/wedding-hero-005-1440.webp 1440w, images/wedding/wedding-hero-005-2048.webp 2048w" sizes="(max-width: 1280px) 1280px, (max-width: 1440px) 1440px, 2048px" alt="Wedding Hero 5 &mdash; Heritage Pink Palace Fort &amp; Flying Red Dupatta" loading="lazy" style="object-position: center 30%;" />
+          </div>
+        </div>
+
+        <!-- Desktop Prev / Next Controls & Dots -->
+        <button class="desktop-slider-btn prev-btn" id="desk-hero-prev" aria-label="Previous Slide">&larr;</button>
+        <button class="desktop-slider-btn next-btn" id="desk-hero-next" aria-label="Next Slide">&rarr;</button>
+
+        <div class="desktop-slider-dots">
+          <span class="desk-dot active" data-slide="0">01</span>
+          <span class="desk-dot" data-slide="1">02</span>
+          <span class="desk-dot" data-slide="2">03</span>
+          <span class="desk-dot" data-slide="3">04</span>
+          <span class="desk-dot" data-slide="4">05</span>
+        </div>
+      </div>
+
       <div class="hero-overlay"></div>
     </div>
 
@@ -799,11 +1064,13 @@
         <div class="hero-contact-links">
           <a href="https://wa.me/919491818015" target="_blank" rel="noopener" class="hero-contact-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
             </svg>
             <span>WHATSAPP</span>
           </a>
-          <a href="https://www.instagram.com/sumanth__photography07/" target="_blank" rel="noopener" class="hero-contact-item">
+          <a href="https://www.instagram.com/sumanth__photography07/" target="_blank" rel="noopener"
+            class="hero-contact-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -813,7 +1080,8 @@
           </a>
           <a href="tel:+919491818015" class="hero-contact-item">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
             <span>CALL</span>
           </a>
@@ -839,10 +1107,7 @@
               srcset="images/prewedding/prewedding-001-480.webp 480w, images/prewedding/prewedding-001.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
               alt="Pre-wedding couple standing inside an architectural archway holding Save The Date newspaper"
-              loading="eager"
-              fetchpriority="high"
-              width="683"
-              height="1024" />
+              loading="eager" fetchpriority="high" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 001 &middot; ARCHWAY SILHOUETTE</span>
               <span>PRE-WEDDING</span>
@@ -854,10 +1119,7 @@
               srcset="images/prewedding/prewedding-002-480.webp 480w, images/prewedding/prewedding-002.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
               alt="Editorial pre-wedding portrait of couple wearing sunglasses and holding Save The Date newspaper"
-              loading="lazy"
-              decoding="async"
-              width="683"
-              height="1024" />
+              loading="lazy" decoding="async" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 002</span>
               <span>PRE-WEDDING &middot; PORTRAIT</span>
@@ -868,11 +1130,8 @@
             <img src="images/prewedding/prewedding-003.webp"
               srcset="images/prewedding/prewedding-003-480.webp 480w, images/prewedding/prewedding-003.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Close-up editorial portrait of couple holding Save The Date 23.04.2025 newspaper"
-              loading="lazy"
-              decoding="async"
-              width="683"
-              height="1024" />
+              alt="Close-up editorial portrait of couple holding Save The Date 23.04.2025 newspaper" loading="lazy"
+              decoding="async" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 003</span>
               <span>PRE-WEDDING &middot; COUPLE</span>
@@ -886,11 +1145,8 @@
             <img src="images/prewedding/prewedding-004.webp"
               srcset="images/prewedding/prewedding-004-480.webp 480w, images/prewedding/prewedding-004-800.webp 800w, images/prewedding/prewedding-004.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Pre-wedding couple holding hands in snow with scenic winter mountain backdrop"
-              loading="lazy"
-              decoding="async"
-              width="1024"
-              height="683" />
+              alt="Pre-wedding couple holding hands in snow with scenic winter mountain backdrop" loading="lazy"
+              decoding="async" width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 004 &middot; SNOW SCAPE</span>
               <span>PRE-WEDDING</span>
@@ -901,11 +1157,8 @@
             <img src="images/prewedding/prewedding-005.webp"
               srcset="images/prewedding/prewedding-005-480.webp 480w, images/prewedding/prewedding-005-800.webp 800w, images/prewedding/prewedding-005.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Couple playfully throwing snow among pine trees in a winter forest"
-              loading="lazy"
-              decoding="async"
-              width="1024"
-              height="683" />
+              alt="Couple playfully throwing snow among pine trees in a winter forest" loading="lazy" decoding="async"
+              width="1024" height="683" />
             <div class="photo-meta">
               <span>FRAME 005 &middot; WINTER FOREST</span>
               <span>PRE-WEDDING</span>
@@ -917,10 +1170,7 @@
               srcset="images/prewedding/prewedding-006-480.webp 480w, images/prewedding/prewedding-006-800.webp 800w, images/prewedding/prewedding-006.webp 1024w"
               sizes="(max-width: 900px) 100vw, 33vw"
               alt="Woman in vibrant royal blue saree with dramatic flowing pallu in open field under blue sky"
-              loading="lazy"
-              decoding="async"
-              width="1024"
-              height="682" />
+              loading="lazy" decoding="async" width="1024" height="682" />
             <div class="photo-meta">
               <span>FRAME 006 &middot; BLUE SAREE SILK</span>
               <span>PRE-WEDDING</span>
@@ -934,11 +1184,8 @@
             <img src="images/prewedding/prewedding-007.webp"
               srcset="images/prewedding/prewedding-007-480.webp 480w, images/prewedding/prewedding-007.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Intimate pre-wedding moment of couple behind Save The Date 23.04.2025 newspaper"
-              loading="lazy"
-              decoding="async"
-              width="683"
-              height="1024" />
+              alt="Intimate pre-wedding moment of couple behind Save The Date 23.04.2025 newspaper" loading="lazy"
+              decoding="async" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 007 &middot; SAVE THE DATE</span>
               <span>PRE-WEDDING</span>
@@ -949,11 +1196,8 @@
             <img src="images/prewedding/prewedding-008.webp"
               srcset="images/prewedding/prewedding-008-480.webp 480w, images/prewedding/prewedding-008.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Romantic night portrait of couple embracing warmly against dark urban city bokeh"
-              loading="lazy"
-              decoding="async"
-              width="683"
-              height="1024" />
+              alt="Romantic night portrait of couple embracing warmly against dark urban city bokeh" loading="lazy"
+              decoding="async" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 008 &middot; CITY BOKEH</span>
               <span>PRE-WEDDING</span>
@@ -964,13 +1208,205 @@
             <img src="images/prewedding/prewedding-009.webp"
               srcset="images/prewedding/prewedding-009-480.webp 480w, images/prewedding/prewedding-009.webp 683w"
               sizes="(max-width: 900px) 100vw, 33vw"
-              alt="Pre-wedding couple in outdoor amphitheater holding Save The Date 23.04.2025 newspaper"
-              loading="lazy"
-              decoding="async"
-              width="683"
-              height="1024" />
+              alt="Pre-wedding couple in outdoor amphitheater holding Save The Date 23.04.2025 newspaper" loading="lazy"
+              decoding="async" width="683" height="1024" />
             <div class="photo-meta">
               <span>FRAME 009 &middot; AMPHITHEATER</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 4: FRAMES 010, 011, 012 (3 SIDE-BY-SIDE) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-010.webp"
+              srcset="images/prewedding/prewedding-010-480.webp 480w, images/prewedding/prewedding-010.webp 682w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Pre-wedding couple in elegant attire standing in front of clock tower heritage architecture" loading="lazy"
+              decoding="async" width="682" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 010 &middot; CLOCK TOWER HERITAGE</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-011.webp"
+              srcset="images/prewedding/prewedding-011-480.webp 480w, images/prewedding/prewedding-011.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Playful pre-wedding moment of couple with bicycle at white villa archway" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 011 &middot; BICYCLE &amp; ARCHWAY</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-012.webp"
+              srcset="images/prewedding/prewedding-012-480.webp 480w, images/prewedding/prewedding-012.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Editorial pre-wedding portrait in heritage arcade corridor with red saree" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 012 &middot; HERITAGE CORRIDOR</span>
+              <span>PRE-WEDDING &middot; PORTRAIT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 5: FRAMES 013, 014, 015 (3 SIDE-BY-SIDE) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-013.webp"
+              srcset="images/prewedding/prewedding-013-480.webp 480w, images/prewedding/prewedding-013.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Atmospheric night portrait of pre-wedding couple on illuminated temple steps" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 013 &middot; TEMPLE ILLUMINATION</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-014.webp"
+              srcset="images/prewedding/prewedding-014-480.webp 480w, images/prewedding/prewedding-014.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Majestic pre-wedding portrait atop heritage dome architecture with red saree" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 014 &middot; DOME MONUMENT</span>
+              <span>PRE-WEDDING &middot; ARCHITECTURE</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-015.webp"
+              srcset="images/prewedding/prewedding-015-480.webp 480w, images/prewedding/prewedding-015.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Romantic sunset beach silhouette of couple creating heart shape with hands around sun" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 015 &middot; SUNSET BEACH HEART</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 6: FRAMES 016, 017, 018 (3 SIDE-BY-SIDE) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-016.webp"
+              srcset="images/prewedding/prewedding-016-480.webp 480w, images/prewedding/prewedding-016.webp 682w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Editorial pre-wedding portrait of stylish woman in denim jacket and yellow dress sitting on river rocks" loading="lazy"
+              decoding="async" width="682" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 016 &middot; RIVER ROCK PORTRAIT</span>
+              <span>PRE-WEDDING &middot; PORTRAIT</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-017.webp"
+              srcset="images/prewedding/prewedding-017-480.webp 480w, images/prewedding/prewedding-017.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Regal portrait of bride in magenta gown on white mansion staircase" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 017 &middot; PALACE STAIRCASE</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-018.webp"
+              srcset="images/prewedding/prewedding-018-480.webp 480w, images/prewedding/prewedding-018.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Cinematic portrait of woman in vibrant yellow and pink saree in snow under bare winter tree" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 018 &middot; SNOW SAREE PORTRAIT</span>
+              <span>PRE-WEDDING &middot; PORTRAIT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 7: FRAMES 019, 020, 021 (3 SIDE-BY-SIDE LANDSCAPE TRIO) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-019.webp"
+              srcset="images/prewedding/prewedding-019-480.webp 480w, images/prewedding/prewedding-019-800.webp 800w, images/prewedding/prewedding-019.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Backlit silhouette of pre-wedding couple standing inside illuminated heritage archway window" loading="lazy"
+              decoding="async" width="1024" height="682" />
+            <div class="photo-meta">
+              <span>FRAME 019 &middot; ARCHWAY SILHOUETTE</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-020.webp"
+              srcset="images/prewedding/prewedding-020-480.webp 480w, images/prewedding/prewedding-020-800.webp 800w, images/prewedding/prewedding-020.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Cinematic landscape portrait of bride in purple gown with dramatic flowing train spreading across field" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 020 &middot; FLOWING PURPLE TRAIN</span>
+              <span>PRE-WEDDING &middot; PORTRAIT</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-021.webp"
+              srcset="images/prewedding/prewedding-021-480.webp 480w, images/prewedding/prewedding-021-800.webp 800w, images/prewedding/prewedding-021.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Golden hour sunset beach silhouette of groom lifting bride beside 4x4 Jeep SUV" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 021 &middot; SUNSET BEACH JEEP LIFT</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 8: FRAMES 022, 023, 024 (3 SIDE-BY-SIDE LANDSCAPE TRIO) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-022.webp"
+              srcset="images/prewedding/prewedding-022-480.webp 480w, images/prewedding/prewedding-022-800.webp 800w, images/prewedding/prewedding-022.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Playful pre-wedding couple portrait on lakeside promenade railing with white palace backdrop" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 022 &middot; LAKESIDE PROMENADE</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-023.webp"
+              srcset="images/prewedding/prewedding-023-480.webp 480w, images/prewedding/prewedding-023-800.webp 800w, images/prewedding/prewedding-023.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Editorial pre-wedding portrait in white winter wonderland set with magenta gown and black sherwani" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 023 &middot; WINTER WONDERLAND</span>
+              <span>PRE-WEDDING &middot; PORTRAIT</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-024.webp"
+              srcset="images/prewedding/prewedding-024-480.webp 480w, images/prewedding/prewedding-024-800.webp 800w, images/prewedding/prewedding-024.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Romantic pre-wedding portrait of couple holding hands walking up ancient stone steps against blue sky" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 024 &middot; ANCIENT STONE STEPS</span>
               <span>PRE-WEDDING</span>
             </div>
           </div>
@@ -1188,107 +1624,162 @@
     </section>
 
     <!-- 05 · THE WEDDING CEREMONY -->
-    <section class="story-stage reveal">
+    <section class="story-stage reveal wedding-stage" id="wedding-ceremony">
       <div class="story-container">
         <div class="stage-marker">
           <div class="stage-title">05 &middot; THE WEDDING</div>
         </div>
 
-        <div class="photo-frame frame-hero-spread">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
-            alt="Sacred Mandap Setup" loading="lazy" />
-          <div class="photo-meta">
-            <span>FRAME 041 &middot; THE WEDDING</span>
-            <span>SACRED MANDAP &middot; HYDERABAD</span>
-          </div>
-        </div>
 
-        <div class="grid-pair-spacious">
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80"
-              alt="Sacred Fire Ritual" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 042</span>
-              <span>SACRED FIRE RITUAL</span>
-            </div>
-          </div>
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1472653816316-3ad6f10a6592?auto=format&fit=crop&w=1200&q=80"
-              alt="Baraat Arrival" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 043</span>
-              <span>BARAAT ARRIVAL</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="grid-asymmetric-wide">
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80"
-              alt="Bride Entry Under Phoolon Ki Chaadar" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 044</span>
-              <span>BRIDE ENTRY</span>
-            </div>
-          </div>
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1464699908537-0954e50791ee?auto=format&fit=crop&w=1000&q=80"
-              alt="Groom at Mandap" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 045</span>
-              <span>GROOM AT MANDAP</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- FULL-BLEED CEREMONY CLIMAX SPREAD -->
-      <div class="photo-frame frame-full-bleed">
-        <img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?auto=format&fit=crop&w=2400&q=85"
-          alt="Varamala Garland Exchange" loading="lazy" />
-        <div class="photo-meta">
-          <span>FRAME 046 &middot; VARAMALA CEREMONY</span>
-          <span>GARLAND EXCHANGE &middot; UDAIPUR PALACE</span>
-        </div>
-      </div>
-
-      <div class="story-container">
+        <!-- ROW 2: PORTRAIT TRIO (CELEBRATION & BRIDAL BOKEH PORTRAITS) -->
         <div class="grid-trio-spacious">
           <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80"
-              alt="Kanyadaan Ritual" loading="lazy" />
+            <img src="images/wedding/wedding-006.webp"
+              srcset="images/wedding/wedding-006-480.webp 480w, images/wedding/wedding-006.webp 682w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Playful outdoor wedding moment: Groom jumping in dhoti while bride holds garland" loading="lazy"
+              decoding="async" width="682" height="1024" />
             <div class="photo-meta">
-              <span>FRAME 047</span>
-              <span>KANYADAAN RITUAL</span>
+              <span>FRAME 044 &middot; JOYFUL LEAP</span>
+              <span>OUTDOOR WEDDING</span>
             </div>
           </div>
+
           <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=800&q=80"
-              alt="Saptapadi" loading="lazy" />
+            <img src="images/wedding/wedding-007.webp"
+              srcset="images/wedding/wedding-007-480.webp 480w, images/wedding/wedding-007.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Close bridal portrait of smiling bride adjusting head jewelry with golden bokeh" loading="lazy"
+              decoding="async" width="683" height="1024" />
             <div class="photo-meta">
-              <span>FRAME 048</span>
-              <span>SAPTAPADI</span>
+              <span>FRAME 045 &middot; BRIDAL ELEGANCE</span>
+              <span>GOLDEN BOKEH</span>
             </div>
           </div>
+
           <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1519671282429-b827f0fea77c?auto=format&fit=crop&w=800&q=80"
-              alt="Mangalsutra Tying" loading="lazy" />
+            <img src="images/wedding/wedding-008.webp"
+              srcset="images/wedding/wedding-008-480.webp 480w, images/wedding/wedding-008.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Intimate mandap portrait of bride resting head on groom's shoulder under floral garlands"
+              loading="lazy" decoding="async" width="683" height="1024" />
             <div class="photo-meta">
-              <span>FRAME 049</span>
-              <span>MANGALSUTRA</span>
+              <span>FRAME 046 &middot; SACRED EMBRACE</span>
+              <span>MANDAP PORTRAIT</span>
             </div>
           </div>
         </div>
 
-        <div class="photo-frame frame-hero-spread">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=85"
-            alt="First Married Portrait" loading="lazy" />
-          <div class="photo-meta">
-            <span>FRAME 052 &middot; FIRST MARRIED PORTRAIT</span>
-            <span>SACRED UNION</span>
+        <!-- ROW 3: PORTRAIT TRIO (TALAMBRALU BLESSINGS & FOREHEAD PORTRAIT) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-009.webp"
+              srcset="images/wedding/wedding-009-480.webp 480w, images/wedding/wedding-009.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Sacred yellow rice Talambralu blessing showering over smiling bride" loading="lazy" decoding="async"
+              width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 047 &middot; BRIDE TALAMBRALU</span>
+              <span>SACRED BLESSING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-011.webp"
+              srcset="images/wedding/wedding-011-480.webp 480w, images/wedding/wedding-011.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Sacred yellow rice Talambralu blessing showering over reverent groom" loading="lazy" decoding="async"
+              width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 048 &middot; GROOM TALAMBRALU</span>
+              <span>SACRED BLESSING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-010.webp"
+              srcset="images/wedding/wedding-010-480.webp 480w, images/wedding/wedding-010.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Intimate forehead-to-forehead portrait of groom in sehra and bride smiling in silk saree"
+              loading="lazy" decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 049 &middot; FOREHEAD EMBRACE</span>
+              <span>WEDDING PORTRAIT</span>
+            </div>
           </div>
         </div>
+
+        <!-- ROW 3: LANDSCAPE PAIR (BRIDAL MAKEUP & MANDAP MOMENTS) -->
+        <div class="grid-pair-spacious">
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-023.webp"
+              srcset="images/wedding/wedding-023-480.webp 480w, images/wedding/wedding-023-800.webp 800w, images/wedding/wedding-023.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 50vw"
+              alt="Editorial portrait of bride touching eye under mandap in red saree" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 050 &middot; BRIDAL MANDAP RITUAL</span>
+              <span>THE WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-024.webp"
+              srcset="images/wedding/wedding-024-480.webp 480w, images/wedding/wedding-024-800.webp 800w, images/wedding/wedding-024.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 50vw"
+              alt="Artistic mirror reflection portrait of bride applying makeup with powder brush" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 051 &middot; BRIDAL MAKEUP MIRROR</span>
+              <span>BRIDAL PREPARATION</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 4: PORTRAIT TRIO (SACRED RITUALS & MANGALSUTRA) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-025.webp"
+              srcset="images/wedding/wedding-025-480.webp 480w, images/wedding/wedding-025-800.webp 800w, images/wedding/wedding-025.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Sacred Kanyadaan water pouring ritual over coconut and mangalsutra during Indian wedding ceremony" loading="lazy"
+              decoding="async" width="683" height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 052 &middot; SACRED KANYADAAN</span>
+              <span>WEDDING RITUAL</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-026.webp"
+              srcset="images/wedding/wedding-026-480.webp 480w, images/wedding/wedding-026-800.webp 800w, images/wedding/wedding-026.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Joyful groom smiling frame under wedding flower garland" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 053 &middot; GROOM CEREMONY SMILE</span>
+              <span>WEDDING PORTRAIT</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/wedding/wedding-027.webp"
+              srcset="images/wedding/wedding-027-480.webp 480w, images/wedding/wedding-027-800.webp 800w, images/wedding/wedding-027.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Emotional Mangalsutra tying ceremony: Groom tying sacred knot as bride smiles reclining" loading="lazy"
+              decoding="async" width="1024" height="683" />
+            <div class="photo-meta">
+              <span>FRAME 054 &middot; MANGALSUTRA CEREMONY</span>
+              <span>SACRED KNOT</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
       </div>
     </section>
 
@@ -1397,11 +1888,13 @@
         <span class="italic">starts here.</span>
       </h2>
       <p style="font-size:16px; color:var(--text-secondary); margin-bottom:40px; opacity:0.85;">
-        We accept a limited number of wedding commissions each year to ensure undivided artistic dedication for every story.
+        We accept a limited number of wedding commissions each year to ensure undivided artistic dedication for every
+        story.
       </p>
 
       <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-        <a href="quote.html" class="btn-byq" id="weddings-byq-cta" aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
+        <a href="quote.html" class="btn-byq" id="weddings-byq-cta"
+          aria-label="Build Your Wedding Photography Quote">BUILD YOUR QUOTE &rarr;</a>
         <a href="contact.html" class="btn-secondary">CONTACT STUDIO &rarr;</a>
       </div>
     </div>
@@ -1435,7 +1928,8 @@
           <a href="tel:+919491818015" class="footer-link">+91 94918 18015</a>
           <a href="mailto:hello@sumanthphotography.com" class="footer-link">hello@sumanthphotography.com</a>
           <div style="margin-top:12px; display:flex; gap:16px;">
-            <a href="https://www.instagram.com/sumanth__photography07/" target="_blank" rel="noopener" aria-label="Instagram" class="footer-link">
+            <a href="https://www.instagram.com/sumanth__photography07/" target="_blank" rel="noopener"
+              aria-label="Instagram" class="footer-link">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
@@ -1573,6 +2067,196 @@
     }, { threshold: 0.05 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // DYNAMIC ADAPTIVE WEDDING HERO SLIDESHOW ENGINE (01 -> 02 -> 03 -> 04 -> 05 -> 01)
+    (function() {
+      const slides = document.querySelectorAll('.hero-desktop-slider .desktop-slide');
+      const dots = document.querySelectorAll('.desktop-slider-dots .desk-dot');
+      const prevBtn = document.getElementById('desk-hero-prev');
+      const nextBtn = document.getElementById('desk-hero-next');
+      const heroSection = document.querySelector('.hero-section');
+
+      if (!slides.length) return;
+
+      let currentIndex = 0;
+      let timer = null;
+      let isPaused = false;
+
+      function updateActiveSlide(newIndex) {
+        slides[currentIndex].classList.remove('active');
+        if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+        currentIndex = (newIndex + slides.length) % slides.length;
+
+        slides[currentIndex].classList.add('active');
+        if (dots[currentIndex]) dots[currentIndex].classList.add('active');
+
+        const activeImg = slides[currentIndex].querySelector('img');
+        if (activeImg && activeImg.naturalWidth && activeImg.naturalHeight && heroSection) {
+          const containerWidth = heroSection.clientWidth;
+          const naturalRatio = activeImg.naturalHeight / activeImg.naturalWidth;
+          const calculatedHeight = Math.max(520, Math.min(window.innerHeight * 0.92, containerWidth * naturalRatio));
+          heroSection.style.height = calculatedHeight + 'px';
+        }
+      }
+
+      function next() {
+        updateActiveSlide(currentIndex + 1);
+      }
+
+      function prev() {
+        updateActiveSlide(currentIndex - 1);
+      }
+
+      function startTimer() {
+        stopTimer();
+        timer = setInterval(() => {
+          if (!isPaused) next();
+        }, 4500);
+      }
+
+      function stopTimer() {
+        if (timer) clearInterval(timer);
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', () => { next(); startTimer(); });
+      if (prevBtn) prevBtn.addEventListener('click', () => { prev(); startTimer(); });
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => { updateActiveSlide(idx); startTimer(); });
+      });
+
+      if (heroSection) {
+        heroSection.addEventListener('mouseenter', () => { isPaused = true; });
+        heroSection.addEventListener('mouseleave', () => { isPaused = false; });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('lightbox-modal');
+        if (modal && modal.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft') { prev(); startTimer(); }
+        if (e.key === 'ArrowRight') { next(); startTimer(); }
+      });
+
+      updateActiveSlide(0);
+      startTimer();
+
+      window.addEventListener('resize', () => {
+        updateActiveSlide(currentIndex);
+      });
+    })();
+
+    // MOBILE-ONLY ART-DIRECTED 5-IMAGE WEDDING HERO SLIDESHOW ENGINE
+    (function() {
+      const mobileSlides = document.querySelectorAll('#hero-mobile-slider .mobile-slide');
+      const mobileNumEl = document.getElementById('mobile-slide-num');
+      const mobileSlider = document.getElementById('hero-mobile-slider');
+
+      if (!mobileSlides.length) return;
+
+      let currentMobileIndex = 0;
+      let mobileTimer = null;
+      let isMobilePaused = false;
+
+      function updateMobileSlide(newIndex) {
+        mobileSlides[currentMobileIndex].classList.remove('active');
+        currentMobileIndex = (newIndex + mobileSlides.length) % mobileSlides.length;
+        mobileSlides[currentMobileIndex].classList.add('active');
+
+        if (mobileNumEl) {
+          mobileNumEl.textContent = String(currentMobileIndex + 1).padStart(2, '0');
+        }
+
+        // Progressive image preloading for smooth mobile playback
+        const nextIdx = (currentMobileIndex + 1) % mobileSlides.length;
+        const nextImg = mobileSlides[nextIdx].querySelector('img');
+        if (nextImg && nextImg.getAttribute('loading') === 'lazy') {
+          nextImg.setAttribute('loading', 'eager');
+        }
+      }
+
+      function nextMobile() {
+        updateMobileSlide(currentMobileIndex + 1);
+      }
+
+      function prevMobile() {
+        updateMobileSlide(currentMobileIndex - 1);
+      }
+
+      function startMobileTimer() {
+        stopMobileTimer();
+        mobileTimer = setInterval(() => {
+          if (!isMobilePaused) nextMobile();
+        }, 4500);
+      }
+
+      function stopMobileTimer() {
+        if (mobileTimer) clearInterval(mobileTimer);
+      }
+
+      // Tab visibility state handling
+      document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+          stopMobileTimer();
+        } else {
+          startMobileTimer();
+        }
+      });
+
+      // Mobile Menu state pause/resume listener
+      const menuBtn = document.querySelector('.mobile-menu-btn, .menu-toggle, #menu-btn');
+      const menuOverlay = document.querySelector('.mobile-menu-overlay, .mobile-nav-overlay');
+
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+          setTimeout(function() {
+            if (menuOverlay && (menuOverlay.classList.contains('active') || menuOverlay.classList.contains('open'))) {
+              isMobilePaused = true;
+            } else {
+              isMobilePaused = false;
+            }
+          }, 50);
+        });
+      }
+
+      // Touch gesture support (Swipe Left / Swipe Right)
+      if (mobileSlider) {
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchEndX = 0;
+        let touchEndY = 0;
+
+        mobileSlider.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        mobileSlider.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          touchEndY = e.changedTouches[0].screenY;
+          handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+          const deltaX = touchEndX - touchStartX;
+          const deltaY = touchEndY - touchStartY;
+
+          // Only trigger swipe when horizontal motion dominates (>35px)
+          if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 35) {
+            if (deltaX < 0) {
+              nextMobile();
+            } else {
+              prevMobile();
+            }
+            startMobileTimer();
+          }
+        }
+      }
+
+      // Initialize Mobile Slideshow
+      updateMobileSlide(0);
+      startMobileTimer();
+    })();
   </script>
 </body>
 
