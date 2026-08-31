@@ -334,18 +334,26 @@
       padding-bottom: 16px;
     }
 
-    /* UNCONTAINED PHOTOGRAPHY FRAME ELEMENTS */
+    /* EDITORIAL PRINT FRAME ELEMENTS */
     .photo-frame {
       position: relative;
       cursor: pointer;
       margin-bottom: 64px;
-      background: transparent;
+      background: #F5F4F1;
+      border: 1px solid #141212;
+      padding: 16px;
+      box-sizing: border-box;
+      transition: border-color 300ms ease;
+    }
+
+    .photo-frame:hover {
+      border-color: #000000;
     }
 
     .photo-frame img {
       width: 100%;
       height: auto;
-      object-fit: cover;
+      display: block;
       transition: transform 700ms var(--ease-editorial), filter 700ms ease;
       filter: brightness(0.98);
     }
@@ -356,15 +364,37 @@
     }
 
     .photo-meta {
-      padding-top: 12px;
+      padding-top: 14px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
       font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      color: var(--text-secondary);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: #000000;
       text-transform: uppercase;
+    }
+
+    .photo-meta span:last-child {
+      color: #666666;
+    }
+
+    .frame-hero-centered {
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 72px;
+    }
+
+    .frame-landscape-wide {
+      width: 100%;
+      margin-bottom: 72px;
+    }
+
+    .prewedding-stage {
+      padding-bottom: 96px;
     }
 
     /* FULL VIEWPORT COMPOSITION LAYOUTS */
@@ -408,27 +438,31 @@
       align-items: center;
     }
 
-    .grid-asymmetric-wide {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 48px;
-      margin-bottom: 72px;
-      align-items: center;
+    .prewedding-stage .story-container {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 24px;
+      padding-right: 24px;
+      margin: 0 auto;
     }
 
-    .grid-asymmetric-wide-rev {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 48px;
-      margin-bottom: 72px;
-      align-items: center;
+    .photo-frame {
+      position: relative;
+      cursor: pointer;
+      margin-bottom: 32px;
+      background: #F5F4F1;
+      border: 1px solid #141212;
+      padding: 14px;
+      box-sizing: border-box;
+      transition: border-color 300ms ease;
     }
 
     .grid-trio-spacious {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-bottom: 72px;
+      gap: 24px;
+      margin-bottom: 36px;
+      align-items: start;
     }
 
     @media (max-width: 900px) {
@@ -792,98 +826,156 @@
   <main class="story-flow" id="pre-wedding">
 
     <!-- 01 · PRE-WEDDING -->
-    <section class="story-stage reveal">
+    <section class="story-stage reveal prewedding-stage">
       <div class="story-container">
         <div class="stage-marker">
           <div class="stage-title">01 &middot; PRE-WEDDING</div>
         </div>
 
-        <div class="photo-frame frame-hero-spread">
-          <img src="https://images.unsplash.com/photo-1518563259479-d003814d0810?auto=format&fit=crop&w=2000&q=85"
-            alt="Pre-Wedding Heritage Location" loading="lazy" />
-          <div class="photo-meta">
-            <span>FRAME 001 &middot; HERITAGE LOCATION</span>
-            <span>HYDERABAD &middot; INDIA</span>
-          </div>
-        </div>
-
-        <div class="grid-pair-spacious">
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=1200&q=80"
-              alt="Natural Landscape Backdrop" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 002</span>
-              <span>ENVIRONMENT</span>
-            </div>
-          </div>
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1200&q=80"
-              alt="Couple Walking at Sunset" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 003</span>
-              <span>SUNSET PROMENADE</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-asymmetric-wide">
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1617777938240-9a1d8e51a47d?auto=format&fit=crop&w=1400&q=80"
-              alt="Shared Laughter" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 004</span>
-              <span>SHARED LAUGHTER</span>
-            </div>
-          </div>
-          <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1529637008816-f4a5bcc6ccf6?auto=format&fit=crop&w=1000&q=80"
-              alt="Silk & Gold Detail" loading="lazy" />
-            <div class="photo-meta">
-              <span>FRAME 005</span>
-              <span>SILK &amp; GOLD DETAIL</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- FULL-BLEED 100VW FRAME -->
-      <div class="photo-frame frame-full-bleed">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2400&q=85"
-          alt="Palace Gardens Panoramic" loading="lazy" />
-        <div class="photo-meta">
-          <span>FRAME 006 &middot; PALACE GARDENS</span>
-          <span>HYDERABAD &middot; 2026</span>
-        </div>
-      </div>
-
-      <div class="story-container">
+        <!-- ROW 1: FRAMES 001, 002, 003 (3 SIDE-BY-SIDE) -->
         <div class="grid-trio-spacious">
           <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80"
-              alt="Editorial Couple Portrait" loading="lazy" />
+            <img src="images/prewedding/prewedding-001.webp"
+              srcset="images/prewedding/prewedding-001-480.webp 480w, images/prewedding/prewedding-001.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Pre-wedding couple standing inside an architectural archway holding Save The Date newspaper"
+              loading="eager"
+              fetchpriority="high"
+              width="683"
+              height="1024" />
             <div class="photo-meta">
-              <span>FRAME 007</span>
-              <span>EDITORIAL PORTRAIT</span>
+              <span>FRAME 001 &middot; ARCHWAY SILHOUETTE</span>
+              <span>PRE-WEDDING</span>
             </div>
           </div>
+
           <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?auto=format&fit=crop&w=800&q=80"
-              alt="Ring Close-up" loading="lazy" />
+            <img src="images/prewedding/prewedding-002.webp"
+              srcset="images/prewedding/prewedding-002-480.webp 480w, images/prewedding/prewedding-002.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Editorial pre-wedding portrait of couple wearing sunglasses and holding Save The Date newspaper"
+              loading="lazy"
+              decoding="async"
+              width="683"
+              height="1024" />
             <div class="photo-meta">
-              <span>FRAME 008</span>
-              <span>RING DETAIL</span>
+              <span>FRAME 002</span>
+              <span>PRE-WEDDING &middot; PORTRAIT</span>
             </div>
           </div>
+
           <div class="photo-frame">
-            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80"
-              alt="Dusk Portrait" loading="lazy" />
+            <img src="images/prewedding/prewedding-003.webp"
+              srcset="images/prewedding/prewedding-003-480.webp 480w, images/prewedding/prewedding-003.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Close-up editorial portrait of couple holding Save The Date 23.04.2025 newspaper"
+              loading="lazy"
+              decoding="async"
+              width="683"
+              height="1024" />
             <div class="photo-meta">
-              <span>FRAME 010</span>
-              <span>DUSK PORTRAIT</span>
+              <span>FRAME 003</span>
+              <span>PRE-WEDDING &middot; COUPLE</span>
             </div>
           </div>
         </div>
+
+        <!-- ROW 2: FRAMES 004, 005, 006 (3 SIDE-BY-SIDE) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-004.webp"
+              srcset="images/prewedding/prewedding-004-480.webp 480w, images/prewedding/prewedding-004-800.webp 800w, images/prewedding/prewedding-004.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Pre-wedding couple holding hands in snow with scenic winter mountain backdrop"
+              loading="lazy"
+              decoding="async"
+              width="1024"
+              height="683" />
+            <div class="photo-meta">
+              <span>FRAME 004 &middot; SNOW SCAPE</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-005.webp"
+              srcset="images/prewedding/prewedding-005-480.webp 480w, images/prewedding/prewedding-005-800.webp 800w, images/prewedding/prewedding-005.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Couple playfully throwing snow among pine trees in a winter forest"
+              loading="lazy"
+              decoding="async"
+              width="1024"
+              height="683" />
+            <div class="photo-meta">
+              <span>FRAME 005 &middot; WINTER FOREST</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-006.webp"
+              srcset="images/prewedding/prewedding-006-480.webp 480w, images/prewedding/prewedding-006-800.webp 800w, images/prewedding/prewedding-006.webp 1024w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Woman in vibrant royal blue saree with dramatic flowing pallu in open field under blue sky"
+              loading="lazy"
+              decoding="async"
+              width="1024"
+              height="682" />
+            <div class="photo-meta">
+              <span>FRAME 006 &middot; BLUE SAREE SILK</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ROW 3: FRAMES 007, 008, 009 (3 SIDE-BY-SIDE) -->
+        <div class="grid-trio-spacious">
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-007.webp"
+              srcset="images/prewedding/prewedding-007-480.webp 480w, images/prewedding/prewedding-007.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Intimate pre-wedding moment of couple behind Save The Date 23.04.2025 newspaper"
+              loading="lazy"
+              decoding="async"
+              width="683"
+              height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 007 &middot; SAVE THE DATE</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-008.webp"
+              srcset="images/prewedding/prewedding-008-480.webp 480w, images/prewedding/prewedding-008.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Romantic night portrait of couple embracing warmly against dark urban city bokeh"
+              loading="lazy"
+              decoding="async"
+              width="683"
+              height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 008 &middot; CITY BOKEH</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+
+          <div class="photo-frame">
+            <img src="images/prewedding/prewedding-009.webp"
+              srcset="images/prewedding/prewedding-009-480.webp 480w, images/prewedding/prewedding-009.webp 683w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Pre-wedding couple in outdoor amphitheater holding Save The Date 23.04.2025 newspaper"
+              loading="lazy"
+              decoding="async"
+              width="683"
+              height="1024" />
+            <div class="photo-meta">
+              <span>FRAME 009 &middot; AMPHITHEATER</span>
+              <span>PRE-WEDDING</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
