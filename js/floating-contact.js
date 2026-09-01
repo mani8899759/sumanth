@@ -166,6 +166,21 @@
 
     // Input Focus Lock: Lock form open whenever user interacts with form fields
     if (form) {
+      form.addEventListener('focusin', () => {
+        isFormFocused = true;
+        clearTimeout(closeTimer);
+      });
+
+      form.addEventListener('click', (e) => {
+        e.stopPropagation();
+        isFormFocused = true;
+      });
+
+      form.addEventListener('touchstart', (e) => {
+        e.stopPropagation();
+        isFormFocused = true;
+      }, { passive: true });
+
       const inputs = form.querySelectorAll('input, select, textarea');
       inputs.forEach(input => {
         input.addEventListener('focus', () => {
@@ -179,9 +194,12 @@
       });
     }
 
+    let lastPanelOpenedTime = 0;
+
     // Panel switching helper
     function openPanel(targetId) {
       clearTimeout(closeTimer);
+      lastPanelOpenedTime = Date.now();
 
       items.forEach(item => {
         const itemId = item.dataset.id;
@@ -205,10 +223,12 @@
 
       activePanelId = targetId;
 
-      // Focus first field if opening contact form
       if (targetId === 'panel-contact') {
+        isFormFocused = true;
         const nameField = document.getElementById('fc-name');
-        if (nameField) setTimeout(() => nameField.focus(), 100);
+        if (nameField && window.innerWidth > 768) {
+          setTimeout(() => nameField.focus(), 100);
+        }
       }
     }
 
@@ -233,45 +253,73 @@
 
       // Desktop Hover on Item Wrapper (Trigger + Panel Region)
       item.addEventListener('mouseenter', () => {
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 900) {
           openPanel(targetId);
         }
       });
 
       item.addEventListener('mouseleave', () => {
         // Do NOT close if user is actively filling out the contact form
-        if (window.innerWidth > 768 && (!isFormFocused || targetId !== 'panel-contact')) {
+        if (window.innerWidth > 900 && (!isFormFocused || targetId !== 'panel-contact')) {
           closeTimer = setTimeout(closeAllPanels, HOVER_GRACE_PERIOD);
         }
       });
 
-      // Tap / Click Toggle
+      // Mobile & Desktop Click / Tap Toggle (Robust Touch + Click Handler)
       if (tab) {
-        tab.addEventListener('click', (e) => {
+        let lastTouchTime = 0;
+
+        const handleActivation = (e) => {
+          if (e.cancelable) e.preventDefault();
           e.stopPropagation();
+
+          // Ignore synthetic click if touch already activated panel
+          if (e.type === 'click' && Date.now() - lastTouchTime < 500) {
+            return;
+          }
+          if (e.type === 'touchend') {
+            lastTouchTime = Date.now();
+          }
+
           if (activePanelId === targetId) {
             closeAllPanels();
           } else {
             openPanel(targetId);
           }
-        });
+        };
+
+        tab.addEventListener('click', handleActivation);
+        tab.addEventListener('touchend', handleActivation, { passive: false });
       }
     });
 
     // Close buttons (Intentional Close)
     closeBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      const handleClose = (e) => {
+        if (e.cancelable) e.preventDefault();
         e.stopPropagation();
         closeAllPanels();
-      });
+      };
+      btn.addEventListener('click', handleClose);
+      btn.addEventListener('touchend', handleClose, { passive: false });
     });
 
     // Outside click & ESC key dismissal
-    document.addEventListener('click', (e) => {
-      if (activePanelId && !container.contains(e.target)) {
+    const handleOutsideDismiss = (e) => {
+      // Guard against synthetic touch click leak within 400ms of opening
+      if (Date.now() - lastPanelOpenedTime < 400) return;
+      if (activePanelId && !container.contains(e.target) && !isFormFocused) {
         closeAllPanels();
       }
-    });
+    };
+
+    document.addEventListener('click', handleOutsideDismiss);
+    document.addEventListener('touchend', (e) => {
+      if (Date.now() - lastPanelOpenedTime < 400) return;
+      if (activePanelId && !container.contains(e.target) && !isFormFocused) {
+        closeAllPanels();
+      }
+    }, { passive: true });
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && activePanelId) {
@@ -319,6 +367,7 @@
 
           statusEl.textContent = "ENQUIRY RECEIVED. We'll be in touch soon.";
           statusEl.className = 'floating-panel__status is-success';
+          statusEl.style.display = 'block';
           form.reset();
 
           setTimeout(() => {
@@ -326,12 +375,13 @@
             submitBtn.disabled = false;
             submitBtn.textContent = 'SEND ENQUIRY →';
             statusEl.style.display = 'none';
-          }, 3000);
+          }, 4000);
 
         } catch (err) {
           console.error('[FloatingContact Error]', err);
           statusEl.textContent = 'Unable to send enquiry. Please try again.';
           statusEl.className = 'floating-panel__status is-error';
+          statusEl.style.display = 'block';
           submitBtn.disabled = false;
           submitBtn.textContent = 'SEND ENQUIRY →';
         }
@@ -339,17 +389,25 @@
     }
 
     // Monitor Mobile Menu & Lightbox state to hide widget cleanly
-    const observer = new MutationObserver(() => {
-      const isMobileMenuOpen = document.getElementById('mobile-nav')?.classList.contains('is-open') || document.body.classList.contains('menu-open');
-      const isLightboxOpen = document.body.classList.contains('lightbox-open') || document.querySelector('.lg-outer');
+    function checkVisibility() {
+      const mobNav = document.getElementById('mobile-nav');
+      const isMobileMenuOpen = mobNav?.classList.contains('open') || mobNav?.classList.contains('is-open') || document.body.classList.contains('menu-open');
+      const lbModal = document.getElementById('lightbox-modal');
+      const isLightboxOpen = lbModal?.classList.contains('open') || document.body.classList.contains('lightbox-open') || document.querySelector('.lg-outer');
+
       if (isMobileMenuOpen || isLightboxOpen) {
         container.classList.add('is-hidden');
       } else {
         container.classList.remove('is-hidden');
       }
-    });
+    }
 
+    const observer = new MutationObserver(checkVisibility);
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    const mobNav = document.getElementById('mobile-nav');
+    if (mobNav) observer.observe(mobNav, { attributes: true, attributeFilter: ['class'] });
+    const lbModal = document.getElementById('lightbox-modal');
+    if (lbModal) observer.observe(lbModal, { attributes: true, attributeFilter: ['class'] });
   }
 
   // Auto-initialize on DOMReady

@@ -256,63 +256,226 @@ a:hover>span.arrow {
 }
 
 /* --------------------------------------------------------------------------
-   07 — VIEWPORT SCROLL REVEALS & STAGGER
+   07 — VIEWPORT SCROLL REVEALS & STAGGER (LEFT → RIGHT EDITORIAL MOTION)
    -------------------------------------------------------------------------- */
-.reveal {
+
+:root {
+  --reveal-dist-h-desktop: -40px;
+  --reveal-dist-h-mobile: -24px;
+
+  --reveal-dist-sub-desktop: -28px;
+  --reveal-dist-sub-mobile: -18px;
+
+  --reveal-dist-cta-desktop: -20px;
+  --reveal-dist-cta-mobile: -14px;
+
+  --dur-reveal-h: 750ms;
+  --dur-reveal-sub: 600ms;
+  --dur-reveal-cta: 500ms;
+
+  --ease-editorial-decel: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Default / No-JS Fallback: All elements visible naturally */
+.reveal-left,
+.reveal-left-heading,
+.reveal-left-sub,
+.reveal-left-cta,
+.reveal-left-group,
+.reveal,
+.editorial-title,
+[data-reveal="left"],
+[data-reveal] {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* JS-Active Initial Hidden States (Left offset) */
+html.js-ready .reveal-left,
+html.js-ready .reveal-left-heading,
+html.js-ready .reveal,
+html.js-ready .editorial-title,
+html.js-ready [data-reveal="left"],
+html.js-ready [data-reveal] {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity var(--duration-text) var(--ease-editorial),
-    transform var(--duration-text) var(--ease-editorial);
+  transform: translateX(var(--reveal-dist-h-desktop));
+  transition: opacity var(--dur-reveal-h) var(--ease-editorial-decel),
+    transform var(--dur-reveal-h) var(--ease-editorial-decel);
   will-change: opacity, transform;
 }
 
-.reveal.on {
-  opacity: 1;
-  transform: translateY(0);
+html.js-ready .reveal-left-sub,
+html.js-ready .reveal-sub {
+  opacity: 0;
+  transform: translateX(var(--reveal-dist-sub-desktop));
+  transition: opacity var(--dur-reveal-sub) var(--ease-editorial-decel) 120ms,
+    transform var(--dur-reveal-sub) var(--ease-editorial-decel) 120ms;
+  will-change: opacity, transform;
 }
 
-/* Editorial Italic Word Reveal */
+html.js-ready .reveal-left-cta,
+html.js-ready .reveal-cta {
+  opacity: 0;
+  transform: translateX(var(--reveal-dist-cta-desktop));
+  transition: opacity var(--dur-reveal-cta) var(--ease-editorial-decel) 220ms,
+    transform var(--dur-reveal-cta) var(--ease-editorial-decel) 220ms;
+  will-change: opacity, transform;
+}
+
+/* Mobile Travel Offsets (16px–24px) */
+@media (max-width: 768px) {
+
+  html.js-ready .reveal-left,
+  html.js-ready .reveal-left-heading,
+  html.js-ready .reveal,
+  html.js-ready .editorial-title,
+  html.js-ready [data-reveal="left"],
+  html.js-ready [data-reveal] {
+    transform: translateX(var(--reveal-dist-h-mobile));
+  }
+
+  html.js-ready .reveal-left-sub,
+  html.js-ready .reveal-sub {
+    transform: translateX(var(--reveal-dist-sub-mobile));
+  }
+
+  html.js-ready .reveal-left-cta,
+  html.js-ready .reveal-cta {
+    transform: translateX(var(--reveal-dist-cta-mobile));
+  }
+}
+
+/* Revealed / Settled State */
+html.js-ready .reveal-left.is-visible,
+html.js-ready .reveal-left.on,
+html.js-ready .reveal-left-heading.is-visible,
+html.js-ready .reveal-left-heading.on,
+html.js-ready .reveal-left-sub.is-visible,
+html.js-ready .reveal-left-sub.on,
+html.js-ready .reveal-left-cta.is-visible,
+html.js-ready .reveal-left-cta.on,
+html.js-ready .reveal.is-visible,
+html.js-ready .reveal.on,
+html.js-ready .editorial-title.is-visible,
+html.js-ready .editorial-title.on,
+html.js-ready [data-reveal="left"].is-visible,
+html.js-ready [data-reveal="left"].on,
+html.js-ready [data-reveal].is-visible,
+html.js-ready [data-reveal].on {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Editorial Italic Word Reveal (Left offset) */
 .italic,
 span.italic {
   display: inline-block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+html.js-ready .italic,
+html.js-ready span.italic {
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 600ms var(--ease-editorial), transform 600ms var(--ease-editorial);
+  transform: translateX(-16px);
+  transition: opacity 600ms var(--ease-editorial-decel), transform 600ms var(--ease-editorial-decel);
   will-change: opacity, transform;
 }
 
-.reveal.on .italic,
-.reveal-hero.on .italic,
-.italic.on {
-  opacity: 1;
-  transform: translateY(0);
+html.js-ready .reveal.on .italic,
+html.js-ready .reveal-left.on .italic,
+html.js-ready .editorial-title.on .italic,
+html.js-ready .italic.on,
+html.js-ready .italic.is-visible {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
-/* Section Headline Reveal */
-.editorial-title {
+/* Automatic Container Stagger (Heading -> Supporting Text -> CTA) */
+html.js-ready .reveal-left-group>h1,
+html.js-ready .reveal-left-group>h2,
+html.js-ready .reveal-left-group>h3,
+html.js-ready .reveal-left-group>.editorial-title,
+html.js-ready .reveal-left-group>.reveal-heading {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 850ms var(--ease-editorial), transform 850ms var(--ease-editorial);
+  transform: translateX(var(--reveal-dist-h-desktop));
+  transition: opacity var(--dur-reveal-h) var(--ease-editorial-decel) 0ms,
+    transform var(--dur-reveal-h) var(--ease-editorial-decel) 0ms;
+}
+
+html.js-ready .reveal-left-group>p,
+html.js-ready .reveal-left-group>.mono-label,
+html.js-ready .reveal-left-group>.reveal-sub,
+html.js-ready .reveal-left-group>.lead-text {
+  opacity: 0;
+  transform: translateX(var(--reveal-dist-sub-desktop));
+  transition: opacity var(--dur-reveal-sub) var(--ease-editorial-decel) 120ms,
+    transform var(--dur-reveal-sub) var(--ease-editorial-decel) 120ms;
+}
+
+html.js-ready .reveal-left-group>.btn-primary,
+html.js-ready .reveal-left-group>.btn-secondary,
+html.js-ready .reveal-left-group>.btn-byq,
+html.js-ready .reveal-left-group>.btn-cta,
+html.js-ready .reveal-left-group>.arrow-link,
+html.js-ready .reveal-left-group>.reveal-cta {
+  opacity: 0;
+  transform: translateX(var(--reveal-dist-cta-desktop));
+  transition: opacity var(--dur-reveal-cta) var(--ease-editorial-decel) 220ms,
+    transform var(--dur-reveal-cta) var(--ease-editorial-decel) 220ms;
+}
+
+@media (max-width: 768px) {
+
+  html.js-ready .reveal-left-group>h1,
+  html.js-ready .reveal-left-group>h2,
+  html.js-ready .reveal-left-group>h3,
+  html.js-ready .reveal-left-group>.editorial-title,
+  html.js-ready .reveal-left-group>.reveal-heading {
+    transform: translateX(var(--reveal-dist-h-mobile));
+  }
+
+  html.js-ready .reveal-left-group>p,
+  html.js-ready .reveal-left-group>.mono-label,
+  html.js-ready .reveal-left-group>.reveal-sub,
+  html.js-ready .reveal-left-group>.lead-text {
+    transform: translateX(var(--reveal-dist-sub-mobile));
+  }
+
+  html.js-ready .reveal-left-group>.btn-primary,
+  html.js-ready .reveal-left-group>.btn-secondary,
+  html.js-ready .reveal-left-group>.btn-byq,
+  html.js-ready .reveal-left-group>.btn-cta,
+  html.js-ready .reveal-left-group>.arrow-link,
+  html.js-ready .reveal-left-group>.reveal-cta {
+    transform: translateX(var(--reveal-dist-cta-mobile));
+  }
+}
+
+html.js-ready .reveal-left-group.is-visible>*,
+html.js-ready .reveal-left-group.on>* {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Grid Child Left Stagger */
+html.js-ready .reveal-stagger>* {
+  opacity: 0;
+  transform: translateX(-24px);
+  transition: opacity 650ms var(--ease-editorial-decel), transform 650ms var(--ease-editorial-decel);
   will-change: opacity, transform;
 }
 
-.editorial-title.on,
-.reveal.on .editorial-title {
-  opacity: 1;
-  transform: translateY(0);
+@media (max-width: 768px) {
+  html.js-ready .reveal-stagger>* {
+    transform: translateX(-16px);
+  }
 }
 
-/* Contact Sheet & Gallery Grid Stagger */
-.reveal-stagger>* {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 750ms var(--ease-editorial), transform 750ms var(--ease-editorial);
-  will-change: opacity, transform;
-}
-
-.reveal-stagger.on>* {
-  opacity: 1;
-  transform: translateY(0);
+html.js-ready .reveal-stagger.on>*,
+html.js-ready .reveal-stagger.is-visible>* {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -501,9 +664,9 @@ body.menu-open {
   margin: 0 !important;
   border: none !important;
   background: transparent !important;
-  transition: opacity 250ms ease, transform 350ms var(--ease-editorial) !important;
+  transition: opacity 450ms var(--ease-editorial-decel), transform 450ms var(--ease-editorial-decel) !important;
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateX(-24px);
   will-change: opacity, transform;
   min-height: 44px !important;
   display: inline-flex !important;
@@ -512,7 +675,7 @@ body.menu-open {
 
 #mobile-nav.open .mobile-menu-item {
   opacity: 1 !important;
-  transform: translateY(0) !important;
+  transform: translateX(0) !important;
 }
 
 /* BUILD YOUR QUOTE item inside mobile menu — medium/bold emphasis, same serif, no border */
@@ -854,13 +1017,142 @@ a.btn-byq-dark:focus-visible,
   max-width: 640px;
 }
 
-/* ── Reduced motion for BYQ ─────────────────────────────────────────────── */
+/* ── Build Your Quote Wizard Directional Step Transitions ───────────────── */
+.wizard-step-panel {
+  opacity: 0;
+  transition: opacity 500ms var(--ease-editorial-decel), transform 500ms var(--ease-editorial-decel);
+  will-change: opacity, transform;
+}
+
+.wizard-step-panel.active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.wizard-step-panel.step-enter-left {
+  opacity: 0;
+  transform: translateX(-32px);
+}
+
+.wizard-step-panel.step-enter-right {
+  opacity: 0;
+  transform: translateX(32px);
+}
+
+@media (max-width: 768px) {
+  .wizard-step-panel.step-enter-left {
+    transform: translateX(-20px);
+  }
+
+  .wizard-step-panel.step-enter-right {
+    transform: translateX(20px);
+  }
+}
+
+/* ── Reduced motion for BYQ & Global System ─────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
 
   a.nav-byq-cta,
   a.btn-byq,
   a.btn-byq-dark,
-  #mobile-nav .mobile-menu-byq {
+  #mobile-nav .mobile-menu-byq,
+  .wizard-step-panel {
     transition: none !important;
+    transform: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+gallery-grid>div,
+.photo-frame,
+.frame-card,
+.editorial-mosaic-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 550ms var(--ease-editorial-decel), transform 550ms var(--ease-editorial-decel);
+  will-change: opacity, transform;
+}
+
+.editorial-mosaic-gallery>div.is-visible,
+.editorial-mosaic-gallery>a.is-visible,
+.contact-sheet-grid>div.is-visible,
+.gallery-grid>div.is-visible,
+.photo-frame.is-visible,
+.frame-card.is-visible,
+.editorial-mosaic-item.is-visible,
+.is-visible .photo-frame,
+.is-visible .frame-card,
+.is-visible .editorial-mosaic-item,
+html:not(.js-ready) .editorial-mosaic-gallery>div,
+html:not(.js-ready) .editorial-mosaic-gallery>a,
+html:not(.js-ready) .contact-sheet-grid>div,
+html:not(.js-ready) .gallery-grid>div,
+html:not(.js-ready) .photo-frame,
+html:not(.js-ready) .frame-card,
+html:not(.js-ready) .editorial-mosaic-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* --------------------------------------------------------------------------
+   16 — HOME PHOTO SHOWCASE: FORCED 3-COLUMN DESKTOP EDITORIAL GRID
+   -------------------------------------------------------------------------- */
+#home-photo-grid #home-showcase-container {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 6px !important;
+  width: 100% !important;
+}
+
+#home-photo-grid .photo-frame {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: #eae8e1 !important;
+  aspect-ratio: 16 / 11 !important;
+  position: relative !important;
+}
+
+#home-photo-grid .photo-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 400ms var(--ease-editorial-decel, ease-out) !important;
+}
+
+#home-photo-grid .photo-frame:hover img {
+  transform: scale(1.015) !important;
+}
+
+/* Specific aspect ratio overrides for portrait vs landscape photos */
+#home-photo-grid .photo-frame:has(img[src*="prewedding-001"]),
+#home-photo-grid .photo-frame:has(img[src*="prewedding-002"]),
+#home-photo-grid .photo-frame:has(img[src*="prewedding-006"]),
+#home-photo-grid .photo-frame:has(img[src*="prewedding-011"]),
+#home-photo-grid .photo-frame:has(img[src*="prewedding-017"]) {
+  aspect-ratio: 9 / 14 !important;
+}
+
+/* Responsive Breakpoints: Desktop (3-col), Tablet (2-col), Mobile (1-col) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  #home-photo-grid #home-showcase-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #home-photo-grid #home-showcase-container {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
   }
 }

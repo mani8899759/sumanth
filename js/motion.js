@@ -1,6 +1,6 @@
 /**
  * SUMANTH PHOTOGRAPHY — EDITORIAL & CINEMATIC MOTION SYSTEM
- * Quiet, intentional, precise JavaScript interaction engine.
+ * Global Left-to-Right Entrance Reveal System
  */
 
 (function () {
@@ -9,7 +9,13 @@
   // Respect prefers-reduced-motion
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Signal JS readiness immediately for non-flash CSS activation
+  if (document.documentElement) {
+    document.documentElement.classList.add('js-ready');
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    document.documentElement.classList.add('js-ready');
     initPageTransitions();
     initHeroSequence();
     initScrollObserver();
@@ -75,74 +81,128 @@
   }
 
   /* --------------------------------------------------------------------------
-     02 — HERO TEXT & ELEMENT STAGING
+     02 — HERO TEXT LEFT-TO-RIGHT ENTRANCE STAGGER
      -------------------------------------------------------------------------- */
   function initHeroSequence() {
-    const heroSection = document.querySelector('section.hero, header.hero, .hero-section, .hero, .about-hero-section, .contact-hero-section');
+    const heroSection = document.querySelector('section.hero, header.hero, .hero-section, .hero, .about-hero-section, .contact-hero-section, .byq-hero, .portfolio-hero');
     
     // Always activate any italic elements above the fold
     document.querySelectorAll('.about-hero-section .italic, .contact-hero-section .italic, .hero .italic, .hero-section .italic').forEach(el => {
-      el.classList.add('on');
+      el.classList.add('is-visible', 'on');
     });
 
     if (!heroSection) return;
 
-    const heroElements = heroSection.querySelectorAll('h1, h2, p, .mono-label, .btn-primary, .btn-secondary, .italic, span.italic');
-    heroElements.forEach((el, idx) => {
-      el.style.transitionDelay = `${150 + idx * 120}ms`;
-      el.classList.add('reveal');
+    if (prefersReducedMotion) {
+      heroSection.querySelectorAll('h1, h2, p, .mono-label, .btn-primary, .btn-secondary, .btn-byq, .arrow-link, .italic, span.italic').forEach(el => {
+        el.classList.add('is-visible', 'on');
+      });
+      return;
+    }
+
+    const headings = heroSection.querySelectorAll('h1, h2, .editorial-title');
+    const subtexts = heroSection.querySelectorAll('p, .mono-label, .hero-sub, .lead-text');
+    const ctas = heroSection.querySelectorAll('.btn-primary, .btn-secondary, .btn-byq, .btn-byq-dark, .btn-cta, .arrow-link, .hero-cta-primary, .hero-cta-secondary');
+
+    headings.forEach(el => {
+      el.classList.add('reveal-left-heading');
     });
 
-    // Trigger hero entrance quickly after load
+    subtexts.forEach(el => {
+      el.classList.add('reveal-left-sub');
+    });
+
+    ctas.forEach(el => {
+      el.classList.add('reveal-left-cta');
+    });
+
+    // Trigger hero entrance after page paint
     setTimeout(() => {
-      heroElements.forEach(el => el.classList.add('on'));
-    }, 100);
+      heroSection.querySelectorAll('.reveal-left-heading, .reveal-left-sub, .reveal-left-cta, .italic, span.italic').forEach(el => {
+        el.classList.add('is-visible', 'on', 'visible');
+      });
+    }, 60);
   }
 
   /* --------------------------------------------------------------------------
-     03 — SCROLL REVEALS & CONTACT SHEET STAGGER
+     03 — GLOBAL VIEWPORT SCROLL OBSERVER (ANIMATE ONCE)
      -------------------------------------------------------------------------- */
   function initScrollObserver() {
+    const allRevealElements = document.querySelectorAll(
+      '.reveal-left, .reveal-left-heading, .reveal-left-sub, .reveal-left-cta, .reveal-left-group, .reveal, .editorial-title, .reveal-stagger, [data-reveal="left"], [data-reveal]'
+    );
+
+    // Auto-discover section headings and content blocks if not explicitly tagged
+    const sectionBlocks = document.querySelectorAll('main section, body > section, article section');
+    sectionBlocks.forEach(sec => {
+      if (sec.closest('.hero-section, .hero, header.hero, .about-hero-section, .contact-hero-section')) return;
+
+      const secHeadings = sec.querySelectorAll('h1, h2, h3, .section-title, .content-heading, .editorial-title');
+      secHeadings.forEach(h => {
+        if (!h.classList.contains('reveal-left') && !h.classList.contains('reveal-left-heading') && !h.classList.contains('reveal')) {
+          h.classList.add('reveal-left-heading');
+        }
+      });
+
+      const secSubs = sec.querySelectorAll('p.lead-text, p.section-sub, .mono-label');
+      secSubs.forEach(s => {
+        if (!s.classList.contains('reveal-left') && !s.classList.contains('reveal-left-sub') && !s.classList.contains('reveal')) {
+          s.classList.add('reveal-left-sub');
+        }
+      });
+
+      const secCtas = sec.querySelectorAll('.btn-primary, .btn-secondary, .btn-byq, .btn-byq-dark, .btn-cta, .arrow-link');
+      secCtas.forEach(c => {
+        if (!c.classList.contains('reveal-left') && !c.classList.contains('reveal-left-cta') && !c.classList.contains('reveal')) {
+          c.classList.add('reveal-left-cta');
+        }
+      });
+    });
+
     if (prefersReducedMotion) {
-      document.querySelectorAll('.reveal, .reveal-stagger, .reveal-clip, .editorial-title, .italic, span.italic').forEach(el => {
-        el.classList.add('on');
+      document.querySelectorAll(
+        '.reveal-left, .reveal-left-heading, .reveal-left-sub, .reveal-left-cta, .reveal-left-group, .reveal, .editorial-title, .reveal-stagger, .italic, span.italic, [data-reveal="left"], [data-reveal]'
+      ).forEach(el => {
+        el.classList.add('is-visible', 'on', 'visible');
       });
       return;
     }
 
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.08
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.05
     };
 
-    const observer = new IntersectionObserver((entries, obs) => {
+    const revealObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const target = entry.target;
 
-          // If container has reveal-stagger class, stagger immediate children
-          if (target.classList.contains('reveal-stagger') || target.classList.contains('contact-sheet-grid') || target.classList.contains('featured-grid')) {
+          // Reveal target element
+          target.classList.add('is-visible', 'on', 'visible');
+
+          // If container has group or stagger class, activate child elements
+          if (target.classList.contains('reveal-left-group') || target.classList.contains('reveal-stagger') || target.classList.contains('contact-sheet-grid') || target.classList.contains('featured-grid')) {
             const children = Array.from(target.children);
-            children.forEach((child, idx) => {
-              child.style.transitionDelay = `${idx * 60}ms`;
-            });
+            children.forEach(child => child.classList.add('is-visible', 'on', 'visible'));
           }
 
-          target.classList.add('on');
           // Also activate child italic words
-          target.querySelectorAll('.italic, span.italic').forEach(it => it.classList.add('on'));
+          target.querySelectorAll('.italic, span.italic').forEach(it => it.classList.add('is-visible', 'on', 'visible'));
+
+          // ANIMATE ONCE — unobserve immediately
           obs.unobserve(target);
         }
       });
     }, observerOptions);
 
-    // Observe reveal elements
+    // Re-query all elements after auto-discovery tagging
     const elementsToObserve = document.querySelectorAll(
-      '.reveal, .reveal-stagger, .reveal-clip, .contact-sheet-grid, .featured-grid, .portfolio-grid, .editorial-title, .italic, span.italic'
+      '.reveal-left, .reveal-left-heading, .reveal-left-sub, .reveal-left-cta, .reveal-left-group, .reveal, .editorial-title, .reveal-stagger, .contact-sheet-grid, .featured-grid, [data-reveal="left"], [data-reveal]'
     );
 
-    elementsToObserve.forEach(el => observer.observe(el));
+    elementsToObserve.forEach(el => revealObserver.observe(el));
   }
 
   /* --------------------------------------------------------------------------
@@ -162,16 +222,13 @@
 
           if (currentScrollY > 100) {
             if (currentScrollY > lastScrollY + 10) {
-              // Scrolling down: reduce prominence
               nav.classList.add('nav-scrolled-down');
               nav.classList.remove('nav-scrolled-up');
             } else if (currentScrollY < lastScrollY - 10) {
-              // Scrolling up: restore full visibility
               nav.classList.add('nav-scrolled-up');
               nav.classList.remove('nav-scrolled-down');
             }
           } else {
-            // Near top
             nav.classList.remove('nav-scrolled-down');
             nav.classList.remove('nav-scrolled-up');
           }
@@ -184,8 +241,8 @@
     }, { passive: true });
   }
 
-  /* -----------------------------------------------------------------  /* --------------------------------------------------------------------------
-     05 — MOBILE MENU & STAGGERED REVEAL (ONE GLOBAL COMPONENT)
+  /* --------------------------------------------------------------------------
+     05 — MOBILE MENU & STAGGERED REVEAL (LEFT → RIGHT)
      -------------------------------------------------------------------------- */
   const mobileNavigation = [
     { label: 'WEDDING<br />PHOTOGRAPHY', href: 'weddings.html' },
@@ -200,7 +257,6 @@
     let mobileNav = document.getElementById('mobile-nav');
     const menuBtns = document.querySelectorAll('#menu-btn, .menu-btn, #mobile-menu-btn');
 
-    // Ensure universal mobile nav HTML is present
     if (!mobileNav) {
       mobileNav = document.createElement('div');
       mobileNav.id = 'mobile-nav';
@@ -210,7 +266,6 @@
       document.body.appendChild(mobileNav);
     }
 
-    // Standardize mobile nav internal content matching visual reference
     mobileNav.innerHTML = `
       <div class="mobile-nav-top">
         <a href="index.html" class="mobile-nav-logo">SUMANTH PHOTOGRAPHY</a>
@@ -244,8 +299,9 @@
         });
       });
 
+      // Subtle Left-to-Right stagger sequence: 0ms, 60ms, 120ms, 180ms, 240ms, 300ms
       navItems.forEach((link, idx) => {
-        link.style.transitionDelay = `${50 + idx * 45}ms`;
+        link.style.transitionDelay = `${idx * 60}ms`;
       });
     };
 
@@ -289,26 +345,22 @@
       };
     }
 
-    // Close menu when tapping any link inside
     navItems.forEach(link => {
       link.addEventListener('click', () => {
         closeMenu();
       });
     });
 
-    // ESC Key listener
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
         closeMenu();
       }
     });
 
-    // Reset state on pageshow (back button navigation)
     window.addEventListener('pageshow', () => {
       closeMenu();
     });
 
-    // Reset state on desktop resize
     window.addEventListener('resize', () => {
       if (window.innerWidth > 900 && mobileNav.classList.contains('open')) {
         closeMenu();
@@ -320,7 +372,7 @@
      06 — CTA BUTTON ARROW AUTO-WRAPPER
      -------------------------------------------------------------------------- */
   function initCTAArrows() {
-    const ctas = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-cta, .arrow-link, a.mono-label');
+    const ctas = document.querySelectorAll('.btn-primary, .btn-secondary, .btn-byq, .btn-cta, .arrow-link, a.mono-label');
 
     ctas.forEach(cta => {
       const html = cta.innerHTML;
@@ -344,7 +396,6 @@
 
     if (!modal || !lbImg) return;
 
-    // Smooth transition on prev / next image change
     function transitionImage(direction) {
       const slideOutClass = direction === 'next' ? 'lb-slide-out-next' : 'lb-slide-out-prev';
       lbImg.classList.add(slideOutClass);
@@ -366,7 +417,6 @@
       lbNext.addEventListener('click', () => transitionImage('next'));
     }
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (!modal.classList.contains('open')) return;
       if (e.key === 'ArrowLeft' && lbPrev) {

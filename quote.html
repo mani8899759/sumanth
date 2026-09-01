@@ -465,13 +465,136 @@
       display: block;
     }
 
-    .event-name {
-      font-family: var(--font-serif);
-      font-size: 18px;
-      font-weight: 500;
-      text-transform: uppercase;
+    .card-mobile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .card-number {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       color: var(--text-primary);
-      line-height: 1.25;
+    }
+
+    .card-select-control {
+      width: 22px;
+      height: 22px;
+      border: 1px solid var(--border-color);
+      background: var(--bg);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    .selection-card.selected .card-select-control {
+      background: var(--text-primary);
+      color: var(--bg);
+    }
+
+    /* --------------------------------------------------------------------------
+       MOBILE-ONLY BUILD YOUR QUOTE REFINEMENTS (@media max-width: 767px)
+       -------------------------------------------------------------------------- */
+    @media (max-width: 767px) {
+      /* Step 1: Photography Style Cards Mobile Layout */
+      #style-cards-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+      }
+
+      .selection-card {
+        padding: 16px;
+        min-height: auto;
+        border: 1px solid var(--border-color);
+        background: var(--bg);
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .selection-card.selected {
+        background-color: var(--surface-secondary);
+        border-color: var(--border-color);
+      }
+
+      /* Medium Square Camera Image Box */
+      .selection-card .card-image-wrap {
+        width: 100%;
+        max-width: 120px;
+        height: 120px;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto 6px auto;
+        background: var(--surface-secondary);
+        border: 1px solid var(--border-color);
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .selection-card .card-image-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 4px;
+      }
+
+      /* Hide marketing paragraphs and long descriptions on mobile */
+      .selection-card .card-description,
+      .selection-card .card-subtitle {
+        display: none !important;
+      }
+
+      .selection-card .card-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: var(--text-primary);
+        text-align: center;
+        line-height: 1.2;
+        margin-top: 2px;
+      }
+
+      /* Step 2: Events Selection Mobile Refinements */
+      #events-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+        gap: 12px;
+        width: 100%;
+      }
+
+      .event-card {
+        padding: 12px;
+        min-height: auto;
+      }
+
+      .event-card .card-image-wrap {
+        margin-bottom: 8px;
+      }
+
+      .event-name {
+        font-size: 15px !important; /* Smaller compact event title font size on mobile */
+        line-height: 1.2;
+      }
+
+      .event-cat {
+        font-size: 9px !important;
+        margin-bottom: 2px;
+      }
     }
 
     /* STEP 3: COVERAGE SERVICE CARDS */

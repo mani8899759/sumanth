@@ -404,8 +404,6 @@
   </footer>
   <script>
     const nav = document.getElementById('main-nav'); window.addEventListener('scroll', () => { if (window.scrollY > 60) nav.classList.add('scrolled'); else nav.classList.remove('scrolled'); }, { passive: true });
-    const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } }); }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     document.querySelectorAll('a[href]').forEach(link => { const href = link.getAttribute('href'); if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('tel') && !href.startsWith('mailto')) { link.addEventListener('click', (e) => { e.preventDefault(); const o = document.getElementById('page-transition'); o.style.opacity = '1'; o.style.pointerEvents = 'all'; setTimeout(() => { window.location.href = href; }, 380); }); } });
     window.addEventListener('load', () => { document.getElementById('page-transition').style.opacity = '0'; });
   </script>

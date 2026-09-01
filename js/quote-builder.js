@@ -578,10 +578,15 @@
     const grid = document.getElementById('style-cards-grid');
     if (!grid) return;
 
-    grid.innerHTML = CONFIG.styles.map(style => {
+    grid.innerHTML = CONFIG.styles.map((style, index) => {
       const isSelected = state.photographyStyle === style.id;
+      const numStr = `0${index + 1}`;
       return `
         <div class="selection-card ${isSelected ? 'selected' : ''}" data-style-id="${style.id}" onclick="window.selectPhotographyStyle('${style.id}')" tabindex="0" role="button" aria-pressed="${isSelected}">
+          <div class="card-mobile-header">
+            <span class="card-number">${numStr}</span>
+            <div class="card-select-control" aria-hidden="true">${isSelected ? '✓' : ''}</div>
+          </div>
           <div class="card-image-wrap">
             <img src="${style.image}" alt="${style.title}" loading="lazy" />
           </div>
@@ -1765,6 +1770,8 @@
   // MASTER NAVIGATION DISPATCHER
   // -------------------------------------------------------------
   window.goToQuoteStep = function (stepIndex) {
+    const previousStep = typeof state.currentStep === 'number' ? state.currentStep : 0;
+
     // If attempting to advance from Step 5 -> Step 6, validate customer details first
     if (state.currentStep === 5 && stepIndex === 6) {
       const isValid = validateCustomerDetails();
@@ -1774,9 +1781,23 @@
     state.currentStep = stepIndex;
     saveState();
 
+    const isForward = stepIndex >= previousStep;
+    const enterClass = isForward ? 'step-enter-left' : 'step-enter-right';
+
     document.querySelectorAll('.wizard-step-panel').forEach(panel => {
       const step = parseInt(panel.getAttribute('data-step'), 10);
-      panel.classList.toggle('active', step === stepIndex);
+      if (step === stepIndex) {
+        panel.classList.remove('step-enter-left', 'step-enter-right');
+        panel.classList.add(enterClass);
+        panel.classList.add('active');
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            panel.classList.remove('step-enter-left', 'step-enter-right');
+          });
+        });
+      } else {
+        panel.classList.remove('active', 'step-enter-left', 'step-enter-right');
+      }
     });
 
     window.scrollTo({ top: 0, behavior: 'smooth' });

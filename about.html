@@ -676,13 +676,6 @@
   </footer>
 
   <script src="js/motion.js"></script>
-  <script>
-    // Reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); observer.unobserve(e.target); } });
-    }, { threshold: 0.06 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
 
   <style>
     /* Floating WhatsApp (Mobile Only) */

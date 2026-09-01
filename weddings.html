@@ -2103,17 +2103,6 @@
       });
     });
 
-    // REVEAL ANIMATIONS
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('on');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.05 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     // DYNAMIC ADAPTIVE WEDDING HERO SLIDESHOW ENGINE (01 -> 02 -> 03 -> 04 -> 05 -> 01)
     (function () {
